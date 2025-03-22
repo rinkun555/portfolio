@@ -61,7 +61,7 @@ body, button, input, textarea, select {
     font-weight: 400;
     font-style: normal;
     color: #90404C;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 body {
@@ -75,11 +75,6 @@ body {
 }
 
 /* Typography */
-h1, h2, h3 {
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #90404C;
-}
 
 h1 {
     font-size: 2.5rem;
@@ -90,7 +85,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 
 
@@ -117,7 +112,9 @@ h3 {
 }
 
 .intro-text {
-    flex: 2;
+    width: 50%;
+    max-width: 50%;
+    flex-shrink: 0;
 }
 
 /* Navigation */
@@ -181,7 +178,8 @@ h3 {
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* 間隔を少し縮小 */
+    gap: 1rem; /* 間隔を少し縮小 */
+    text-align: right; /* Align text to the right */
 }
 
 .keyword-cloud span {
@@ -194,11 +192,9 @@ h3 {
 }
 
 .keyword-cloud .italic {
-    font-family: 'Times New Roman', serif;
-    font-weight: 300; 
-    font-stretch: condensed;
-    letter-spacing: -0.02em;
-    opacity: 0.9;
+    font-family: "garamond-premier-pro-display", serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 /* 個別のキーワードスタイル */
@@ -209,22 +205,22 @@ h3 {
     font-size: 1.875rem; /* 30px */
 }
 .keyword-playful {
-    font-size: 3.5rem; /* 50px */
+    font-size: 3rem; /* 50px */
 }
 .keyword-MEANINGFUL {
-    font-size: 3.125rem; /* 50px */
+    font-size: 2.5rem; /* 50px */
 }
 .keyword-Qualitatitive {
-    font-size: 2.7rem; /* 50px */
+    font-size: 2rem; /* 50px */
 }
 .keyword-ECOSYSTEM {
     font-size: 1.5rem; 
 }
 .keyword-Facilitation {
-    font-size: 3rem; 
+    font-size: 2.4rem; 
 }
 .keyword-PEOPLE {
-    font-size: 2.5rem; 
+    font-size: 2.1rem; 
 }
 .keyword-SOCIAL {
     font-size: 2rem;
@@ -234,8 +230,9 @@ h3 {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    column-gap: 2rem;
+    row-gap: 4rem;
+    margin-bottom: 20rem;
 }
 
 .project-card {
@@ -254,12 +251,12 @@ h3 {
 }
 
 .project-info {
-    padding: 1.5rem;
+  
 }
 
 .project-category {
     font-size: 0.9rem;
-    color: #90404C;
+    color: #3e3e3e;
     margin-bottom: 0.5rem;
 }
 
@@ -271,14 +268,13 @@ h3 {
 .filter-tabs {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 3rem;
     margin-bottom: 1.5rem;
 }
 
 .filter-tab {
     background: none;
     border: none;
-    padding: 0.5rem 0.8rem;
     color: #90404C;
     font-weight: 600;
     font-size: 0.9rem;
@@ -293,7 +289,7 @@ h3 {
 }
 
 .filter-tab.active {
-    border-bottom: 2px solid #90404C;
+    border-bottom: 1px solid #90404C;
     color: #90404C;
     font-weight: 700;
 }
@@ -302,7 +298,7 @@ h3 {
 footer {
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
+    padding-top: 15rem;
 }
 
 .copyright {
@@ -312,7 +308,7 @@ footer {
 
 .accent-text {
     font-style: italic;
-    color: #ff6b6b;
+    text-align: right;
 }
 
 /* Responsive design */
