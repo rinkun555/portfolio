@@ -1,0 +1,504 @@
+// Variables
+$primary-color: #90404C;
+$secondary-color: #484848;
+$background-color: #E5DFD1;
+$white: #ffffff;
+$gray: #3e3e3e;
+
+// Mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+  
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, button, input, textarea, select {
+  font-family: "din-2014", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Selection style */
+::selection {
+  background-color: $primary-color;
+  color: $white;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: $primary-color;
+  color: $white;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* Header styles */
+.left-header {
+  @include flex(row, space-between, flex-start);
+  margin-bottom: 2rem;
+  
+  @include responsive(tablet) {
+    flex-direction: column;
+  }
+}
+
+.name-container {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.japanese-subtitle {
+  font-size: 1.2rem;
+  margin-top: -0.5rem;
+}
+
+.intro-text {
+  width: 50%;
+  max-width: 50%;
+  flex-shrink: 0;
+  
+  @include responsive(tablet) {
+    padding-left: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Navigation */
+.top-nav {
+  ul {
+    @include flex(row, space-between, center);
+    list-style: none;
+    margin-bottom: 3rem;
+    width: 100%;
+    
+    @include responsive(tablet) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  
+  .name-section {
+    @include flex(row, flex-start, center);
+    gap: 1rem;
+    
+    @include responsive(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+    }
+  }
+  
+  .menu-section {
+    @include flex(row, flex-start, center);
+    
+    @include responsive(tablet) {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    li {
+      margin-right: 2rem;
+      
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      @include responsive(tablet) {
+        margin-right: 1rem;
+      }
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+    
+    &:hover {
+      color: $primary-color;
+      transform: translateY(-3px);
+      border-bottom: 1px solid transparent;
+    }
+    
+    &.active {
+      border-bottom: 1px solid transparent;
+      color: $secondary-color;
+      font-weight: 700;
+    }
+  }
+}
+
+/* Main content */
+.title-section {
+  margin: 6rem 0 4rem;
+  @include flex(row, flex-start, center, wrap);
+  gap: 2rem;
+  
+  @include responsive(tablet) {
+    flex-direction: column;
+  }
+}
+
+.main-title {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.keyword-cloud {
+  flex: 1;
+  min-width: 300px;
+  @include flex(column);
+  gap: 1rem;
+  text-align: right;
+  
+  span {
+    border-radius: 2rem;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-family: "din-2014", sans-serif;
+  }
+  
+  .italic {
+    font-family: "cormorant-garamond", serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 5rem;
+  }
+}
+
+/* 個別のキーワードスタイル */
+.keyword-circular { font-size: 1.2rem; }
+.keyword-tools { font-size: 1.5rem; }
+.keyword-MEANINGFUL { font-size: 1.6rem; }
+.keyword-Qualitatitive { font-size: 1.3rem; }
+.keyword-ECOSYSTEM { font-size: 1.2rem; }
+.keyword-Facilitation { font-size: 1.1rem; }
+.keyword-PEOPLE { font-size: 1.6rem; }
+.keyword-SOCIAL { font-size: 1rem; }
+
+/* Projects section */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  column-gap: 2rem;
+  row-gap: 4rem;
+  margin-bottom: 20rem;
+  
+  @include responsive(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  overflow: hidden;
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
+
+.project-category {
+  font-size: 0.9rem;
+  color: $gray;
+  margin-bottom: 0.5rem;
+}
+
+/* Category filter tabs */
+.category-filter {
+  margin-bottom: 2rem;
+}
+
+.filter-tabs {
+  @include flex(row, flex-start, center, wrap);
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+  
+  @include responsive(tablet) {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+  }
+}
+
+.filter-tab {
+  background: none;
+  border: none;
+  color: $primary-color;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.3rem;
+  
+  @include responsive(tablet) {
+    display: inline-block;
+  }
+  
+  &:hover {
+    color: $primary-color;
+    transform: translateY(-3px);
+    border-bottom: 2px solid transparent;
+  }
+  
+  &.active {
+    border-bottom: 1px solid transparent;
+    color: $secondary-color;
+    font-weight: 700;
+  }
+  
+  &[data-filter="all"] {
+    padding-left: 0;
+    padding-right: 1.5rem;
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: -1rem;
+      bottom: 0;
+      z-index: 1;
+    }
+    
+    &:hover {
+      color: $primary-color;
+      transform: translateY(-3px);
+      border-bottom: 2px solid transparent;
+    }
+  }
+}
+
+/* Footer */
+footer {
+  @include flex(row, space-between);
+  padding-top: 15rem;
+  
+  @include responsive(tablet) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.copyright {
+  color: $primary-color;
+  font-size: 0.9rem;
+}
+
+.accent-text {
+  font-style: italic;
+  text-align: right;
+}
+
+/* Social icons */
+.social-icons {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  @include flex(column);
+  gap: 1rem;
+  z-index: 100;
+  
+  @include responsive(tablet) {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    transform: none;
+  }
+  
+  a {
+    @include flex(row, center, center);
+    color: $background-color;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    
+    &:hover {
+      background-color: $background-color;
+      color: $primary-color;
+      transform: scale(1.1);
+    }
+  }
+  
+  .fab {
+    color: $primary-color;
+    font-size: 1.5em;
+  }
+}
+
+/* Project detail page */
+.project-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+    
+    @include responsive(tablet) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: $primary-color;
+    
+    @include responsive(tablet) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.project-intro {
+  margin-bottom: 3rem;
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  ul {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+  }
+}
+
+.project-images {
+  margin-bottom: 3rem;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  figcaption {
+    font-size: 0.9rem;
+    color: $primary-color;
+    font-style: italic;
+  }
+}
