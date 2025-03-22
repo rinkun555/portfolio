@@ -1,4 +1,4 @@
-/* リセットと基本スタイル */
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,332 +6,204 @@
 }
 
 body {
-    font-family: 'Helvetica', Arial, sans-serif;
-    background-color: #f8f5f0; /* ソフトベージュ */
+    font-family: "din-2014", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     color: #333;
+    background-color: #E5DFD1;
     line-height: 1.6;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* モバイルファーストのレイアウト（小さい画面） */
 .container {
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding: 2rem;
 }
 
-/* 左側ヘッダー（モバイルでは上部に変更） */
-.left-header {
-    padding: 1rem 0 1.5rem;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.name-container {
-    margin-bottom: 1.5rem;
-}
-
-.left-header h1 {
-    font-size: 1.8rem;
+/* Typography */
+h1, h2, h3 {
     font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
 }
 
-.japanese-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+h1 {
+    font-size: 2.5rem;
 }
 
-.intro-text {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    text-align: center;
-    padding: 0 1rem;
+h2 {
+    font-size: 2.2rem;
 }
 
-/* トップナビゲーション（モバイルでは縦並び） */
-.top-nav {
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Header styles */
+.left-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 2rem;
 }
 
+.name-container {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.japanese-subtitle {
+    font-size: 1.2rem;
+    margin-top: -0.5rem;
+}
+
+.intro-text {
+    flex: 2;
+    padding-left: 2rem;
+}
+
+/* Navigation */
 .top-nav ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     list-style: none;
-    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.top-nav li {
+    margin-right: 2rem;
 }
 
 .top-nav a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-weight: 700;
     transition: color 0.3s;
 }
 
-.top-nav a:hover, .top-nav a.active {
-    color: #8b1e1e; /* 赤色のアクセント */
+.top-nav a:hover,
+.top-nav a.active {
+    color: #ff6b6b;
 }
 
-/* メインコンテンツ */
-main {
-    flex: 1;
-}
-
+/* Main content */
 .title-section {
+    margin-bottom: 3rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2.5rem;
-    text-align: center;
-}
-
-.main-title {
-    font-family: 'Times New Roman', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1;
-}
-
-.main-title .italic {
-    font-style: italic;
-}
-
-.keyword-cloud {
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-}
-
-.keyword-cloud span {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #8b1e1e;
-}
-
-/* プロジェクトセクション - モバイルでは1列 */
-.projects {
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
-.project-card {
+.main-title {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.keyword-cloud {
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.keyword-cloud span {
+    background-color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Projects section */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
     width: 100%;
-    height: auto;
+    height: 220px;
     object-fit: cover;
-    margin-bottom: 0.8rem;
 }
 
 .project-info {
-    padding: 0.5rem 0;
+    padding: 1.5rem;
 }
 
 .project-category {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #777;
-    margin-bottom: 0.3rem;
-}
-
-.project-card h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* フッター */
-footer {
-    padding: 2rem 0 1rem;
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-.copyright {
-    opacity: 0.7;
     margin-bottom: 0.5rem;
 }
 
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+.copyright {
+    color: #777;
+    font-size: 0.9rem;
+}
+
 .accent-text {
-    color: #8b1e1e; /* 赤色のアクセント */
     font-style: italic;
+    color: #ff6b6b;
 }
 
-/* タブレット用メディアクエリ (768px - 1024px) */
-@media (min-width: 768px) {
-    .container {
-        padding: 1.5rem;
-    }
-    
+/* Responsive design */
+@media (max-width: 768px) {
     .left-header {
-        text-align: left;
-        padding: 1.5rem 0;
+        flex-direction: column;
     }
     
     .intro-text {
-        text-align: left;
-        padding: 0;
+        padding-left: 0;
+        margin-top: 1.5rem;
     }
     
     .top-nav ul {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 1.5rem;
-    }
-    
-    .title-section {
-        align-items: flex-start;
-        text-align: left;
-    }
-    
-    .keyword-cloud {
-        justify-content: flex-start;
+        flex-wrap: wrap;
     }
     
     .projects {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .main-title {
-        font-size: 3rem;
+        grid-template-columns: 1fr;
     }
     
     footer {
-        text-align: left;
-    }
-}
-
-/* デスクトップ用メディアクエリ (1200px以上) */
-@media (min-width: 1200px) {
-    .container {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas: 
-            "header nav"
-            "header main"
-            "footer footer";
-        padding: 2rem;
-        gap: 2rem;
-    }
-    
-    .left-header {
-        grid-area: header;
-        padding-right: 2rem;
-        border-right: 1px solid #ddd;
-        border-bottom: none;
-        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        position: sticky;
-        top: 2rem;
-        align-self: start;
-        height: calc(100vh - 4rem);
-        margin-bottom: 0;
+        gap: 1rem;
     }
-    
-    .top-nav {
-        grid-area: nav;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-bottom: 0;
-    }
-    
-    .top-nav ul {
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 2rem;
-    }
-    
-    main {
-        grid-area: main;
-        padding: 0 2rem;
-    }
-    
+
     .title-section {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 4rem;
-        align-items: flex-start;
-    }
-    
-    .main-title {
-        font-size: 3.5rem;
-        margin-right: 3rem;
-        margin-bottom: 0;
-    }
-    
-    .keyword-cloud {
         flex-direction: column;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .keyword-cloud span {
-        font-size: 0.9rem;
-    }
-    
-    .projects {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    .project-card img {
-        height: 250px;
-        margin-bottom: 1rem;
-    }
-    
-    footer {
-        grid-area: footer;
-        padding: 2rem 0;
-    }
-}
-
-/* 大きいデスクトップ画面 (1600px以上) */
-@media (min-width: 1600px) {
-    .container {
-        grid-template-columns: 350px 1fr;
-    }
-    
-    .left-header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .japanese-subtitle {
-        font-size: 1.3rem;
-    }
-    
-    .intro-text {
-        font-size: 1rem;
-    }
-    
-    .main-title {
-        font-size: 4rem;
-    }
-    
-    .project-card img {
-        height: 300px;
     }
 }
