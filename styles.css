@@ -151,16 +151,23 @@ h3 {
     color: #90404C;
     font-weight: 700;
     transition: color 0.3s;
+    padding-bottom: 0.3rem; /* ボーダーのためのパディング追加 */
+    border-bottom: 1px solid transparent; /* 透明ボーダーをデフォルトで設定 */
 }
 
-.top-nav a:hover,
+.top-nav a:hover {
+    color: #90404c50;
+}
+
 .top-nav a.active {
-    color: #ff6b6b;
+    border-bottom: 1px solid #90404C;
+    color: #90404C;
+    font-weight: 700;
 }
 
 /* Main content */
 .title-section {
-    margin-bottom: 6rem;
+    margin:6rem 0 4rem;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -192,38 +199,36 @@ h3 {
 }
 
 .keyword-cloud .italic {
-    font-family: "garamond-premier-pro-display", serif;
-    font-weight: 300;
-    font-style: normal;
+    font-family: "cormorant-garamond", serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 5rem;
 }
 
 /* 個別のキーワードスタイル */
 .keyword-circular {
-    font-size: 2.5rem; /* 40px */
+    font-size: 1.2rem; /* 40px */
 }
 .keyword-tools {
-    font-size: 1.875rem; /* 30px */
-}
-.keyword-playful {
-    font-size: 3rem; /* 50px */
+    font-size: 1.5rem; /* 30px */
 }
 .keyword-MEANINGFUL {
-    font-size: 2.5rem; /* 50px */
+    font-size: 1.6rem; /* 50px */
 }
 .keyword-Qualitatitive {
-    font-size: 2rem; /* 50px */
+    font-size: 1.3rem; /* 50px */
 }
 .keyword-ECOSYSTEM {
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
 }
 .keyword-Facilitation {
-    font-size: 2.4rem; 
+    font-size: 1.1rem; 
 }
 .keyword-PEOPLE {
-    font-size: 2.1rem; 
+    font-size: 1.6rem; 
 }
 .keyword-SOCIAL {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 /* Projects section */
@@ -285,7 +290,7 @@ h3 {
 }
 
 .filter-tab:hover {
-    color: #ff6b6b;
+    color: #90404c50;
 }
 
 .filter-tab.active {
@@ -309,6 +314,38 @@ footer {
 .accent-text {
     font-style: italic;
     text-align: right;
+}
+
+/* Social icons */
+.social-icons {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E5DFD1;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    background-color: #E5DFD1;
+    color: #90404C;
+    transform: scale(1.1);
+}
+
+.social-icons .fab{
+    color: #90404C;
+    font-size: 1.5em;
 }
 
 /* Responsive design */
@@ -364,5 +401,13 @@ footer {
     
     .filter-tab {
         display: inline-block;
+    }
+
+    .social-icons {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 2rem;
+        transform: none;
     }
 }
