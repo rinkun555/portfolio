@@ -3,16 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ping Pong Game</title>
+    <title>Río SUZUKI - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&family=Times+New+Roman:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="gameContainer">
-        <canvas id="gameCanvas"></canvas>
+    <div class="container">
+        <header class="left-header">
+            <div class="name-container">
+                <h1>Río SUZUKI</h1>
+                <p class="japanese-subtitle">鈴木リオ</p>
+            </div>
+            <div class="intro-text">
+                <p>Hi this is Rio! FROM TOKYO, BASED IN COPENHAGEN. I'm a designer focused on creating sustainable solutions through co-design methodologies. With a background in both Japanese and Scandinavian design principles, I bring a unique perspective to every project.</p>
+            </div>
+        </header>
+
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="title-section">
+                <h2 class="main-title"><span class="italic">CO-</span>DESIGN</h2>
+                <div class="keyword-cloud">
+                    <span>CIRCULAR ECONOMY</span>
+                    <span>MAKE TOOLS</span>
+                    <span>PLAYFUL</span>
+                    <span>SUSTAINABILITY</span>
+                    <span>PARTICIPATORY</span>
+                    <span>COLLABORATION</span>
+                    <span>INNOVATION</span>
+                    <span>HUMAN-CENTERED</span>
+                </div>
+            </section>
+
+            <section class="projects">
+                <div class="project-card">
+                    <img src="images/project1.jpg" alt="Køge Hospital Project">
+                    <div class="project-info">
+                        <p class="project-category">PROJECT / Køge Hospital</p>
+                        <h3>Sustainable Healthcare Design</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Circular Economy Project">
+                    <div class="project-info">
+                        <p class="project-category">RESEARCH / Circular Materials</p>
+                        <h3>Redefining Material Cycles</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project3.jpg" alt="Community Workshop">
+                    <div class="project-info">
+                        <p class="project-category">WORKSHOP / Community Engagement</p>
+                        <h3>Participatory Design Tools</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project4.jpg" alt="Urban Planning">
+                    <div class="project-info">
+                        <p class="project-category">URBAN / Copenhagen Municipality</p>
+                        <h3>Public Space Transformation</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project5.jpg" alt="Sustainable Products">
+                    <div class="project-info">
+                        <p class="project-category">PRODUCT / Eco-friendly Solutions</p>
+                        <h3>Biodegradable Packaging</h3>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project6.jpg" alt="Digital Interface">
+                    <div class="project-info">
+                        <p class="project-category">DIGITAL / User Experience</p>
+                        <h3>Inclusive Interface Design</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="copyright">Río Suzuki All Rights Reserved. 2025</p>
+            <p class="accent-text">I can make a matcha Latte from Japan and would love to talk in person</p>
+        </footer>
     </div>
-    <script src="game.js"></script>
 </body>
 </html>
-
-
-
