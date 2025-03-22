@@ -157,6 +157,7 @@ body {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem;
+		margin-bottom: 2rem;
 }
 
 /* Selection style */
@@ -767,34 +768,42 @@ footer {
 
 /* Køge Hospital Project Page Styles */
 .koge-hospital-page {
-		background-color: #f4f0e8;
+		background-color: #E5DFD1;
 		font-family: "din-2014", sans-serif;
-		/* Arialからdin-2014に変更 */
-		/* Hero Section */
-		/* Main Content Layout */
-		/* Responsive Design */
+}
+.koge-hospital-page .container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+		margin-bottom: 2rem;
 }
 .koge-hospital-page .hero-image {
 		width: 100%;
 		height: 40vh;
-		/* ビューポート高さの40%に設定（約300px） */
 		min-height: 250px;
-		/* 最小高さを確保 */
 		max-height: 400px;
-		/* 最大高さを制限 */
 		margin-bottom: 3rem;
 		display: block;
 		-o-object-fit: cover;
 		   object-fit: cover;
-		/* 画像がコンテナにフィットするように調整 */
 		-o-object-position: center;
 		   object-position: center;
-		/* 画像を中央に配置 */
 		opacity: 0.8;
-		/* 80% opacity */
+}
+.koge-hospital-page h1 {
+		font-size: 2.5rem;
+		color: #90404C;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+}
+.koge-hospital-page .subtitle {
+		font-size: 1.2rem;
+		color: #8b1e1e;
+		margin-bottom: 3rem;
+		font-style: italic;
 }
 .koge-hospital-page .case-study-container {
-		max-width: 1800px;
+		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0 2rem;
 		display: -webkit-box;
@@ -803,26 +812,12 @@ footer {
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
 		gap: 3rem;
-		/* Left Column - Text Content */
-		/* Right Column - Image Gallery */
 }
 .koge-hospital-page .case-study-container .text-column {
 		-webkit-box-flex: 2;
 		    -ms-flex: 2;
 		        flex: 2;
 		min-width: 300px;
-}
-.koge-hospital-page .case-study-container .text-column h1 {
-		font-size: 2.5rem;
-		color: #90404C;
-		font-weight: 700;
-		margin-bottom: 1.5rem;
-}
-.koge-hospital-page .case-study-container .text-column .subtitle {
-		font-size: 1.2rem;
-		color: #8b1e1e;
-		margin-bottom: 3rem;
-		font-style: italic;
 }
 .koge-hospital-page .case-study-container .text-column .section {
 		margin-bottom: 3rem;
@@ -862,20 +857,44 @@ footer {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
-		min-width: 300px;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		gap: 2rem;
+		min-width: 50%;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 0.5rem 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: -webkit-min-content;
+		grid-auto-rows: min-content;
+		gap: 0.5rem;
 }
 .koge-hospital-page .case-study-container .image-column .project-image {
 		width: 100%;
-		height: auto;
+		height: 100%;
 		border-radius: 4px;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		margin: 0;
+		display: block;
+}
+.koge-hospital-page .case-study-container .image-column .project-image.horizontal {
+		-ms-grid-column-span: 2;
+		grid-column: span 2;
+		height: 300px;
+}
+.koge-hospital-page .case-study-container .image-column .project-image.square {
+		-ms-grid-column-span: 1;
+		grid-column: span 1;
+		aspect-ratio: 1/1;
+}
+.koge-hospital-page .case-study-container .image-column .project-image.vertical {
+		-ms-grid-column-span: 1;
+		grid-column: span 1;
+		aspect-ratio: 2/3;
+		min-height: 400px;
+}
+.koge-hospital-page .case-study-container .image-column .project-image.small {
+		-ms-grid-column-span: 1;
+		grid-column: span 1;
+		aspect-ratio: 1/1;
 }
 .koge-hospital-page .case-study-container .image-column .project-image:hover {
 		-webkit-transform: scale(1.02);
@@ -886,6 +905,8 @@ footer {
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .koge-hospital-page .case-study-container .image-column .image-caption {
+		-ms-grid-column-span: 2;
+		grid-column: span 2;
 		font-size: 0.85rem;
 		color: #8b1e1e;
 		margin-top: 0.5rem;
@@ -910,13 +931,32 @@ footer {
 		.koge-hospital-page .case-study-container {
 				padding: 0 1rem;
 		}
-		.koge-hospital-page .text-column h1 {
+		.koge-hospital-page h1 {
 				font-size: 2rem;
 		}
-		.koge-hospital-page .text-column h2 {
+		.koge-hospital-page h2 {
 				font-size: 1.5rem;
 		}
-		.koge-hospital-page .text-column h3 {
+		.koge-hospital-page h3 {
 				font-size: 1.2rem;
 		}
+		.koge-hospital-page .case-study-container .image-column {
+				-ms-grid-columns: 1fr;
+				grid-template-columns: 1fr;
+		}
+		.koge-hospital-page .case-study-container .image-column .project-image {
+				grid-column: 1/-1;
+		}
+		.koge-hospital-page .case-study-container .image-column .project-image.horizontal, .koge-hospital-page .case-study-container .image-column .project-image.vertical, .koge-hospital-page .case-study-container .image-column .project-image.square, .koge-hospital-page .case-study-container .image-column .project-image.small {
+				height: auto;
+				min-height: auto;
+				aspect-ratio: 1/1;
+		}
+}
+
+/* その他のページクラスにも同じ背景色を適用 */
+.about-page,
+.projects-page,
+.contact-page {
+		background-color: #E5DFD1;
 }
