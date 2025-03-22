@@ -5,13 +5,16 @@
     box-sizing: border-box;
 }
 
-body {
+body, button, input, textarea, select {
     font-family: "din-2014", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #90404C;
-    background-color: #E5DFD1;
     line-height: 1.6;
+}
+
+body {
+    background-color: #E5DFD1;
 }
 
 .container {
@@ -137,10 +140,17 @@ p {
 .keyword-cloud span {
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font-size: 0.85rem;
+    font-size: 4rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     display: inline-block;
+    font-family: 'Times New Roman', sans-serif;
+    font-style: italic;
+}
+
+/* 個別のキーワードスタイル */
+.keyword-circular {
+    font-size: 2.5rem; /* 40px */
 }
 
 /* Projects section */
@@ -175,6 +185,41 @@ p {
     font-size: 0.9rem;
     color: #90404C;
     margin-bottom: 0.5rem;
+}
+
+/* Category filter tabs */
+.category-filter {
+    margin-bottom: 2rem;
+}
+
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-tab {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    color: #90404C;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+
+.filter-tab:hover {
+    color: #ff6b6b;
+}
+
+.filter-tab.active {
+    border-bottom: 2px solid #90404C;
+    color: #90404C;
+    font-weight: 700;
 }
 
 /* Footer */
@@ -237,5 +282,16 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.3rem;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 0.5rem;
+        flex-wrap: nowrap;
+    }
+    
+    .filter-tab {
+        display: inline-block;
     }
 }

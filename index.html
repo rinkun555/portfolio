@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&family=Times+New+Roman:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/times-new-roman" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/bds6nij.css">
 </head>
 <body>
@@ -35,54 +36,64 @@
             </div>
                 <div class="keyword-cloud">
                   <h2 class="main-title"><span class="italic">CO-</span>DESIGN</h2>
-                    <span>CIRCULAR ECONOMY</span>
-                    <span>MAKE TOOLS</span>
-                    <span>PLAYFUL</span>
-                    <span>SUSTAINABILITY</span>
-                    <span>PARTICIPATORY</span>
-                    <span>COLLABORATION</span>
-                    <span>INNOVATION</span>
-                    <span>HUMAN-CENTERED</span>
+                    <span class="keyword-circular">CIRCULAR ECONOMY</span>
+                    <span class="keyword-tools">MAKE TOOLS</span>
+                    <span class="keyword-playful">PLAYFUL</span>
+                    <span class="keyword-sustainability">SUSTAINABILITY</span>
+                    <span class="keyword-participatory">PARTICIPATORY</span>
+                    <span class="keyword-collaboration">COLLABORATION</span>
+                    <span class="keyword-innovation">INNOVATION</span>
+                    <span class="keyword-humancentered">HUMAN-CENTERED</span>
+                </div>
+            </section>
+
+            <section class="category-filter">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">ALL</button>
+                    <button class="filter-tab" data-filter="project">PROJECT</button>
+                    <button class="filter-tab" data-filter="workshop">WORKSHOP</button>
+                    <button class="filter-tab" data-filter="data-analysis">DATA ANALYSIS (QUALITATIVE)</button>
+                    <button class="filter-tab" data-filter="sensemaking">SENSEMAKING</button>
                 </div>
             </section>
 
             <section class="projects">
-                <div class="project-card">
+                <div class="project-card" data-category="project">
                     <img src="images/project1.jpg" alt="Køge Hospital Project">
                     <div class="project-info">
                         <p class="project-category">PROJECT / Køge Hospital</p>
                         <h3>Sustainable Healthcare Design</h3>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="data-analysis">
                     <img src="images/project2.jpg" alt="Circular Economy Project">
                     <div class="project-info">
                         <p class="project-category">RESEARCH / Circular Materials</p>
                         <h3>Redefining Material Cycles</h3>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="workshop">
                     <img src="images/project3.jpg" alt="Community Workshop">
                     <div class="project-info">
                         <p class="project-category">WORKSHOP / Community Engagement</p>
                         <h3>Participatory Design Tools</h3>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="project">
                     <img src="images/project4.jpg" alt="Urban Planning">
                     <div class="project-info">
                         <p class="project-category">URBAN / Copenhagen Municipality</p>
                         <h3>Public Space Transformation</h3>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="sensemaking">
                     <img src="images/project5.jpg" alt="Sustainable Products">
                     <div class="project-info">
                         <p class="project-category">PRODUCT / Eco-friendly Solutions</p>
                         <h3>Biodegradable Packaging</h3>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="data-analysis">
                     <img src="images/project6.jpg" alt="Digital Interface">
                     <div class="project-info">
                         <p class="project-category">DIGITAL / User Experience</p>
@@ -97,5 +108,33 @@
             <p class="accent-text">I can make a matcha Latte from Japan and would love to talk in person</p>
         </footer>
     </div>
+
+    <script>
+        // フィルタリング機能のJavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // タブクリック時の処理
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // アクティブタブの切り替え
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // プロジェクトカードのフィルタリング
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
