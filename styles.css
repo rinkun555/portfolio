@@ -153,7 +153,25 @@ body {
 		background-color: #E5DFD1;
 }
 
+a {
+		text-decoration: none;
+		color: inherit;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+a:hover {
+		color: #90404C;
+		opacity: 0.7;
+}
+
 .container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+		margin-bottom: 2rem;
+}
+
+.header-container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem;
@@ -770,6 +788,10 @@ footer {
 .koge-hospital-page {
 		background-color: #E5DFD1;
 		font-family: "din-2014", sans-serif;
+		/* Modal styles */
+}
+.koge-hospital-page .header-container {
+		margin-bottom: 0;
 }
 .koge-hospital-page .container {
 		max-width: 1200px;
@@ -823,7 +845,7 @@ footer {
 		margin-bottom: 3rem;
 }
 .koge-hospital-page .case-study-container .text-column .section h2 {
-		font-size: 1.8rem;
+		font-size: 1.4rem;
 		color: #90404C;
 		font-weight: 700;
 		margin-bottom: 1rem;
@@ -973,6 +995,64 @@ footer {
 .koge-hospital-page .case-study-container .images-container .image-column .project-image.square {
 		aspect-ratio: 1/1; /* Perfect square */
 		width: 100%;
+}
+.koge-hospital-page .modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.6);
+}
+.koge-hospital-page .modal-inner-container {
+		position: relative;
+		display: inline-block;
+		margin: auto;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+}
+.koge-hospital-page .modal-content {
+		display: block;
+		width: auto;
+		height: auto;
+		max-width: 90vw;
+		max-height: 90vh;
+		-o-object-fit: contain;
+		   object-fit: contain;
+}
+.koge-hospital-page .modal-close {
+		position: absolute;
+		right: -70px;
+		top: 0;
+		color: #ffffff;
+		font-size: 4rem;
+		font-weight: 300;
+		cursor: pointer;
+		z-index: 1001;
+		width: 60px;
+		height: 60px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		background-color: rgba(0, 0, 0, 0.3);
+}
+.koge-hospital-page .modal-close:hover {
+		color: #90404C;
+		background-color: rgba(255, 255, 255, 0.2);
+}
+.koge-hospital-page .zoomable {
+		cursor: -webkit-zoom-in;
+		cursor: zoom-in;
 }
 @media (max-width: 1200px) {
 		.koge-hospital-page .case-study-container {

@@ -14,13 +14,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="koge-hospital-page">
+    <!-- Modal container -->
+    <div id="imageModal" class="modal">
+        <div class="modal-inner-container">
+            <img class="modal-content" id="modalImg">
+            <span class="modal-close">&times;</span>
+        </div>
+    </div>
     <div class="social-icons">
         <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
             <i class="fab fa-linkedin"></i>
         </a>
     </div>
 
-    <div class="container">
+    <div class="header-container">
         <nav class="top-nav">
             <ul>
                 <li class="name-section">
@@ -109,25 +116,25 @@
         <div class="images-container">
             <div class="image-column main">
                 <div class="image-wrapper">
-                    <img src="img/project_koge_cancerpathway.png" alt="Cancer pathway visualization" class="project-image portrait">
+                    <img src="img/project_koge_cancerpathway.png" alt="Cancer pathway visualization" class="project-image portrait zoomable">
                 </div>
                 <div class="image-wrapper">
-                    <img src="img/project_koge_coding.png" alt="Qualitative coding process" class="project-image landscape">
+                    <img src="img/project_koge_coding.png" alt="Qualitative coding process" class="project-image landscape zoomable">
                 </div>
                 <div class="image-wrapper">
-                    <img src="img/project_koge_coding.png" alt="Qualitative coding process" class="project-image square">
+                    <img src="img/project_koge_coding.png" alt="Qualitative coding process" class="project-image square zoomable">
                 </div>
             </div>
             
             <div class="image-column secondary">
                 <div class="image-wrapper">
-                    <img src="img/project_ikea_metaphorcards.png" alt="Metaphor cards used in workshops" class="project-image square">
+                    <img src="img/project_ikea_metaphorcards.png" alt="Metaphor cards used in workshops" class="project-image square zoomable">
                 </div>
                 <div class="image-wrapper">
-                    <img src="img/project_ikea_legobricks.png" alt="LEGO bricks workshop" class="project-image landscape">
+                    <img src="img/project_ikea_legobricks.png" alt="LEGO bricks workshop" class="project-image landscape zoomable">
                 </div>
                 <div class="image-wrapper">
-                  <img src="img/project_ikea_legobricks.png" alt="LEGO bricks workshop" class="project-image portrait">
+                  <img src="img/project_ikea_legobricks.png" alt="LEGO bricks workshop" class="project-image portrait zoomable">
               </div>
             </div>
         </div>
@@ -140,5 +147,31 @@
             <p class="copyright">Río Suzuki All Rights Reserved. 2025</p>
         </footer>
     </div>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementsByClassName("modal-close")[0];
+        
+        // Get all zoomable images
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+        
+        // Close modal when clicking X
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
