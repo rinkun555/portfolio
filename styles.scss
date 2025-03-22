@@ -15,7 +15,7 @@ $gray: #3e3e3e;
 }
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == tablet {
+  @if $breakpoint ==tablet {
     @media (max-width: 768px) {
       @content;
     }
@@ -23,19 +23,87 @@ $gray: #3e3e3e;
 }
 
 /* CSS Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -45,8 +113,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -54,14 +131,17 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
-  
-  &:before, &:after {
+
+  &:before,
+  &:after {
     content: '';
     content: none;
   }
@@ -79,7 +159,11 @@ table {
   box-sizing: border-box;
 }
 
-body, button, input, textarea, select {
+body,
+button,
+input,
+textarea,
+select {
   font-family: "din-2014", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -130,7 +214,7 @@ h3 {
 .left-header {
   @include flex(row, space-between, flex-start);
   margin-bottom: 2rem;
-  
+
   @include responsive(tablet) {
     flex-direction: column;
   }
@@ -150,7 +234,7 @@ h3 {
   width: 50%;
   max-width: 50%;
   flex-shrink: 0;
-  
+
   @include responsive(tablet) {
     padding-left: 0;
     margin-top: 1.5rem;
@@ -164,45 +248,45 @@ h3 {
     list-style: none;
     margin-bottom: 3rem;
     width: 100%;
-    
+
     @include responsive(tablet) {
       flex-direction: column;
       gap: 1.5rem;
     }
   }
-  
+
   .name-section {
     @include flex(row, flex-start, center);
     gap: 1rem;
-    
+
     @include responsive(tablet) {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.3rem;
     }
   }
-  
+
   .menu-section {
     @include flex(row, flex-start, center);
-    
+
     @include responsive(tablet) {
       flex-wrap: wrap;
       gap: 1rem;
     }
-    
+
     li {
       margin-right: 2rem;
-      
+
       &:last-child {
         margin-right: 0;
       }
-      
+
       @include responsive(tablet) {
         margin-right: 1rem;
       }
     }
   }
-  
+
   a {
     text-decoration: none;
     color: $primary-color;
@@ -211,13 +295,13 @@ h3 {
     padding-bottom: 0.3rem;
     border-bottom: 1px solid transparent;
     display: inline-block;
-    
+
     &:hover {
       color: $primary-color;
       transform: translateY(-3px);
       border-bottom: 1px solid transparent;
     }
-    
+
     &.active {
       border-bottom: 1px solid transparent;
       color: $secondary-color;
@@ -231,7 +315,7 @@ h3 {
   margin: 6rem 0 4rem;
   @include flex(row, flex-start, center, wrap);
   gap: 2rem;
-  
+
   @include responsive(tablet) {
     flex-direction: column;
   }
@@ -249,7 +333,7 @@ h3 {
   @include flex(column);
   gap: 1rem;
   text-align: right;
-  
+
   span {
     border-radius: 2rem;
     display: inline-block;
@@ -258,7 +342,7 @@ h3 {
     font-weight: 300;
     font-family: "din-2014", sans-serif;
   }
-  
+
   .italic {
     font-family: "cormorant-garamond", serif;
     font-weight: 500;
@@ -268,14 +352,37 @@ h3 {
 }
 
 /* 個別のキーワードスタイル */
-.keyword-circular { font-size: 1.2rem; }
-.keyword-tools { font-size: 1.5rem; }
-.keyword-MEANINGFUL { font-size: 1.6rem; }
-.keyword-Qualitatitive { font-size: 1.3rem; }
-.keyword-ECOSYSTEM { font-size: 1.2rem; }
-.keyword-Facilitation { font-size: 1.1rem; }
-.keyword-PEOPLE { font-size: 1.6rem; }
-.keyword-SOCIAL { font-size: 1rem; }
+.keyword-circular {
+  font-size: 1.2rem;
+}
+
+.keyword-tools {
+  font-size: 1.5rem;
+}
+
+.keyword-MEANINGFUL {
+  font-size: 1.6rem;
+}
+
+.keyword-Qualitatitive {
+  font-size: 1.3rem;
+}
+
+.keyword-ECOSYSTEM {
+  font-size: 1.2rem;
+}
+
+.keyword-Facilitation {
+  font-size: 1.1rem;
+}
+
+.keyword-PEOPLE {
+  font-size: 1.6rem;
+}
+
+.keyword-SOCIAL {
+  font-size: 1rem;
+}
 
 /* Projects section */
 .projects {
@@ -284,7 +391,7 @@ h3 {
   column-gap: 2rem;
   row-gap: 4rem;
   margin-bottom: 20rem;
-  
+
   @include responsive(tablet) {
     grid-template-columns: 1fr;
   }
@@ -293,11 +400,11 @@ h3 {
 .project-card {
   overflow: hidden;
   transition: transform 0.3s;
-  
+
   &:hover {
     transform: translateY(-5px);
   }
-  
+
   img {
     width: 100%;
     aspect-ratio: 1/1;
@@ -320,7 +427,7 @@ h3 {
   @include flex(row, flex-start, center, wrap);
   gap: 3rem;
   margin-bottom: 1.5rem;
-  
+
   @include responsive(tablet) {
     overflow-x: auto;
     white-space: nowrap;
@@ -340,28 +447,28 @@ h3 {
   position: relative;
   border-bottom: 2px solid transparent;
   padding-bottom: 0.3rem;
-  
+
   @include responsive(tablet) {
     display: inline-block;
   }
-  
+
   &:hover {
     color: $primary-color;
     transform: translateY(-3px);
     border-bottom: 2px solid transparent;
   }
-  
+
   &.active {
     border-bottom: 1px solid transparent;
     color: $secondary-color;
     font-weight: 700;
   }
-  
+
   &[data-filter="all"] {
     padding-left: 0;
     padding-right: 1.5rem;
     position: relative;
-    
+
     &::before {
       content: "";
       position: absolute;
@@ -371,7 +478,7 @@ h3 {
       bottom: 0;
       z-index: 1;
     }
-    
+
     &:hover {
       color: $primary-color;
       transform: translateY(-3px);
@@ -384,7 +491,7 @@ h3 {
 footer {
   @include flex(row, space-between);
   padding-top: 15rem;
-  
+
   @include responsive(tablet) {
     flex-direction: column;
     gap: 1rem;
@@ -410,7 +517,7 @@ footer {
   @include flex(column);
   gap: 1rem;
   z-index: 100;
-  
+
   @include responsive(tablet) {
     position: static;
     flex-direction: row;
@@ -418,20 +525,20 @@ footer {
     margin-top: 2rem;
     transform: none;
   }
-  
+
   a {
     @include flex(row, center, center);
     color: $background-color;
     transition: all 0.3s ease;
     font-size: 1.2rem;
-    
+
     &:hover {
       background-color: $background-color;
       color: $primary-color;
       transform: scale(1.1);
     }
   }
-  
+
   .fab {
     color: $primary-color;
     font-size: 1.5em;
@@ -443,23 +550,23 @@ footer {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 0;
-  
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: $primary-color;
-    
+
     @include responsive(tablet) {
       font-size: 2.5rem;
     }
   }
-  
+
   h2 {
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 3rem;
     color: $primary-color;
-    
+
     @include responsive(tablet) {
       font-size: 1.5rem;
     }
@@ -468,17 +575,17 @@ footer {
 
 .project-intro {
   margin-bottom: 3rem;
-  
+
   p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
   }
-  
+
   ul {
     margin-left: 2rem;
     margin-bottom: 2rem;
-    
+
     li {
       margin-bottom: 0.5rem;
       list-style-type: disc;
@@ -488,17 +595,174 @@ footer {
 
 .project-images {
   margin-bottom: 3rem;
-  
+
   img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
   }
-  
+
   figcaption {
     font-size: 0.9rem;
     color: $primary-color;
     font-style: italic;
+  }
+}
+
+/* Køge Hospital Project Page Styles */
+.koge-hospital-page {
+  background-color: #f4f0e8;
+  font-family: "din-2014", sans-serif;
+  /* Arialからdin-2014に変更 */
+
+  /* Hero Section */
+  .hero-image {
+    width: 100%;
+    height: 40vh;
+    /* ビューポート高さの40%に設定（約300px） */
+    min-height: 250px;
+    /* 最小高さを確保 */
+    max-height: 400px;
+    /* 最大高さを制限 */
+    margin-bottom: 3rem;
+    display: block;
+    object-fit: cover;
+    /* 画像がコンテナにフィットするように調整 */
+    object-position: center;
+    /* 画像を中央に配置 */
+    opacity: 0.8;
+    /* 80% opacity */
+  }
+
+  /* Main Content Layout */
+  .case-study-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    /* Left Column - Text Content */
+    .text-column {
+      flex: 2;
+      min-width: 300px;
+
+      h1 {
+        font-size: 2.5rem;
+        color: $primary-color;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: #8b1e1e;
+        margin-bottom: 3rem;
+        font-style: italic;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+
+        h2 {
+          font-size: 1.8rem;
+          color: $primary-color;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+        }
+
+        h3 {
+          font-size: 1.4rem;
+          color: #8b1e1e;
+          font-weight: 600;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+          line-height: 1.7;
+        }
+
+        .quote {
+          font-style: italic;
+          padding-left: 1.5rem;
+          border-left: 3px solid #8b1e1e;
+          margin: 2rem 0;
+        }
+
+        ul {
+          list-style-type: disc;
+          margin-left: 1.5rem;
+          margin-bottom: 1.5rem;
+
+          li {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+
+    /* Right Column - Image Gallery */
+    .image-column {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .project-image {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+
+        &:hover {
+          transform: scale(1.02);
+          transition: transform 0.3s ease;
+        }
+      }
+
+      .image-caption {
+        font-size: 0.85rem;
+        color: #8b1e1e;
+        margin-top: 0.5rem;
+        font-style: italic;
+      }
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .case-study-container {
+      flex-direction: column;
+
+      .text-column,
+      .image-column {
+        flex: none;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .case-study-container {
+      padding: 0 1rem;
+    }
+
+    .text-column {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
