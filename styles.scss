@@ -858,8 +858,8 @@ footer {
       display: block;
       width: auto;
       height: auto;
-      max-width: 90vw;
-      max-height: 90vh;
+      max-width: 80vw;
+      max-height: 80vh;
       object-fit: contain;
     }
     
@@ -882,6 +882,26 @@ footer {
       &:hover {
         color: $primary-color;
         background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    &-caption {
+      color: $white;
+      padding: 0.5rem 0 0.5rem 1rem;
+      text-align: left;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background: #3d3d3d4a;
+      
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 300;
+      }
+      
+      p {
+        font-size: 1rem;
+        opacity: 0.9;
       }
     }
   }

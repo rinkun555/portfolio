@@ -17,6 +17,10 @@
     <!-- Modal container -->
     <div id="imageModal" class="modal">
         <div class="modal-inner-container">
+            <div class="modal-caption">
+                <h3 id="modalTitle">Image Title</h3>
+                <p id="modalDescription">Image description goes here</p>
+            </div>
             <img class="modal-content" id="modalImg">
             <span class="modal-close">&times;</span>
         </div>
@@ -45,7 +49,7 @@
     </div>
     
     <!-- Hero Image -->
-    <img src="img/koge/koge_hero.jpg" alt="Køge Hospital cancer pathway visualization" class="hero-image">
+    <img src="img/koge_hero.jpg" alt="Køge Hospital cancer pathway visualization" class="hero-image">
     
     <div class="container">
       <h1>How might we design an offboarding process for recently discharged patients?</h1>
@@ -116,13 +120,13 @@
         <div class="images-container">
             <div class="image-column main">
                 <div class="image-wrapper">
-                    <img src="img/project_koge_cancerpathway.png" alt="Cancer pathway visualization" class="project-image portrait zoomable">
+                    <img src="img/koge_lego.JPG" alt="Cancer pathway visualization" class="project-image portrait zoomable">
                 </div>
                 <div class="image-wrapper">
-                    <img src="img/project_koge_coding.png" alt="Qualitative coding process" class="project-image landscape zoomable">
+                    <img src="img/koge_lego.JP" alt="Qualitative coding process" class="project-image landscape zoomable">
                 </div>
                 <div class="image-wrapper">
-                    <img src="img/project_koge_coding.png" alt="Qualitative coding process" class="project-image square zoomable">
+                    <img src="img/koge_lego.JP" alt="Qualitative coding process" class="project-image square zoomable">
                 </div>
             </div>
             
@@ -131,10 +135,10 @@
                     <img src="img/project_ikea_metaphorcards.png" alt="Metaphor cards used in workshops" class="project-image square zoomable">
                 </div>
                 <div class="image-wrapper">
-                    <img src="img/project_ikea_legobricks.png" alt="LEGO bricks workshop" class="project-image landscape zoomable">
+                    <img src="img/koge_lego.JP" alt="LEGO bricks workshop" class="project-image landscape zoomable">
                 </div>
                 <div class="image-wrapper">
-                  <img src="img/project_ikea_legobricks.png" alt="LEGO bricks workshop" class="project-image portrait zoomable">
+                  <img src="img/koge_lego.JP" alt="LEGO bricks workshop" class="project-image portrait zoomable">
               </div>
             </div>
         </div>
@@ -158,6 +162,8 @@
             img.onclick = function() {
                 modal.style.display = "block";
                 modalImg.src = this.src;
+                document.getElementById('modalTitle').textContent = this.alt;
+                document.getElementById('modalDescription').textContent = this.dataset.description;
             }
         });
         

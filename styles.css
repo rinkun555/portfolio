@@ -1019,8 +1019,8 @@ footer {
 		display: block;
 		width: auto;
 		height: auto;
-		max-width: 90vw;
-		max-height: 90vh;
+		max-width: 80vw;
+		max-height: 80vh;
 		-o-object-fit: contain;
 		   object-fit: contain;
 }
@@ -1049,6 +1049,23 @@ footer {
 .koge-hospital-page .modal-close:hover {
 		color: #90404C;
 		background-color: rgba(255, 255, 255, 0.2);
+}
+.koge-hospital-page .modal-caption {
+		color: #ffffff;
+		padding: 0.5rem 0 0.5rem 1rem;
+		text-align: left;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		background: rgba(61, 61, 61, 0.2901960784);
+}
+.koge-hospital-page .modal-caption h3 {
+		font-size: 1.4rem;
+		font-weight: 300;
+}
+.koge-hospital-page .modal-caption p {
+		font-size: 1rem;
+		opacity: 0.9;
 }
 .koge-hospital-page .zoomable {
 		cursor: -webkit-zoom-in;
