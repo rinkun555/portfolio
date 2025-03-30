@@ -628,8 +628,8 @@ footer {
   }
 }
 
-/* Køge Hospital Project Page Styles */
-.koge-hospital-page {
+/* Work Page Common Styles */
+.work-page-common {
   background-color: $background-color;
   font-family: "din-2014", sans-serif;
 
@@ -734,48 +734,48 @@ footer {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: min-content;
-      gap: 0; // gap を 0 に設定
-      
+      gap: 0;
+
       .project-image-wrapper {
-      overflow: hidden; // Move overflow to the wrapper
-      width: 100%;
-      height: 100%;
-      margin-bottom: 0.5rem;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0.5rem;
       }
-      
+
       .project-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      margin: 0;
-      display: block;
-      transition: transform 0.3s ease; // Move transition to default state
-      
-      &:hover {
-        transform: scale(1.02);
-      }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+        display: block;
+        transition: transform 0.3s ease;
 
-      &.horizontal {
-        grid-column: span 2;
-        height: 300px;
-      }
+        &:hover {
+          transform: scale(1.02);
+        }
 
-      &.square {
-        grid-column: span 1;
-        aspect-ratio: 1/1;
-      }
+        &.horizontal {
+          grid-column: span 2;
+          height: 300px;
+        }
 
-      &.vertical {
-        grid-column: span 1;
-        aspect-ratio: 2/3;
-        min-height: 400px;
-      }
+        &.square {
+          grid-column: span 1;
+          aspect-ratio: 1/1;
+        }
 
-      &.small {
-        grid-column: span 1;
-        aspect-ratio: 1/1;
-        height: 200px;
-      }
+        &.vertical {
+          grid-column: span 1;
+          aspect-ratio: 2/3;
+          min-height: 400px;
+        }
+
+        &.small {
+          grid-column: span 1;
+          aspect-ratio: 1/1;
+          height: 200px;
+        }
       }
 
       .image-caption {
@@ -829,7 +829,7 @@ footer {
           }
 
           &.square {
-            aspect-ratio: 1/1; /* Perfect square */
+            aspect-ratio: 1/1;
             width: 100%;
           }
         }
@@ -846,11 +846,11 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    
+
     a {
       font-size: 1.1rem;
       color: $primary-color;
-      
+
       @media (max-width: 768px) {
         width: 100%;
         text-align: left;
@@ -858,7 +858,6 @@ footer {
     }
   }
 
-  /* Modal styles */
   .modal {
     display: none;
     position: fixed;
@@ -867,8 +866,8 @@ footer {
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); // 透明度を上げる
-    
+    background-color: rgba(0, 0, 0, 0.6);
+
     &-inner-container {
       position: relative;
       display: inline-block;
@@ -877,7 +876,7 @@ footer {
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    
+
     &-content {
       display: block;
       width: auto;
@@ -886,10 +885,10 @@ footer {
       max-height: 80vh;
       object-fit: contain;
     }
-    
+
     &-close {
       position: absolute;
-      right: -70px; // 画像の右側に配置
+      right: -70px;
       top: 0;
       color: $white;
       font-size: 4rem;
@@ -902,7 +901,7 @@ footer {
       align-items: center;
       justify-content: center;
       background-color: rgba(0, 0, 0, 0.3);
-      
+
       &:hover {
         color: $primary-color;
         background-color: rgba(255, 255, 255, 0.2);
@@ -917,12 +916,12 @@ footer {
       position: absolute;
       bottom: 0;
       background: #3d3d3d4a;
-      
+
       h3 {
         font-size: 1.4rem;
         font-weight: 300;
       }
-      
+
       p {
         font-size: 1rem;
         opacity: 0.9;
@@ -968,7 +967,7 @@ footer {
 
       .project-image {
         grid-column: 1 / -1;
-        
+
         &.horizontal, &.vertical, &.square, &.small {
           height: auto;
           min-height: auto;
@@ -984,6 +983,25 @@ footer {
       .image-column-secondary {
         width: 100%;
       }
+    }
+  }
+}
+
+/* Page Specific Styles */
+.future-metaphor-page {
+  @extend .work-page-common;
+
+  .my-role-list{
+    .works_role_title {
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+      color: $primary-color;
+    }
+    
+    li:first-child {
+      margin-bottom: 1.5rem !important;
     }
   }
 }

@@ -783,25 +783,24 @@ footer {
 		font-style: italic;
 }
 
-/* Køge Hospital Project Page Styles */
-.koge-hospital-page {
+/* Work Page Common Styles */
+.work-page-common, .future-metaphor-page {
 		background-color: #E5DFD1;
 		font-family: "din-2014", sans-serif;
-		/* Modal styles */
 }
-.koge-hospital-page .header-container {
+.work-page-common .header-container, .future-metaphor-page .header-container {
 		margin-bottom: 0;
 }
-.koge-hospital-page .container {
+.work-page-common .container, .future-metaphor-page .container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem;
 		margin-bottom: 2rem;
 }
-.koge-hospital-page .container footer {
+.work-page-common .container footer, .future-metaphor-page .container footer {
 		padding-top: 6rem;
 }
-.koge-hospital-page .hero-image {
+.work-page-common .hero-image, .future-metaphor-page .hero-image {
 		width: 100%;
 		height: 40vh;
 		min-height: 250px;
@@ -814,19 +813,19 @@ footer {
 		   object-position: center;
 		opacity: 0.8;
 }
-.koge-hospital-page h1 {
+.work-page-common h1, .future-metaphor-page h1 {
 		font-size: 2.5rem;
 		color: #90404C;
 		font-weight: 400;
 		margin-bottom: 1.5rem;
 }
-.koge-hospital-page .subtitle {
+.work-page-common .subtitle, .future-metaphor-page .subtitle {
 		font-size: 1.2rem;
 		color: #8b1e1e;
 		margin-bottom: 3rem;
 		font-style: italic;
 }
-.koge-hospital-page .case-study-container {
+.work-page-common .case-study-container, .future-metaphor-page .case-study-container {
 		max-width: 1200px;
 		margin: 0 auto 8rem;
 		padding: 0 2rem;
@@ -837,47 +836,47 @@ footer {
 		    flex-wrap: wrap;
 		gap: 3rem;
 }
-.koge-hospital-page .case-study-container .text-column {
+.work-page-common .case-study-container .text-column, .future-metaphor-page .case-study-container .text-column {
 		-webkit-box-flex: 2;
 		    -ms-flex: 2;
 		        flex: 2;
 		min-width: 300px;
 }
-.koge-hospital-page .case-study-container .text-column .section {
+.work-page-common .case-study-container .text-column .section, .future-metaphor-page .case-study-container .text-column .section {
 		margin-bottom: 3rem;
 }
-.koge-hospital-page .case-study-container .text-column .section h2 {
+.work-page-common .case-study-container .text-column .section h2, .future-metaphor-page .case-study-container .text-column .section h2 {
 		font-size: 1.4rem;
 		color: #90404C;
 		font-weight: 700;
 		margin-bottom: 1rem;
 		text-transform: uppercase;
 }
-.koge-hospital-page .case-study-container .text-column .section h3 {
+.work-page-common .case-study-container .text-column .section h3, .future-metaphor-page .case-study-container .text-column .section h3 {
 		font-size: 1.4rem;
 		color: #8b1e1e;
 		font-weight: 600;
 		margin-bottom: 0.8rem;
 }
-.koge-hospital-page .case-study-container .text-column .section p {
+.work-page-common .case-study-container .text-column .section p, .future-metaphor-page .case-study-container .text-column .section p {
 		margin-bottom: 1.5rem;
 		line-height: 1.7;
 }
-.koge-hospital-page .case-study-container .text-column .section .quote {
+.work-page-common .case-study-container .text-column .section .quote, .future-metaphor-page .case-study-container .text-column .section .quote {
 		font-style: italic;
 		padding-left: 1.5rem;
 		border-left: 3px solid #8b1e1e;
 		margin: 2rem 0;
 }
-.koge-hospital-page .case-study-container .text-column .section ul {
+.work-page-common .case-study-container .text-column .section ul, .future-metaphor-page .case-study-container .text-column .section ul {
 		list-style-type: disc;
 		margin-left: 1.5rem;
 		margin-bottom: 1.5rem;
 }
-.koge-hospital-page .case-study-container .text-column .section ul li {
+.work-page-common .case-study-container .text-column .section ul li, .future-metaphor-page .case-study-container .text-column .section ul li {
 		margin-bottom: 0.5rem;
 }
-.koge-hospital-page .case-study-container .image-column {
+.work-page-common .case-study-container .image-column, .future-metaphor-page .case-study-container .image-column {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
@@ -890,13 +889,13 @@ footer {
 		grid-auto-rows: min-content;
 		gap: 0;
 }
-.koge-hospital-page .case-study-container .image-column .project-image-wrapper {
+.work-page-common .case-study-container .image-column .project-image-wrapper, .future-metaphor-page .case-study-container .image-column .project-image-wrapper {
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
 		margin-bottom: 0.5rem;
 }
-.koge-hospital-page .case-study-container .image-column .project-image {
+.work-page-common .case-study-container .image-column .project-image, .future-metaphor-page .case-study-container .image-column .project-image {
 		width: 100%;
 		height: 100%;
 		-o-object-fit: cover;
@@ -908,33 +907,33 @@ footer {
 		transition: transform 0.3s ease;
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-.koge-hospital-page .case-study-container .image-column .project-image:hover {
+.work-page-common .case-study-container .image-column .project-image:hover, .future-metaphor-page .case-study-container .image-column .project-image:hover {
 		-webkit-transform: scale(1.02);
 		        transform: scale(1.02);
 }
-.koge-hospital-page .case-study-container .image-column .project-image.horizontal {
+.work-page-common .case-study-container .image-column .project-image.horizontal, .future-metaphor-page .case-study-container .image-column .project-image.horizontal {
 		-ms-grid-column-span: 2;
 		grid-column: span 2;
 		height: 300px;
 }
-.koge-hospital-page .case-study-container .image-column .project-image.square {
+.work-page-common .case-study-container .image-column .project-image.square, .future-metaphor-page .case-study-container .image-column .project-image.square {
 		-ms-grid-column-span: 1;
 		grid-column: span 1;
 		aspect-ratio: 1/1;
 }
-.koge-hospital-page .case-study-container .image-column .project-image.vertical {
+.work-page-common .case-study-container .image-column .project-image.vertical, .future-metaphor-page .case-study-container .image-column .project-image.vertical {
 		-ms-grid-column-span: 1;
 		grid-column: span 1;
 		aspect-ratio: 2/3;
 		min-height: 400px;
 }
-.koge-hospital-page .case-study-container .image-column .project-image.small {
+.work-page-common .case-study-container .image-column .project-image.small, .future-metaphor-page .case-study-container .image-column .project-image.small {
 		-ms-grid-column-span: 1;
 		grid-column: span 1;
 		aspect-ratio: 1/1;
 		height: 200px;
 }
-.koge-hospital-page .case-study-container .image-column .image-caption {
+.work-page-common .case-study-container .image-column .image-caption, .future-metaphor-page .case-study-container .image-column .image-caption {
 		-ms-grid-column-span: 2;
 		grid-column: span 2;
 		font-size: 0.85rem;
@@ -942,7 +941,7 @@ footer {
 		margin-top: 0.5rem;
 		font-style: italic;
 }
-.koge-hospital-page .case-study-container .images-container {
+.work-page-common .case-study-container .images-container, .future-metaphor-page .case-study-container .images-container {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
@@ -952,7 +951,7 @@ footer {
 		display: flex;
 		gap: 0.5rem;
 }
-.koge-hospital-page .case-study-container .images-container .image-column {
+.work-page-common .case-study-container .images-container .image-column, .future-metaphor-page .case-study-container .images-container .image-column {
 		-webkit-box-flex: 2;
 		    -ms-flex: 2;
 		        flex: 2;
@@ -965,14 +964,14 @@ footer {
 		        flex-direction: column;
 		gap: 0.5rem;
 }
-.koge-hospital-page .case-study-container .images-container .image-column .image-wrapper {
+.work-page-common .case-study-container .images-container .image-column .image-wrapper, .future-metaphor-page .case-study-container .images-container .image-column .image-wrapper {
 		overflow: hidden;
 		width: 100%;
 }
-.koge-hospital-page .case-study-container .images-container .image-column .image-wrapper:last-child {
+.work-page-common .case-study-container .images-container .image-column .image-wrapper:last-child, .future-metaphor-page .case-study-container .images-container .image-column .image-wrapper:last-child {
 		margin-bottom: 0;
 }
-.koge-hospital-page .case-study-container .images-container .image-column .project-image {
+.work-page-common .case-study-container .images-container .image-column .project-image, .future-metaphor-page .case-study-container .images-container .image-column .project-image {
 		width: 100%;
 		-o-object-fit: cover;
 		   object-fit: cover;
@@ -982,23 +981,23 @@ footer {
 		transition: transform 0.3s ease;
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-.koge-hospital-page .case-study-container .images-container .image-column .project-image:hover {
+.work-page-common .case-study-container .images-container .image-column .project-image:hover, .future-metaphor-page .case-study-container .images-container .image-column .project-image:hover {
 		-webkit-transform: scale(1.07);
 		        transform: scale(1.07);
 }
-.koge-hospital-page .case-study-container .images-container .image-column .project-image.portrait {
+.work-page-common .case-study-container .images-container .image-column .project-image.portrait, .future-metaphor-page .case-study-container .images-container .image-column .project-image.portrait {
 		aspect-ratio: 3/4;
 		width: 100%;
 }
-.koge-hospital-page .case-study-container .images-container .image-column .project-image.landscape {
+.work-page-common .case-study-container .images-container .image-column .project-image.landscape, .future-metaphor-page .case-study-container .images-container .image-column .project-image.landscape {
 		aspect-ratio: 16/9;
 		width: 100%;
 }
-.koge-hospital-page .case-study-container .images-container .image-column .project-image.square {
-		aspect-ratio: 1/1; /* Perfect square */
+.work-page-common .case-study-container .images-container .image-column .project-image.square, .future-metaphor-page .case-study-container .images-container .image-column .project-image.square {
+		aspect-ratio: 1/1;
 		width: 100%;
 }
-.koge-hospital-page .project-navigation {
+.work-page-common .project-navigation, .future-metaphor-page .project-navigation {
 		max-width: 1200px;
 		margin: 4rem auto;
 		padding: 0 2rem;
@@ -1015,17 +1014,17 @@ footer {
 		    flex-wrap: wrap;
 		gap: 1rem;
 }
-.koge-hospital-page .project-navigation a {
+.work-page-common .project-navigation a, .future-metaphor-page .project-navigation a {
 		font-size: 1.1rem;
 		color: #90404C;
 }
 @media (max-width: 768px) {
-		.koge-hospital-page .project-navigation a {
+		.work-page-common .project-navigation a, .future-metaphor-page .project-navigation a {
 				width: 100%;
 				text-align: left;
 		}
 }
-.koge-hospital-page .modal {
+.work-page-common .modal, .future-metaphor-page .modal {
 		display: none;
 		position: fixed;
 		z-index: 1000;
@@ -1035,7 +1034,7 @@ footer {
 		height: 100vh;
 		background-color: rgba(0, 0, 0, 0.6);
 }
-.koge-hospital-page .modal-inner-container {
+.work-page-common .modal-inner-container, .future-metaphor-page .modal-inner-container {
 		position: relative;
 		display: inline-block;
 		margin: auto;
@@ -1044,7 +1043,7 @@ footer {
 		-webkit-transform: translate(-50%, -50%);
 		        transform: translate(-50%, -50%);
 }
-.koge-hospital-page .modal-content {
+.work-page-common .modal-content, .future-metaphor-page .modal-content {
 		display: block;
 		width: auto;
 		height: auto;
@@ -1053,7 +1052,7 @@ footer {
 		-o-object-fit: contain;
 		   object-fit: contain;
 }
-.koge-hospital-page .modal-close {
+.work-page-common .modal-close, .future-metaphor-page .modal-close {
 		position: absolute;
 		right: -70px;
 		top: 0;
@@ -1075,11 +1074,11 @@ footer {
 		        justify-content: center;
 		background-color: rgba(0, 0, 0, 0.3);
 }
-.koge-hospital-page .modal-close:hover {
+.work-page-common .modal-close:hover, .future-metaphor-page .modal-close:hover {
 		color: #90404C;
 		background-color: rgba(255, 255, 255, 0.2);
 }
-.koge-hospital-page .modal-caption {
+.work-page-common .modal-caption, .future-metaphor-page .modal-caption {
 		color: #ffffff;
 		padding: 0.5rem 0 0.5rem 1rem;
 		text-align: left;
@@ -1088,27 +1087,28 @@ footer {
 		bottom: 0;
 		background: rgba(61, 61, 61, 0.2901960784);
 }
-.koge-hospital-page .modal-caption h3 {
+.work-page-common .modal-caption h3, .future-metaphor-page .modal-caption h3 {
 		font-size: 1.4rem;
 		font-weight: 300;
 }
-.koge-hospital-page .modal-caption p {
+.work-page-common .modal-caption p, .future-metaphor-page .modal-caption p {
 		font-size: 1rem;
 		opacity: 0.9;
 }
-.koge-hospital-page .zoomable {
+.work-page-common .zoomable, .future-metaphor-page .zoomable {
 		cursor: -webkit-zoom-in;
 		cursor: zoom-in;
 }
 @media (max-width: 1200px) {
-		.koge-hospital-page .case-study-container {
+		.work-page-common .case-study-container, .future-metaphor-page .case-study-container {
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: normal;
 				    -ms-flex-direction: column;
 				        flex-direction: column;
 		}
-		.koge-hospital-page .case-study-container .text-column,
-		.koge-hospital-page .case-study-container .image-column {
+		.work-page-common .case-study-container .text-column, .future-metaphor-page .case-study-container .text-column,
+		.work-page-common .case-study-container .image-column,
+		.future-metaphor-page .case-study-container .image-column {
 				-webkit-box-flex: 0;
 				    -ms-flex: none;
 				        flex: none;
@@ -1116,40 +1116,53 @@ footer {
 		}
 }
 @media (max-width: 768px) {
-		.koge-hospital-page .case-study-container {
+		.work-page-common .case-study-container, .future-metaphor-page .case-study-container {
 				padding: 0 1rem;
 		}
-		.koge-hospital-page h1 {
+		.work-page-common h1, .future-metaphor-page h1 {
 				font-size: 2rem;
 		}
-		.koge-hospital-page h2 {
+		.work-page-common h2, .future-metaphor-page h2 {
 				font-size: 1.5rem;
 		}
-		.koge-hospital-page h3 {
+		.work-page-common h3, .future-metaphor-page h3 {
 				font-size: 1.2rem;
 		}
-		.koge-hospital-page .case-study-container .image-column {
+		.work-page-common .case-study-container .image-column, .future-metaphor-page .case-study-container .image-column {
 				-ms-grid-columns: 1fr;
 				grid-template-columns: 1fr;
 		}
-		.koge-hospital-page .case-study-container .image-column .project-image {
+		.work-page-common .case-study-container .image-column .project-image, .future-metaphor-page .case-study-container .image-column .project-image {
 				grid-column: 1/-1;
 		}
-		.koge-hospital-page .case-study-container .image-column .project-image.horizontal, .koge-hospital-page .case-study-container .image-column .project-image.vertical, .koge-hospital-page .case-study-container .image-column .project-image.square, .koge-hospital-page .case-study-container .image-column .project-image.small {
+		.work-page-common .case-study-container .image-column .project-image.horizontal, .future-metaphor-page .case-study-container .image-column .project-image.horizontal, .work-page-common .case-study-container .image-column .project-image.vertical, .future-metaphor-page .case-study-container .image-column .project-image.vertical, .work-page-common .case-study-container .image-column .project-image.square, .future-metaphor-page .case-study-container .image-column .project-image.square, .work-page-common .case-study-container .image-column .project-image.small, .future-metaphor-page .case-study-container .image-column .project-image.small {
 				height: auto;
 				min-height: auto;
 				aspect-ratio: 1/1;
 		}
-		.koge-hospital-page .case-study-container .images-container {
+		.work-page-common .case-study-container .images-container, .future-metaphor-page .case-study-container .images-container {
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: normal;
 				    -ms-flex-direction: column;
 				        flex-direction: column;
 		}
-		.koge-hospital-page .case-study-container .images-container .image-column-main,
-		.koge-hospital-page .case-study-container .images-container .image-column-secondary {
+		.work-page-common .case-study-container .images-container .image-column-main, .future-metaphor-page .case-study-container .images-container .image-column-main,
+		.work-page-common .case-study-container .images-container .image-column-secondary,
+		.future-metaphor-page .case-study-container .images-container .image-column-secondary {
 				width: 100%;
 		}
+}
+
+/* Page Specific Styles */
+.future-metaphor-page .my-role-list .works_role_title {
+		font-weight: 900;
+		font-size: 1.2rem;
+		letter-spacing: 0.02em;
+		margin-bottom: 0.5rem;
+		color: #90404C;
+}
+.future-metaphor-page .my-role-list li:first-child {
+		margin-bottom: 1.5rem !important;
 }
 
 /* その他のページクラスにも同じ背景色を適用 */
