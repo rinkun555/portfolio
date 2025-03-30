@@ -361,7 +361,7 @@ h3 {
 .top-nav a {
 		text-decoration: none;
 		color: #90404C;
-		font-weight: 700;
+		font-weight: 400;
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 		padding-bottom: 0.3rem;
@@ -377,7 +377,6 @@ h3 {
 .top-nav a.active {
 		border-bottom: 1px solid transparent;
 		color: #484848;
-		font-weight: 700;
 }
 
 /* Main content */
@@ -521,6 +520,9 @@ h3 {
 		-o-object-fit: cover;
 		   object-fit: cover;
 }
+.project-card.comingsoon {
+		opacity: 0.75;
+}
 
 .project-category {
 		font-size: 0.9rem;
@@ -566,7 +568,7 @@ h3 {
 		background: none;
 		border: none;
 		color: #90404C;
-		font-weight: 600;
+		font-weight: 400;
 		font-size: 0.9rem;
 		cursor: pointer;
 		-webkit-transition: all 0.3s ease;
@@ -848,7 +850,7 @@ footer {
 .work-page-common .case-study-container .text-column .section h2, .future-metaphor-page .case-study-container .text-column .section h2 {
 		font-size: 1.4rem;
 		color: #90404C;
-		font-weight: 700;
+		font-weight: 400;
 		margin-bottom: 1rem;
 		text-transform: uppercase;
 }
@@ -875,6 +877,19 @@ footer {
 }
 .work-page-common .case-study-container .text-column .section ul li, .future-metaphor-page .case-study-container .text-column .section ul li {
 		margin-bottom: 0.5rem;
+}
+.work-page-common .case-study-container .text-column .section ul li .title_bold, .future-metaphor-page .case-study-container .text-column .section ul li .title_bold {
+		font-weight: 700;
+}
+.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title, .future-metaphor-page .case-study-container .text-column .section .my-role-list .works_role_title {
+		font-weight: 400;
+		font-size: 1.2rem;
+		letter-spacing: 0.02em;
+		margin-bottom: 0.5rem;
+		color: #90404C;
+}
+.work-page-common .case-study-container .text-column .section .my-role-list li:first-child, .future-metaphor-page .case-study-container .text-column .section .my-role-list li:first-child {
+		margin-bottom: 1.5rem !important;
 }
 .work-page-common .case-study-container .image-column, .future-metaphor-page .case-study-container .image-column {
 		-webkit-box-flex: 1;
@@ -1154,17 +1169,6 @@ footer {
 }
 
 /* Page Specific Styles */
-.future-metaphor-page .my-role-list .works_role_title {
-		font-weight: 900;
-		font-size: 1.2rem;
-		letter-spacing: 0.02em;
-		margin-bottom: 0.5rem;
-		color: #90404C;
-}
-.future-metaphor-page .my-role-list li:first-child {
-		margin-bottom: 1.5rem !important;
-}
-
 /* その他のページクラスにも同じ背景色を適用 */
 .about-page,
 .projects-page,

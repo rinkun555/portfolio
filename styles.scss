@@ -308,7 +308,7 @@ h3 {
   a {
     text-decoration: none;
     color: $primary-color;
-    font-weight: 700;
+    font-weight: 400;
     transition: all 0.3s ease;
     padding-bottom: 0.3rem;
     border-bottom: 1px solid transparent;
@@ -323,7 +323,6 @@ h3 {
     &.active {
       border-bottom: 1px solid transparent;
       color: $secondary-color;
-      font-weight: 700;
     }
   }
 }
@@ -428,6 +427,10 @@ h3 {
     aspect-ratio: 1/1;
     object-fit: cover;
   }
+
+  &.comingsoon{
+    opacity: 0.75;
+  }
 }
 
 .project-category {
@@ -458,7 +461,7 @@ h3 {
   background: none;
   border: none;
   color: $primary-color;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -692,7 +695,7 @@ footer {
         h2 {
           font-size: 1.4rem;
           color: $primary-color;
-          font-weight: 700;
+          font-weight: 400;
           margin-bottom: 1rem;
           text-transform: uppercase;
         }
@@ -723,6 +726,24 @@ footer {
 
           li {
             margin-bottom: 0.5rem;
+
+            .title_bold{
+              font-weight: 700;
+            }
+          }
+        }
+
+        .my-role-list{
+          .works_role_title {
+            font-weight: 400;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            color: $primary-color;
+          }
+          
+          li:first-child {
+            margin-bottom: 1.5rem !important;
           }
         }
       }
@@ -991,19 +1012,7 @@ footer {
 .future-metaphor-page {
   @extend .work-page-common;
 
-  .my-role-list{
-    .works_role_title {
-      font-weight: 900;
-      font-size: 1.2rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
-      color: $primary-color;
-    }
-    
-    li:first-child {
-      margin-bottom: 1.5rem !important;
-    }
-  }
+
 }
 
 /* その他のページクラスにも同じ背景色を適用 */
