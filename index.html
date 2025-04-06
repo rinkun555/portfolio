@@ -17,6 +17,18 @@
 </head>
 <body>
 
+    <!-- Modal container -->
+    <div id="imageModal" class="modal">
+        <div class="modal-inner-container">
+            <div class="modal-caption">
+                <h3 id="modalTitle">Image Title</h3>
+                <p id="modalDescription">Image description goes here</p>
+            </div>
+            <img class="modal-content" id="modalImg">
+            <span class="modal-close">&times;</span>
+        </div>
+    </div>
+
     <div class="container">
         <nav class="top-nav">
             <ul>
@@ -181,13 +193,64 @@
                     </a>
                 </div>
             </section>
-            <p class="accent-text">I can make a matcha Latte 🍵 and would love to have a casual talk in person!</p>
         </main>
 
-        <footer>
+
+    </div><!-- container -->
+        
+    <div class="container">
+        <div class="images-container">
+            <div class="image-column main">
+                <div class="image-wrapper">
+                  <img src="img/about_sport2.JPG" alt="" class="project-image portrait zoomable">
+                </div>
+                <div class="image-wrapper">
+                  <img src="img/about_sport1.JPG" alt="" class="project-image landscape zoomable">
+                </div>
+                <div class="image-wrapper">
+                  <img src="img/about_voulunteer.JPG" alt="" class="project-image square zoomable">
+                </div>
+                <div class="image-wrapper">
+                  <img src="img/about_sport.JPG" alt="" class="project-image square zoomable">
+                </div>
+              </div>
+              
+              <div class="image-column secondary">
+                <div class="image-wrapper">
+                <img src="img/about_tsumami.JPG" alt="" class="project-image landscape zoomable">
+                </div>
+                <div class="image-wrapper">
+                <img src="img/about_tsumami3.JPG" alt="" class="project-image portrait zoomable">
+                </div>
+                <div class="image-wrapper">
+                <img src="img/about_tsumami4.JPG" alt="" class="project-image square zoomable">
+                </div>
+                <div class="image-wrapper">
+                <img src="img/about_team.JPG" alt="" class="project-image square zoomable">
+                </div>
+            </div>
+
+            <div class="image-column main">
+                <div class="image-wrapper">
+                  <img src="img/about_nature.jpg" alt="" class="project-image portrait zoomable">
+                </div>
+                <div class="image-wrapper">
+                  <img src="img/about_tsumami6.JPG" alt="" class="project-image landscape zoomable">
+                </div>
+                <div class="image-wrapper">
+                  <img src="img/about_family.JPG" alt="" class="project-image square zoomable">
+                </div>
+                <div class="image-wrapper">
+                  <img src="img/about_tea.JPG" alt="" class="project-image square zoomable">
+                </div>
+                
+              </div>
+          </div>
+          <p class="accent-text">I can make a matcha Latte 🍵 and would love to have a casual talk in person!</p>
+          <footer>
             <p class="copyright">Río Suzuki All Rights Reserved. 2025</p>
         </footer>
-    </div><!-- container -->
+    </div>
 
     <script>
         // フィルタリング機能のJavaScript
@@ -253,6 +316,33 @@
 
                 lastScrollY = window.scrollY;
             });
+
+            // Modal functionality
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const closeBtn = document.getElementsByClassName("modal-close")[0];
+            
+            // Get all zoomable images
+            document.querySelectorAll('.zoomable').forEach(img => {
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    document.getElementById('modalTitle').textContent = this.alt;
+                    document.getElementById('modalDescription').textContent = this.dataset.description;
+                }
+            });
+            
+            // Close modal when clicking X
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
         });
     </script>
 </body>

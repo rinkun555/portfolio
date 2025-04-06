@@ -523,7 +523,157 @@ h3 {
   
 }
 
+/* Images Container - Global Styles */
+.images-container {
+  flex: 1;
+  min-width: 50%;
+  display: flex;
+  gap: 0.5rem;
 
+  .image-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .image-wrapper {
+      overflow: hidden;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .project-image {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.07);
+      }
+
+      &.portrait {
+        aspect-ratio: 3/4;
+        width: 100%;
+        height: 400px;
+      }
+
+      &.landscape {
+        aspect-ratio: 16/9;
+        width: 100%;
+      }
+
+      &.square {
+        aspect-ratio: 1/1;
+        width: 100%;
+      }
+      
+      &.horizontal {
+        grid-column: span 2;
+        height: 300px;
+      }
+
+      &.vertical {
+        grid-column: span 1;
+        aspect-ratio: 2/3;
+        min-height: 400px;
+      }
+
+      &.small {
+        grid-column: span 1;
+        aspect-ratio: 1/1;
+        height: 200px;
+      }
+    }
+  }
+}
+
+.image-caption {
+  grid-column: span 2;
+  font-size: 0.85rem;
+  color: #8b1e1e;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.zoomable {
+  cursor: zoom-in;
+}
+
+/* Modal - Global Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  &-inner-container {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-content {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  &-close {
+    position: absolute;
+    right: -70px;
+    top: 0;
+    color: $white;
+    font-size: 4rem;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 1001;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      color: $primary-color;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &-caption {
+    color: $white;
+    padding: 0.5rem 0 0.5rem 1rem;
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #3d3d3d4a;
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  }
+}
 
 /* Category filter tabs */
 .category-filter {
@@ -873,85 +1023,6 @@ footer {
         &:hover {
           transform: scale(1.02);
         }
-
-        &.horizontal {
-          grid-column: span 2;
-          height: 300px;
-        }
-
-        &.square {
-          grid-column: span 1;
-          aspect-ratio: 1/1;
-        }
-
-        &.vertical {
-          grid-column: span 1;
-          aspect-ratio: 2/3;
-          min-height: 400px;
-        }
-
-        &.small {
-          grid-column: span 1;
-          aspect-ratio: 1/1;
-          height: 200px;
-        }
-      }
-
-      .image-caption {
-        grid-column: span 2;
-        font-size: 0.85rem;
-        color: #8b1e1e;
-        margin-top: 0.5rem;
-        font-style: italic;
-      }
-    }
-
-    .images-container {
-      flex: 1;
-      min-width: 50%;
-      display: flex;
-      gap: 0.5rem;
-
-      .image-column {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        .image-wrapper {
-          overflow: hidden;
-          width: 100%;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-
-        .project-image {
-          width: 100%;
-          object-fit: cover;
-          display: block;
-          transition: transform 0.3s ease;
-
-          &:hover {
-            transform: scale(1.07);
-          }
-
-          &.portrait {
-            aspect-ratio: 3/4;
-            width: 100%;
-          }
-
-          &.landscape {
-            aspect-ratio: 16/9;
-            width: 100%;
-          }
-
-          &.square {
-            aspect-ratio: 1/1;
-            width: 100%;
-          }
-        }
       }
     }
   }
@@ -973,77 +1044,6 @@ footer {
       @media (max-width: 768px) {
         width: 100%;
         text-align: left;
-      }
-    }
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
-
-    &-inner-container {
-      position: relative;
-      display: inline-block;
-      margin: auto;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    &-content {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: 80vw;
-      max-height: 80vh;
-      object-fit: contain;
-    }
-
-    &-close {
-      position: absolute;
-      right: -70px;
-      top: 0;
-      color: $white;
-      font-size: 4rem;
-      font-weight: 300;
-      cursor: pointer;
-      z-index: 1001;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.3);
-
-      &:hover {
-        color: $primary-color;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    &-caption {
-      color: $white;
-      padding: 0.5rem 0 0.5rem 1rem;
-      text-align: left;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      background: #3d3d3d4a;
-
-      h3 {
-        font-size: 1.4rem;
-        font-weight: 300;
-      }
-
-      p {
-        font-size: 1rem;
-        opacity: 0.9;
       }
     }
   }
@@ -1094,23 +1094,19 @@ footer {
         }
       }
     }
-
-    .case-study-container .images-container {
-      flex-direction: column;
-
-      .image-column-main,
-      .image-column-secondary {
-        width: 100%;
-      }
-    }
   }
 }
 
-/* Page Specific Styles */
-.future-metaphor-page {
-  @extend .work-page-common;
+/* レスポンシブスタイルをグローバルに移動 */
+@media (max-width: 768px) {
+  .images-container {
+    flex-direction: column;
 
-
+    .image-column-main,
+    .image-column-secondary {
+      width: 100%;
+    }
+  }
 }
 
 /* その他のページクラスにも同じ背景色を適用 */
@@ -1119,3 +1115,4 @@ footer {
 .contact-page {
   background-color: $background-color;
 }
+

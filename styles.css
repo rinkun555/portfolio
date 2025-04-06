@@ -666,6 +666,169 @@ h3 {
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+/* Images Container - Global Styles */
+.images-container {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		min-width: 50%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		gap: 0.5rem;
+}
+.images-container .image-column {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2;
+		        flex: 2;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		gap: 0.5rem;
+}
+.images-container .image-column .image-wrapper {
+		overflow: hidden;
+		width: 100%;
+}
+.images-container .image-column .image-wrapper:last-child {
+		margin-bottom: 0;
+}
+.images-container .image-column .project-image {
+		width: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		display: block;
+		-webkit-transition: -webkit-transform 0.3s ease;
+		transition: -webkit-transform 0.3s ease;
+		transition: transform 0.3s ease;
+		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.images-container .image-column .project-image:hover {
+		-webkit-transform: scale(1.07);
+		        transform: scale(1.07);
+}
+.images-container .image-column .project-image.portrait {
+		aspect-ratio: 3/4;
+		width: 100%;
+		height: 400px;
+}
+.images-container .image-column .project-image.landscape {
+		aspect-ratio: 16/9;
+		width: 100%;
+}
+.images-container .image-column .project-image.square {
+		aspect-ratio: 1/1;
+		width: 100%;
+}
+.images-container .image-column .project-image.horizontal {
+		-ms-grid-column-span: 2;
+		grid-column: span 2;
+		height: 300px;
+}
+.images-container .image-column .project-image.vertical {
+		-ms-grid-column-span: 1;
+		grid-column: span 1;
+		aspect-ratio: 2/3;
+		min-height: 400px;
+}
+.images-container .image-column .project-image.small {
+		-ms-grid-column-span: 1;
+		grid-column: span 1;
+		aspect-ratio: 1/1;
+		height: 200px;
+}
+
+.image-caption {
+		-ms-grid-column-span: 2;
+		grid-column: span 2;
+		font-size: 0.85rem;
+		color: #8b1e1e;
+		margin-top: 0.5rem;
+		font-style: italic;
+}
+
+.zoomable {
+		cursor: -webkit-zoom-in;
+		cursor: zoom-in;
+}
+
+/* Modal - Global Styles */
+.modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-inner-container {
+		position: relative;
+		display: inline-block;
+		margin: auto;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+}
+.modal-content {
+		display: block;
+		width: auto;
+		height: auto;
+		max-width: 80vw;
+		max-height: 80vh;
+		-o-object-fit: contain;
+		   object-fit: contain;
+}
+.modal-close {
+		position: absolute;
+		right: -70px;
+		top: 0;
+		color: #ffffff;
+		font-size: 4rem;
+		font-weight: 300;
+		cursor: pointer;
+		z-index: 1001;
+		width: 60px;
+		height: 60px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-close:hover {
+		color: #563F2E;
+		background-color: rgba(255, 255, 255, 0.2);
+}
+.modal-caption {
+		color: #ffffff;
+		padding: 0.5rem 0 0.5rem 1rem;
+		text-align: left;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		background: rgba(61, 61, 61, 0.2901960784);
+}
+.modal-caption h3 {
+		font-size: 1.4rem;
+		font-weight: 300;
+}
+.modal-caption p {
+		font-size: 1rem;
+		opacity: 0.9;
+}
+
 /* Category filter tabs */
 .category-filter {
 		margin-bottom: 2rem;
@@ -924,23 +1087,23 @@ footer {
 }
 
 /* Work Page Common Styles */
-.work-page-common, .future-metaphor-page {
+.work-page-common {
 		background-color: #E5DFD1;
 		font-family: "din-2014", sans-serif;
 }
-.work-page-common .header-container, .future-metaphor-page .header-container {
+.work-page-common .header-container {
 		margin-bottom: 0;
 }
-.work-page-common .container, .future-metaphor-page .container {
+.work-page-common .container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem;
 		margin-bottom: 2rem;
 }
-.work-page-common .container footer, .future-metaphor-page .container footer {
+.work-page-common .container footer {
 		padding-top: 6rem;
 }
-.work-page-common .hero-image, .future-metaphor-page .hero-image {
+.work-page-common .hero-image {
 		width: 100%;
 		height: 40vh;
 		min-height: 250px;
@@ -953,19 +1116,19 @@ footer {
 		   object-position: center;
 		opacity: 0.8;
 }
-.work-page-common h1, .future-metaphor-page h1 {
+.work-page-common h1 {
 		font-size: 2.5rem;
 		color: #563F2E;
 		font-weight: 400;
 		margin-bottom: 1.5rem;
 }
-.work-page-common .subtitle, .future-metaphor-page .subtitle {
+.work-page-common .subtitle {
 		font-size: 1.2rem;
 		color: #8b1e1e;
 		margin-bottom: 3rem;
 		font-style: italic;
 }
-.work-page-common .case-study-container, .future-metaphor-page .case-study-container {
+.work-page-common .case-study-container {
 		max-width: 1200px;
 		margin: 0 auto 8rem;
 		padding: 0 2rem;
@@ -976,68 +1139,68 @@ footer {
 		    flex-wrap: wrap;
 		gap: 3rem;
 }
-.work-page-common .case-study-container .text-column, .future-metaphor-page .case-study-container .text-column {
+.work-page-common .case-study-container .text-column {
 		-webkit-box-flex: 2;
 		    -ms-flex: 2;
 		        flex: 2;
 		min-width: 300px;
 }
-.work-page-common .case-study-container .text-column .section, .future-metaphor-page .case-study-container .text-column .section {
+.work-page-common .case-study-container .text-column .section {
 		margin-bottom: 3rem;
 }
-.work-page-common .case-study-container .text-column .section h2, .future-metaphor-page .case-study-container .text-column .section h2 {
+.work-page-common .case-study-container .text-column .section h2 {
 		font-size: 1.4rem;
 		color: #563F2E;
 		font-weight: 400;
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
 }
-.work-page-common .case-study-container .text-column .section p, .future-metaphor-page .case-study-container .text-column .section p {
+.work-page-common .case-study-container .text-column .section p {
 		margin-bottom: 1.8rem;
 }
-.work-page-common .case-study-container .text-column .section p.list_top_description, .future-metaphor-page .case-study-container .text-column .section p.list_top_description {
+.work-page-common .case-study-container .text-column .section p.list_top_description {
 		margin-bottom: 0.6rem;
 }
-.work-page-common .case-study-container .text-column .section .quote, .future-metaphor-page .case-study-container .text-column .section .quote {
+.work-page-common .case-study-container .text-column .section .quote {
 		font-style: italic;
 		padding-left: 1.5rem;
 		border-left: 3px solid #8b1e1e;
 		margin: 2rem 0;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list, .future-metaphor-page .case-study-container .text-column .section .my-role-list {
+.work-page-common .case-study-container .text-column .section .my-role-list {
 		list-style-type: none;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title, .future-metaphor-page .case-study-container .text-column .section .my-role-list .works_role_title {
+.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title {
 		font-weight: 600;
 		font-size: 1.3rem;
 		letter-spacing: 0.02em;
 		margin-bottom: 0;
 		color: #563F2E;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title .inner_box, .future-metaphor-page .case-study-container .text-column .section .my-role-list .works_role_title .inner_box {
+.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title .inner_box {
 		margin-bottom: 1.2rem;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list .inner_title, .future-metaphor-page .case-study-container .text-column .section .my-role-list .inner_title {
+.work-page-common .case-study-container .text-column .section .my-role-list .inner_title {
 		margin-bottom: 0.5rem;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list .inner_title .title_bold, .future-metaphor-page .case-study-container .text-column .section .my-role-list .inner_title .title_bold {
+.work-page-common .case-study-container .text-column .section .my-role-list .inner_title .title_bold {
 		list-style-type: none;
 		font-size: 1.2rem;
 		margin-bottom: 0 !important;
 		font-weight: 700;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list .inner_title .title_bold.description, .future-metaphor-page .case-study-container .text-column .section .my-role-list .inner_title .title_bold.description {
+.work-page-common .case-study-container .text-column .section .my-role-list .inner_title .title_bold.description {
 		font-size: 1rem;
 }
-.work-page-common .case-study-container .text-column .section .my-role-list .takeaway_title, .future-metaphor-page .case-study-container .text-column .section .my-role-list .takeaway_title {
+.work-page-common .case-study-container .text-column .section .my-role-list .takeaway_title {
 		font-size: 1.2rem;
 		font-weight: 700;
 }
-.work-page-common .case-study-container .text-column .section.method li, .future-metaphor-page .case-study-container .text-column .section.method li {
+.work-page-common .case-study-container .text-column .section.method li {
 		list-style-type: disc;
 		margin-left: 1em;
 }
-.work-page-common .case-study-container .image-column, .future-metaphor-page .case-study-container .image-column {
+.work-page-common .case-study-container .image-column {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
@@ -1050,13 +1213,13 @@ footer {
 		grid-auto-rows: min-content;
 		gap: 0;
 }
-.work-page-common .case-study-container .image-column .project-image-wrapper, .future-metaphor-page .case-study-container .image-column .project-image-wrapper {
+.work-page-common .case-study-container .image-column .project-image-wrapper {
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
 		margin-bottom: 0.5rem;
 }
-.work-page-common .case-study-container .image-column .project-image, .future-metaphor-page .case-study-container .image-column .project-image {
+.work-page-common .case-study-container .image-column .project-image {
 		width: 100%;
 		height: 100%;
 		-o-object-fit: cover;
@@ -1068,97 +1231,11 @@ footer {
 		transition: transform 0.3s ease;
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-.work-page-common .case-study-container .image-column .project-image:hover, .future-metaphor-page .case-study-container .image-column .project-image:hover {
+.work-page-common .case-study-container .image-column .project-image:hover {
 		-webkit-transform: scale(1.02);
 		        transform: scale(1.02);
 }
-.work-page-common .case-study-container .image-column .project-image.horizontal, .future-metaphor-page .case-study-container .image-column .project-image.horizontal {
-		-ms-grid-column-span: 2;
-		grid-column: span 2;
-		height: 300px;
-}
-.work-page-common .case-study-container .image-column .project-image.square, .future-metaphor-page .case-study-container .image-column .project-image.square {
-		-ms-grid-column-span: 1;
-		grid-column: span 1;
-		aspect-ratio: 1/1;
-}
-.work-page-common .case-study-container .image-column .project-image.vertical, .future-metaphor-page .case-study-container .image-column .project-image.vertical {
-		-ms-grid-column-span: 1;
-		grid-column: span 1;
-		aspect-ratio: 2/3;
-		min-height: 400px;
-}
-.work-page-common .case-study-container .image-column .project-image.small, .future-metaphor-page .case-study-container .image-column .project-image.small {
-		-ms-grid-column-span: 1;
-		grid-column: span 1;
-		aspect-ratio: 1/1;
-		height: 200px;
-}
-.work-page-common .case-study-container .image-column .image-caption, .future-metaphor-page .case-study-container .image-column .image-caption {
-		-ms-grid-column-span: 2;
-		grid-column: span 2;
-		font-size: 0.85rem;
-		color: #8b1e1e;
-		margin-top: 0.5rem;
-		font-style: italic;
-}
-.work-page-common .case-study-container .images-container, .future-metaphor-page .case-study-container .images-container {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1;
-		        flex: 1;
-		min-width: 50%;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		gap: 0.5rem;
-}
-.work-page-common .case-study-container .images-container .image-column, .future-metaphor-page .case-study-container .images-container .image-column {
-		-webkit-box-flex: 2;
-		    -ms-flex: 2;
-		        flex: 2;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		gap: 0.5rem;
-}
-.work-page-common .case-study-container .images-container .image-column .image-wrapper, .future-metaphor-page .case-study-container .images-container .image-column .image-wrapper {
-		overflow: hidden;
-		width: 100%;
-}
-.work-page-common .case-study-container .images-container .image-column .image-wrapper:last-child, .future-metaphor-page .case-study-container .images-container .image-column .image-wrapper:last-child {
-		margin-bottom: 0;
-}
-.work-page-common .case-study-container .images-container .image-column .project-image, .future-metaphor-page .case-study-container .images-container .image-column .project-image {
-		width: 100%;
-		-o-object-fit: cover;
-		   object-fit: cover;
-		display: block;
-		-webkit-transition: -webkit-transform 0.3s ease;
-		transition: -webkit-transform 0.3s ease;
-		transition: transform 0.3s ease;
-		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-.work-page-common .case-study-container .images-container .image-column .project-image:hover, .future-metaphor-page .case-study-container .images-container .image-column .project-image:hover {
-		-webkit-transform: scale(1.07);
-		        transform: scale(1.07);
-}
-.work-page-common .case-study-container .images-container .image-column .project-image.portrait, .future-metaphor-page .case-study-container .images-container .image-column .project-image.portrait {
-		aspect-ratio: 3/4;
-		width: 100%;
-}
-.work-page-common .case-study-container .images-container .image-column .project-image.landscape, .future-metaphor-page .case-study-container .images-container .image-column .project-image.landscape {
-		aspect-ratio: 16/9;
-		width: 100%;
-}
-.work-page-common .case-study-container .images-container .image-column .project-image.square, .future-metaphor-page .case-study-container .images-container .image-column .project-image.square {
-		aspect-ratio: 1/1;
-		width: 100%;
-}
-.work-page-common .project-navigation, .future-metaphor-page .project-navigation {
+.work-page-common .project-navigation {
 		max-width: 1200px;
 		margin: 4rem auto;
 		padding: 0 2rem;
@@ -1175,101 +1252,29 @@ footer {
 		    flex-wrap: wrap;
 		gap: 1rem;
 }
-.work-page-common .project-navigation a, .future-metaphor-page .project-navigation a {
+.work-page-common .project-navigation a {
 		font-size: 1.1rem;
 		color: #563F2E;
 }
 @media (max-width: 768px) {
-		.work-page-common .project-navigation a, .future-metaphor-page .project-navigation a {
+		.work-page-common .project-navigation a {
 				width: 100%;
 				text-align: left;
 		}
 }
-.work-page-common .modal, .future-metaphor-page .modal {
-		display: none;
-		position: fixed;
-		z-index: 1000;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.6);
-}
-.work-page-common .modal-inner-container, .future-metaphor-page .modal-inner-container {
-		position: relative;
-		display: inline-block;
-		margin: auto;
-		top: 50%;
-		left: 50%;
-		-webkit-transform: translate(-50%, -50%);
-		        transform: translate(-50%, -50%);
-}
-.work-page-common .modal-content, .future-metaphor-page .modal-content {
-		display: block;
-		width: auto;
-		height: auto;
-		max-width: 80vw;
-		max-height: 80vh;
-		-o-object-fit: contain;
-		   object-fit: contain;
-}
-.work-page-common .modal-close, .future-metaphor-page .modal-close {
-		position: absolute;
-		right: -70px;
-		top: 0;
-		color: #ffffff;
-		font-size: 4rem;
-		font-weight: 300;
-		cursor: pointer;
-		z-index: 1001;
-		width: 60px;
-		height: 60px;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
-		background-color: rgba(0, 0, 0, 0.3);
-}
-.work-page-common .modal-close:hover, .future-metaphor-page .modal-close:hover {
-		color: #563F2E;
-		background-color: rgba(255, 255, 255, 0.2);
-}
-.work-page-common .modal-caption, .future-metaphor-page .modal-caption {
-		color: #ffffff;
-		padding: 0.5rem 0 0.5rem 1rem;
-		text-align: left;
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		background: rgba(61, 61, 61, 0.2901960784);
-}
-.work-page-common .modal-caption h3, .future-metaphor-page .modal-caption h3 {
-		font-size: 1.4rem;
-		font-weight: 300;
-}
-.work-page-common .modal-caption p, .future-metaphor-page .modal-caption p {
-		font-size: 1rem;
-		opacity: 0.9;
-}
-.work-page-common .zoomable, .future-metaphor-page .zoomable {
+.work-page-common .zoomable {
 		cursor: -webkit-zoom-in;
 		cursor: zoom-in;
 }
 @media (max-width: 1200px) {
-		.work-page-common .case-study-container, .future-metaphor-page .case-study-container {
+		.work-page-common .case-study-container {
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: normal;
 				    -ms-flex-direction: column;
 				        flex-direction: column;
 		}
-		.work-page-common .case-study-container .text-column, .future-metaphor-page .case-study-container .text-column,
-		.work-page-common .case-study-container .image-column,
-		.future-metaphor-page .case-study-container .image-column {
+		.work-page-common .case-study-container .text-column,
+		.work-page-common .case-study-container .image-column {
 				-webkit-box-flex: 0;
 				    -ms-flex: none;
 				        flex: none;
@@ -1277,44 +1282,45 @@ footer {
 		}
 }
 @media (max-width: 768px) {
-		.work-page-common .case-study-container, .future-metaphor-page .case-study-container {
+		.work-page-common .case-study-container {
 				padding: 0 1rem;
 		}
-		.work-page-common h1, .future-metaphor-page h1 {
+		.work-page-common h1 {
 				font-size: 2rem;
 		}
-		.work-page-common h2, .future-metaphor-page h2 {
+		.work-page-common h2 {
 				font-size: 1.5rem;
 		}
-		.work-page-common h3, .future-metaphor-page h3 {
+		.work-page-common h3 {
 				font-size: 1.2rem;
 		}
-		.work-page-common .case-study-container .image-column, .future-metaphor-page .case-study-container .image-column {
+		.work-page-common .case-study-container .image-column {
 				-ms-grid-columns: 1fr;
 				grid-template-columns: 1fr;
 		}
-		.work-page-common .case-study-container .image-column .project-image, .future-metaphor-page .case-study-container .image-column .project-image {
+		.work-page-common .case-study-container .image-column .project-image {
 				grid-column: 1/-1;
 		}
-		.work-page-common .case-study-container .image-column .project-image.horizontal, .future-metaphor-page .case-study-container .image-column .project-image.horizontal, .work-page-common .case-study-container .image-column .project-image.vertical, .future-metaphor-page .case-study-container .image-column .project-image.vertical, .work-page-common .case-study-container .image-column .project-image.square, .future-metaphor-page .case-study-container .image-column .project-image.square, .work-page-common .case-study-container .image-column .project-image.small, .future-metaphor-page .case-study-container .image-column .project-image.small {
+		.work-page-common .case-study-container .image-column .project-image.horizontal, .work-page-common .case-study-container .image-column .project-image.vertical, .work-page-common .case-study-container .image-column .project-image.square, .work-page-common .case-study-container .image-column .project-image.small {
 				height: auto;
 				min-height: auto;
 				aspect-ratio: 1/1;
 		}
-		.work-page-common .case-study-container .images-container, .future-metaphor-page .case-study-container .images-container {
+}
+
+/* レスポンシブスタイルをグローバルに移動 */
+@media (max-width: 768px) {
+		.images-container {
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: normal;
 				    -ms-flex-direction: column;
 				        flex-direction: column;
 		}
-		.work-page-common .case-study-container .images-container .image-column-main, .future-metaphor-page .case-study-container .images-container .image-column-main,
-		.work-page-common .case-study-container .images-container .image-column-secondary,
-		.future-metaphor-page .case-study-container .images-container .image-column-secondary {
+		.images-container .image-column-main,
+		.images-container .image-column-secondary {
 				width: 100%;
 		}
 }
-
-/* Page Specific Styles */
 /* その他のページクラスにも同じ背景色を適用 */
 .about-page,
 .projects-page,
