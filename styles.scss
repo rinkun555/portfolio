@@ -696,13 +696,16 @@ footer {
           font-size: 1.4rem;
           color: $primary-color;
           font-weight: 400;
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
           text-transform: uppercase;
         }
 
-        p {
-          margin-bottom: 1.5rem;
+        p{
+          margin-bottom: 1.8rem;
 
+          &.list_top_description{
+            margin-bottom: 0.6rem;
+          }
         }
 
         .quote {
@@ -714,7 +717,6 @@ footer {
 
         .my-role-list {
           list-style-type: none;
-          margin-bottom: 1.5rem;
 
           .works_role_title {
             font-weight: 600;
@@ -722,7 +724,6 @@ footer {
             letter-spacing: 0.02em;
             margin-bottom: 0;
             color: $primary-color;
-            font-style: italic;
 
             .inner_box{
               margin-bottom: 1.2rem; 
@@ -748,7 +749,11 @@ footer {
           
         }
 
-
+        // method and tool
+        &.method li{
+          list-style-type: disc;
+          margin-left: 1em;
+        }
       }
     }
 

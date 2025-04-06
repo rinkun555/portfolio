@@ -851,11 +851,14 @@ footer {
 		font-size: 1.4rem;
 		color: #90404C;
 		font-weight: 400;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 		text-transform: uppercase;
 }
 .work-page-common .case-study-container .text-column .section p, .future-metaphor-page .case-study-container .text-column .section p {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.8rem;
+}
+.work-page-common .case-study-container .text-column .section p.list_top_description, .future-metaphor-page .case-study-container .text-column .section p.list_top_description {
+		margin-bottom: 0.6rem;
 }
 .work-page-common .case-study-container .text-column .section .quote, .future-metaphor-page .case-study-container .text-column .section .quote {
 		font-style: italic;
@@ -865,7 +868,6 @@ footer {
 }
 .work-page-common .case-study-container .text-column .section .my-role-list, .future-metaphor-page .case-study-container .text-column .section .my-role-list {
 		list-style-type: none;
-		margin-bottom: 1.5rem;
 }
 .work-page-common .case-study-container .text-column .section .my-role-list .works_role_title, .future-metaphor-page .case-study-container .text-column .section .my-role-list .works_role_title {
 		font-weight: 600;
@@ -873,7 +875,6 @@ footer {
 		letter-spacing: 0.02em;
 		margin-bottom: 0;
 		color: #90404C;
-		font-style: italic;
 }
 .work-page-common .case-study-container .text-column .section .my-role-list .works_role_title .inner_box, .future-metaphor-page .case-study-container .text-column .section .my-role-list .works_role_title .inner_box {
 		margin-bottom: 1.2rem;
@@ -893,6 +894,10 @@ footer {
 .work-page-common .case-study-container .text-column .section .my-role-list .takeaway_title, .future-metaphor-page .case-study-container .text-column .section .my-role-list .takeaway_title {
 		font-size: 1.2rem;
 		font-weight: 700;
+}
+.work-page-common .case-study-container .text-column .section.method li, .future-metaphor-page .case-study-container .text-column .section.method li {
+		list-style-type: disc;
+		margin-left: 1em;
 }
 .work-page-common .case-study-container .image-column, .future-metaphor-page .case-study-container .image-column {
 		-webkit-box-flex: 1;
