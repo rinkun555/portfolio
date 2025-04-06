@@ -1003,7 +1003,7 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		display: flex;
 }
 .work-page-common .case-study-container .text-column .section .my-role-list .inner_title {
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 }
 .work-page-common .case-study-container .text-column .section .my-role-list .inner_title .title_bold {
 		list-style-type: none;
