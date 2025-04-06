@@ -29,175 +29,154 @@
         </div>
     </div>
 
-    <div class="container">
-        <nav class="top-nav">
-            <ul>
-                <li class="name-section">
-                    <a href="index.html">
-                        <span>RIO SUZUKI</span>
-                        <span>三度の飯よりデザイン</span>
-                    </a>
-                </li>
-                <div class="menu-section">
-                    <li><a href="#" class="active">HOME</a></li>
-                    <li><a href="#works">WORKS</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#">CV</a></li>
-                    <li class="social-nav-item">
-                        <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+    <div class="header-container">
+        <!-- ハードコードされたナビゲーションを削除（JSで挿入） -->
+    </div>
 
-        <main>
-            <section class="title-section">
-                <div class="intro-text">
-                    <p>Hi, I am Rio! Born and raised in Tokyo, with a chapter spent in Sydney, and now based in Copenhagen.<br>
-                        I dare to think differently and stay endlessly curious and love turning complexity into human-centered solutions.</p>
-                </div>
-                <div class="keyword-cloud">
-                    <h2 class="main-title"><span class="italic">Play</span>-ful</h2>
-                    <span class="keyword-circular">CIRCULAR ECONOMY</span>
-                    <span class="keyword-tools">MAKE TOOLS</span>
-                    <span class="keyword-MEANINGFUL">MEANINGFUL</span>
-                    <span class="keyword-Qualitatitive">Qualitatitive</span>
-                    <span class="keyword-ECOSYSTEM">ECOSYSTEM</span>
-                    <span class="keyword-Facilitation">Facilitation</span>
-                    <span class="keyword-PEOPLE">PEOPLE</span>
-                    <span class="keyword-SOCIAL">SOCIAL</span>
-                </div>
-            </section>
+    <main class="container">
+        <section class="title-section">
+            <div class="intro-text">
+                <p>Hi, I am Rio! Born and raised in Tokyo, with a chapter spent in Sydney, and now based in Copenhagen.<br>
+                    I dare to think differently and stay endlessly curious and love turning complexity into human-centered solutions.</p>
+            </div>
+            <div class="keyword-cloud">
+                <h2 class="main-title"><span class="italic">Play</span>-ful</h2>
+                <span class="keyword-circular">CIRCULAR ECONOMY</span>
+                <span class="keyword-tools">MAKE TOOLS</span>
+                <span class="keyword-MEANINGFUL">MEANINGFUL</span>
+                <span class="keyword-Qualitatitive">Qualitatitive</span>
+                <span class="keyword-ECOSYSTEM">ECOSYSTEM</span>
+                <span class="keyword-Facilitation">Facilitation</span>
+                <span class="keyword-PEOPLE">PEOPLE</span>
+                <span class="keyword-SOCIAL">SOCIAL</span>
+            </div>
+        </section>
 
-            <section class="offers-section">
-                <h2>What I can offer</h2>
-                <div class="offers-container">
-                    <div class="offers-items">
-                        <div class="offer-item">
-                            <h3 class="offer-title"><span class="capital">S</span>trategic Design</h3>
-                            <img src="img/offer_stratigic.png" alt="Strategic Design services">
-                        </div>
-                        <div class="offer-item">
-                            <h3 class="offer-title"><span class="capital">Q</span>ualitative Research</h3>
-                            <img src="img/offer_reseach.png" alt="Qualitative Research services">
-                        </div>
-                        <div class="offer-item">
-                            <h3 class="offer-title"><span class="capital">D</span>esigning Co-Design Workshop</h3>
-                            <img src="img/offer_workshop.png" alt="Designing Co-Design Workshop services">
-                        </div>
-                        <div class="offer-item">
-                            <h3 class="offer-title"><span class="capital">F</span>acilitation</h3>
-                            <img src="img/offer_facilitation.png" alt="Facilitation services">
-                        </div>
-                        <div class="offer-item">
-                            <h3 class="offer-title"><span class="capital">C</span>reative Direction & Production (Graphic and Video)</h3>
-                            <img src="img/offer_creative.png" alt="Creative Direction & Production (Graphic and Video) services">
-                        </div>
+        <section class="offers-section">
+            <h2>What I can offer</h2>
+            <div class="offers-container">
+                <div class="offers-items">
+                    <div class="offer-item">
+                        <h3 class="offer-title"><span class="capital">S</span>trategic Design</h3>
+                        <img src="img/offer_stratigic.png" alt="Strategic Design services">
+                    </div>
+                    <div class="offer-item">
+                        <h3 class="offer-title"><span class="capital">Q</span>ualitative Research</h3>
+                        <img src="img/offer_reseach.png" alt="Qualitative Research services">
+                    </div>
+                    <div class="offer-item">
+                        <h3 class="offer-title"><span class="capital">D</span>esigning Co-Design Workshop</h3>
+                        <img src="img/offer_workshop.png" alt="Designing Co-Design Workshop services">
+                    </div>
+                    <div class="offer-item">
+                        <h3 class="offer-title"><span class="capital">F</span>acilitation</h3>
+                        <img src="img/offer_facilitation.png" alt="Facilitation services">
+                    </div>
+                    <div class="offer-item">
+                        <h3 class="offer-title"><span class="capital">C</span>reative Direction & Production (Graphic and Video)</h3>
+                        <img src="img/offer_creative.png" alt="Creative Direction & Production (Graphic and Video) services">
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="category-filter" id="works">
-                <h2>Works</h2>
-                <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="all">ALL <span class="count"></span></button>
-                    <button class="filter-tab" data-filter="project">PROJECT <span class="count"></span></button>
-                    <button class="filter-tab" data-filter="workshop">WORKSHOP <span class="count"></span></button>
-                    <button class="filter-tab" data-filter="data-analysis">DATA ANALYSIS (QUALITATIVE) <span class="count"></span></button>
-                    <button class="filter-tab" data-filter="sensemaking">SENSEMAKING <span class="count"></span></button>
-                </div>
-            </section>
+        <section class="category-filter" id="works">
+            <h2>Works</h2>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">ALL <span class="count"></span></button>
+                <button class="filter-tab" data-filter="project">PROJECT <span class="count"></span></button>
+                <button class="filter-tab" data-filter="workshop">WORKSHOP <span class="count"></span></button>
+                <button class="filter-tab" data-filter="data-analysis">DATA ANALYSIS (QUALITATIVE) <span class="count"></span></button>
+                <button class="filter-tab" data-filter="sensemaking">SENSEMAKING <span class="count"></span></button>
+            </div>
+        </section>
 
-            <section class="projects">
-                <div class="project-card" data-category="project">
-                    <a href="kogehospital.html">
-                        <img src="img/project_koge_cancerpathway.png" alt="Køge Hospital project visualizing the cancer care pathway.">
-                        <div class="project-info">
-                            <h3>How might we can gently push the patients after the cancer pathway and move forward thier life?</h3>
-                            <p class="project-category">PROJECT / Køge Hospital</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="workshop">
-                    <a href="future_metaphor.html">
-                        <img src="img/project_ikea_metaphorcards.png" alt="IKEA workshop using metaphor cards to explore patient experiences.">
-                        <div class="project-info">
-                            <h3>A Genie Can Grant Your Wishes! What Three Things Would You Change to Create a Better World?</h3>
-                            <p class="project-category">WORKSHOP / IKEA</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="data-analysis">
-                    <a href="kogehospital_coding.html">
-                        <img src="img/project_koge_coding.png" alt="NVivo screenshot showing qualitative coding for cancer survivors.">
-                        <div class="project-info">
-                            <h3>What are the main themes for life after the cancer?</h3>
-                            <p class="project-category">Data Analysis (QUALITATIVE) / Koge Hospital</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="project">
-                    <a href="ikea_serviceorigami.html">
-                        <img src="img/project_ikea.JPG" alt="Project timeline for IKEA workshop series shown on a planning board.">
-                        <div class="project-info">
-                            <h3>Mapping the System: Uncovering What’s Behind and Navigating Complexity</h3>
-                            <p class="project-category">PROJECT / IKEA</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="sensemaking">
-                    <a href="ikea_sensemaking.html">
-                        <img src="img/project_ikea_rootcauses.png" alt="Root cause mapping exercise with post-it notes and string connections.">
-                        <div class="project-info">
-                            <h3>What are the root causes and leveraging opportunity area?</h3>
-                            <p class="project-category">Sensemaking / IKEA</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="project">
-                    <a href="#">
-                        <img src="img/project_canteen_value_map.png" alt="Customer value constellation and storyboard for a university canteen project.">
-                        <div class="project-info">
-                            <h3>(Coming Soon)Remeal</h3>
-                            <p class="project-category">PROJECT / Aarborg Univeristy Canteen</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="workshop">
-                    <a href="#">
-                        <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
-                        <div class="project-info">
-                            <h3>(Coming Soon)Ideal future</h3>
-                            <p class="project-category">WORKSHOP / IKEA</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="workshop">
-                    <a href="#">
-                        <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
-                        <div class="project-info">
-                            <h3>Manuefest</h3>
-                            <p class="project-category">WORKSHOP / IKEA</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-card" data-category="workshop">
-                    <a href="#">
-                        <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
-                        <div class="project-info">
-                            <h3>Design Fiction</h3>
-                            <p class="project-category">WORKSHOP / IKEA</p>
-                        </div>
-                    </a>
-                </div>
-            </section>
-        </main>
+        <section class="projects">
+            <div class="project-card" data-category="project">
+                <a href="kogehospital.html">
+                    <img src="img/project_koge_cancerpathway.png" alt="Køge Hospital project visualizing the cancer care pathway.">
+                    <div class="project-info">
+                        <h3>How might we can gently push the patients after the cancer pathway and move forward thier life?</h3>
+                        <p class="project-category">PROJECT / Køge Hospital</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="workshop">
+                <a href="future_metaphor.html">
+                    <img src="img/project_ikea_metaphorcards.png" alt="IKEA workshop using metaphor cards to explore patient experiences.">
+                    <div class="project-info">
+                        <h3>A Genie Can Grant Your Wishes! What Three Things Would You Change to Create a Better World?</h3>
+                        <p class="project-category">WORKSHOP / IKEA</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="data-analysis">
+                <a href="kogehospital_coding.html">
+                    <img src="img/project_koge_coding.png" alt="NVivo screenshot showing qualitative coding for cancer survivors.">
+                    <div class="project-info">
+                        <h3>What are the main themes for life after the cancer?</h3>
+                        <p class="project-category">Data Analysis (QUALITATIVE) / Koge Hospital</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="project">
+                <a href="ikea_serviceorigami.html">
+                    <img src="img/project_ikea.JPG" alt="Project timeline for IKEA workshop series shown on a planning board.">
+                    <div class="project-info">
+                        <h3>Mapping the System: Uncovering What’s Behind and Navigating Complexity</h3>
+                        <p class="project-category">PROJECT / IKEA</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="sensemaking">
+                <a href="ikea_sensemaking.html">
+                    <img src="img/project_ikea_rootcauses.png" alt="Root cause mapping exercise with post-it notes and string connections.">
+                    <div class="project-info">
+                        <h3>What are the root causes and leveraging opportunity area?</h3>
+                        <p class="project-category">Sensemaking / IKEA</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="project">
+                <a href="#">
+                    <img src="img/project_canteen_value_map.png" alt="Customer value constellation and storyboard for a university canteen project.">
+                    <div class="project-info">
+                        <h3>(Coming Soon)Remeal</h3>
+                        <p class="project-category">PROJECT / Aarborg Univeristy Canteen</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="workshop">
+                <a href="#">
+                    <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
+                    <div class="project-info">
+                        <h3>(Coming Soon)Ideal future</h3>
+                        <p class="project-category">WORKSHOP / IKEA</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="workshop">
+                <a href="#">
+                    <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
+                    <div class="project-info">
+                        <h3>Manuefest</h3>
+                        <p class="project-category">WORKSHOP / IKEA</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card" data-category="workshop">
+                <a href="#">
+                    <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
+                    <div class="project-info">
+                        <h3>Design Fiction</h3>
+                        <p class="project-category">WORKSHOP / IKEA</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
 
 
-    </div><!-- container -->
-        
     <div class="container" id="about">
         <h2>When I am not desiging, I like to</h2>
         <div class="images-container">
@@ -253,6 +232,7 @@
         </footer>
     </div>
 
+    <script src="js/navigation.js"></script>
     <script>
         // フィルタリング機能のJavaScript
         document.addEventListener('DOMContentLoaded', function() {
@@ -294,28 +274,6 @@
                         }
                     });
                 });
-            });
-
-            // スクロール時のナビゲーションスタイル変更
-            const topNav = document.querySelector('.top-nav');
-            let lastScrollY = window.scrollY;
-
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > lastScrollY) {
-                    // スクロールダウン時に非表示
-                    topNav.classList.add('hidden');
-                } else {
-                    // スクロールアップ時に表示
-                    topNav.classList.remove('hidden');
-                    topNav.classList.add('scrolled'); // パディングを適用
-                }
-
-                // スクロール位置がトップに近い場合、scrolledクラスを削除
-                if (window.scrollY === 0) {
-                    topNav.classList.remove('scrolled');
-                }
-
-                lastScrollY = window.scrollY;
             });
 
             // Modal functionality

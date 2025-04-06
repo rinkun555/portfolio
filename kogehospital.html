@@ -26,29 +26,9 @@
             <span class="modal-close">&times;</span>
         </div>
     </div>
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-            <i class="fab fa-linkedin"></i>
-        </a>
-    </div>
-
+    
     <div class="header-container">
-        <nav class="top-nav">
-            <ul>
-              <li class="name-section">
-                <a href="index.html">
-                    <span>RIO SUZUKI</span>
-                    <span>三度の飯よりデザイン</span>
-                </a>
-            </li>
-                <div class="menu-section">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#" class="active">PROJECTS</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </div>
-            </ul>
-        </nav>
+        <!-- ハードコードされたナビゲーションを削除（JSで挿入） -->
     </div>
     
     <!-- Hero Image -->
@@ -210,6 +190,7 @@
             <p class="copyright">Río Suzuki All Rights Reserved. 2025</p>
         </footer>
     </div>
+    <script src="js/navigation.js"></script>
     <script>
         // Modal functionality
         const modal = document.getElementById("imageModal");
@@ -237,30 +218,6 @@
                 modal.style.display = "none";
             }
         }
-
-        // スクロール時のナビゲーションスタイル変更
-        document.addEventListener('DOMContentLoaded', function() {
-            const topNav = document.querySelector('.top-nav');
-            let lastScrollY = window.scrollY;
-
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > lastScrollY) {
-                    // スクロールダウン時に非表示
-                    topNav.classList.add('hidden');
-                } else {
-                    // スクロールアップ時に表示
-                    topNav.classList.remove('hidden');
-                    topNav.classList.add('scrolled'); // パディングを適用
-                }
-
-                // スクロール位置がトップに近い場合、scrolledクラスを削除
-                if (window.scrollY === 0) {
-                    topNav.classList.remove('scrolled');
-                }
-
-                lastScrollY = window.scrollY;
-            });
-        });
     </script>
 </body>
 </html>

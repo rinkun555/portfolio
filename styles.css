@@ -171,7 +171,7 @@ a:hover {
 .container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 2rem;
+		padding: 2rem 0 1 rem;
 		margin-bottom: 2rem;
 }
 
@@ -179,7 +179,6 @@ a:hover {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem;
-		margin-bottom: 2rem;
 }
 
 /* Selection style */
@@ -270,13 +269,16 @@ h3 {
 
 /* Navigation */
 .top-nav {
-		position: sticky;
+		position: fixed;
 		top: 0;
+		left: 0;
+		width: 100%;
 		z-index: 1000;
 		-webkit-transition: opacity 0.8s ease, padding 0.8s ease, -webkit-transform 0.8s ease;
 		transition: opacity 0.8s ease, padding 0.8s ease, -webkit-transform 0.8s ease;
 		transition: transform 0.8s ease, opacity 0.8s ease, padding 0.8s ease;
 		transition: transform 0.8s ease, opacity 0.8s ease, padding 0.8s ease, -webkit-transform 0.8s ease;
+		background-color: #E5DFD1;
 }
 .top-nav.hidden {
 		-webkit-transform: translateY(-100%);
@@ -304,7 +306,9 @@ h3 {
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
 		list-style: none;
-		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding-top: 1rem;
 }
 @media (max-width: 768px) {
 		.top-nav ul {

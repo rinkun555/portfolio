@@ -200,7 +200,7 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0 1 rem;
   margin-bottom: 2rem; // コンテナの下部マージンを追加
 }
 
@@ -208,7 +208,6 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  margin-bottom: 2rem;
 }
 
 /* Selection style */
@@ -273,10 +272,13 @@ h3 {
 
 /* Navigation */
 .top-nav {
-  position: sticky;
+  position: fixed; // Changed from sticky to fixed
   top: 0;
+  left: 0;
+  width: 100%; // Ensure it spans the full width
   z-index: 1000;
   transition: transform 0.8s ease, opacity 0.8s ease, padding 0.8s ease;
+  background-color: $background-color;
 
   &.hidden {
     transform: translateY(-100%);
@@ -286,12 +288,15 @@ h3 {
   &.scrolled {
     background-color: $background-color;
     padding: 1rem 0; // スクロール時のパディング
+
   }
 
   ul {
     @include flex(row, space-between, center);
     list-style: none;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 1rem;;
 
     @include responsive(tablet) {
       flex-direction: column;
