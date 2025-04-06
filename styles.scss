@@ -269,6 +269,21 @@ h3 {
 
 /* Navigation */
 .top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+
+  &.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  &.scrolled {
+    background-color: $background-color;
+    padding: 1rem 0; // スクロール時のパディング
+  }
+
   ul {
     @include flex(row, space-between, center);
     list-style: none;
@@ -511,7 +526,7 @@ h3 {
 }
 
 .filter-tabs {
-  @include flex(row, flex-start, center, wrap);
+  @include flex(row, flex-end, center, wrap);
   gap: 3rem;
   margin-bottom: 1.5rem;
 

@@ -36,19 +36,23 @@
                     <li><a href="#">ABOUT</a></li>
                     <li><a href="#">WORKS</a></li>
                     <li><a href="#">CV</a></li>
+                    <li class="social-nav-item">
+                        <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
                 </div>
             </ul>
         </nav>
 
         <main>
             <section class="title-section">
-     
-            <div class="intro-text">
-                <p>Hi, I am Rio! Born and raised in Tokyo, with a chapter spent in Sydney, and now based in Copenhagen.<br>
-                    I dare to think differently and stay endlessly curious and love turning complexity into human-centered solutions.</p>
-            </div>
+                <div class="intro-text">
+                    <p>Hi, I am Rio! Born and raised in Tokyo, with a chapter spent in Sydney, and now based in Copenhagen.<br>
+                        I dare to think differently and stay endlessly curious and love turning complexity into human-centered solutions.</p>
+                </div>
                 <div class="keyword-cloud">
-                  <h2 class="main-title"><span class="italic">Play</span>-ful</h2>
+                    <h2 class="main-title"><span class="italic">Play</span>-ful</h2>
                     <span class="keyword-circular">CIRCULAR ECONOMY</span>
                     <span class="keyword-tools">MAKE TOOLS</span>
                     <span class="keyword-MEANINGFUL">MEANINGFUL</span>
@@ -145,7 +149,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="project-card" data-category="project">
                     <a href="#">
                         <img src="img/project_canteen_value_map.png" alt="Customer value constellation and storyboard for a university canteen project.">
@@ -155,7 +158,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="project-card " data-category="workshop">
+                <div class="project-card" data-category="workshop">
                     <a href="#">
                         <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
                         <div class="project-info">
@@ -173,7 +176,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="project-card" data-category="workshop">
                     <a href="#">
                         <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
@@ -183,8 +185,6 @@
                         </div>
                     </a>
                 </div>
-
-
             </section>
             <p class="accent-text">I can make a matcha Latte 🍵 and would love to have a casual talk in person!</p>
         </main>
@@ -235,6 +235,28 @@
                         }
                     });
                 });
+            });
+
+            // スクロール時のナビゲーションスタイル変更
+            const topNav = document.querySelector('.top-nav');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > lastScrollY) {
+                    // スクロールダウン時に非表示
+                    topNav.classList.add('hidden');
+                } else {
+                    // スクロールアップ時に表示
+                    topNav.classList.remove('hidden');
+                    topNav.classList.add('scrolled'); // パディングを適用
+                }
+
+                // スクロール位置がトップに近い場合、scrolledクラスを削除
+                if (window.scrollY === 0) {
+                    topNav.classList.remove('scrolled');
+                }
+
+                lastScrollY = window.scrollY;
             });
         });
     </script>

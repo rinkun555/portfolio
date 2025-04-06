@@ -256,6 +256,30 @@
                 modal.style.display = "none";
             }
         }
+
+        // スクロール時のナビゲーションスタイル変更
+        document.addEventListener('DOMContentLoaded', function() {
+            const topNav = document.querySelector('.top-nav');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > lastScrollY) {
+                    // スクロールダウン時に非表示
+                    topNav.classList.add('hidden');
+                } else {
+                    // スクロールアップ時に表示
+                    topNav.classList.remove('hidden');
+                    topNav.classList.add('scrolled'); // パディングを適用
+                }
+
+                // スクロール位置がトップに近い場合、scrolledクラスを削除
+                if (window.scrollY === 0) {
+                    topNav.classList.remove('scrolled');
+                }
+
+                lastScrollY = window.scrollY;
+            });
+        });
     </script>
 </body>
 </html>
