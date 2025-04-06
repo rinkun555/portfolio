@@ -548,49 +548,57 @@ h3 {
       &:last-child {
         margin-bottom: 0;
       }
-    }
 
-    .project-image {
-      width: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.07);
-      }
-
-      &.portrait {
-        aspect-ratio: 3/4;
+      img {
         width: 100%;
-        height: 400px;
-      }
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
 
-      &.landscape {
-        aspect-ratio: 16/9;
-        width: 100%;
-      }
+        &:hover {
+          transform: scale(1.07);
+        }
 
-      &.square {
-        aspect-ratio: 1/1;
-        width: 100%;
+        &.portrait {
+          aspect-ratio: 3/4;
+          width: 100%;
+          height: 400px;
+        }
+
+        &.landscape {
+          aspect-ratio: 16/9;
+          width: 100%;
+        }
+
+        &.square {
+          aspect-ratio: 1/1;
+          width: 100%;
+        }
+        
+        &.horizontal {
+          grid-column: span 2;
+          height: 300px;
+        }
+
+        &.vertical {
+          grid-column: span 1;
+          aspect-ratio: 2/3;
+          min-height: 400px;
+        }
+
+        &.small {
+          grid-column: span 1;
+          aspect-ratio: 1/1;
+          height: 200px;
+        }
       }
       
-      &.horizontal {
-        grid-column: span 2;
-        height: 300px;
-      }
-
-      &.vertical {
-        grid-column: span 1;
-        aspect-ratio: 2/3;
-        min-height: 400px;
-      }
-
-      &.small {
-        grid-column: span 1;
-        aspect-ratio: 1/1;
-        height: 200px;
+      // 1枚だけの場合はフルサイズ表示
+      img:only-child {
+        width: 100%; // 幅を100%に明示的に設定
+        max-width: 100%;
+        height: 250px;
+        object-fit: cover; // アスペクト比を維持しながら領域いっぱいに表示
       }
     }
   }
@@ -1032,6 +1040,44 @@ footer {
     }
   }
 
+  .my-role-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+    
+    .role-text {
+      flex: 1;
+      min-width: 45%;
+    }
+    
+    .image-wrapper {
+      flex: 1;
+      min-width: 45%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; // 複数画像の折り返しを可能に
+      gap: 10px; // 画像間のスペース
+      align-items: flex-start; // 上部から配置開始
+      
+      img {
+        max-width: calc(50% - 5px); // 2枚の画像がある場合、幅を約半分に
+        height: 250px; // PC表示での固定高さを設定
+        object-fit: cover; // アスペクト比を維持しながら領域を埋める
+      }
+      
+      // 1枚だけの場合はフルサイズ表示
+      img:only-child {
+        width: 100%; // 幅を100%に明示的に設定
+        max-width: 100%;
+        height: 250px;
+        object-fit: cover; // アスペクト比を維持しながら領域いっぱいに表示
+      }
+    }
+  }
+
   .project-navigation {
     max-width: 1200px;
     margin: 4rem auto;
@@ -1096,6 +1142,25 @@ footer {
           height: auto;
           min-height: auto;
           aspect-ratio: 1/1;
+        }
+      }
+    }
+
+    .my-role-list {
+      flex-direction: column;
+      
+      .role-text, 
+      .image-wrapper {
+        width: 100%;
+      }
+      
+      .image-wrapper {
+        margin-top: 15px;
+
+        img {
+          max-width: 100%; // モバイル表示では画像を縦に積み重ね
+          height: auto; // モバイル表示では高さを自動調整に戻す
+          margin-bottom: 10px;
         }
       }
     }

@@ -702,7 +702,7 @@ h3 {
 .images-container .image-column .image-wrapper:last-child {
 		margin-bottom: 0;
 }
-.images-container .image-column .project-image {
+.images-container .image-column .image-wrapper img {
 		width: 100%;
 		-o-object-fit: cover;
 		   object-fit: cover;
@@ -712,39 +712,46 @@ h3 {
 		transition: transform 0.3s ease;
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-.images-container .image-column .project-image:hover {
+.images-container .image-column .image-wrapper img:hover {
 		-webkit-transform: scale(1.07);
 		        transform: scale(1.07);
 }
-.images-container .image-column .project-image.portrait {
+.images-container .image-column .image-wrapper img.portrait {
 		aspect-ratio: 3/4;
 		width: 100%;
 		height: 400px;
 }
-.images-container .image-column .project-image.landscape {
+.images-container .image-column .image-wrapper img.landscape {
 		aspect-ratio: 16/9;
 		width: 100%;
 }
-.images-container .image-column .project-image.square {
+.images-container .image-column .image-wrapper img.square {
 		aspect-ratio: 1/1;
 		width: 100%;
 }
-.images-container .image-column .project-image.horizontal {
+.images-container .image-column .image-wrapper img.horizontal {
 		-ms-grid-column-span: 2;
 		grid-column: span 2;
 		height: 300px;
 }
-.images-container .image-column .project-image.vertical {
+.images-container .image-column .image-wrapper img.vertical {
 		-ms-grid-column-span: 1;
 		grid-column: span 1;
 		aspect-ratio: 2/3;
 		min-height: 400px;
 }
-.images-container .image-column .project-image.small {
+.images-container .image-column .image-wrapper img.small {
 		-ms-grid-column-span: 1;
 		grid-column: span 1;
 		aspect-ratio: 1/1;
 		height: 200px;
+}
+.images-container .image-column .image-wrapper img:only-child {
+		width: 100%;
+		max-width: 100%;
+		height: 250px;
+		-o-object-fit: cover;
+		   object-fit: cover;
 }
 
 .image-caption {
@@ -1240,6 +1247,60 @@ footer {
 		-webkit-transform: scale(1.02);
 		        transform: scale(1.02);
 }
+.work-page-common .my-role-list {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+		gap: 30px;
+		margin-bottom: 40px;
+}
+.work-page-common .my-role-list .role-text {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		min-width: 45%;
+}
+.work-page-common .my-role-list .image-wrapper {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		min-width: 45%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		gap: 10px;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+}
+.work-page-common .my-role-list .image-wrapper img {
+		max-width: calc(50% - 5px);
+		height: 250px;
+		-o-object-fit: cover;
+		   object-fit: cover;
+}
+.work-page-common .my-role-list .image-wrapper img:only-child {
+		width: 100%;
+		max-width: 100%;
+		height: 250px;
+		-o-object-fit: cover;
+		   object-fit: cover;
+}
 .work-page-common .project-navigation {
 		max-width: 1200px;
 		margin: 4rem auto;
@@ -1310,6 +1371,24 @@ footer {
 				height: auto;
 				min-height: auto;
 				aspect-ratio: 1/1;
+		}
+		.work-page-common .my-role-list {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+		}
+		.work-page-common .my-role-list .role-text,
+		.work-page-common .my-role-list .image-wrapper {
+				width: 100%;
+		}
+		.work-page-common .my-role-list .image-wrapper {
+				margin-top: 15px;
+		}
+		.work-page-common .my-role-list .image-wrapper img {
+				max-width: 100%;
+				height: auto;
+				margin-bottom: 10px;
 		}
 }
 
