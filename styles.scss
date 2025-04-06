@@ -336,7 +336,7 @@ h3 {
 
 /* Main content */
 .title-section {
-  margin: 6rem 0 4rem;
+  margin: 6rem 0 4rem 0;
   @include flex(row, flex-start, center, wrap);
   gap: 2rem;
 
@@ -448,7 +448,7 @@ h3 {
 
 /* Offers Section */
 .offers-section {
-  margin: 4rem 0;
+  margin: 4rem 0 6rem;
   padding: 2rem 0;
 }
 
@@ -487,6 +487,11 @@ h3 {
   font-weight: 400;
   font-size: 0.9rem;
   color: $secondary-color;
+
+  .capital{
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
 }
 
 .offer-item img {
@@ -496,9 +501,6 @@ h3 {
   object-fit: cover;
   transition: transform 0.3s ease;
   
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 
@@ -547,6 +549,13 @@ h3 {
     border-bottom: 1px solid transparent;
     color: $secondary-color;
     font-weight: 700;
+  }
+
+  .count {
+    font-size: 0.7rem;
+    position: relative;
+    top: -0.5em;
+    margin-left: 2px;
   }
 
   &[data-filter="all"] {
