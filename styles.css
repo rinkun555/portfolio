@@ -890,7 +890,7 @@ footer {
 					margin-bottom: 1.5rem;
 					
 					li {
-						margin-bottom: 0.5rem;
+						margin-bottom: 1.2rem;
 						
 						.title_bold {
 							font-weight: 700;
@@ -900,17 +900,14 @@ footer {
 				
 				.my-role-list {
 					.works_role_title {
-						font-weight: 400;
+						font-weight: 600;
 						font-size: 1.3rem;
 						letter-spacing: 0.02em;
 						margin-bottom: 0.5rem;
 						color: #90404C;
 						font-style: italic;
 					}
-					
-					li:first-child {
-						margin-bottom: 1.5rem !important;
-					}
+
 				}
 			}
 		}
