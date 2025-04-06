@@ -797,7 +797,7 @@ footer {
 }
 
 /* Work Page Common Styles */
-.work-page-common, .future-metaphor-page {
+.work-page-common {
 	background-color: #E5DFD1;
 	font-family: "din-2014", sans-serif;
 	
@@ -894,6 +894,9 @@ footer {
 						
 						.title_bold {
 							font-weight: 700;
+						}
+						&.analysis{
+							list-style-type: none;
 						}
 					}
 				}
