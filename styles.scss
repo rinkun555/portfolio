@@ -533,90 +533,13 @@ h3 {
   min-width: 50%;
   display: flex;
   gap: 0.5rem;
-
-  .image-column {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .image-wrapper {
-      overflow: hidden;
-      width: 100%;
-      opacity: 0.8;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      img {
-        width: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.07);
-        }
-
-        &.portrait {
-          aspect-ratio: 3/4;
-          width: 100%;
-          height: 400px;
-        }
-
-        &.landscape {
-          aspect-ratio: 16/9;
-          width: 100%;
-        }
-
-        &.square {
-          aspect-ratio: 1/1;
-          width: 100%;
-        }
-        
-        &.horizontal {
-          grid-column: span 2;
-          height: 300px;
-        }
-
-        &.vertical {
-          grid-column: span 1;
-          aspect-ratio: 2/3;
-          min-height: 400px;
-        }
-
-        &.small {
-          grid-column: span 1;
-          aspect-ratio: 1/1;
-          height: 200px;
-        }
-      }
-      
-      // 1枚だけの場合はフルサイズ表示
-      img:only-child {
-        width: 100%; // 幅を100%に明示的に設定
-        max-width: 100%;
-        height: 250px;
-        object-fit: cover; // アスペクト比を維持しながら領域いっぱいに表示
-      }
-    }
-  }
 }
 
-.image-caption {
-  grid-column: span 2;
-  font-size: 0.85rem;
-  color: #8b1e1e;
-  margin-top: 0.5rem;
-  font-style: italic;
-}
-
+/* Zoomable images & Modal - Global Styles */
 .zoomable {
-  cursor: zoom-in;
+  cursor: zoom-in !important;
 }
 
-/* Modal - Global Styles */
 .modal {
   display: none;
   position: fixed;
@@ -674,7 +597,7 @@ h3 {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: #3d3d3d4a;
+    background: rgba(61, 61, 61, 0.29);
 
     h3 {
       font-size: 1.4rem;
@@ -688,199 +611,67 @@ h3 {
   }
 }
 
-/* Category filter tabs */
-.category-filter {
-  margin-bottom: 2rem;
-}
-
-.filter-tabs {
-  @include flex(row, flex-end, center, wrap);
-  gap: 3rem;
-  margin-bottom: 1.5rem;
-
-  @include responsive(tablet) {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 0.5rem;
-    flex-wrap: nowrap;
-  }
-}
-
-.filter-tab {
-  background: none;
-  border: none;
-  color: $primary-color;
-  font-weight: 400;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 0.3rem;
-
-  @include responsive(tablet) {
-    display: inline-block;
-  }
-
-  &:hover {
-    color: $primary-color;
-    transform: translateY(-3px);
-    border-bottom: 2px solid transparent;
-  }
-
-  &.active {
-    border-bottom: 1px solid transparent;
-    color: $secondary-color;
-    font-weight: 700;
-  }
-
-  .count {
-    font-size: 0.7rem;
-    position: relative;
-    top: -0.5em;
-    margin-left: 2px;
-  }
-
-  &[data-filter="all"] {
-    padding-left: 0;
-    padding-right: 1.5rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: -1rem;
-      bottom: 0;
-      z-index: 1;
-    }
-
-    &:hover {
-      color: $primary-color;
-      transform: translateY(-3px);
-      border-bottom: 2px solid transparent;
-    }
-  }
-}
-
-/* Footer */
-footer {
-  @include flex(row, space-between);
-  padding-top: 15rem;
-
-  @include responsive(tablet) {
+/* Index page specific image styles */
+body:not(.work-page-common) .images-container {
+  .image-column {
+    flex: 2;
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
-  }
-}
+    gap: 0.5rem;
 
-.copyright {
-  color: $primary-color;
-  font-size: 0.9rem;
-}
+    .image-wrapper {
+      overflow: hidden;
+      width: 100%;
+      opacity: 0.8;
 
-.accent-text {
-  font-style: italic;
-  text-align: right;
-}
-
-/* Social icons */
-.social-icons {
-  position: fixed;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  @include flex(column);
-  gap: 1rem;
-  z-index: 100;
-
-  @include responsive(tablet) {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
-    transform: none;
-  }
-
-  a {
-    @include flex(row, center, center);
-    color: $background-color;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-
-    &:hover {
-      background-color: $background-color;
-      color: $primary-color;
-      transform: scale(1.1);
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-  }
 
+    .project-image {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
 
-}
+      &:hover {
+        transform: scale(1.07);
+      }
 
-/* Project detail page */
-.project-detail {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 0;
+      &.portrait {
+        aspect-ratio: 3/4;
+        width: 100%;
+        height: 400px;
+      }
 
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: $primary-color;
+      &.landscape {
+        aspect-ratio: 16/9;
+        width: 100%;
+      }
 
-    @include responsive(tablet) {
-      font-size: 2.5rem;
+      &.square {
+        aspect-ratio: 1/1;
+        width: 100%;
+      }
+      
+      &.horizontal {
+        grid-column: span 2;
+        height: 300px;
+      }
+
+      &.vertical {
+        grid-column: span 1;
+        aspect-ratio: 2/3;
+        min-height: 400px;
+      }
+
+      &.small {
+        grid-column: span 1;
+        aspect-ratio: 1/1;
+        height: 200px;
+      }
     }
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 3rem;
-    color: $primary-color;
-
-    @include responsive(tablet) {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-.project-intro {
-  margin-bottom: 3rem;
-
-  p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-
-  ul {
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-
-    li {
-      margin-bottom: 0.5rem;
-      list-style-type: disc;
-    }
-  }
-}
-
-.project-images {
-  margin-bottom: 3rem;
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-
-  figcaption {
-    font-size: 0.9rem;
-    color: $primary-color;
-    font-style: italic;
   }
 }
 
@@ -1040,13 +831,49 @@ footer {
     }
   }
 
+  .images-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  
+    .image-column {
+      &.main, &.secondary {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+      }
+
+      .project-image-wrapper {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
   .my-role-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap:2rem;
+    margin-bottom:1rem;
     
     .role-text {
       flex: 1;
@@ -1057,18 +884,25 @@ footer {
       flex: 1;
       min-width: 45%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between; // Changed to space-between
       flex-wrap: wrap; // 複数画像の折り返しを可能に
-      gap: 10px; // 画像間のスペース
+      gap: 1rem; // Reduced gap for less space
       align-items: flex-start; // 上部から配置開始
       
       img {
-        max-width: calc(50% - 5px); // 2枚の画像がある場合、幅を約半分に
+        max-width: calc(50% - 0.5rem); // Adjusted calculation based on smaller gap
         height: 250px; // PC表示での固定高さを設定
         object-fit: cover; // アスペクト比を維持しながら領域を埋める
+        
+        // 複数の画像がある場合に適用されるスタイル
+        &:nth-child(n+1) {
+          width: calc(50% - 0.5rem); // Adjusted width calculation
+          height: 250px; // 高さを固定
+          flex-grow: 1; // 空きスペースを埋めるように伸張
+          object-fit: cover; // アスペクト比を維持しながらフィット
+        }
       }
-      
-      // 1枚だけの場合はフルサイズ表示
+      // 画像が1枚だけの場合
       img:only-child {
         width: 100%; // 幅を100%に明示的に設定
         max-width: 100%;
@@ -1167,11 +1001,21 @@ footer {
   }
 }
 
-/* レスポンシブスタイルをグローバルに移動 */
+/* レスポンシブスタイル */
 @media (max-width: 768px) {
-  .images-container {
+  // インデックスページのモバイルスタイル
+  body:not(.work-page-common) .images-container {
     flex-direction: column;
 
+    .image-column {
+      width: 100%;
+    }
+  }
+  
+  // プロジェクトページのモバイルスタイル
+  .work-page-common .images-container {
+    grid-template-columns: 1fr;
+    
     .image-column-main,
     .image-column-secondary {
       width: 100%;
