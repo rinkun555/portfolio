@@ -1,9 +1,16 @@
 // Variables
-$primary-color: #90404C;
+$primary-color: #563F2E;
 $secondary-color: #484848;
 $background-color: #E5DFD1;
 $white: #ffffff;
 $gray: #3e3e3e;
+
+// Special colors
+$green: #7BA23F;
+$peach: #DB8E71;
+$orange: #F05E1C;
+$gold: #BA9132;
+$teal: #6699A1;
 
 // Mixins
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
@@ -438,6 +445,63 @@ h3 {
   color: $gray;
   margin-bottom: 0.5rem;
 }
+
+/* Offers Section */
+.offers-section {
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.offers-container {
+  @include flex(row, space-between, flex-end);
+  gap: 2rem;
+  
+  @include responsive(tablet) {
+    flex-direction: column;
+  }
+}
+
+.offers-items {
+  @include flex(row, space-between, flex-end);
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  flex: 3;
+  
+  @include responsive(tablet) {
+    flex-wrap: wrap;
+  }
+}
+
+.offer-item {
+  @include flex(column, flex-end, left);
+  flex: 1;
+  
+  @include responsive(tablet) {
+    flex: 1 0 45%;
+  }
+}
+
+.offer-title {
+  margin-bottom: 0.8rem;
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: $secondary-color;
+}
+
+.offer-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+
 
 /* Category filter tabs */
 .category-filter {
