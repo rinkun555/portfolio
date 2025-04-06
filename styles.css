@@ -674,6 +674,96 @@ h3 {
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+/* Category filter tabs */
+.category-filter {
+		margin-bottom: 2rem;
+}
+
+.filter-tabs {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		gap: 3rem;
+		margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+		.filter-tabs {
+				overflow-x: auto;
+				white-space: nowrap;
+				padding-bottom: 0.5rem;
+				-ms-flex-wrap: nowrap;
+				    flex-wrap: nowrap;
+		}
+}
+
+.filter-tab {
+		background: none;
+		border: none;
+		color: #563F2E;
+		font-weight: 400;
+		font-size: 0.9rem;
+		cursor: pointer;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		position: relative;
+		border-bottom: 2px solid transparent;
+		padding-bottom: 0.3rem;
+}
+@media (max-width: 768px) {
+		.filter-tab {
+				display: inline-block;
+		}
+}
+.filter-tab:hover {
+		color: #563F2E;
+		-webkit-transform: translateY(-3px);
+		        transform: translateY(-3px);
+		border-bottom: 2px solid transparent;
+}
+.filter-tab.active {
+		border-bottom: 1px solid transparent;
+		color: #484848;
+		font-weight: 700;
+}
+.filter-tab .count {
+		font-size: 0.7rem;
+		position: relative;
+		top: -0.5em;
+		margin-left: 2px;
+}
+.filter-tab[data-filter=all] {
+		padding-left: 0;
+		padding-right: 1.5rem;
+		position: relative;
+}
+.filter-tab[data-filter=all]::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: -1rem;
+		bottom: 0;
+		z-index: 1;
+}
+.filter-tab[data-filter=all]:hover {
+		color: #563F2E;
+		-webkit-transform: translateY(-3px);
+		        transform: translateY(-3px);
+		border-bottom: 2px solid transparent;
+}
+
 /* Images Container - Global Styles */
 .images-container {
 		-webkit-box-flex: 1;

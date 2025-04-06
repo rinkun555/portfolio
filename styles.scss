@@ -532,6 +532,83 @@ h3 {
   
 }
 
+/* Category filter tabs */
+.category-filter {
+  margin-bottom: 2rem;
+}
+
+.filter-tabs {
+  @include flex(row, flex-end, center, wrap);
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+
+  @include responsive(tablet) {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+  }
+}
+
+.filter-tab {
+  background: none;
+  border: none;
+  color: $primary-color;
+  font-weight: 400;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.3rem;
+
+  @include responsive(tablet) {
+    display: inline-block;
+  }
+
+  &:hover {
+    color: $primary-color;
+    transform: translateY(-3px);
+    border-bottom: 2px solid transparent;
+  }
+
+  &.active {
+    border-bottom: 1px solid transparent;
+    color: $secondary-color;
+    font-weight: 700;
+  }
+
+  .count {
+    font-size: 0.7rem;
+    position: relative;
+    top: -0.5em;
+    margin-left: 2px;
+  }
+
+  &[data-filter="all"] {
+    padding-left: 0;
+    padding-right: 1.5rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: -1rem;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    &:hover {
+      color: $primary-color;
+      transform: translateY(-3px);
+      border-bottom: 2px solid transparent;
+    }
+  }
+}
+
+
 /* Images Container - Global Styles */
 .images-container {
   flex: 1;
