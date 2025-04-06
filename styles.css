@@ -137,6 +137,10 @@ table {
 		        box-sizing: border-box;
 }
 
+html {
+		scroll-behavior: smooth; /* スムーズスクロールの基本設定 */
+}
+
 body,
 button,
 input,
@@ -516,7 +520,7 @@ h3 {
 		   -moz-column-gap: 2rem;
 		        column-gap: 2rem;
 		row-gap: 4rem;
-		margin-bottom: 20rem;
+		margin-bottom: 5rem;
 }
 @media (max-width: 768px) {
 		.projects {
@@ -693,6 +697,7 @@ h3 {
 .images-container .image-column .image-wrapper {
 		overflow: hidden;
 		width: 100%;
+		opacity: 0.8;
 }
 .images-container .image-column .image-wrapper:last-child {
 		margin-bottom: 0;

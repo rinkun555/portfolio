@@ -166,6 +166,10 @@ table {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* スムーズスクロールの基本設定 */
+}
+
 body,
 button,
 input,
@@ -434,7 +438,7 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   column-gap: 2rem;
   row-gap: 4rem;
-  margin-bottom: 20rem;
+  margin-bottom:5rem;
 
   @include responsive(tablet) {
     grid-template-columns: 1fr;
@@ -539,6 +543,7 @@ h3 {
     .image-wrapper {
       overflow: hidden;
       width: 100%;
+      opacity: 0.8;
 
       &:last-child {
         margin-bottom: 0;

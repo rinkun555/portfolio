@@ -40,8 +40,8 @@
                 </li>
                 <div class="menu-section">
                     <li><a href="#" class="active">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">WORKS</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#about">ABOUT</a></li>
                     <li><a href="#">CV</a></li>
                     <li class="social-nav-item">
                         <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
@@ -99,7 +99,7 @@
                 </div>
             </section>
 
-            <section class="category-filter">
+            <section class="category-filter" id="works">
                 <h2>Works</h2>
                 <div class="filter-tabs">
                     <button class="filter-tab active" data-filter="all">ALL <span class="count"></span></button>
@@ -198,7 +198,8 @@
 
     </div><!-- container -->
         
-    <div class="container">
+    <div class="container" id="about">
+        <h2>When I am not desiging, I like to</h2>
         <div class="images-container">
             <div class="image-column main">
                 <div class="image-wrapper">
@@ -343,6 +344,31 @@
                     modal.style.display = "none";
                 }
             }
+
+            // スムーズなアンカースクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // スクロール位置を少し上に調整（ナビバーの高さ分）
+                        const offset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // URLにアンカーを追加（オプション）
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
         });
     </script>
 </body>
