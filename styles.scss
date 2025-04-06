@@ -700,16 +700,9 @@ footer {
           text-transform: uppercase;
         }
 
-        h3 {
-          font-size: 1.4rem;
-          color: #8b1e1e;
-          font-weight: 600;
-          margin-bottom: 0.8rem;
-        }
-
         p {
           margin-bottom: 1.5rem;
-          line-height: 1.7;
+
         }
 
         .quote {
@@ -719,33 +712,43 @@ footer {
           margin: 2rem 0;
         }
 
-        ul {
-          list-style-type: disc;
-          margin-left: 1.5rem;
+        .my-role-list {
+          list-style-type: none;
           margin-bottom: 1.5rem;
 
-          li {
-            margin-bottom: 0.5rem;
+          .works_role_title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 0;
+            color: $primary-color;
+            font-style: italic;
 
-            .title_bold{
-              font-weight: 700;
+            .inner_box{
+              margin-bottom: 1.2rem; 
             }
           }
-        }
-
-        .my-role-list{
-          .works_role_title {
-            font-weight: 400;
-            font-size: 1.2rem;
-            letter-spacing: 0.02em;
+          .inner_title{
             margin-bottom: 0.5rem;
-            color: $primary-color;
+            .title_bold{
+              list-style-type: none;
+              font-size: 1.2rem;
+              margin-bottom: 0!important;
+              font-weight: 700;
+  
+              &.description{
+                font-size: 1rem;
+              }
+            } 
+          }
+          .takeaway_title{
+              font-size: 1.2rem;
+              font-weight: 700;
           }
           
-          li:first-child {
-            margin-bottom: 1.5rem !important;
-          }
         }
+
+
       }
     }
 
