@@ -910,7 +910,10 @@ footer {
 						color: #90404C;
 						font-style: italic;
 					}
+				}
 
+				.takeaway_title{
+					font-size: 1.3rem;
 				}
 			}
 		}
