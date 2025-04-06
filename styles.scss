@@ -812,8 +812,6 @@ body:not(.work-page-common) .images-container {
     gap: 3rem;
 
     .text-column {
-      flex: 2;
-      min-width: 300px;
 
       .section {
         margin-bottom: 3rem;
@@ -843,18 +841,9 @@ body:not(.work-page-common) .images-container {
 
         .my-role-list {
           list-style-type: none;
+          display: flex;
 
-          .works_role_title {
-            font-weight: 600;
-            font-size: 1.3rem;
-            letter-spacing: 0.02em;
-            margin-bottom: 0;
-            color: $primary-color;
 
-            .inner_box{
-              margin-bottom: 1.2rem; 
-            }
-          }
           .inner_title{
             margin-bottom: 0.5rem;
             .title_bold{
@@ -875,11 +864,44 @@ body:not(.work-page-common) .images-container {
           
         }
 
+        .works_role_title {
+          font-weight: 600;
+          font-size: 1.3rem;
+          letter-spacing: 0.02em;
+          margin-bottom: 0.5rem;
+          color: $primary-color;
+
+          .inner_box{
+            margin-bottom: 1.2rem; 
+          }
+        }
+
+
         // method and tool
         &.method li{
           list-style-type: disc;
           margin-left: 1em;
         }
+
+         //takeaway
+          &.takeaway {
+
+            .my-role-list{
+              display: block;
+            }
+
+            .takeaway_inner{
+              display: flex;
+              
+              h3{
+                width: 24%;
+              }
+
+              p{
+                width: 50%;
+              }
+            }
+          }
       }
     }
 

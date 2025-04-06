@@ -974,12 +974,6 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		    flex-wrap: wrap;
 		gap: 3rem;
 }
-.work-page-common .case-study-container .text-column {
-		-webkit-box-flex: 2;
-		    -ms-flex: 2;
-		        flex: 2;
-		min-width: 300px;
-}
 .work-page-common .case-study-container .text-column .section {
 		margin-bottom: 3rem;
 }
@@ -1004,16 +998,9 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 }
 .work-page-common .case-study-container .text-column .section .my-role-list {
 		list-style-type: none;
-}
-.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title {
-		font-weight: 600;
-		font-size: 1.3rem;
-		letter-spacing: 0.02em;
-		margin-bottom: 0;
-		color: #563F2E;
-}
-.work-page-common .case-study-container .text-column .section .my-role-list .works_role_title .inner_box {
-		margin-bottom: 1.2rem;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 }
 .work-page-common .case-study-container .text-column .section .my-role-list .inner_title {
 		margin-bottom: 0.5rem;
@@ -1031,9 +1018,33 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		font-size: 1.2rem;
 		font-weight: 700;
 }
+.work-page-common .case-study-container .text-column .section .works_role_title {
+		font-weight: 600;
+		font-size: 1.3rem;
+		letter-spacing: 0.02em;
+		margin-bottom: 0.5rem;
+		color: #563F2E;
+}
+.work-page-common .case-study-container .text-column .section .works_role_title .inner_box {
+		margin-bottom: 1.2rem;
+}
 .work-page-common .case-study-container .text-column .section.method li {
 		list-style-type: disc;
 		margin-left: 1em;
+}
+.work-page-common .case-study-container .text-column .section.takeaway .my-role-list {
+		display: block;
+}
+.work-page-common .case-study-container .text-column .section.takeaway .takeaway_inner {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+}
+.work-page-common .case-study-container .text-column .section.takeaway .takeaway_inner h3 {
+		width: 24%;
+}
+.work-page-common .case-study-container .text-column .section.takeaway .takeaway_inner p {
+		width: 50%;
 }
 .work-page-common .case-study-container .image-column {
 		-webkit-box-flex: 1;
