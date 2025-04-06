@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Río SUZUKI - Portfolio</title>
@@ -61,11 +62,11 @@
 
             <section class="category-filter">
                 <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="all">ALL</button>
-                    <button class="filter-tab" data-filter="project">PROJECT</button>
-                    <button class="filter-tab" data-filter="workshop">WORKSHOP</button>
-                    <button class="filter-tab" data-filter="data-analysis">DATA ANALYSIS (QUALITATIVE)</button>
-                    <button class="filter-tab" data-filter="sensemaking">SENSEMAKING</button>
+                    <button class="filter-tab active" data-filter="all">ALL <span class="count"></span></button>
+                    <button class="filter-tab" data-filter="project">PROJECT <span class="count"></span></button>
+                    <button class="filter-tab" data-filter="workshop">WORKSHOP <span class="count"></span></button>
+                    <button class="filter-tab" data-filter="data-analysis">DATA ANALYSIS (QUALITATIVE) <span class="count"></span></button>
+                    <button class="filter-tab" data-filter="sensemaking">SENSEMAKING <span class="count"></span></button>
                 </div>
             </section>
 
@@ -150,6 +151,23 @@
         document.addEventListener('DOMContentLoaded', function() {
             const filterTabs = document.querySelectorAll('.filter-tab');
             const projectCards = document.querySelectorAll('.project-card');
+            
+            // プロジェクト数のカウントと表示
+            function updateProjectCounts() {
+                // すべてのプロジェクト数
+                const allCount = projectCards.length;
+                document.querySelector('[data-filter="all"] .count').textContent = allCount;
+                
+                // カテゴリー別のプロジェクト数
+                const categories = ['project', 'workshop', 'data-analysis', 'sensemaking'];
+                categories.forEach(category => {
+                    const count = document.querySelectorAll(`.project-card[data-category="${category}"]`).length;
+                    document.querySelector(`[data-filter="${category}"] .count`).textContent = count;
+                });
+            }
+            
+            // 初期ロード時にカウント表示
+            updateProjectCounts();
             
             // タブクリック時の処理
             filterTabs.forEach(tab => {
