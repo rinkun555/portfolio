@@ -269,10 +269,10 @@ h3 {
 		position: sticky;
 		top: 0;
 		z-index: 1000;
-		-webkit-transition: opacity 0.3s ease, padding 0.3s ease, -webkit-transform 0.3s ease;
-		transition: opacity 0.3s ease, padding 0.3s ease, -webkit-transform 0.3s ease;
-		transition: transform 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-		transition: transform 0.3s ease, opacity 0.3s ease, padding 0.3s ease, -webkit-transform 0.3s ease;
+		-webkit-transition: opacity 0.8s ease, padding 0.8s ease, -webkit-transform 0.8s ease;
+		transition: opacity 0.8s ease, padding 0.8s ease, -webkit-transform 0.8s ease;
+		transition: transform 0.8s ease, opacity 0.8s ease, padding 0.8s ease;
+		transition: transform 0.8s ease, opacity 0.8s ease, padding 0.8s ease, -webkit-transform 0.8s ease;
 }
 .top-nav.hidden {
 		-webkit-transform: translateY(-100%);
@@ -310,6 +310,10 @@ h3 {
 				        flex-direction: column;
 				gap: 1.5rem;
 		}
+}
+.top-nav ul .fab {
+		font-size: 1.5rem;
+		padding-top: 0.2rem;
 }
 .top-nav .name-section {
 		display: -webkit-box;
@@ -467,7 +471,7 @@ h3 {
 		font-family: "cormorant-garamond", serif;
 		font-weight: 500;
 		font-style: italic;
-		font-size: 5rem;
+		font-size: 6rem;
 }
 
 /* 個別のキーワードスタイル */
@@ -857,10 +861,6 @@ footer {
 		color: #563F2E;
 		-webkit-transform: scale(1.1);
 		        transform: scale(1.1);
-}
-.social-icons .fab {
-		color: #563F2E;
-		font-size: 1.5em;
 }
 
 /* Project detail page */
