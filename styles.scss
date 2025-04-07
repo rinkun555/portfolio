@@ -202,12 +202,30 @@ a {
   margin: 0 auto;
   padding: 2rem 0 1 rem;
   margin-bottom: 2rem; // コンテナの下部マージンを追加
+
+  &#about{
+    margin-bottom: 15rem;
+  }
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+footer {
+  padding-top: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .accent-text{
+    text-align: right;
+    margin-bottom: 15rem;
+  }
+  .copyright{
+    padding-bottom: 0.5rem;
+  }
 }
 
 /* Selection style */
@@ -400,7 +418,7 @@ h3 {
     font-family: "cormorant-garamond", serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 6rem;
+    font-size: 8rem;
   }
 }
 
@@ -443,7 +461,7 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   column-gap: 2rem;
   row-gap: 4rem;
-  margin-bottom:5rem;
+  margin-bottom:10rem;
 
   @include responsive(tablet) {
     grid-template-columns: 1fr;
@@ -477,7 +495,7 @@ h3 {
 
 /* Offers Section */
 .offers-section {
-  margin: 4rem 0 6rem;
+  margin: 4rem 0 8rem;
   padding: 2rem 0;
 }
 
@@ -771,11 +789,8 @@ body:not(.work-page-common) .images-container {
     margin: 0 auto;
     padding: 2rem;
     margin-bottom: 2rem;
-
-    footer {
-      padding-top: 6rem;
-    }
   }
+
 
   .hero-image {
     width: 100%;
