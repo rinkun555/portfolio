@@ -88,13 +88,14 @@
                 <button class="filter-tab" data-filter="workshop">WORKSHOP <span class="count"></span></button>
                 <button class="filter-tab" data-filter="data-analysis">DATA ANALYSIS (QUALITATIVE) <span class="count"></span></button>
                 <button class="filter-tab" data-filter="sensemaking">SENSEMAKING <span class="count"></span></button>
+                <button class="filter-tab" data-filter="future">FUTURE <span class="count"></span></button>
             </div>
         </section>
 
         <section class="projects">
             <div class="project-card" data-category="project">
                 <a href="kogehospital.html">
-                    <img src="img/project_koge_cancerpathway.png" alt="Køge Hospital project visualizing the cancer care pathway.">
+                    <img src="img/koge_hero.jpg" alt="Køge Hospital project visualizing the cancer care pathway.">
                     <div class="project-info">
                         <h3>How might we can gently push the patients after the cancer pathway and move forward thier life?</h3>
                         <p class="project-category">PROJECT / Køge Hospital</p>
@@ -137,7 +138,7 @@
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="project">
+            <div class="project-card comingsoon" data-category="project">
                 <a href="#">
                     <img src="img/project_canteen_value_map.png" alt="Customer value constellation and storyboard for a university canteen project.">
                     <div class="project-info">
@@ -146,7 +147,7 @@
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="workshop">
+            <div class="project-card comingsoon" data-category="workshop">
                 <a href="#">
                     <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
                     <div class="project-info">
@@ -155,21 +156,21 @@
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="workshop">
+            <div class="project-card comingsoon" data-category="workshop">
                 <a href="#">
-                    <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
+                    <img src="img/project_manuefest.png" alt="Manuefest 2025 April ver">
                     <div class="project-info">
-                        <h3>Manuefest</h3>
-                        <p class="project-category">WORKSHOP / IKEA</p>
+                        <h3>Coming soon Manuefest April 2025</h3>
+                        <p class="project-category">WORKSHOP / </p>
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="workshop">
+            <div class="project-card comingsoon" data-category="future">
                 <a href="#">
-                    <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
+                    <img src="img/project_designfiction.png" alt="design fiction movie">
                     <div class="project-info">
                         <h3>Design Fiction</h3>
-                        <p class="project-category">WORKSHOP / IKEA</p>
+                        <p class="project-category">FUTURE / IKEA</p>
                     </div>
                 </a>
             </div>
@@ -246,7 +247,7 @@
                 document.querySelector('[data-filter="all"] .count').textContent = allCount;
                 
                 // カテゴリー別のプロジェクト数
-                const categories = ['project', 'workshop', 'data-analysis', 'sensemaking'];
+                const categories = ['project', 'workshop', 'data-analysis', 'sensemaking', 'future'];
                 categories.forEach(category => {
                     const count = document.querySelectorAll(`.project-card[data-category="${category}"]`).length;
                     document.querySelector(`[data-filter="${category}"] .count`).textContent = count;
