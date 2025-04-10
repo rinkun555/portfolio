@@ -458,6 +458,7 @@ h3 {
 		font-size: 4rem;
 		letter-spacing: 2px;
 		font-weight: 300;
+		margin-bottom: 0.8rem;
 }
 
 .keyword-cloud {
@@ -868,6 +869,26 @@ h3 {
 .modal-caption p {
 		font-size: 1rem;
 		opacity: 0.9;
+}
+
+/* Video Container Styles */
+.video-container {
+		margin: 2rem 0;
+}
+.video-container video {
+		width: 65%;
+		display: block;
+		margin: 0 auto;
+}
+
+.video-caption {
+		text-align: center;
+		margin-top: 1rem;
+		font-style: italic;
+		color: #3e3e3e;
+		max-width: 65%;
+		margin-left: auto;
+		margin-right: auto;
 }
 
 /* Index page specific image styles */
