@@ -188,13 +188,35 @@ footer {
 		padding-top: 6rem;
 		max-width: 1200px;
 		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+}
+footer::before {
+		content: "";
+		position: absolute;
+		width: 120px;
+		height: 120px;
+		left: 90%;
+		top: 0;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		background-image: url("img/flower.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		opacity: 0.6;
+		z-index: -1;
+		-webkit-animation: rotateFlower 20s linear infinite;
+		        animation: rotateFlower 20s linear infinite;
 }
 footer .accent-text {
 		text-align: right;
 		margin-bottom: 15rem;
+		font-size: 1rem;
 }
 footer .copyright {
 		padding-bottom: 0.5rem;
+		font-size: 0.8rem;
 }
 
 /* Selection style */
@@ -427,7 +449,7 @@ h3 {
 
 /* Main content */
 .title-section {
-		margin: 6rem 0 4rem 0;
+		margin: 6rem 0 5rem 0;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -497,6 +519,9 @@ h3 {
 		font-weight: 500;
 		font-style: italic;
 		font-size: 8rem;
+		position: relative;
+		display: inline-block;
+		z-index: 2;
 }
 
 /* 個別のキーワードスタイル */
@@ -524,8 +549,16 @@ h3 {
 		font-size: 1.1rem;
 }
 
+.keyword-change {
+		font-size: 1.5rem;
+}
+
 .keyword-PEOPLE {
 		font-size: 1.6rem;
+}
+
+.keyword-good {
+		font-size: 1rem;
 }
 
 .keyword-SOCIAL {
@@ -579,7 +612,7 @@ h3 {
 
 /* Offers Section */
 .offers-section {
-		margin: 4rem 0 8rem;
+		margin: 4rem 0 10rem;
 		padding: 2rem 0;
 }
 
@@ -672,10 +705,9 @@ h3 {
 		text-align: left;
 		font-weight: 400;
 		font-size: 0.9rem;
-		color: #484848;
 }
 .offer-title .capital {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		font-weight: 200;
 }
 
@@ -956,6 +988,11 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		grid-column: span 1;
 		aspect-ratio: 1/1;
 		height: 200px;
+}
+
+/* Indec specifi Styles */
+#about h2 {
+		margin-bottom: 1.5rem;
 }
 
 /* Work Page Common Styles */
@@ -1332,4 +1369,26 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 .projects-page,
 .contact-page {
 		background-color: #E5DFD1;
+}
+
+/* アニメーションのキーフレーム定義 */
+@-webkit-keyframes rotateFlower {
+		from {
+				-webkit-transform: translateY(-50%) rotate(0deg);
+				        transform: translateY(-50%) rotate(0deg);
+		}
+		to {
+				-webkit-transform: translateY(-50%) rotate(360deg);
+				        transform: translateY(-50%) rotate(360deg);
+		}
+}
+@keyframes rotateFlower {
+		from {
+				-webkit-transform: translateY(-50%) rotate(0deg);
+				        transform: translateY(-50%) rotate(0deg);
+		}
+		to {
+				-webkit-transform: translateY(-50%) rotate(360deg);
+				        transform: translateY(-50%) rotate(360deg);
+		}
 }

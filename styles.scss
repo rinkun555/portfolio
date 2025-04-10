@@ -218,13 +218,35 @@ footer {
   padding-top: 6rem;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 90%;
+    top: 0;
+    transform: translateY(-50%);
+    background-image: url('img/flower.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+    z-index: -1;
+    animation: rotateFlower 20s linear infinite;
+  }
 
   .accent-text{
     text-align: right;
     margin-bottom: 15rem;
+    font-size: 1rem;
   }
+  
   .copyright{
     padding-bottom: 0.5rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -383,7 +405,7 @@ h3 {
 
 /* Main content */
 .title-section {
-  margin: 6rem 0 4rem 0;
+  margin: 6rem 0 5rem 0;
   @include flex(row, flex-start, center, wrap);
   gap: 2rem;
 
@@ -420,8 +442,13 @@ h3 {
     font-weight: 500;
     font-style: italic;
     font-size: 8rem;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
   }
 }
+
+
 
 /* 個別のキーワードスタイル */
 .keyword-circular {
@@ -448,8 +475,16 @@ h3 {
   font-size: 1.1rem;
 }
 
+.keyword-change {
+  font-size: 1.5rem;
+}
+
 .keyword-PEOPLE {
   font-size: 1.6rem;
+}
+
+.keyword-good {
+  font-size: 1rem;
 }
 
 .keyword-SOCIAL {
@@ -496,7 +531,7 @@ h3 {
 
 /* Offers Section */
 .offers-section {
-  margin: 4rem 0 8rem;
+  margin: 4rem 0 10rem;
   padding: 2rem 0;
 }
 
@@ -534,10 +569,9 @@ h3 {
   text-align: left;
   font-weight: 400;
   font-size: 0.9rem;
-  color: $secondary-color;
 
   .capital{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 200;
   }
 }
@@ -796,6 +830,15 @@ body:not(.work-page-common) .images-container {
     }
   }
 }
+
+/* Indec specifi Styles */
+
+#about{
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}
+
 
 /* Work Page Common Styles */
 .work-page-common {
@@ -1169,5 +1212,15 @@ body:not(.work-page-common) .images-container {
 .projects-page,
 .contact-page {
   background-color: $background-color;
+}
+
+/* アニメーションのキーフレーム定義 */
+@keyframes rotateFlower {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
