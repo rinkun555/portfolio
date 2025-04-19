@@ -535,6 +535,29 @@ h3 {
 .offers-section {
   margin: 4rem 0 10rem;
   padding: 2rem 0;
+
+  &.experience{
+
+    h2{
+      width: 45%;
+      margin-bottom: 1rem;
+    }
+
+    .experience_outer{
+      display: flex;    
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .experience_inner{
+        width: 45%;
+        ul{
+          li{
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 .offers-container {

@@ -615,6 +615,26 @@ h3 {
 		margin: 4rem 0 10rem;
 		padding: 2rem 0;
 }
+.offers-section.experience h2 {
+		width: 45%;
+		margin-bottom: 1rem;
+}
+.offers-section.experience .experience_outer {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+}
+.offers-section.experience .experience_outer .experience_inner {
+		width: 45%;
+}
+.offers-section.experience .experience_outer .experience_inner ul li {
+		margin-bottom: 0.8rem;
+}
 
 .offers-container {
 		display: -webkit-box;
