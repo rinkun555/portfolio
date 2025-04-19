@@ -155,6 +155,7 @@
                 <button class="filter-tab" data-filter="qualitative">QUALITATIVE RESEARCH<span class="count"></span></button>
                 <button class="filter-tab" data-filter="future">FUTURE <span class="count"></span></button>
                 <button class="filter-tab" data-filter="systemic">SYSTEMIC <span class="count"></span></button>
+                <button class="filter-tab" data-filter="visualization">VISUALIZATION <span class="count"></span></button>
             </div>
         </section>
 
@@ -237,12 +238,12 @@
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="project">
+            <div class="project-card" data-category="project visualization">
                 <a href="#">
                     <img src="img/project_canteen_value_map.png" alt="Customer value constellation and storyboard for a university canteen project.">
                     <div class="project-info">
                         <h3>(Coming Soon) Remeal</h3>
-                        <p class="project-category">PROJECT / Aarborg Univeristy Canteen</p>
+                        <p class="project-category">PROJECT・VISUALIZATION / Aarborg Univeristy Canteen</p>
                     </div>
                 </a>
             </div>
@@ -340,7 +341,7 @@
                 document.querySelector('[data-filter="all"] .count').textContent = allCount;
                 
                 // カテゴリー別のプロジェクト数 - 新しいフィルターカテゴリに対応
-                const categories = ['project', 'codesign', 'qualitative', 'future', 'systemic'];
+                const categories = ['project', 'codesign', 'qualitative', 'future', 'systemic', 'visualization'];
                 categories.forEach(category => {
                     let count = 0;
                     projectCards.forEach(card => {
