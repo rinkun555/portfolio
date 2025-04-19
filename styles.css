@@ -253,7 +253,7 @@ h3 {
 }
 
 .bold {
-		font-weight: 700;
+		font-weight: 600;
 }
 
 /* Header styles */
@@ -530,43 +530,43 @@ h3 {
 
 /* 個別のキーワードスタイル */
 .keyword-circular {
-		font-size: 1.2rem;
-}
-
-.keyword-tools {
-		font-size: 1.5rem;
-}
-
-.keyword-MEANINGFUL {
-		font-size: 1.6rem;
-}
-
-.keyword-Qualitatitive {
-		font-size: 1.3rem;
-}
-
-.keyword-ECOSYSTEM {
-		font-size: 1.2rem;
-}
-
-.keyword-Facilitation {
 		font-size: 1.1rem;
 }
 
+.keyword-tools {
+		font-size: 1.3rem;
+}
+
+.keyword-MEANINGFUL {
+		font-size: 1.4rem;
+}
+
+.keyword-Qualitatitive {
+		font-size: 1.2rem;
+}
+
+.keyword-ECOSYSTEM {
+		font-size: 1.1rem;
+}
+
+.keyword-Facilitation {
+		font-size: 1em;
+}
+
 .keyword-change {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 }
 
 .keyword-PEOPLE {
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 }
 
 .keyword-good {
-		font-size: 1rem;
+		font-size: 0.9rem;
 }
 
 .keyword-SOCIAL {
-		font-size: 1rem;
+		font-size: 0.9rem;
 }
 
 /* Projects section */
@@ -643,6 +643,9 @@ h3 {
 }
 .offers-section.experience .experience_outer .experience_inner.text p {
 		line-height: 1.7;
+}
+.offers-section.experience .experience_outer .experience_inner.text p .bold {
+		font-size: 1.1rem;
 }
 .offers-section.experience .experience_outer .experience_inner h3 {
 		margin-bottom: 0.7rem;
