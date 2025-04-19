@@ -966,13 +966,6 @@ body:not(.work-page-common) .images-container {
           }
         }
 
-
-        // method and tool
-        &.method li{
-          list-style-type: disc;
-          margin-left: 1em;
-        }
-
          //takeaway
           &.takeaway {
 
@@ -992,6 +985,26 @@ body:not(.work-page-common) .images-container {
               }
             }
           }
+      }
+    }
+
+    .section.reflection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      
+      .section.method, 
+      .section.finaldeliverables {
+        flex: 1;
+        min-width: 250px;
+        
+        ul {
+          li {
+            list-style-type: disc;
+            margin-left: 1em;
+          }
+        }
       }
     }
 
@@ -1190,6 +1203,15 @@ body:not(.work-page-common) .images-container {
           height: auto; // モバイル表示では高さを自動調整に戻す
           margin-bottom: 10px;
         }
+      }
+    }
+
+    .section.reflection {
+      flex-direction: column;
+      
+      .section.method,
+      .section.finaldeliverables {
+        width: 100%;
       }
     }
   }

@@ -1104,10 +1104,6 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 .work-page-common .case-study-container .text-column .section .works_role_title .inner_box {
 		margin-bottom: 1.2rem;
 }
-.work-page-common .case-study-container .text-column .section.method li {
-		list-style-type: disc;
-		margin-left: 1em;
-}
 .work-page-common .case-study-container .text-column .section.takeaway .my-role-list {
 		display: block;
 }
@@ -1121,6 +1117,27 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 }
 .work-page-common .case-study-container .text-column .section.takeaway .takeaway_inner p {
 		width: 50%;
+}
+.work-page-common .case-study-container .section.reflection {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		gap: 2rem;
+		margin-bottom: 3rem;
+}
+.work-page-common .case-study-container .section.reflection .section.method,
+.work-page-common .case-study-container .section.reflection .section.finaldeliverables {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		min-width: 250px;
+}
+.work-page-common .case-study-container .section.reflection .section.method ul li,
+.work-page-common .case-study-container .section.reflection .section.finaldeliverables ul li {
+		list-style-type: disc;
+		margin-left: 1em;
 }
 .work-page-common .case-study-container .image-column {
 		-webkit-box-flex: 1;
@@ -1346,6 +1363,16 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 				max-width: 100%;
 				height: auto;
 				margin-bottom: 10px;
+		}
+		.work-page-common .section.reflection {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+		}
+		.work-page-common .section.reflection .section.method,
+		.work-page-common .section.reflection .section.finaldeliverables {
+				width: 100%;
 		}
 }
 
