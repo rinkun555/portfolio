@@ -531,42 +531,52 @@ h3 {
 /* 個別のキーワードスタイル */
 .keyword-circular {
 		font-size: 1.1rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-tools {
 		font-size: 1.3rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-MEANINGFUL {
-		font-size: 1.4rem;
+		font-size: 1.3rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-Qualitatitive {
 		font-size: 1.2rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-ECOSYSTEM {
 		font-size: 1.1rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-Facilitation {
 		font-size: 1em;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-change {
 		font-size: 1.3rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-PEOPLE {
 		font-size: 1.5rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-good {
 		font-size: 0.9rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 .keyword-SOCIAL {
 		font-size: 0.9rem;
+		color: rgba(86, 63, 46, 0.5098039216);
 }
 
 /* Projects section */
