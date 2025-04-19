@@ -872,7 +872,7 @@ body:not(.work-page-common) .images-container {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: $primary-color;
     font-weight: 400;
     margin-bottom: 1.5rem;
@@ -899,9 +899,9 @@ body:not(.work-page-common) .images-container {
         margin-bottom: 3rem;
 
         h2 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: $primary-color;
-          font-weight: 400;
+          font-weight: 600;
           margin-bottom: 0.5rem;
           text-transform: uppercase;
         }
@@ -944,6 +944,14 @@ body:not(.work-page-common) .images-container {
               font-weight: 700;
           }
           
+          &.main{
+            .inner_title{
+                margin-bottom: 0;
+                .title_bold{
+                  font-weight: 400;
+                }
+          }
+         }
         }
 
         .works_role_title {

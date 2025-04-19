@@ -1022,7 +1022,7 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		opacity: 0.8;
 }
 .work-page-common h1 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		color: #563F2E;
 		font-weight: 400;
 		margin-bottom: 1.5rem;
@@ -1048,9 +1048,9 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		margin-bottom: 3rem;
 }
 .work-page-common .case-study-container .text-column .section h2 {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		color: #563F2E;
-		font-weight: 400;
+		font-weight: 600;
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
 }
@@ -1087,6 +1087,12 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 .work-page-common .case-study-container .text-column .section .my-role-list .takeaway_title {
 		font-size: 1.2rem;
 		font-weight: 700;
+}
+.work-page-common .case-study-container .text-column .section .my-role-list.main .inner_title {
+		margin-bottom: 0;
+}
+.work-page-common .case-study-container .text-column .section .my-role-list.main .inner_title .title_bold {
+		font-weight: 400;
 }
 .work-page-common .case-study-container .text-column .section .works_role_title {
 		font-weight: 600;
