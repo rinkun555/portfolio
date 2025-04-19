@@ -1118,7 +1118,10 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 .work-page-common .case-study-container .text-column .section.takeaway .takeaway_inner p {
 		width: 50%;
 }
-.work-page-common .case-study-container .section.reflection {
+.work-page-common .case-study-container .text-column .section.role {
+		margin-bottom: 5rem;
+}
+.work-page-common .case-study-container .text-column .section.reflection {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -1127,15 +1130,15 @@ body:not(.work-page-common) .images-container .image-column .project-image.small
 		gap: 2rem;
 		margin-bottom: 3rem;
 }
-.work-page-common .case-study-container .section.reflection .section.method,
-.work-page-common .case-study-container .section.reflection .section.finaldeliverables {
+.work-page-common .case-study-container .text-column .section.reflection .section.method,
+.work-page-common .case-study-container .text-column .section.reflection .section.finaldeliverables {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
 		        flex: 1;
 		min-width: 250px;
 }
-.work-page-common .case-study-container .section.reflection .section.method ul li,
-.work-page-common .case-study-container .section.reflection .section.finaldeliverables ul li {
+.work-page-common .case-study-container .text-column .section.reflection .section.method ul li,
+.work-page-common .case-study-container .text-column .section.reflection .section.finaldeliverables ul li {
 		list-style-type: disc;
 		margin-left: 1em;
 }

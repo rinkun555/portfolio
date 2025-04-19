@@ -985,26 +985,30 @@ body:not(.work-page-common) .images-container {
               }
             }
           }
-      }
-    }
 
-    .section.reflection {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      
-      .section.method, 
-      .section.finaldeliverables {
-        flex: 1;
-        min-width: 250px;
-        
-        ul {
-          li {
-            list-style-type: disc;
-            margin-left: 1em;
+          &.role{
+            margin-bottom: 5rem;
           }
-        }
+
+          &.reflection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            
+            .section.method, 
+            .section.finaldeliverables {
+              flex: 1;
+              min-width: 250px;
+              
+              ul {
+                li {
+                  list-style-type: disc;
+                  margin-left: 1em;
+                }
+              }
+            }
+          }
       }
     }
 
