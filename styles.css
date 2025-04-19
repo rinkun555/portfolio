@@ -1058,7 +1058,7 @@ body:not(.work-page-common) .images-container .image-column .project-image:hover
 body:not(.work-page-common) .images-container .image-column .project-image.portrait {
 		aspect-ratio: 3/4;
 		width: 100%;
-		height: 400px;
+		height: 350px;
 }
 body:not(.work-page-common) .images-container .image-column .project-image.landscape {
 		aspect-ratio: 16/9;
