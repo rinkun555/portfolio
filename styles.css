@@ -252,6 +252,10 @@ h3 {
 		font-style: italic;
 }
 
+.bold {
+		font-weight: 700;
+}
+
 /* Header styles */
 .left-header {
 		display: -webkit-box;
@@ -615,9 +619,11 @@ h3 {
 		margin: 4rem 0 10rem;
 		padding: 2rem 0;
 }
+.offers-section h2 {
+		margin-bottom: 1rem;
+}
 .offers-section.experience h2 {
 		width: 45%;
-		margin-bottom: 1rem;
 }
 .offers-section.experience .experience_outer {
 		display: -webkit-box;
@@ -630,12 +636,80 @@ h3 {
 		        justify-content: space-between;
 }
 .offers-section.experience .experience_outer .experience_inner {
-		width: 45%;
+		width: 55%;
+}
+.offers-section.experience .experience_outer .experience_inner.text {
+		width: 35%;
+}
+.offers-section.experience .experience_outer .experience_inner.text p {
+		line-height: 1.7;
+}
+.offers-section.experience .experience_outer .experience_inner h3 {
+		margin-bottom: 0.7rem;
+}
+.offers-section.experience .experience_outer .experience_inner h3:last-of-type {
+		margin-top: 3rem;
 }
 .offers-section.experience .experience_outer .experience_inner ul li {
 		margin-bottom: 0.8rem;
 }
 
+.offers-section.experience .experience_outer .experience_inner ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+}
+.offers-section.experience .experience_outer .experience_inner ul li {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		margin-bottom: 1.2rem;
+		line-height: 1.4;
+}
+.offers-section.experience .experience_outer .experience_inner ul li .date {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 140px;
+		        flex: 0 0 140px;
+		margin-right: 1rem;
+		font-weight: 500;
+}
+.offers-section.experience .experience_outer .experience_inner ul li .date .italic {
+		font-style: italic;
+}
+.offers-section.experience .experience_outer .experience_inner ul li .job-details {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		min-width: 250px;
+}
+.offers-section.experience .experience_outer .experience_inner ul li .job-details a {
+		text-decoration: none;
+		color: primary-color;
+		border-bottom: 1px solid rgba(86, 63, 46, 0.5098039216);
+		-webkit-transition: color 0.2s ease, border-bottom 0.2s ease;
+		transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+.offers-section.experience .experience_outer .experience_inner ul li .job-details a:hover {
+		color: rgba(86, 63, 46, 0.5098039216);
+		border-bottom: 1px solid rgba(86, 63, 46, 0.5098039216);
+}
+
+@media (max-width: 768px) {
+		.offers-section.experience .experience_inner ul li {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+		}
+		.offers-section.experience .experience_inner ul li .date {
+				margin-bottom: 0.3rem;
+		}
+		.offers-section.experience .experience_inner ul li .job-details {
+				padding-left: 0.5rem;
+		}
+}
 .offers-container {
 		display: -webkit-box;
 		display: -ms-flexbox;
