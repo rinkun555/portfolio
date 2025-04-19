@@ -9,26 +9,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // ナビゲーションの HTML を作成
     const navigationHTML = `
       <nav class="top-nav">
-        <ul>
-          <li class="name-section">
-            <a href="index.html">
-              <span>RIO SUZUKI</span>
-              <span>三度の飯よりデザイン</span>
-            </a>
-          </li>
-          <div class="menu-section">
-            <li><a href="index.html" ${currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/') ? 'class="active"' : ''}>HOME</a></li>
-            <li><a href="index.html#works" ${currentPath.includes('hospital') || currentPath.includes('metaphor') ? 'class="active"' : ''}>WORKS</a></li>
-            <li><a href="index.html#about" ${currentPath.includes('about') ? 'class="active"' : ''}>ABOUT</a></li>
-            <li><a href="pdf/cv.pdf">CV</a></li>
-            <li><a href="manifest.html" ${currentPath.endsWith('manifest.html') || currentPath === '/' || currentPath.endsWith('/') ? 'class="active"' : ''}>MANIFEST</a></li>
-            <li class="social-nav-item">
-              <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            </li>
-          </div>
-        </ul>
+      <ul>
+        <li class="name-section">
+        <a href="index.html">
+          <span>RIO SUZUKI</span>
+          <span>三度の飯よりデザイン</span>
+        </a>
+        </li>
+        <div class="menu-section">
+        <li><a href="index.html" ${currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/') ? 'class="active"' : ''}>HOME</a></li>
+        <li><a href="index.html#works" ${currentPath.includes('hospital') || currentPath.includes('metaphor') ? 'class="active"' : ''}>WORKS</a></li>
+        <li><a href="index.html#about" ${currentPath.includes('about') ? 'class="active"' : ''}>ABOUT</a></li>
+        <li><a href="pdf/cv.pdf">CV</a></li>
+        <!-- <li><a href="manifest.html" ${currentPath.endsWith('manifest.html') || currentPath === '/' || currentPath.endsWith('/') ? 'class="active"' : ''}>MANIFEST</a></li> -->
+        <li class="social-nav-item">
+          <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+          <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        </div>
+      </ul>
       </nav>
     `;
 
