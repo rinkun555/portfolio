@@ -4,6 +4,7 @@ $secondary-color: #484848;
 $background-color: #E5DFD1;
 $white: #ffffff;
 $gray: #3e3e3e;
+$primary_pale: #563f2e82;
 
 // Special colors
 $green: #7BA23F;
@@ -526,7 +527,7 @@ h3 {
 
 .project-category {
   font-size: 0.9rem;
-  color: $gray;
+  color: $primary_pale;
   margin-bottom: 0.5rem;
 }
 
@@ -602,62 +603,62 @@ h3 {
     padding-bottom: 0.5rem;
     flex-wrap: nowrap;
   }
-}
 
-.filter-tab {
-  background: none;
-  border: none;
-  color: $primary-color;
-  font-weight: 400;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 0.3rem;
-
-  @include responsive(tablet) {
-    display: inline-block;
-  }
-
-  &:hover {
+  .filter-tab {
+    background: none;
+    border: none;
     color: $primary-color;
-    transform: translateY(-3px);
+    font-weight: 400;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
     border-bottom: 2px solid transparent;
-  }
+    padding-bottom: 0.3rem;
 
-  &.active {
-    border-bottom: 1px solid transparent;
-    color: $secondary-color;
-    font-weight: 700;
-  }
-
-  .count {
-    font-size: 0.7rem;
-    position: relative;
-    top: -0.5em;
-    margin-left: 2px;
-  }
-
-  &[data-filter="all"] {
-    padding-left: 0;
-    padding-right: 1.5rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: -1rem;
-      bottom: 0;
-      z-index: 1;
+    @include responsive(tablet) {
+      display: inline-block;
     }
 
     &:hover {
       color: $primary-color;
       transform: translateY(-3px);
       border-bottom: 2px solid transparent;
+    }
+
+    &.active {
+      border-bottom: 1px solid transparent;
+      color: $secondary-color;
+      font-weight: 700;
+    }
+
+    .count {
+      font-size: 0.7rem;
+      position: relative;
+      top: -0.5em;
+      margin-left: 2px;
+    }
+
+    &[data-filter="all"] {
+      padding-left: 0;
+      padding-right: 1.5rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -1rem;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      &:hover {
+        color: $primary-color;
+        transform: translateY(-3px);
+        border-bottom: 2px solid transparent;
+      }
     }
   }
 }

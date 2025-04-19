@@ -606,7 +606,7 @@ h3 {
 
 .project-category {
 		font-size: 0.9rem;
-		color: #3e3e3e;
+		color: rgba(86, 63, 46, 0.5098039216);
 		margin-bottom: 0.5rem;
 }
 
@@ -756,8 +756,7 @@ h3 {
 				    flex-wrap: nowrap;
 		}
 }
-
-.filter-tab {
+.filter-tabs .filter-tab {
 		background: none;
 		border: none;
 		color: #563F2E;
@@ -771,33 +770,33 @@ h3 {
 		padding-bottom: 0.3rem;
 }
 @media (max-width: 768px) {
-		.filter-tab {
+		.filter-tabs .filter-tab {
 				display: inline-block;
 		}
 }
-.filter-tab:hover {
+.filter-tabs .filter-tab:hover {
 		color: #563F2E;
 		-webkit-transform: translateY(-3px);
 		        transform: translateY(-3px);
 		border-bottom: 2px solid transparent;
 }
-.filter-tab.active {
+.filter-tabs .filter-tab.active {
 		border-bottom: 1px solid transparent;
 		color: #484848;
 		font-weight: 700;
 }
-.filter-tab .count {
+.filter-tabs .filter-tab .count {
 		font-size: 0.7rem;
 		position: relative;
 		top: -0.5em;
 		margin-left: 2px;
 }
-.filter-tab[data-filter=all] {
+.filter-tabs .filter-tab[data-filter=all] {
 		padding-left: 0;
 		padding-right: 1.5rem;
 		position: relative;
 }
-.filter-tab[data-filter=all]::before {
+.filter-tabs .filter-tab[data-filter=all]::before {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -806,7 +805,7 @@ h3 {
 		bottom: 0;
 		z-index: 1;
 }
-.filter-tab[data-filter=all]:hover {
+.filter-tabs .filter-tab[data-filter=all]:hover {
 		color: #563F2E;
 		-webkit-transform: translateY(-3px);
 		        transform: translateY(-3px);

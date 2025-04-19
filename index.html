@@ -104,10 +104,9 @@
                 <button class="filter-tab active" data-filter="all">ALL <span class="count"></span></button>
                 <button class="filter-tab" data-filter="project">PROJECT <span class="count"></span></button>
                 <button class="filter-tab" data-filter="codesign">CO-DESIGN <span class="count"></span></button>
-                <button class="filter-tab" data-filter="data-analysis">QUALITATIVE RESEARCH<span class="count"></span></button>
-                <button class="filter-tab" data-filter="sensemaking">SENSEMAKING <span class="count"></span></button>
+                <button class="filter-tab" data-filter="qualitative">QUALITATIVE RESEARCH<span class="count"></span></button>
                 <button class="filter-tab" data-filter="future">FUTURE <span class="count"></span></button>
-                <button class="filter-tab" data-filter="system">SYSTEM <span class="count"></span></button>
+                <button class="filter-tab" data-filter="systemic">SYSTEMIC <span class="count"></span></button>
             </div>
         </section>
 
@@ -123,7 +122,7 @@
                 </a>
             </div>
 
-            <div class="project-card" data-category="project system">
+            <div class="project-card" data-category="project systemic">
                 <a href="ikea_serviceorigami.html">
                     <img src="img/project_ikea.JPG" alt="Project timeline for IKEA workshop series shown on a planning board.">
                     <div class="project-info">
@@ -132,7 +131,7 @@
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="codesign">
+            <div class="project-card" data-category="project codesign">
                 <a href="ikea_facilitator.html">
                     <img src="img/project_facilitator.png" alt="Manuefest 2025 April ver">
                     <div class="project-info">
@@ -142,7 +141,7 @@
                 </a>
             </div>
 
-            <div class="project-card" data-category="codesign">
+            <div class="project-card" data-category="project codesign">
                 <a href="future_metaphor.html">
                     <img src="img/project_ikea_metaphorcards.png" alt="IKEA workshop using metaphor cards to explore patient experiences.">
                     <div class="project-info">
@@ -161,7 +160,7 @@
                     </div>
                 </a>
             </div>
-            <div class="project-card" data-category="sensemaking">
+            <div class="project-card" data-category="project qualitative">
                 <a href="ikea_sensemaking.html">
                     <img src="img/project_ikea_rootcauses.jpg" alt="Root cause mapping exercise with post-it notes and string connections.">
                     <div class="project-info">
@@ -171,7 +170,7 @@
                 </a>
             </div>
 
-            <div class="project-card" data-category="data-analysis project">
+            <div class="project-card" data-category="qualitative project">
                 <a href="kogehospital_coding.html">
                     <img src="img/project_koge_coding.png" alt="NVivo screenshot showing qualitative coding for cancer survivors.">
                     <div class="project-info">
@@ -181,7 +180,7 @@
                 </a>
             </div>
 
-            <div class="project-card" data-category="workshop">
+            <div class="project-card" data-category="codesign project">
                 <a href="#">
                     <img src="img/project_ikea_legobricks.png" alt="Make tool session with LEGO bricks for ideation and storytelling.">
                     <div class="project-info">
@@ -292,8 +291,8 @@
                 const allCount = projectCards.length;
                 document.querySelector('[data-filter="all"] .count').textContent = allCount;
                 
-                // カテゴリー別のプロジェクト数 - 複数カテゴリに対応
-                const categories = ['project', 'workshop', 'data-analysis', 'sensemaking', 'future', 'learn'];
+                // カテゴリー別のプロジェクト数 - 新しいフィルターカテゴリに対応
+                const categories = ['project', 'codesign', 'qualitative', 'future', 'systemic'];
                 categories.forEach(category => {
                     let count = 0;
                     projectCards.forEach(card => {
