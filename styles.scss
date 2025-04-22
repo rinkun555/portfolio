@@ -12,6 +12,8 @@ $peach: #DB8E71;
 $orange: #F05E1C;
 $gold: #BA9132;
 $teal: #6699A1;
+$red: #9F353A;
+$purple: #4E4F97;
 
 // Mixins
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
@@ -580,6 +582,34 @@ color: $primary_pale;
             // ボールドテキストのスタイルを強化
             .bold{
               font-size: 1.1rem; 
+
+                &.red{
+                color: $red;
+                }
+                
+                &.green{
+                color: $green;
+                }
+                
+                &.peach{
+                color: $peach;
+                }
+                
+                &.orange{
+                color: $orange;
+                }
+                
+                &.gold{
+                color: $gold;
+                }
+                
+                &.teal{
+                color: $teal;
+                }
+                
+                &.purple{
+                color: $purple;
+                }
             }
           }
         }
