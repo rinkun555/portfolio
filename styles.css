@@ -204,7 +204,6 @@ footer .flower-link {
 }
 footer .rotating-flower {
 		width: 100%;
-		height: 100%;
 		opacity: 0.6;
 		-webkit-animation: rotateFlower 20s linear infinite;
 		        animation: rotateFlower 20s linear infinite;
