@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <li><a href="index.html#works" ${currentPath.includes('hospital') || currentPath.includes('metaphor') ? 'class="active"' : ''}>WORKS</a></li>
       <li><a href="index.html#about" ${currentPath.includes('about') ? 'class="active"' : ''}>ABOUT</a></li>
       <li><a href="index.html#flower" ${currentPath.includes('flower') ? 'class="active"' : ''}>FUN</a></li>
-      <li><a href="pdf/cv.pdf">CV</a></li>
+      <li><a href="pdf/CV.pdf">CV</a></li>
       <!-- <li><a href="manifest.html" ${currentPath.endsWith('manifest.html') || currentPath === '/' || currentPath.endsWith('/') ? 'class="active"' : ''}>MANIFEST</a></li> -->
       <li class="social-nav-item">
         <a href="https://www.linkedin.com/in/rio-suzuki-jp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
