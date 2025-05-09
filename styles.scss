@@ -286,36 +286,35 @@ h3 {
 .bold {
   font-weight: 600;
   font-size: 1.1rem;
+}
   
-  &.red{
-    color: $red;
-  }
-  
-  &.green{
-    color: $green;
-  }
-  
-  &.peach{
-    color: $peach;
-  }
-  
-  &.orange{
-    color: $orange;
-  }
-  
-  &.gold{
-    color: $gold;
-  }
-  
-  &.teal{
-    color: $teal;
-  }
-  
-  &.purple{
-    color: $purple;
-  }
+.red{
+  color: $red;
 }
 
+.green{
+  color: $green;
+}
+
+.peach{
+  color: $peach;
+}
+
+.orange{
+  color: $orange;
+}
+
+.gold{
+  color: $gold;
+}
+
+.teal{
+  color: $teal;
+}
+
+.purple{
+  color: $purple;
+}
 /* Header styles */
 .left-header {
   @include flex(row, space-between, flex-start);

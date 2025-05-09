@@ -255,25 +255,32 @@ h3 {
 		font-weight: 600;
 		font-size: 1.1rem;
 }
-.bold.red {
+
+.red {
 		color: #9F353A;
 }
-.bold.green {
+
+.green {
 		color: #7BA23F;
 }
-.bold.peach {
+
+.peach {
 		color: #DB8E71;
 }
-.bold.orange {
+
+.orange {
 		color: #F05E1C;
 }
-.bold.gold {
+
+.gold {
 		color: #BA9132;
 }
-.bold.teal {
+
+.teal {
 		color: #6699A1;
 }
-.bold.purple {
+
+.purple {
 		color: #4E4F97;
 }
 
