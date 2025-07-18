@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <title>Luca Project | RIO SUZUKI</title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Luca Project | RIO SUZUKI">
+    <meta property="og:description" content="Service Designer based in Copenhagen - Luca Project Details">
+    <meta property="og:image" content="https://suzukirio.com/img/og-image.png">
+    <meta property="og:url" content="https://suzukirio.com/luca/">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luca Project | RIO SUZUKI">
+    <meta name="twitter:description" content="Service Designer based in Copenhagen - Luca Project Details">
+    <meta name="twitter:image" content="https://suzukirio.com/img/og-image.png">
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&family=Times+New+Roman:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/times-new-roman" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bds6nij.css">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Modal container -->
+    <div id="imageModal" class="modal">
+        <div class="modal-inner-container">
+            <div class="modal-caption">
+                <h3 id="modalTitle">Image Title</h3>
+                <p id="modalDescription">Image description goes here</p>
+            </div>
+            <img class="modal-content" id="modalImg">
+            <span class="modal-close">&times;</span>
+        </div>
+    </div>
+
+    <div class="header-container">
+        <!-- Navigation will be inserted by JavaScript -->
+    </div>
+
+    <main class="container">
+        <section class="title-section">
+            <div class="intro-text">
+                <h1>Luca Project</h1>
+                <p>Project description and details will be added here.</p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>This is a placeholder for the Luca project content. You can add detailed descriptions, images, and other content about the project here.</p>
+            </div>
+            
+            <div class="project-gallery">
+                <h2>Project Gallery</h2>
+                <div class="images-container">
+                    <div class="image-column main">
+                        <div class="image-wrapper">
+                            <img src="../img/placeholder.jpg" alt="Project Image" class="project-image landscape zoomable" data-description="Description for this image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-details">
+                <h2>Process & Methodology</h2>
+                <p>Describe the process, methodology, and outcomes of the Luca project here.</p>
+            </div>
+        </section>
+        
+        <section class="back-to-projects">
+            <a href="../index.html#works" class="back-button">← Back to all projects</a>
+        </section>
+    </main>
+         
+    <footer>
+        <a href="https://www.instagram.com/tsumami_cph/" class="flower-link" id="flower" aria-label="Special link">
+            <img src="../img/flower.png" alt="Decorative flower" class="rotating-flower">
+        </a>
+        <p class="accent-text">I can make a matcha Latte 🍵 and would love to have a casual talk in person!</p>
+        <p class="copyright">RIO SUZUKI All Rights Reserved 2025</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const closeBtn = document.getElementsByClassName("modal-close")[0];
+            
+            // Get all zoomable images
+            document.querySelectorAll('.zoomable').forEach(img => {
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    document.getElementById('modalTitle').textContent = this.alt;
+                    document.getElementById('modalDescription').textContent = this.dataset.description;
+                }
+            });
+            
+            // Close modal when clicking X
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
