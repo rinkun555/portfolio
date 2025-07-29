@@ -32,11 +32,59 @@ p{
   position: relative;
 }
 
+body{
+          position: relative;
+          background-color: #FAFBF3;
+          
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+              90deg,
+              transparent,
+              transparent 30px,
+              rgba(102, 76, 65, 0.2) 30px,
+              rgba(102, 76, 65, 0.2) 31px
+            );
+            z-index: -4;
+            border-radius: 8px;
+          }
+}
 
 
 // Base styles
 
 .container_outer{
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 100%;
+    height: 100px;
+    background: url('../img/intro_fuwa.png') no-repeat center center;
+    background-size: contain;
+    z-index: 10;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -120px;
+    width: 100%;
+    height: 120px;
+    background: url('../img/intro_mochi.png') no-repeat center center;
+    background-size: contain;
+    z-index: 10;
+  }
+  
   .title {
     &.new img {
       width: 50%;
@@ -66,29 +114,6 @@ p{
           }
 
         .introduction {
-          position: relative;
-          background-color: #FAFBF3;
-          padding: 60px 20px 20px 20px;
-          border-radius: 8px;
-          margin-bottom: 30px;
-          
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-              90deg,
-              transparent,
-              transparent 30px,
-              rgba(102, 76, 65, 0.2) 30px,
-              rgba(102, 76, 65, 0.2) 31px
-            );
-            z-index: 0;
-            border-radius: 8px;
-          }
 
           .box{
             background-color: #ffffff;            
