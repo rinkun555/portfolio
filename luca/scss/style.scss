@@ -58,15 +58,21 @@ body{
 
 // Base styles
 
+header{
+  .mv{
+    margin-bottom: 4em;
+  }
+}
+
 .container_outer{
   position: relative;
   
   &::before {
     content: "";
     position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 100%;
+    top: -110px;
+    left: -70px;
+    width: 90%;
     height: 100px;
     background: url('../img/intro_fuwa.png') no-repeat center center;
     background-size: contain;
@@ -76,9 +82,9 @@ body{
   &::after {
     content: "";
     position: absolute;
-    top: -100px;
-    right: -120px;
-    width: 100%;
+    top: -110px;
+    right: -100px;
+    width: 90%;
     height: 120px;
     background: url('../img/intro_mochi.png') no-repeat center center;
     background-size: contain;
@@ -121,6 +127,7 @@ body{
             z-index: 1;
             padding: 10%;
             border-radius: 50px;
+            margin-bottom: 2.5em;
 
             &.first{
                 position: relative; // Add this to make it a positioning context
