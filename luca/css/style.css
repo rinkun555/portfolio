@@ -7,6 +7,8 @@ html, body, img, h1, h2, h3, h4, p, ul, li, dl, dd, dt, span, a, textarea, input
 img {
 		vertical-align: bottom;
 		max-width: 100%;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
 }
 
 li {
@@ -42,14 +44,18 @@ body::before {
 		border-radius: 8px;
 }
 
+section {
+		padding: 4.5em 2.5em;
+}
+
 header .mv {
 		margin-bottom: 4em;
 }
 
-.container_outer {
+.intro_outer {
 		position: relative;
 }
-.container_outer::before {
+.intro_outer::before {
 		content: "";
 		position: absolute;
 		top: -110px;
@@ -60,7 +66,7 @@ header .mv {
 		background-size: contain;
 		z-index: 10;
 }
-.container_outer::after {
+.intro_outer::after {
 		content: "";
 		position: absolute;
 		top: -110px;
@@ -71,22 +77,17 @@ header .mv {
 		background-size: contain;
 		z-index: 10;
 }
-.container_outer .title.new img {
+.intro_outer .title.new img {
 		width: 50%;
 		margin: 0 auto;
 		display: block;
 }
-.container_outer .title.bagle img {
+.intro_outer .title.bagle img {
 		position: absolute;
 		width: 94%;
 		left: 0;
 }
-
-.container_inner {
-		width: 90%;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 40px 20px;
+.intro_outer .intro_inner {
 		background-image: url("../img/intro_bagle.png");
 		background-size: contain;
 		background-position: top center;
@@ -94,28 +95,82 @@ header .mv {
 		position: relative;
 		padding-top: 250px; /* Add more padding to accommodate higher image */
 }
-
-.introduction .box {
+.intro_outer .box {
 		background-color: #ffffff;
 		position: relative;
 		z-index: 1;
 		padding: 10%;
 		border-radius: 50px;
-		margin-bottom: 2.5em;
+		margin-bottom: 4.5em;
 }
-.introduction .box.first {
-		position: relative;
-}
-.introduction .box.first::after {
+.intro_outer .box::after {
 		content: "";
 		position: absolute;
-		top: -45px; /* Move it above the box */
+		top: -40px;
 		left: 50%;
 		-webkit-transform: translateX(-50%);
-		        transform: translateX(-50%); /* Center it horizontally */
-		width: 100%; /* Fixed width instead of 100% */
+		        transform: translateX(-50%);
+		width: 100%;
 		height: 80px;
-		background: url("../img/number1.png") no-repeat center center; /* Fix the path with ../ */
+		background-repeat: no-repeat;
+		background-position: center center;
 		background-size: contain;
 		z-index: 1;
+}
+.intro_outer .box:first-child::after {
+		background-image: url("../img/number1.png");
+}
+.intro_outer .box:nth-child(2)::after {
+		background-image: url("../img/number2.png");
+}
+.intro_outer .box:nth-child(3)::after {
+		background-image: url("../img/number3.png");
+}
+.intro_outer .box:nth-child(4) {
+		margin-bottom: 0;
+}
+.intro_outer .box:nth-child(4)::after {
+		background-image: url("../img/number4.png");
+}
+
+.calendar {
+		background-color: #30ADFF;
+		background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.2) 40px, rgba(255, 255, 255, 0.2) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.2) 40px, rgba(255, 255, 255, 0.2) 41px);
+}
+.calendar h2 {
+		color: white;
+		text-align: center;
+		margin-bottom: 20px;
+}
+.calendar .calendar_box img {
+		border-radius: 15px;
+}
+
+.store_info {
+		background-color: #A1D9FE;
+		position: relative;
+		overflow: hidden;
+}
+.store_info h2, .store_info p {
+		position: relative;
+		z-index: 3;
+}
+.store_info::before, .store_info::after {
+		content: "";
+		position: absolute;
+		width: 224px;
+		height: 200px;
+		background: url("../img/store_info_footprint.png") no-repeat center center;
+		background-size: contain;
+		z-index: 0;
+}
+.store_info::before {
+		top: 0;
+		left: -40px;
+}
+.store_info::after {
+		bottom: 0px;
+		right: -40px;
+		-webkit-transform: rotate(180deg);
+		        transform: rotate(180deg);
 }
