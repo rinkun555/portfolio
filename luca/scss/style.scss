@@ -4,6 +4,7 @@
 $blue: #30ADFF;
 $light-blue: #A1D9FE;
 $light-blue-2: #E7F4FF;
+$warm-white:#FEFFF8;
 
 // Reset
 html, body, img, h1, h2, h3, h4, p, ul, li, dl, dd, dt, span, a, textarea, input {
@@ -314,10 +315,13 @@ header{
 
 //other_service
 .other_services{
+
+  .other_services_inner{
     display: grid;
     -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
+  }
 
   .other_services_box{
 
@@ -325,7 +329,7 @@ header{
       border-radius: 135px;
       overflow: hidden;
       width: 100%;
-      height:270px;
+      height:250px;
 
           img {
           width: 100%;
