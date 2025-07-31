@@ -174,3 +174,106 @@ header .mv {
 		-webkit-transform: rotate(180deg);
 		        transform: rotate(180deg);
 }
+
+.online_shop .shop_items {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 20px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		margin: 30px 0;
+}
+.online_shop .shop_items .item_img_frame {
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+		border-radius: 200px 200px 20px 20px;
+		border: 1px solid #000;
+		margin: 0 auto 0.5em;
+}
+.online_shop .shop_items .item_img_frame img {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		display: block;
+}
+.online_shop .shop_items .item_img_box .item_name, .online_shop .shop_items .item_img_box .item_price {
+		margin-bottom: 0;
+		line-height: 1.4;
+}
+.online_shop .online_shop_link {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		padding: 20px 30px;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		gap: 10px;
+		border-radius: 100px;
+		border: 1px solid #3F3F3F;
+		background: #30ADFF;
+		-webkit-box-shadow: 6px 10px 0px 0px #FFF, 7px 11px 0px 0px #000;
+		        box-shadow: 6px 10px 0px 0px #FFF, 7px 11px 0px 0px #000;
+}
+
+.cafe_menu {
+		background-color: #E7F4FF;
+}
+.cafe_menu p {
+		color: #30ADFF;
+}
+.cafe_menu .cafe_items .cafe_item {
+		position: relative;
+}
+.cafe_menu .cafe_items .cafe_item .cafe_frame {
+		width: 100%;
+		border-radius: 180px;
+		overflow: hidden;
+		margin-bottom: 4em;
+}
+.cafe_menu .cafe_items .cafe_item .cafe_frame img {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		display: block;
+}
+.cafe_menu .cafe_items .cafe_item .cafe_label {
+		position: absolute;
+		bottom: -1em;
+		right: 0;
+		background-color: #30ADFF;
+		color: white;
+		padding: 1em 1.5em;
+		border-radius: 20px;
+		font-size: 14px;
+		text-align: center;
+		-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.other_services {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 20px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1em;
+}
+.other_services .other_services_box .other_services_frame {
+		border-radius: 135px;
+		overflow: hidden;
+		width: 100%;
+		height: 270px;
+}
+.other_services .other_services_box .other_services_frame img {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		display: block;
+}
