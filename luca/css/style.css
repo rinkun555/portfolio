@@ -60,17 +60,8 @@ section {
 		color: white;
 		margin-bottom: 2em;
 }
-.title_box.side {
-		background-image: url("../img/title_side.svg");
-		background-repeat: repeat-y;
-		background-size: 100% auto;
-		background-position: left center, right center;
-		background-origin: border-box;
-		padding: 2em 0;
-}
-.title_box.side .title {
-		background-color: #ffffff;
-		border-radius: 100px;
+.title_box.white {
+		background-image: url("../img/title_white.svg");
 }
 .title_box .title {
 		position: relative;
@@ -96,6 +87,17 @@ section {
 
 header {
 		position: relative;
+}
+header::after {
+		content: "";
+		position: absolute;
+		bottom: 2rem;
+		right: 1em;
+		width: clamp(80px, 56vw, 250px);
+		height: clamp(80px, 40vw, 250px);
+		background: url("../img/logo.svg") no-repeat center center;
+		background-size: contain;
+		z-index: 10;
 }
 header .mask {
 		width: 100%;
@@ -134,10 +136,10 @@ header .cloud-bg .shape_shadow {
 .intro .intro_outer::before {
 		content: "";
 		position: absolute;
-		top: -190px;
-		left: -30px;
-		width: 230px;
-		height: 100px;
+		top: -160px;
+		left: -28px;
+		width: 207px;
+		height: 90px;
 		background: url("../img/intro_fuwa.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
@@ -146,16 +148,16 @@ header .cloud-bg .shape_shadow {
 		content: "";
 		position: absolute;
 		top: -100px;
-		right: -40px;
-		width: 207px;
-		height: 80px;
+		right: -30px;
+		width: 180px;
+		height: 70px;
 		background: url("../img/intro_mochi.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
 }
 .intro .intro_outer .title.new img {
 		width: 50%;
-		margin: 0 auto;
+		margin: 1em auto 0;
 		display: block;
 }
 .intro .intro_outer .title.bagle img {
@@ -276,7 +278,10 @@ header .cloud-bg .shape_shadow {
 		background-color: #30ADFF;
 		background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.2) 40px, rgba(255, 255, 255, 0.2) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.2) 40px, rgba(255, 255, 255, 0.2) 41px);
 }
-.calendar .title {
+.calendar .title_box {
+		background-size: auto 140px;
+}
+.calendar .title_box .title {
 		color: #30ADFF;
 		text-align: center;
 		background-color: #ffffff;
@@ -291,10 +296,13 @@ header .cloud-bg .shape_shadow {
 		overflow: hidden;
 }
 .store_info .title_box {
-		background-size: auto 140px;
+		background-size: auto 160px;
+}
+.store_info .title_box .title {
+		padding: 0.2em 0;
 }
 .store_info .title_box .title .english {
-		font-size: 1.3em;
+		font-size: 1.2em;
 }
 .store_info h2, .store_info p {
 		position: relative;
@@ -320,6 +328,12 @@ header .cloud-bg .shape_shadow {
 		        transform: rotate(180deg);
 }
 
+.online_shop .title_box {
+		background-size: auto 137px;
+}
+.online_shop .title_box .title .english {
+		font-size: 1.2em;
+}
 .online_shop .shop_items {
 		display: -ms-grid;
 		display: grid;
