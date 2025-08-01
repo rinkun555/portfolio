@@ -79,8 +79,15 @@ section {
 		display: block;
 }
 
-header .mv {
-		margin-bottom: 4em;
+header .mask {
+		width: 100%;
+		height: auto;
+		clip-path: url(#svgPath);
+		-o-object-fit: cover;
+		   object-fit: cover;
+}
+header .shape {
+		height: 0;
 }
 
 .intro_outer {
@@ -89,9 +96,9 @@ header .mv {
 .intro_outer::before {
 		content: "";
 		position: absolute;
-		top: -110px;
-		left: -70px;
-		width: 90%;
+		top: -190px;
+		left: -30px;
+		width: 230px;
 		height: 100px;
 		background: url("../img/intro_fuwa.png") no-repeat center center;
 		background-size: contain;
@@ -100,10 +107,10 @@ header .mv {
 .intro_outer::after {
 		content: "";
 		position: absolute;
-		top: -110px;
-		right: -100px;
-		width: 90%;
-		height: 120px;
+		top: -100px;
+		right: -40px;
+		width: 207px;
+		height: 80px;
 		background: url("../img/intro_mochi.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
