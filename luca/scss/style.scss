@@ -436,6 +436,25 @@ header{
   // cafe_menu
 .cafe_menu {
   background-color: $light-blue-2;
+  position: relative;
+  
+  // Add cloud background images
+ background-image: 
+    url('../img/cafe_menu_cloud_one.png'),
+    url('../img/cafe_menu_cloud_two.png'),
+    url('../img/cafe_menu_cloud_three.png'),
+    url('../img/cafe_menu_cloud_two.png'),
+    url('../img/cafe_menu_cloud_one.png'),
+    url('../img/cafe_menu_cloud_two.png');
+  background-repeat: no-repeat;
+  background-position: 
+    top 1vh left,
+    top 10vh right,
+    top 25vh left,
+    bottom 25vh right,
+   bottom 10vh left,
+    bottom 1vh right;
+  background-size: auto 80px; // or adjust to fit your design
 
       .title_box{
     background-size: auto 137px;
@@ -452,7 +471,9 @@ header{
   }
 
   .cafe_items {
-
+    position: relative;
+    z-index: 1;
+    
     .cafe_item {
       position: relative;
       .cafe_frame {

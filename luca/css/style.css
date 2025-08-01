@@ -386,6 +386,11 @@ header .cloud-bg .shape_shadow {
 
 .cafe_menu {
 		background-color: #E7F4FF;
+		position: relative;
+		background-image: url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_two.png"), url("../img/cafe_menu_cloud_three.png"), url("../img/cafe_menu_cloud_two.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_two.png");
+		background-repeat: no-repeat;
+		background-position: top 1vh left, top 10vh right, top 25vh left, bottom 25vh right, bottom 10vh left, bottom 1vh right;
+		background-size: auto 80px;
 }
 .cafe_menu .title_box {
 		background-size: auto 137px;
@@ -395,6 +400,10 @@ header .cloud-bg .shape_shadow {
 }
 .cafe_menu p {
 		color: #30ADFF;
+}
+.cafe_menu .cafe_items {
+		position: relative;
+		z-index: 1;
 }
 .cafe_menu .cafe_items .cafe_item {
 		position: relative;
