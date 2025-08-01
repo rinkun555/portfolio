@@ -377,3 +377,14 @@ header .mv {
 		   object-fit: cover;
 		display: block;
 }
+
+.footer_inner {
+		text-align: center;
+}
+.footer_inner .logo {
+		width: 60%;
+		margin: 10em auto 3em;
+}
+.footer_inner .copyright {
+		font-size: 0.8em;
+}

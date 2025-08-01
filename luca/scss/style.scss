@@ -424,3 +424,13 @@ header{
 }
 
 
+.footer_inner{
+  text-align: center;
+  .logo{
+    width: 60%;
+    margin: 10em auto 3em;
+  }
+  .copyright{
+    font-size: 0.8em;
+  }
+}
