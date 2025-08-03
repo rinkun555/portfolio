@@ -494,3 +494,22 @@ section.intro {
 .footer_inner .copyright {
 		font-size: 0.8em;
 }
+
+@media (min-width: 767px) {
+		header .mask {
+				height: 40vh;
+		}
+		.intro .intro_outer .title.new img {
+				width: 20%;
+		}
+		.intro .intro_outer .intro_inner {
+				background-size: 70%;
+				width: 80%;
+				margin: 0 auto;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-wrap: wrap;
+				    flex-wrap: wrap;
+		}
+}

@@ -572,3 +572,21 @@ section.intro{
     font-size: 0.8em;
   }
 }
+
+//tablet
+@media (min-width:767px){
+  header .mask{
+    height: 40vh;
+  }
+
+  .intro .intro_outer .title.new img{
+    width: 20%;
+  }
+  .intro .intro_outer .intro_inner {
+      background-size: 70%;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+    flex-wrap: wrap;
+  }
+}
