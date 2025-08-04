@@ -29,11 +29,20 @@
     <!-- Favicon (optional) -->
     <link rel="icon" type="image/png" href="img/favicon.png">
 
-      <script>
-    // Set ID on <body> based on device type
+
+  <script>
     window.onload = function () {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      document.body.id = isMobile ? 'for_SP' : 'for_PC';
+      const pcOnly = document.querySelectorAll(".pc-only");
+      const spOnly = document.querySelectorAll(".sp-only");
+
+      if (isMobile) {
+        pcOnly.forEach(el => el.style.display = "none");
+        spOnly.forEach(el => el.style.display = "block");
+      } else {
+        pcOnly.forEach(el => el.style.display = "block");
+        spOnly.forEach(el => el.style.display = "none");
+      }
     };
   </script>
 
@@ -65,7 +74,7 @@
                     <p class="title bagle"><img class="main-image" src="img/intro_togubagle.png" alt="お豆腐" ></p>
 
                   <div class="intro_inner">
-                    <div class="box">
+                    <div class="box pc-only">
                         <p>地元青梅の原島豆腐店さんのお豆腐をベーグルの生地にたっぷり練り込んだので、クセになるしっとりふわもち食感！</p>
                         <img class="main-image" src="img/tofu.png" alt="地元青梅の原島豆腐店さんのお豆腐" >
                     </div>
