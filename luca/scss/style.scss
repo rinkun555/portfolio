@@ -673,6 +673,7 @@ section.intro{
           width: 24%;
           right: 0;
           left: 0;
+          top: 5vh;
           margin: 0 auto;
         }
         
@@ -688,6 +689,7 @@ section.intro{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
+        padding-top: 40vh;
       }
     }
   }

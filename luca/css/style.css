@@ -576,6 +576,7 @@ section.intro {
 				width: 24%;
 				right: 0;
 				left: 0;
+				top: 5vh;
 				margin: 0 auto;
 		}
 		.intro .intro_outer .title.new img {
@@ -590,6 +591,7 @@ section.intro {
 				-ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
 				grid-template-columns: repeat(4, 1fr);
 				gap: 20px;
+				padding-top: 40vh;
 		}
 		.calendar_box {
 				text-align: center;
