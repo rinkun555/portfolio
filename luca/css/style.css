@@ -90,6 +90,10 @@ section {
 		display: block;
 }
 
+.description {
+		margin-bottom: 3em;
+}
+
 header {
 		position: relative;
 }
@@ -428,9 +432,6 @@ section.intro {
 .cafe_menu .title_box .title .english {
 		font-size: 1.1em;
 }
-.cafe_menu p {
-		color: #30ADFF;
-}
 .cafe_menu .cafe_items {
 		position: relative;
 		z-index: 1;
@@ -528,7 +529,7 @@ section.intro {
 
 @media (min-width: 767px) {
 		header .mask {
-				height: 40vh;
+				height: 50vh;
 		}
 		header::after {
 				width: 30vw;
@@ -554,18 +555,21 @@ section.intro {
 		.title_box .title .japanese {
 				font-size: 0.7em;
 		}
+		.title_box .title .english {
+				font-size: 1.2em;
+		}
 		#intro {
 				padding-top: 0;
 		}
 		.intro .intro_outer::before {
-				left: 19em;
+				left: 17em;
 				width: 16vw;
 				height: 16vh;
-				top: 5em;
+				top: 7em;
 		}
 		.intro .intro_outer::after {
-				top: 7em;
-				right: 23vw;
+				top: 9em;
+				right: 21vw;
 				width: 13vw;
 				height: 13vh;
 		}
@@ -597,11 +601,17 @@ section.intro {
 				text-align: center;
 				height: auto;
 		}
+		#store_info .store_info .title_box .title {
+				padding: 0.5em 0;
+		}
 		#store_info p {
 				margin-bottom: 0;
 		}
 		#store_info .google_map {
-				height: 20vh;
+				height: 40vh;
+		}
+		.store_info .title_box {
+				background-size: auto 140px;
 		}
 		.online_shop p {
 				text-align: center;

@@ -92,20 +92,6 @@ section{
       background-image: url('../img/title_white.svg');
   }
 
-  // &.side{
-  //   background-image: url('../img/title_side.svg');
-  //     background-repeat: repeat-y;
-  //     background-size: 100% auto; // adjust width
-  //     background-position: left center, right center;
-  //     background-origin: border-box;
-  //     padding: 2em 0;
-
-  //     .title{
-  //     background-color: $white;
-  //     border-radius: 100px;
-  //     }
-  // }
-
   .title {
     position: relative;
     z-index: 1;
@@ -130,6 +116,10 @@ section{
       display: block;
     }
   }
+}
+
+.description {
+ margin-bottom: 3em;
 }
 
 // Base styles
@@ -494,10 +484,6 @@ section.intro{
     }
   }
 
-  p{
-    color: $blue;
-  }
-
   .cafe_items {
     position: relative;
     z-index: 1;
@@ -609,7 +595,7 @@ section.intro{
   
   header {
     .mask{
-      height: 40vh;
+      height: 50vh;
     }
     &::after{
       width: 30vw;
@@ -644,6 +630,10 @@ section.intro{
     font-size:0.7em;
   }
 
+  .title_box .title .english{
+    font-size: 1.2em;
+  }
+
   #intro{
     padding-top: 0;
   }
@@ -652,14 +642,14 @@ section.intro{
     .intro_outer {
 
       &::before {
-        left: 19em;
+        left: 17em;
         width: 16vw;
         height: 16vh;
-        top: 5em;
+        top: 7em;
       }
       &::after {
-    top: 7em;
-    right: 23vw;
+    top: 9em;
+    right: 21vw;
         width: 13vw;
         height: 13vh;
       }
@@ -701,14 +691,21 @@ section.intro{
 }
 
 #store_info{
+  .store_info .title_box {
+  
+  .title{
+    padding: 0.5em 0;
+  }
+  }
   p{
     margin-bottom: 0;
   }
     .google_map{
-    height: 20vh;
+    height: 40vh;
   }
 }
-
+.store_info .title_box{    background-size: auto 140px
+}
 .online_shop{
   p{
     text-align: center;
