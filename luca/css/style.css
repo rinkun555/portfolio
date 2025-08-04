@@ -110,7 +110,7 @@ header::after {
 }
 header .mask {
 		width: 100%;
-		height: auto;
+		height: 70vh;
 		-o-object-fit: cover;
 		   object-fit: cover;
 		clip-path: url(#svgPath);

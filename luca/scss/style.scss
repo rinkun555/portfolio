@@ -141,7 +141,7 @@ header{
 
 .mask {
    width: 100%;
-  height: auto; // Or set a fixed height
+  height: 70vh; // Or set a fixed height
   object-fit: cover; // ensures image covers the area
   // aspect-ratio: 750 / 991.9; // same as your SVG viewBox
   -webkit-clip-path: url(#svgPath);
