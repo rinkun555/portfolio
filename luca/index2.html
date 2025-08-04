@@ -50,7 +50,12 @@
 
 <body>
 <header>
-    <video class="mask" src="video/mv_video.mp4" autoplay muted playsinline loop></video>
+    <video class="mask" autoplay muted playsinline loop preload="auto">
+        <source src="video/mv_video.mp4" type="video/mp4">
+        <source src="video/mv_video.webm" type="video/webm">
+        <!-- Fallback image for browsers that don't support video -->
+        <img src="img/mv.png" alt="Toful Bagel">
+    </video>
     <svg class="shape" viewBox="0 0 750 991.9" xmlns="http://www.w3.org/2000/svg" width="auto" height="0" aria-hidden="true" focusable="false">
     <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
         <path d="M0,0v0.747c0.013,0.008,0.028,0.015,0.043,0.021c0.022,0.008,0.047,0.014,0.073,0.016
