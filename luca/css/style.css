@@ -26,7 +26,6 @@ p {
 		margin-bottom: 1em;
 		z-index: 5;
 		position: relative;
-		font-family: "Zen Maru Gothic", sans-serif;
 }
 
 body {
@@ -43,6 +42,10 @@ body::before {
 		background: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(102, 76, 65, 0.2) 30px, rgba(102, 76, 65, 0.2) 31px);
 		z-index: -4;
 		border-radius: 8px;
+}
+
+.bold {
+		font-weight: 700;
 }
 
 section {
@@ -138,6 +141,7 @@ section.intro {
 .intro .intro_outer {
 		position: relative;
 		padding-top: 3em;
+		font-family: "Zen Maru Gothic", sans-serif;
 }
 .intro .intro_outer::before {
 		content: "";
@@ -553,9 +557,7 @@ section.intro {
 		}
 		.calendar_box {
 				text-align: center;
-		}
-		.calendar_box img {
-				height: 50vh;
+				height: auto;
 		}
 		#store_info p {
 				margin-bottom: 0;
