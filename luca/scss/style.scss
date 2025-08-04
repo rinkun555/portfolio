@@ -39,6 +39,7 @@ p{
   margin-bottom: 1em;
   z-index: 5;
   position: relative;
+  font-family: "Zen Maru Gothic", sans-serif;
 }
 
 body{
@@ -575,18 +576,171 @@ section.intro{
 
 //tablet
 @media (min-width:767px){
-  header .mask{
+  
+  header {
+    .mask{
     height: 40vh;
+    }
+    &::after{
+    width: 30vw;
+    height: 30vh;
+    bottom: 0rem;
+    }
+  }
+  
+
+  section{
+    padding: 6em 10em;
   }
 
-  .intro .intro_outer .title.new img{
-    width: 20%;
+  #calendar, #store_info{
+    padding: 6em;
   }
-  .intro .intro_outer .intro_inner {
-      background-size: 70%;
-      width: 80%;
-      margin: 0 auto;
-      display: flex;
-    flex-wrap: wrap;
+
+  .title_box .title .japanese{
+    font-size:0.7em;
   }
+
+  .intro {
+    .intro_outer {
+      padding-top: 5em;
+
+      &::before {
+        left: 32em;
+        width: 16vw;
+        height: 16vh;
+        top: -3em;
+      }
+      &::after {
+      top: -2em;
+          right: 36vw;
+          width: 13vw;
+          height: 13vh;
+      }
+
+      .box{
+        margin: 0;
+      }
+      
+      .title {
+        &.bagle img {
+          width: 24%;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+        }
+        
+        &.new img {
+          width: 14vw;
+        }
+      }
+      
+      .intro_inner {
+        background-size: 50%;
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+  }
+
+
+.calendar_box{
+  text-align: center;
+   img{
+    height: 50vh;
+   }
+}
+
+#store_info{
+  p{
+    margin-bottom: 0;
+  }
+    .google_map{
+    width: 100%;
+    height: 20vh;
+    iframe{
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+.online_shop{
+  p{
+    text-align: center;
+  }
+  .shop_items{
+  gap: 4em;
+  margin-bottom: 4em;
+
+    .item_img_frame{
+    height: 40vh;
+    }
+
+    .item_img_box{
+      .item_name{
+        padding: 0 1em 0.2em;
+      }
+    }
+  } 
+  .online_shop_link{
+    padding: 2em 2em;
+    width: 40%;
+    margin: 0 auto;
+  }
+} 
+
+.cafe_menu {
+    p{
+    text-align: center;
+  }
+  .cafe_items{
+   display: grid;
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .cafe_item{
+      .cafe_frame{
+            height: 40vh;
+          }
+      .cafe_label {
+        bottom: 4em;
+        right: 0;
+        font-size: 1em;
+      }
+    } 
+}
+}
+
+.other_services{
+      p{
+    text-align: center;
+  }
+   .other_services_box .other_services_frame{
+    height: 40vh;
+   }
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.intro, .online_shop, .cafe_menu, .other_services {
+  grid-column: 1 / -1; // Span both columns (full width)
+}
+
+.calendar, .store_info{
+  grid-column: span 1; // Each takes one column (50% width)
+}
+
+.footer_inner .logo{
+  width: 20%;
+}
 }
