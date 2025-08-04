@@ -44,6 +44,15 @@ body::before {
 		border-radius: 8px;
 }
 
+/* Show for SP */
+#for_SP {
+		display: block;
+}
+
+#for_PC {
+		display: none;
+}
+
 .bold {
 		font-weight: 700;
 }
@@ -501,6 +510,13 @@ section.intro {
 }
 
 @media (min-width: 767px) {
+		/* Show for PC */
+		#for_PC {
+				display: block;
+		}
+		#for_SP {
+				display: none;
+		}
 		header .mask {
 				height: 40vh;
 		}
@@ -508,6 +524,16 @@ section.intro {
 				width: 30vw;
 				height: 30vh;
 				bottom: 0rem;
+		}
+		header .cloud-bg {
+				width: 100vw;
+				height: 40vh;
+				bottom: 0;
+				left: 0;
+				aspect-ratio: unset;
+		}
+		header .cloud-bg .shape_shadow {
+				clip-path: url(#svgPath);
 		}
 		section {
 				padding: 6em 10em;

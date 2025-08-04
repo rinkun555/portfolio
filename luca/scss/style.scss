@@ -65,6 +65,15 @@ body{
 }
 
 //Common styles
+/* Show for SP */
+#for_SP{
+  display: block;
+}
+
+#for_PC{
+  display: none;
+}
+
 .bold{
   font-weight: 700;
 }
@@ -580,15 +589,36 @@ section.intro{
 
 //tablet
 @media (min-width:767px){
+  /* Show for PC */
+#for_PC{
+  display: block;
+}
+
+#for_SP{
+  display: none;
+}
   
   header {
     .mask{
-    height: 40vh;
+      height: 40vh;
     }
     &::after{
-    width: 30vw;
-    height: 30vh;
-    bottom: 0rem;
+      width: 30vw;
+      height: 30vh;
+      bottom: 0rem;
+    }
+    
+    .cloud-bg {
+      width: 100vw;
+      height: 40vh;
+      bottom: 0;
+      left: 0;
+      aspect-ratio: unset;
+      
+      .shape_shadow {
+        -webkit-clip-path: url(#svgPath);
+        clip-path: url(#svgPath);
+      }
     }
   }
   
