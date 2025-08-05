@@ -529,7 +529,7 @@ section.intro {
 
 @media (min-width: 767px) {
 		header .mask {
-				height: 50vh;
+				height: 60vh;
 		}
 		header::after {
 				width: 30vw;
