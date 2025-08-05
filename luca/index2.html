@@ -31,8 +31,11 @@
 
 
 <script>
+  // Check if this is the first visit
+  const hasVisited = sessionStorage.getItem('hasVisited');
+  
   window.onload = function () {
-    const isMobile = window.innerWidth <= 768; // You can adjust the value
+    const isMobile = window.innerWidth <= 768;
     const pcOnly = document.querySelectorAll(".pc-only");
     const spOnly = document.querySelectorAll(".sp-only");
 
@@ -43,12 +46,50 @@
       pcOnly.forEach(el => el.style.display = "block");
       spOnly.forEach(el => el.style.display = "none");
     }
+
+    // Show loading animation only for first-time visitors
+    if (!hasVisited) {
+      const loader = document.querySelector('.loading-screen');
+      const logoContainer = document.querySelector('.loading-logo');
+      const leftCurtain = document.querySelector('.curtain-left');
+      const rightCurtain = document.querySelector('.curtain-right');
+      
+      // After 2 seconds, fade out logo
+      setTimeout(() => {
+        logoContainer.classList.add('logo-fade');
+        
+        // After logo fades, start curtain animation
+        setTimeout(() => {
+          leftCurtain.classList.add('curtain-open');
+          rightCurtain.classList.add('curtain-open');
+          sessionStorage.setItem('hasVisited', 'true');
+          
+          // Remove loader completely after animation
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 1500);
+        }, 500); // Wait for logo fade
+      }, 2000); // Show logo for 2 seconds
+    } else {
+      // Hide loader immediately for returning visitors
+      const loader = document.querySelector('.loading-screen');
+      loader.style.display = 'none';
+    }
   };
 </script>
 
 </head>
 
 <body>
+<!-- Loading Screen -->
+<div class="loading-screen">
+  <div class="curtain-left"></div>
+  <div class="curtain-right"></div>
+  <div class="loading-logo">
+    <img src="img/logo.svg" alt="Toful Bagel">
+  </div>
+</div>
+
 <header>
     <video class="mask" autoplay muted playsinline loop preload="auto">
         <source src="video/mv_video.mp4" type="video/mp4">

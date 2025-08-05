@@ -783,3 +783,72 @@ section.intro{
   width: 20%;
 }
 }
+
+// Loading Screen
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  
+  .curtain-left,
+  .curtain-right {
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: $blue;
+    transition: transform 1.5s ease-in-out;
+
+  }
+  
+  .curtain-left {
+    left: 0;
+    
+    &.curtain-open {
+      transform: translateY(-100%);
+      border-radius: 0 0 30% 30%;
+    }
+  }
+  
+  .curtain-right {
+    right: 0;
+    
+    &.curtain-open {
+      transform: translateY(-100%);
+      border-radius: 0 0 30% 30%;
+    }
+  }
+  
+  .loading-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    
+    img {
+      width: 200px;
+      height: auto;
+      animation: pulse 2s ease-in-out infinite;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    &.logo-fade {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
