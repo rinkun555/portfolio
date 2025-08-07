@@ -142,7 +142,7 @@ header .cloud-bg .shape_shadow {
 }
 
 section.intro {
-		padding: 4.5em 0;
+		padding: 6.5em 0 0;
 }
 
 .intro {
@@ -292,7 +292,7 @@ section.intro {
 		background-image: url("../img/number3.png");
 }
 .intro .intro_outer .box:nth-child(4) {
-		margin-bottom: 0;
+		margin-bottom: 4.5em;
 }
 .intro .intro_outer .box:nth-child(4)::after {
 		background-image: url("../img/number4.png");

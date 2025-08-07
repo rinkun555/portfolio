@@ -175,7 +175,7 @@ header{
 
 //introduction
 section.intro{
-  padding:4.5em 0;
+  padding:6.5em 0 0;
 }
 
 .intro{
@@ -184,6 +184,7 @@ section.intro{
   position: relative;
   padding-top: 3em;
   font-family: $font-zen-maru;
+
   
   &::before {
     content: "";
@@ -304,7 +305,7 @@ top: -5.3em;
             }
 
             &:nth-child(4) {
-              margin-bottom: 0;
+              margin-bottom: 4.5em;
               
               &::after {
               background-image: url('../img/number4.png');
