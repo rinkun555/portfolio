@@ -206,7 +206,7 @@ section.intro {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		height: 20vh;
+		max-height: 20vh;
 }
 .intro .intro_outer .box .three_bagel {
 		display: -ms-grid;
@@ -723,6 +723,16 @@ section.intro {
 		}
 		.intro .intro_outer .intro_inner p {
 				font-size: 1.5em;
+		}
+		.intro .intro_outer .bagel_all_outer {
+				height: 40vh;
+				overflow: hidden;
+				position: relative;
+		}
+		.intro .intro_outer .bagel_all_outer img {
+				position: absolute;
+				top: -25vh;
+				opacity: 0.9;
 		}
 		.calendar_box {
 				text-align: center;

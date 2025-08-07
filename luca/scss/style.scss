@@ -244,7 +244,7 @@ top: -5.3em;
             img{
             margin: 0 auto;
             display: flex;
-            height: 20vh;
+            max-height: 20vh;
             }
   
 
@@ -790,6 +790,17 @@ top: -5.3em;
         p{
           font-size: 1.5em;
         }
+      }
+
+      .bagel_all_outer{
+        height: 40vh;
+    overflow: hidden;
+    position: relative;
+    img{
+      position: absolute;
+    top: -25vh;
+    opacity: 0.9;
+    }
       }
     }
   }
