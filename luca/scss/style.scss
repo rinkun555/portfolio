@@ -186,10 +186,10 @@ section.intro{
   &::before {
     content: "";
     position: absolute;
-    top: -5.5em;
-    left: 5px;
-    width: 207px;
-    height: 90px;
+    top: -4.5em;
+    left: 0.6em;
+    width: 20vh;
+    height: 15vh;
     background: url('../img/intro_fuwa.png') no-repeat center center;
     background-size: contain;
     z-index: 10;
@@ -199,9 +199,9 @@ section.intro{
     content: "";
     position: absolute;
     top: -2em;
-    right: 0;
-    width: 180px;
-    height: 70px;
+    right: 1.7em;
+    width: 18vh;
+    height: 10vh;
     background: url('../img/intro_mochi.png') no-repeat center center;
     background-size: contain;
     z-index: 10;
@@ -799,7 +799,7 @@ section.intro{
     top: 0;
     width: 50vw;
     height: 100vh;
-    background-color: $blue;
+    background-color: $light-blue;
     transition: transform 1.5s ease-in-out;
 
   }
