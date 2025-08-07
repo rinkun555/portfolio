@@ -31,6 +31,12 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+          &:hover {
+          transform: scale(0.9);
+          transition: transform 0.2s ease-in-out;
+          }
 }
 
 p{
