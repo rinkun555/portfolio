@@ -114,6 +114,45 @@
         iframe.src = ''; // Stop the map from loading
       }
     });
+
+    // ハンバーガーメニュー機能
+    window.toggleMenu = function() {
+      const navMenu = document.querySelector('.nav-menu');
+      const overlay = document.getElementById('mobileOverlay');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      
+      navMenu.classList.toggle('mobile-active');
+      overlay.classList.toggle('active');
+      hamburgerIcon.classList.toggle('active');
+    };
+
+    window.closeMenu = function() {
+      const navMenu = document.querySelector('.nav-menu');
+      const overlay = document.getElementById('mobileOverlay');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      
+      navMenu.classList.remove('mobile-active');
+      overlay.classList.remove('active');
+      hamburgerIcon.classList.remove('active');
+    };
+
+    // オーバーレイクリックでメニューを閉じる
+    document.addEventListener('click', function(event) {
+      const navMenu = document.querySelector('.nav-menu');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      if (event.target === overlay) {
+        closeMenu();
+      }
+      
+      // ハンバーガーメニュー外クリックで閉じる（モバイル時のみ）
+      if (window.innerWidth <= 768 && 
+          !hamburgerIcon.contains(event.target) && 
+          !navMenu.contains(event.target)) {
+        closeMenu();
+      }
+    });
   };
 </script>
 
@@ -133,6 +172,25 @@
 </div>
 
 <header>
+  <nav>
+    <!-- 共通ナビゲーション -->
+    <ul class="nav-menu">
+      <li><a href="#intro">イントロ</a></li>
+      <li><a href="#calendar">カレンダー</a></li>
+      <li><a href="#store_info">店舗情報</a></li>
+      <li><a href="#online_shop">オンラインショップ</a></li>
+      <li><a href="#cafe_menu">カフェメニュー</a></li>
+      <li><a href="#other_services">その他サービス</a></li>
+    </ul>
+
+    <!-- ハンバーガーアイコン（SP用） -->
+    <div class="hamburger-icon" onclick="toggleMenu()">
+      <img src="img/menu_bar.png" alt="Menu">
+    </div>
+
+    <!-- モバイルメニューオーバーレイ -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </nav>
     <video class="mask" autoplay muted playsinline loop preload="auto">
         <source src="video/mv_video.mp4" type="video/mp4">
         <source src="video/mv_video.webm" type="video/webm">
@@ -479,6 +537,45 @@
         lightbox.style.display = 'none';
         const iframe = lightboxMap.querySelector('iframe');
         iframe.src = ''; // Stop the map from loading
+      }
+    });
+
+    // ハンバーガーメニュー機能
+    window.toggleMenu = function() {
+      const navMenu = document.querySelector('.nav-menu');
+      const overlay = document.getElementById('mobileOverlay');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      
+      navMenu.classList.toggle('mobile-active');
+      overlay.classList.toggle('active');
+      hamburgerIcon.classList.toggle('active');
+    };
+
+    window.closeMenu = function() {
+      const navMenu = document.querySelector('.nav-menu');
+      const overlay = document.getElementById('mobileOverlay');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      
+      navMenu.classList.remove('mobile-active');
+      overlay.classList.remove('active');
+      hamburgerIcon.classList.remove('active');
+    };
+
+    // オーバーレイクリックでメニューを閉じる
+    document.addEventListener('click', function(event) {
+      const navMenu = document.querySelector('.nav-menu');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      if (event.target === overlay) {
+        closeMenu();
+      }
+      
+      // ハンバーガーメニュー外クリックで閉じる（モバイル時のみ）
+      if (window.innerWidth <= 768 && 
+          !hamburgerIcon.contains(event.target) && 
+          !navMenu.contains(event.target)) {
+        closeMenu();
       }
     });
   };

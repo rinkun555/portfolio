@@ -1,0 +1,290 @@
+// ナビゲーション共通スタイル
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  padding: 20px;
+}
+
+// 共通ナビゲーションメニュー
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 15px 30px;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  li {
+    margin: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+      background: rgba(161, 217, 254, 0.3);
+      color: #007bff;
+      transform: translateY(-2px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #007bff;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 80%;
+    }
+  }
+}
+
+// ハンバーガーアイコン（SP用）
+.hamburger-icon {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2002;
+
+  &:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  &.active {
+    transform: rotate(180deg) scale(1.1);
+    background: rgba(161, 217, 254, 0.9);
+
+    img {
+      filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(7471%) hue-rotate(201deg) brightness(97%) contrast(101%);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+  }
+}
+
+// モバイルオーバーレイ
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1999;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// SP（モバイル）対応
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 100px 30px 30px;
+    gap: 0;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 2001;
+
+    &.mobile-active {
+      right: 0;
+    }
+
+    li {
+      width: 100%;
+      border-bottom: 1px solid rgba(161, 217, 254, 0.3);
+      opacity: 0;
+      transform: translateX(30px);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      padding: 20px 0;
+      text-align: left;
+      font-size: 18px;
+      border-radius: 0;
+      position: relative;
+
+      &:hover {
+        background: rgba(161, 217, 254, 0.2);
+        color: #007bff;
+        padding-left: 15px;
+        transform: translateY(0);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: #007bff;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::before {
+        transform: scaleY(1);
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // モバイルメニューアクティブ時のアニメーション
+  .nav-menu.mobile-active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-menu.mobile-active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-menu.mobile-active li:nth-child(2) { transition-delay: 0.2s; }
+  .nav-menu.mobile-active li:nth-child(3) { transition-delay: 0.3s; }
+  .nav-menu.mobile-active li:nth-child(4) { transition-delay: 0.4s; }
+  .nav-menu.mobile-active li:nth-child(5) { transition-delay: 0.5s; }
+  .nav-menu.mobile-active li:nth-child(6) { transition-delay: 0.6s; }
+}
+
+// PC（デスクトップ）対応
+@media (min-width: 769px) {
+  .hamburger-icon {
+    display: none !important;
+  }
+
+  .mobile-overlay {
+    display: none;
+  }
+
+  .nav-menu {
+    position: relative;
+    right: auto;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    padding: 15px 30px;
+    gap: 40px;
+    border-radius: 50px;
+
+    li {
+      width: auto;
+      border-bottom: none;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    a {
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 25px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+// アニメーション効果
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// スムーススクロール対応
+html {
+  scroll-behavior: smooth;
+}
+
+// セクション用のスクロールオフセット
+section {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 80px;
+  }
+}
