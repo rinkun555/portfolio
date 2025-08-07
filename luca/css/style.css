@@ -568,16 +568,16 @@ section.intro {
 				padding-top: 0;
 		}
 		.intro .intro_outer::before {
-				left: 17em;
-				width: 16vw;
-				height: 16vh;
-				top: 7em;
+				left: 28em;
+				width: 19vw;
+				height: 22vh;
+				top: 1em;
 		}
 		.intro .intro_outer::after {
-				top: 9em;
+				top: 5em;
 				right: 21vw;
-				width: 13vw;
-				height: 13vh;
+				width: 17vw;
+				height: 18vh;
 		}
 		.intro .intro_outer .box {
 				margin: 0;
@@ -607,17 +607,28 @@ section.intro {
 				text-align: center;
 				height: auto;
 		}
+		.calendar_box img {
+				height: 50vh;
+		}
+		#store_info .store_info .title_box {
+				width: 100%;
+				background-size: auto 140px;
+		}
 		#store_info .store_info .title_box .title {
 				padding: 0.5em 0;
 		}
 		#store_info p {
 				margin-bottom: 0;
 		}
-		#store_info .google_map {
-				height: 40vh;
+		#store_info .store_info_outer {
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-columns: 1fr 2em 1fr;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
 		}
-		.store_info .title_box {
-				background-size: auto 140px;
+		#store_info .google_map_inner .google_map {
+				height: 40vh;
 		}
 		.online_shop p {
 				text-align: center;
@@ -690,33 +701,40 @@ section.intro {
 		height: 100vh;
 		z-index: 9999;
 }
-.loading-screen .curtain-left,
-.loading-screen .curtain-right {
+.loading-screen .curtain {
 		position: absolute;
 		top: 0;
-		width: 50vw;
-		height: 100vh;
+		width: 20vw;
+		height: 120vh;
 		background-color: #A1D9FE;
 		-webkit-transition: -webkit-transform 1.5s ease-in-out;
 		transition: -webkit-transform 1.5s ease-in-out;
 		transition: transform 1.5s ease-in-out;
 		transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
 }
-.loading-screen .curtain-left {
+.loading-screen .curtain.curtain-open {
+		-webkit-transform: translateY(-100%);
+		        transform: translateY(-100%);
+}
+.loading-screen .curtain-1 {
 		left: 0;
+		border-radius: 0 0 15em 15em;
 }
-.loading-screen .curtain-left.curtain-open {
-		-webkit-transform: translateY(-100%);
-		        transform: translateY(-100%);
-		border-radius: 0 0 30% 30%;
+.loading-screen .curtain-2 {
+		left: 20vw;
+		border-radius: 0 0 15em 15em;
 }
-.loading-screen .curtain-right {
-		right: 0;
+.loading-screen .curtain-3 {
+		left: 40vw;
+		border-radius: 0 0 15em 15em;
 }
-.loading-screen .curtain-right.curtain-open {
-		-webkit-transform: translateY(-100%);
-		        transform: translateY(-100%);
-		border-radius: 0 0 30% 30%;
+.loading-screen .curtain-4 {
+		left: 60vw;
+		border-radius: 0 0 15em 15em;
+}
+.loading-screen .curtain-5 {
+		left: 80vw;
+		border-radius: 0 0 15em 15em;
 }
 .loading-screen .loading-logo {
 		position: absolute;

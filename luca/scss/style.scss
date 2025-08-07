@@ -648,16 +648,16 @@ section.intro{
     .intro_outer {
 
       &::before {
-        left: 17em;
-        width: 16vw;
-        height: 16vh;
-        top: 7em;
+    left: 28em;
+    width: 19vw;
+    height: 22vh;
+    top: 1em;
       }
       &::after {
-    top: 9em;
+top: 5em;
     right: 21vw;
-        width: 13vw;
-        height: 13vh;
+    width: 17vw;
+    height: 18vh;
       }
 
       .box{
@@ -694,24 +694,38 @@ section.intro{
 .calendar_box{
   text-align: center;
   height: auto;
+
+  img{
+    height: 50vh;
+  }
 }
 
 #store_info{
+
   .store_info .title_box {
+    width: 100%;
+    background-size: auto 140px;
   
   .title{
     padding: 0.5em 0;
   }
   }
-  p{
-    margin-bottom: 0;
-  }
-    .google_map{
-    height: 40vh;
+    p{
+      margin-bottom: 0;
+    }
+.store_info_outer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+  .google_map_inner{
+     
+      .google_map{
+      height: 40vh;
+      }
   }
 }
-.store_info .title_box{    background-size: auto 140px
-}
+
 .online_shop{
   p{
     text-align: center;
@@ -799,33 +813,43 @@ section.intro{
   height: 100vh;
   z-index: 9999;
   
-  .curtain-left,
-  .curtain-right {
+  .curtain {
     position: absolute;
     top: 0;
-    width: 50vw;
-    height: 100vh;
+    width: 20vw; // Each curtain is 20% of viewport width (100% / 5)
+    height: 120vh;
     background-color: $light-blue;
     transition: transform 1.5s ease-in-out;
-
+    
+    &.curtain-open {
+      transform: translateY(-100%);
+    }
   }
   
-  .curtain-left {
+  .curtain-1 {
     left: 0;
-    
-    &.curtain-open {
-      transform: translateY(-100%);
-      border-radius: 0 0 30% 30%;
-    }
+    border-radius: 0 0 15em 15em;
   }
   
-  .curtain-right {
-    right: 0;
-    
-    &.curtain-open {
-      transform: translateY(-100%);
-      border-radius: 0 0 30% 30%;
-    }
+  .curtain-2 {
+    left: 20vw;
+    border-radius: 0 0 15em 15em;
+  }
+  
+  .curtain-3 {
+    left: 40vw;
+    border-radius: 0 0 15em 15em;
+  }
+  
+  .curtain-4 {
+    left: 60vw;
+    border-radius: 0 0 15em 15em;
+  }
+  
+  .curtain-5 {
+    left: 80vw;
+    border-radius: 0 0 15em 15em;
+
   }
   
   .loading-logo {

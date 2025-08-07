@@ -51,8 +51,7 @@
     if (!hasVisited) {
       const loader = document.querySelector('.loading-screen');
       const logoContainer = document.querySelector('.loading-logo');
-      const leftCurtain = document.querySelector('.curtain-left');
-      const rightCurtain = document.querySelector('.curtain-right');
+      const curtains = document.querySelectorAll('.curtain');
       
       // After 2 seconds, fade out logo
       setTimeout(() => {
@@ -60,8 +59,9 @@
         
         // After logo fades, start curtain animation
         setTimeout(() => {
-          leftCurtain.classList.add('curtain-open');
-          rightCurtain.classList.add('curtain-open');
+          curtains.forEach(curtain => {
+            curtain.classList.add('curtain-open');
+          });
           sessionStorage.setItem('hasVisited', 'true');
           
           // Remove loader completely after animation
@@ -83,8 +83,11 @@
 <body>
 <!-- Loading Screen -->
 <div class="loading-screen">
-  <div class="curtain-left"></div>
-  <div class="curtain-right"></div>
+  <div class="curtain curtain-1"></div>
+  <div class="curtain curtain-2"></div>
+  <div class="curtain curtain-3"></div>
+  <div class="curtain curtain-4"></div>
+  <div class="curtain curtain-5"></div>
   <div class="loading-logo">
     <img src="img/logo.svg" alt="Toful Bagel">
   </div>
@@ -165,25 +168,30 @@
                 </h2>
             </div>
 
-            
-            <div class="google_map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.86674366108105!2d139.26808914237992!3d35.790599026951654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019252fb524f031%3A0x96a48bd03a281c5!2sToful%20Bagel%20cafe!5e0!3m2!1sen!2sjp!4v1754301077715!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="store_info_outer">
+                <div class="store_info_inner">
+                <p><span class="bold">東青梅駅から徒歩6分</span><br><br>
+                <span class="bold">営業時間</span><br>
+                平日：8:00〜17:00<br>
+                土日祝：9:00〜17:00（モーニングセット 9:00〜11:00／土日祝限定）<br>
+                ランチセット：11:00〜15:00（L.O 14:00）<br>
+                ※なくなり次第、早めに閉店することがあります。<br>
+
+                <span class="bold">定休日　水曜日・木曜日</span><br><br>
+
+                <span class="bold">駐車場</span><br>お店に向かって右横：小型車2台 または 大型車1台まで駐車可<br>
+                ※満車の場合は近隣のパーキングをご利用ください。<br>
+                ※近隣施設への駐車はご遠慮ください。<br><br>
+
+                店内 10席・わんちゃんOK（リードとおむつの着用お願いします）<br></p>
+                </div>
+
+                <div class="google_map_outer">
+                    <div class="google_map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.86674366108105!2d139.26808914237992!3d35.790599026951654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019252fb524f031%3A0x96a48bd03a281c5!2sToful%20Bagel%20cafe!5e0!3m2!1sen!2sjp!4v1754301077715!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
             </div>
-
-            <p>東青梅駅から徒歩6分<br><br>
-            <span class="bold">営業時間</span><br>
-            平日：8:00〜17:00<br>
-            土日祝：9:00〜17:00（モーニングセット 9:00〜11:00／土日祝限定）<br>
-            ランチセット：11:00〜15:00（L.O 14:00）<br>
-            ※なくなり次第、早めに閉店することがあります。<br>
-
-            <span class="bold">定休日　水曜日・木曜日</span><br><br>
-
-            <span class="bold">駐車場</span><br>お店に向かって右横：小型車2台 または 大型車1台まで駐車可<br>
-            ※満車の場合は近隣のパーキングをご利用ください。<br>
-            ※近隣施設への駐車はご遠慮ください。<br><br>
-
-            店内 　 10席・わんちゃんOK（リードとおむつの着用お願いします）<br></p>
         </section>
 
 
