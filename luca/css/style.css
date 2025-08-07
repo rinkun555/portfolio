@@ -735,26 +735,25 @@ section.intro {
 				max-width: calc(95vw - 40px);
 				max-height: calc(95vh - 40px);
 		}
-		#store_info .store_info .title_box {
-				width: 100%;
-				background-size: auto 140px;
-		}
-		#store_info .store_info .title_box .title {
-				padding: 0.5em 0;
-		}
-		#store_info p {
+		.store_info p {
 				margin-bottom: 0;
 				font-size: 1.2em;
 		}
-		#store_info .store_info_outer {
+		.store_info .title_box {
+				background-size: auto 140px !important;
+		}
+		.store_info .title_box .title {
+				padding: 0.5em 0;
+		}
+		.store_info .store_info_outer {
 				display: -ms-grid;
 				display: grid;
-				-ms-grid-columns: 1fr 2em 1fr;
+				-ms-grid-columns: 1fr 4em 1fr;
 				grid-template-columns: repeat(2, 1fr);
-				gap: 2em;
+				gap: 4em;
 		}
-		#store_info .google_map_inner .google_map {
-				height: 40vh;
+		.store_info .google_map_outer .google_map {
+				height: 66vh;
 		}
 		.online_shop p {
 				text-align: center;

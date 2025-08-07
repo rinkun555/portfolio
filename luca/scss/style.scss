@@ -816,32 +816,30 @@ top: -5.3em;
 
 }
 
-#store_info{
-
-  .store_info .title_box {
-    width: 100%;
-    background-size: auto 140px;
-  
-  .title{
-    padding: 0.5em 0;
-  }
-  }
+  .store_info {
     p{
       margin-bottom: 0;
       font-size: 1.2em;
     }
-.store_info_outer{
+
+    .title_box {
+            background-size: auto 140px!important;
+            .title{
+        padding: 0.5em 0;
+      }
+    }
+    .store_info_outer{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2em;
+  gap: 4em;
 }
-  .google_map_inner{
+  .google_map_outer{
      
       .google_map{
-      height: 40vh;
+      height: 66vh;
       }
   }
-}
+  }
 
 .online_shop{
   p{
