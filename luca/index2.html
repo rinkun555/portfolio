@@ -31,10 +31,10 @@
 
 
 <script>
-  // Check if this is the first visit
-  const hasVisited = sessionStorage.getItem('hasVisited');
-  
   window.onload = function () {
+    // Check if this is the first visit
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    
     const isMobile = window.innerWidth <= 768;
     const pcOnly = document.querySelectorAll(".pc-only");
     const spOnly = document.querySelectorAll(".sp-only");
@@ -75,6 +75,45 @@
       const loader = document.querySelector('.loading-screen');
       loader.style.display = 'none';
     }
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxMap = document.getElementById('lightbox-map');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const type = this.getAttribute('data-lightbox');
+        lightbox.style.display = 'flex';
+        
+        if (type === 'calendar') {
+          lightboxImage.src = 'img/calendar.jpg';
+          lightboxImage.style.display = 'block';
+          lightboxMap.style.display = 'none';
+        } else if (type === 'map') {
+          const iframe = lightboxMap.querySelector('iframe');
+          iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.86674366108105!2d139.26808914237992!3d35.790599026951654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019252fb524f031%3A0x96a48bd03a281c5!2sToful%20Bagel%20cafe!5e0!3m2!1sen!2sjp!4v1754301077715!5m2!1sen!2sjp';
+          lightboxMap.style.display = 'block';
+          lightboxImage.style.display = 'none';
+        }
+      });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+      lightbox.style.display = 'none';
+      const iframe = lightboxMap.querySelector('iframe');
+      iframe.src = ''; // Stop the map from loading
+    });
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        const iframe = lightboxMap.querySelector('iframe');
+        iframe.src = ''; // Stop the map from loading
+      }
+    });
   };
 </script>
 
@@ -100,7 +139,7 @@
         <!-- Fallback image for browsers that don't support video -->
         <img src="img/mv.png" alt="Toful Bagel">
     </video>
-    <svg class="shape" viewBox="0 0 750 991.9" xmlns="http://www.w3.org/2000/svg" width="auto" height="0" aria-hidden="true" focusable="false">
+    <svg class="shape" viewBox="0 0 750 991.9" xmlns="http://www.w3.org/2000/svg" height="0" aria-hidden="true" focusable="false">
     <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
         <path d="M0,0v0.747c0.013,0.008,0.028,0.015,0.043,0.021c0.022,0.008,0.047,0.014,0.073,0.016
                 c0.032,0.063,0.112,0.108,0.206,0.109c0.034,0.063,0.116,0.108,0.211,0.108s0.177-0.045,0.211-0.108
@@ -156,7 +195,7 @@
             </div>
    
             <div class ="calendar_box">
-                <img src="img/calendar.jpg" alt="今月のカレンダー" >
+                <img src="img/calendar.jpg" alt="今月のカレンダー" class="lightbox-trigger" data-lightbox="calendar">
             </div>
         </section>
 
@@ -326,6 +365,17 @@
 
     </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-map" class="lightbox-map-container">
+                <iframe src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer_inner">
             <img class="logo" src="img/logo.svg" alt="Toful Bagel">
@@ -347,6 +397,93 @@
         }
     }
     </script> -->
+
+    <script>
+  window.onload = function () {
+    // Check if this is the first visit
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    
+    const isMobile = window.innerWidth <= 768;
+    const pcOnly = document.querySelectorAll(".pc-only");
+    const spOnly = document.querySelectorAll(".sp-only");
+
+    if (isMobile) {
+      pcOnly.forEach(el => el.style.display = "none");
+      spOnly.forEach(el => el.style.display = "block");
+    } else {
+      pcOnly.forEach(el => el.style.display = "block");
+      spOnly.forEach(el => el.style.display = "none");
+    }
+
+    // Show loading animation only for first-time visitors
+    if (!hasVisited) {
+      const loader = document.querySelector('.loading-screen');
+      const logoContainer = document.querySelector('.loading-logo');
+      const curtains = document.querySelectorAll('.curtain');
+      
+      // After 2 seconds, fade out logo
+      setTimeout(() => {
+        logoContainer.classList.add('logo-fade');
+        
+        // After logo fades, start curtain animation
+        setTimeout(() => {
+          curtains.forEach(curtain => {
+            curtain.classList.add('curtain-open');
+          });
+          sessionStorage.setItem('hasVisited', 'true');
+          
+          // Remove loader completely after animation
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 1500);
+        }, 500); // Wait for logo fade
+      }, 2000); // Show logo for 2 seconds
+    } else {
+      // Hide loader immediately for returning visitors
+      const loader = document.querySelector('.loading-screen');
+      loader.style.display = 'none';
+    }
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxMap = document.getElementById('lightbox-map');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const type = this.getAttribute('data-lightbox');
+        lightbox.style.display = 'flex';
+        
+        if (type === 'calendar') {
+          lightboxImage.src = 'img/calendar.jpg';
+          lightboxImage.style.display = 'block';
+          lightboxMap.style.display = 'none';
+        } else if (type === 'map') {
+          const iframe = lightboxMap.querySelector('iframe');
+          iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.86674366108105!2d139.26808914237992!3d35.790599026951654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019252fb524f031%3A0x96a48bd03a281c5!2sToful%20Bagel%20cafe!5e0!3m2!1sen!2sjp!4v1754301077715!5m2!1sen!2sjp';
+          lightboxMap.style.display = 'block';
+          lightboxImage.style.display = 'none';
+        }
+      });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+      lightbox.style.display = 'none';
+      const iframe = lightboxMap.querySelector('iframe');
+      iframe.src = ''; // Stop the map from loading
+    });
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        const iframe = lightboxMap.querySelector('iframe');
+        iframe.src = ''; // Stop the map from loading
+      }
+    });
+  };
+</script>
 </body>
 
 </html>
