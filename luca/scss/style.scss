@@ -188,8 +188,8 @@ section.intro{
   &::before {
     content: "";
     position: absolute;
-    top: -7.3em;
-    left: 0.6em;
+top: -5.3em;
+    left: 0.2em;
     width: 24vh;
     height: 15vh;
     background: url('../img/intro_fuwa.png') no-repeat center center;
@@ -200,8 +200,8 @@ section.intro{
   &::after {
     content: "";
     position: absolute;
-    top: -4em;
-    right: 1.7em;
+    top: -2.3em;
+    right: 1em;
     width: 20vh;
     height: 12vh;
     background: url('../img/intro_mochi.png') no-repeat center center;
@@ -357,7 +357,7 @@ section.intro{
   }
   .google_map{
     width: 100%;
-    height: 30vh;
+    height: 50vh;
     iframe{
       width: 100%;
       height: 100%;
@@ -422,8 +422,8 @@ section.intro{
     img {
       width: auto;
       height: auto;
-      max-width: calc(95vw - 40px); // Account for padding
-      max-height: calc(95vh - 40px); // Account for padding
+      max-width: 97vw; // Account for padding
+      max-height: 95vh; // Account for padding
       object-fit: contain;
       display: block;
     }
@@ -680,7 +680,7 @@ section.intro{
   }
 }
 
-//tablet
+//tablet PC
 @media (min-width:767px){
 
   p{
@@ -801,6 +801,19 @@ section.intro{
   img{
     height: 66vh;
   }
+}
+
+/// Lightbox styles
+.lightbox {
+  .lightbox-content {
+    
+    img {
+
+      max-width: calc(95vw - 40px); // Account for padding
+      max-height: calc(95vh - 40px); 
+    }
+  }
+
 }
 
 #store_info{
