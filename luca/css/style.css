@@ -24,14 +24,6 @@ a {
 		transition: transform 0.2s ease-in-out;
 		transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
-a:hover {
-		-webkit-transform: scale(0.9);
-		        transform: scale(0.9);
-		-webkit-transition: -webkit-transform 0.2s ease-in-out;
-		transition: -webkit-transform 0.2s ease-in-out;
-		transition: transform 0.2s ease-in-out;
-		transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
 
 p {
 		font-size: 1em;
@@ -253,7 +245,7 @@ section.intro {
 		-ms-grid-column: 3;
 }
 .intro .intro_outer .box .three_bagel img {
-		width: 100px;
+		width: 100%;
 		height: auto;
 		-o-object-fit: cover;
 		   object-fit: cover;
@@ -648,6 +640,14 @@ section.intro {
 @media (min-width: 767px) {
 		p {
 				font-size: 1.1em;
+		}
+		a:hover {
+				-webkit-transform: scale(0.9);
+				        transform: scale(0.9);
+				-webkit-transition: -webkit-transform 0.2s ease-in-out;
+				transition: -webkit-transform 0.2s ease-in-out;
+				transition: transform 0.2s ease-in-out;
+				transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 		}
 		section .title .english {
 				font-size: 1.4em !important;

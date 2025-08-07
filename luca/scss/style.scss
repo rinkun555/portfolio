@@ -33,10 +33,6 @@ a {
   color: inherit;
   display: block;
   transition: transform 0.2s ease-in-out;
-          &:hover {
-          transform: scale(0.9);
-          transition: transform 0.2s ease-in-out;
-          }
 }
 
 p{
@@ -259,7 +255,7 @@ section.intro{
               align-items: center;
 
               img {
-                width: 100px;
+                width: 100%;
                 height: auto;
                 object-fit: cover;
               }
@@ -689,6 +685,13 @@ section.intro{
 
   p{
     font-size: 1.1em;
+  }
+
+  a{
+      &:hover {
+      transform: scale(0.9);
+      transition: transform 0.2s ease-in-out;
+      }
   }
 
   section .title .english{
