@@ -222,27 +222,33 @@ section.intro{
   }
  
  .intro_inner {
-      background-image: url('../img/intro_bagle.png');
+      background-image: url('../img/intro_togubagle_round.png');
       background-size: 120%;
       background-position: top center;
       background-repeat: no-repeat;
       position: relative;
-            padding-top: 250px; /* Add more padding to accommodate higher image */
-          }
+      padding-top: 35vh; /* Add more padding to accommodate higher image */
+      }
 
           .box{
             background-color: #ffffff;            
             position: relative;
             z-index: 1;
-            padding: 10%;
+            padding: 2em;
             border-radius: 50px;
             margin: 0 2.5em 4.5em;
+
+            img{
+            margin: 0 auto;
+            display: flex;
+            height: 20vh;
+            }
+  
 
             .three_bagel {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               grid-template-rows: auto auto;
-              max-width: 300px; 
               justify-items: center;
               align-items: center;
 
@@ -272,7 +278,7 @@ section.intro{
             &::after {
               content: "";
               position: absolute;
-              top: -40px;
+              top: -3.5em;
               left: 50%;
               transform: translateX(-50%);
               width: 100%;
