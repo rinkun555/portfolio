@@ -1057,16 +1057,20 @@ p{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    transition: opacity 1s ease-out, transform 1s ease-out;
     
     img {
       width: 200px;
       height: auto;
       animation: pulse 2s ease-in-out infinite;
-      transition: opacity 0.5s ease-out;
     }
     
     &.logo-fade {
       opacity: 0;
+      
+      img {
+        animation: none;
+      }
     }
   }
 }
@@ -1086,6 +1090,10 @@ p{
   0%, 100% {
     transform: scale(1);
     opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
   }
   50% {
     transform: scale(1.1);
