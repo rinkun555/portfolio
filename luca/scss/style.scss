@@ -868,7 +868,7 @@ top: 0.7em;
   height: auto;
 
   img{
-    height: 66vh;
+    height: 80vh;
   }
 }
 
@@ -897,15 +897,11 @@ top: 0.7em;
         padding: 0.5em 0;
       }
     }
-    .store_info_outer{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4em;
-}
+
   .google_map_outer{
      
       .google_map{
-      height: 66vh;
+      height: 40vh;
       }
   }
   }
