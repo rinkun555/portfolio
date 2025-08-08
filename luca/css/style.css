@@ -31,7 +31,7 @@ nav.nav-hidden {
 		        align-items: flex-start;
 		list-style: none;
 		margin: 0;
-		padding: 10em 2em;
+		padding: 7em 2em;
 		-webkit-box-sizing: border-box;
 		        box-sizing: border-box;
 		background: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(48, 173, 255, 0.4117647059) 30px, rgba(48, 173, 255, 0.1607843137) 31px);
@@ -124,8 +124,8 @@ nav.nav-hidden {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		width: 3em;
-		height: 3em;
+		width: 2.5em;
+		height: 2.5em;
 		cursor: pointer;
 		background: #A1D9FE;
 		border-radius: 0 0 40% 40%;
@@ -153,12 +153,47 @@ nav.nav-hidden {
 		transition: all 0.3s ease;
 }
 
+.sp-instagram-icon {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		width: 2.5em;
+		height: 2.5em;
+		cursor: pointer;
+		background: #A1D9FE;
+		border-radius: 0 0 40% 40%;
+		padding: 1em;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+.sp-instagram-icon:hover {
+		-webkit-transform: scale(1.1);
+		        transform: scale(1.1);
+		background: rgb(255, 255, 255);
+}
+.sp-instagram-icon img {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: contain;
+		   object-fit: contain;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		-webkit-filter: brightness(0) invert(1);
+		        filter: brightness(0) invert(1);
+}
+
 .hamburger-icon {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		width: 3em;
-		height: 3em;
+		width: 2.5em;
+		height: 2.5em;
 		cursor: pointer;
 		background: #30ADFF;
 		border-radius: 0 0 40% 40%;
@@ -308,7 +343,8 @@ nav.nav-hidden {
 
 @media (min-width: 760px) and (max-width: 1599px) {
 		.hamburger-icon,
-		.online-shop-icon {
+		.online-shop-icon,
+		.sp-instagram-icon {
 				width: 4em;
 				height: 4em;
 		}

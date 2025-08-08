@@ -32,7 +32,7 @@ nav {
   align-items: flex-start;
   list-style: none;
   margin: 0;
-  padding: 10em 2em;
+  padding: 7em 2em;
   box-sizing: border-box;
   background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30adff69 30px, #30adff29 31px);
   background-color: $light-blue;
@@ -118,8 +118,8 @@ nav {
 // オンラインショップアイコン（SP用）
 .online-shop-icon {
   display: flex;
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   cursor: pointer;
   background: $light-blue;
 border-radius: 0 0 40% 40%;
@@ -141,11 +141,38 @@ border-radius: 0 0 40% 40%;
   }
 }
 
+// SP用Instagramアイコン
+.sp-instagram-icon {
+  display: flex;
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+  background: $light-blue;
+  border-radius: 0 0 40% 40%;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1); // 白色に変更
+  }
+}
+
 // ハンバーガーアイコン（SP用）
 .hamburger-icon {
   display: flex;
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   cursor: pointer;
   background: $blue;
   border-radius: 0 0 40% 40%;
@@ -270,7 +297,8 @@ border-radius: 0 0 40% 40%;
 @media (min-width: 760px) and (max-width: 1599px) {
 
   .hamburger-icon,
-  .online-shop-icon {
+  .online-shop-icon,
+  .sp-instagram-icon {
     width: 4em;
     height: 4em;
   }
