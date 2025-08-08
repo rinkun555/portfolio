@@ -321,8 +321,8 @@ nav.nav-hidden {
 				-webkit-box-align: center;
 				    -ms-flex-align: center;
 				        align-items: center;
-				padding: 0.5em 1.5em;
-				gap: 0.5em;
+				padding: 0.2em 1.5em;
+				gap: 0.3em;
 				border-radius: 0 0 80px 80px;
 				z-index: auto;
 		}
@@ -1168,22 +1168,12 @@ section.intro {
 				font-size: 1.4em !important;
 		}
 		header .mask {
-				height: 60vh;
+				height: 80vh;
 		}
 		header::after {
 				width: 30vw;
 				height: 30vh;
 				bottom: 0rem;
-		}
-		header .cloud-bg {
-				width: 100vw;
-				height: 40vh;
-				bottom: 0;
-				left: 0;
-				aspect-ratio: unset;
-		}
-		header .cloud-bg .shape_shadow {
-				clip-path: url(#svgPath);
 		}
 		section {
 				padding: 10em 6em;
@@ -1444,6 +1434,18 @@ section.intro {
 		}
 }
 
+@keyframes pulse {
+		0%, 100% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+				opacity: 1;
+		}
+		50% {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+				opacity: 0.8;
+		}
+}
 @keyframes pulse {
 		0%, 100% {
 				-webkit-transform: scale(1);
