@@ -1335,29 +1335,25 @@ section.intro {
 				padding-top: 0;
 		}
 		.intro .intro_outer::before {
-				left: 14em;
-				width: 19vw;
-				height: 22vh;
-				top: 1em;
+				top: 0.7em;
+				right: 5vw;
+				width: 28vh;
+				height: 18vh;
 		}
 		.intro .intro_outer::after {
 				top: 7em;
-				right: 14vw;
-				width: 17vw;
-				height: 18vh;
+				left: 3vw;
+				width: 23vw;
+				height: 22vh;
 		}
 		.intro .intro_outer .box {
 				margin: 0;
 		}
-		.intro .intro_outer .title.bagle img {
-				width: 24%;
-				right: 0;
-				left: 0;
-				top: 5vh;
-				margin: 0 auto;
-		}
 		.intro .intro_outer .title.new img {
 				width: 14vw;
+		}
+		.intro .intro_outer .title.bagle {
+				width: 40%;
 		}
 		.intro .intro_outer .intro_inner {
 				background-size: 50%;
@@ -1371,7 +1367,7 @@ section.intro {
 				padding-top: 40vh;
 		}
 		.intro .intro_outer .intro_inner p {
-				font-size: 1.4em;
+				font-size: 1.1em;
 		}
 		.intro .intro_outer .bagel_all_outer {
 				height: 40vh;
@@ -1503,11 +1499,14 @@ section.intro {
 		}
 		.intro .intro_outer::before {
 				left: auto;
-				right: 20em;
+				right: 22em;
+				top: 8vh;
 		}
 		.intro .intro_outer::after {
 				right: auto;
-				left: 18em;
+				left: 16em;
+				width: 17vw;
+				height: 16vh;
 		}
 }
 .loading-screen {

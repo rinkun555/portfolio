@@ -807,17 +807,17 @@ p{
     .intro_outer {
 
     &::before {
-    left: 14em;
-    width: 19vw;
-    height: 22vh;
-    top: 1em;
+top: 0.7em;
+    right: 5vw;
+    width: 28vh;
+    height: 18vh;
     }
 
     &::after {
     top: 7em;
-    right: 14vw;
-    width: 17vw;
-    height: 18vh;
+    left: 3vw;
+    width: 23vw;
+    height: 22vh;
     }
 
       .box{
@@ -825,17 +825,14 @@ p{
       }
       
       .title {
-        &.bagle img {
-          width: 24%;
-          right: 0;
-          left: 0;
-          top: 5vh;
-          margin: 0 auto;
-        }
-        
         &.new img {
           width: 14vw;
         }
+
+        &.bagle {
+          width: 40%
+        }
+      
       }
       
       .intro_inner {
@@ -848,7 +845,7 @@ p{
         padding-top: 40vh;
 
         p{
-          font-size: 1.4em;
+          font-size: 1.1em;
         }
       }
 
@@ -1022,12 +1019,15 @@ p{
 
       &::before {
         left: auto;
-        right: 20em;
+        right: 22em;
+        top: 8vh;
       }
 
       &::after {
         right: auto;
-        left: 18em;
+        left: 16em;
+            width: 17vw;
+    height: 16vh;
       }
     }
   }
