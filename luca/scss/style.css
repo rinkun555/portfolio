@@ -422,6 +422,7 @@ nav.nav-hidden {
 				position: relative;
 				-webkit-transition: all 0.3s ease;
 				transition: all 0.3s ease;
+				background-color: #A1D9FE;
 		}
 		.nav-menu a:hover {
 				background: rgba(161, 217, 254, 0.3);
