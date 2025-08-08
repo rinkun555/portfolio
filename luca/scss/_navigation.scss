@@ -18,9 +18,9 @@ nav {
 .nav-menu {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%; // 初期状態で画面外に隠す
   width: 70%;
-  height: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -29,18 +29,21 @@ nav {
   margin: 0;
   padding: 10em 2em;
     box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
   gap: 0;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 2001;
 
   &.mobile-active {
-    right: 0;
+    right: 0; // アクティブ時に表示
   }
 
   li {
     width: 100%;
     margin: 0;
-    border-bottom: 1px solid rgba(161, 217, 254, 0.3);
+    border-bottom: 1px solid $light-blue;
     opacity: 0;
     transform: translateX(30px);
     transition: all 0.3s ease;
@@ -121,11 +124,6 @@ nav {
   transition: all 0.3s ease;
   z-index: 2002;
 
-  &:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 1);
-  }
-
   &.active {
     transform: rotate(180deg) scale(1.1);
     background: rgba(161, 217, 254, 0.9);
@@ -148,11 +146,9 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
-  width: 70vw;
+  width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.8);
-  -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;

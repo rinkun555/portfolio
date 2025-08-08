@@ -10,9 +10,9 @@ nav {
 .nav-menu {
 		position: fixed;
 		top: 0;
-		right: 0;
+		right: -100%;
 		width: 70%;
-		height: auto;
+		height: 100vh;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -31,6 +31,9 @@ nav {
 		padding: 10em 2em;
 		-webkit-box-sizing: border-box;
 		        box-sizing: border-box;
+		background: rgba(255, 255, 255, 0.8);
+		-webkit-backdrop-filter: blur(20px);
+		backdrop-filter: blur(20px);
 		gap: 0;
 		-webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 		transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -42,7 +45,7 @@ nav {
 .nav-menu li {
 		width: 100%;
 		margin: 0;
-		border-bottom: 1px solid rgba(161, 217, 254, 0.3);
+		border-bottom: 1px solid #A1D9FE;
 		opacity: 0;
 		-webkit-transform: translateX(30px);
 		        transform: translateX(30px);
@@ -130,11 +133,6 @@ nav {
 		transition: all 0.3s ease;
 		z-index: 2002;
 }
-.hamburger-icon:hover {
-		-webkit-transform: scale(1.1);
-		        transform: scale(1.1);
-		background: rgb(255, 255, 255);
-}
 .hamburger-icon.active {
 		-webkit-transform: rotate(180deg) scale(1.1);
 		        transform: rotate(180deg) scale(1.1);
@@ -157,11 +155,9 @@ nav {
 		position: fixed;
 		top: 0;
 		right: 0;
-		width: 70vw;
+		width: 100vw;
 		height: 100vh;
-		background: rgba(255, 255, 255, 0.8);
-		-webkit-backdrop-filter: blur(20px);
-		backdrop-filter: blur(20px);
+		background: rgba(0, 0, 0, 0.4);
 		opacity: 0;
 		visibility: hidden;
 		-webkit-transition: all 0.3s ease;
