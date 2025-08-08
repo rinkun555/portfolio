@@ -396,7 +396,7 @@ nav.nav-hidden {
 				-webkit-box-align: center;
 				    -ms-flex-align: center;
 				        align-items: center;
-				padding: 0.2em 1.5em;
+				padding: 0 15px;
 				gap: 0.3em;
 				border-radius: 0 0 80px 80px;
 				z-index: auto;
@@ -420,7 +420,6 @@ nav.nav-hidden {
 				text-align: center;
 				border-radius: 25px;
 				position: relative;
-				background-color: #A1D9FE;
 				-webkit-transition: all 0.3s ease;
 				transition: all 0.3s ease;
 		}
@@ -443,10 +442,10 @@ nav.nav-hidden {
 		}
 		.nav-menu .nav-instagram {
 				margin-left: 2em;
-				margin-top: 0;
+				margin-top: 0.4em;
 				background-color: #A1D9FE;
 				border-radius: 25px;
-				padding: 10px 15px;
+				padding: 0 15px;
 				-webkit-transition: all 0.3s ease;
 				transition: all 0.3s ease;
 		}
