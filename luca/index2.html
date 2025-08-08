@@ -176,27 +176,39 @@
     let scrollTimeout;
     
     window.addEventListener('scroll', function() {
-      // モバイル時は実行しない
-      if (window.innerWidth <= 768) return;
-      
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const nav = document.querySelector('nav');
+      const spNavIcons = document.querySelector('.sp-nav-icons');
       
       // スクロール方向を判定
       if (currentScroll > lastScrollTop && currentScroll > 100) {
         // 下にスクロール - ナビを隠す
-        nav.classList.add('nav-hidden');
+        if (window.innerWidth >= 1600) {
+          nav.classList.add('nav-hidden');
+        } else {
+          // SP/タブレット - アイコンを隠す
+          spNavIcons.classList.add('nav-hidden');
+        }
       } else {
         // 上にスクロール - ナビを表示
-        nav.classList.remove('nav-hidden');
+        if (window.innerWidth >= 1600) {
+          nav.classList.remove('nav-hidden');
+        } else {
+          // SP/タブレット - アイコンを表示
+          spNavIcons.classList.remove('nav-hidden');
+        }
       }
       
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
       
       // スクロール停止時にナビを表示
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        nav.classList.remove('nav-hidden');
+        if (window.innerWidth >= 1600) {
+          nav.classList.remove('nav-hidden');
+        } else {
+          spNavIcons.classList.remove('nav-hidden');
+        }
       }, 1000); // 1秒後に表示
     });
 
@@ -715,27 +727,39 @@
     let scrollTimeout;
     
     window.addEventListener('scroll', function() {
-      // モバイル時は実行しない
-      if (window.innerWidth <= 768) return;
-      
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const nav = document.querySelector('nav');
+      const spNavIcons = document.querySelector('.sp-nav-icons');
       
       // スクロール方向を判定
       if (currentScroll > lastScrollTop && currentScroll > 100) {
         // 下にスクロール - ナビを隠す
-        nav.classList.add('nav-hidden');
+        if (window.innerWidth >= 1600) {
+          nav.classList.add('nav-hidden');
+        } else {
+          // SP/タブレット - アイコンを隠す
+          spNavIcons.classList.add('nav-hidden');
+        }
       } else {
         // 上にスクロール - ナビを表示
-        nav.classList.remove('nav-hidden');
+        if (window.innerWidth >= 1600) {
+          nav.classList.remove('nav-hidden');
+        } else {
+          // SP/タブレット - アイコンを表示
+          spNavIcons.classList.remove('nav-hidden');
+        }
       }
       
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
       
       // スクロール停止時にナビを表示
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        nav.classList.remove('nav-hidden');
+        if (window.innerWidth >= 1600) {
+          nav.classList.remove('nav-hidden');
+        } else {
+          spNavIcons.classList.remove('nav-hidden');
+        }
       }, 1000); // 1秒後に表示
     });
 

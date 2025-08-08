@@ -113,6 +113,11 @@ nav {
   gap: 0;
   justify-content: flex-end;
   z-index: 2002;
+  transition: transform 0.3s ease-in-out;
+
+  &.nav-hidden {
+    transform: translateY(-100%);
+  }
 }
 
 // オンラインショップアイコン（SP用）

@@ -118,6 +118,14 @@ nav.nav-hidden {
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 		z-index: 2002;
+		-webkit-transition: -webkit-transform 0.3s ease-in-out;
+		transition: -webkit-transform 0.3s ease-in-out;
+		transition: transform 0.3s ease-in-out;
+		transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.sp-nav-icons.nav-hidden {
+		-webkit-transform: translateY(-100%);
+		        transform: translateY(-100%);
 }
 
 .online-shop-icon {
