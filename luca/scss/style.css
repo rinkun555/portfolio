@@ -1056,8 +1056,8 @@ section.intro {
 .online_shop {
 		background-image: url(../img/online-shop_bg.png);
 		background-repeat: repeat;
+		background-size: 200px 200px;
 		font-family: "Zen Maru Gothic", sans-serif;
-		background-size: 200px;
 }
 .online_shop .title_box {
 		background-size: auto 137px;
@@ -1112,7 +1112,7 @@ section.intro {
 		position: relative;
 		background-image: url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_two.png"), url("../img/cafe_menu_cloud_three.png"), url("../img/cafe_menu_cloud_two.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_two.png");
 		background-repeat: no-repeat;
-		background-position: top 1vh left, top 10vh right, top 25vh left, bottom 25vh right, bottom 10vh left, bottom 1vh right;
+		background-position: top 25vh left, top 30vh right, top 45vh left, bottom 25vh right, bottom 10vh left, bottom 1vh right;
 		background-size: auto 80px;
 }
 .cafe_menu .title_box {

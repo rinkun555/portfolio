@@ -491,8 +491,8 @@ top: -5.3em;
 .online_shop{
   background-image: url(../img/online-shop_bg.png);
   background-repeat: repeat;
+  background-size: 200px 200px;
   font-family: $font-zen-maru;
-      background-size: 200px;
 
   .title_box{
     background-size: auto 137px;
@@ -563,9 +563,9 @@ top: -5.3em;
     url('../img/cafe_menu_cloud_two.png');
   background-repeat: no-repeat;
   background-position: 
-    top 1vh left,
-    top 10vh right,
     top 25vh left,
+    top 30vh right,
+    top 45vh left,
     bottom 25vh right,
    bottom 10vh left,
     bottom 1vh right;
