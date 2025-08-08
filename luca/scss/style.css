@@ -760,7 +760,7 @@ section.intro {
 		left: 0.2em;
 		width: 25vh;
 		height: 16vh;
-		background: url("../img/intro_fuwa.png") no-repeat center center;
+		background: url("../img/intro_fuwa2.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
 }
@@ -768,10 +768,10 @@ section.intro {
 		content: "";
 		position: absolute;
 		top: -2.3em;
-		right: 1em;
-		width: 21vh;
+		left: 0em;
+		width: 23vh;
 		height: 13vh;
-		background: url("../img/intro_mochi.png") no-repeat center center;
+		background: url("../img/intro_mochi2.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
 }
