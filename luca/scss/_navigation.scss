@@ -74,14 +74,13 @@ nav {
   width: 45px;
   height: 45px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  z-index: 2002;
+  z-index: 100;
 
   &:hover {
     transform: scale(1.1);
