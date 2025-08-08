@@ -1251,6 +1251,12 @@ section.intro {
 				transition: transform 0.2s ease-in-out;
 				transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 		}
+		.body_link {
+				padding: 1.5em;
+				width: 30%;
+				margin: 0 auto;
+				font-size: 1.4em;
+		}
 		section .title .english {
 				font-size: 1.4em !important;
 		}
@@ -1373,12 +1379,6 @@ section.intro {
 		.online_shop .shop_items .item_img_box .item_name {
 				padding: 0 1em 0.2em;
 		}
-		.online_shop .body_link {
-				padding: 1.5em;
-				width: 30%;
-				margin: 0 auto;
-				font-size: 1.4em;
-		}
 		.cafe_menu p {
 				text-align: center;
 				font-size: 1.4em;
@@ -1404,6 +1404,7 @@ section.intro {
 		}
 		.other_services .other_services_inner {
 				gap: 4em;
+				margin-bottom: 4em;
 		}
 		.other_services .other_services_inner .other_services_box .other_services_frame {
 				height: 40vh;

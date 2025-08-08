@@ -711,6 +711,13 @@ p{
       }
   }
 
+    .body_link{
+    padding: 1.5em;
+    width: 30%;
+    margin: 0 auto;
+    font-size: 1.4em;
+  }
+
   section .title .english{
     font-size: 1.4em!important;
   }
@@ -876,12 +883,7 @@ p{
       }
     }
   } 
-  .body_link{
-    padding: 1.5em;
-    width: 30%;
-    margin: 0 auto;
-    font-size: 1.4em;
-  }
+
 } 
 
 .cafe_menu {
@@ -915,6 +917,7 @@ p{
   }
   .other_services_inner{
     gap: 4em;
+        margin-bottom: 4em;
        .other_services_box {
         .other_services_frame{
          height: 40vh;
