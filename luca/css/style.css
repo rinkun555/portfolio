@@ -133,14 +133,37 @@ nav {
 		transition: all 0.3s ease;
 		z-index: 2002;
 }
+.hamburger-icon::before, .hamburger-icon::after {
+		content: "";
+		position: absolute;
+		width: 30px;
+		height: 2px;
+		background: #333;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		opacity: 0;
+}
+.hamburger-icon::before {
+		-webkit-transform: rotate(45deg);
+		        transform: rotate(45deg);
+}
+.hamburger-icon::after {
+		-webkit-transform: rotate(-45deg);
+		        transform: rotate(-45deg);
+}
 .hamburger-icon.active {
-		-webkit-transform: rotate(180deg) scale(1.1);
-		        transform: rotate(180deg) scale(1.1);
+		-webkit-transform: scale(1.1);
+		        transform: scale(1.1);
 		background: rgba(161, 217, 254, 0.9);
 }
 .hamburger-icon.active img {
-		-webkit-filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(7471%) hue-rotate(201deg) brightness(97%) contrast(101%);
-		        filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(7471%) hue-rotate(201deg) brightness(97%) contrast(101%);
+		opacity: 0;
+		-webkit-transform: scale(0);
+		        transform: scale(0);
+}
+.hamburger-icon.active::before, .hamburger-icon.active::after {
+		opacity: 1;
+		background: #007bff;
 }
 .hamburger-icon img {
 		width: 100%;
