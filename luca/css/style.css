@@ -777,10 +777,9 @@ section.intro {
 		margin: 1em auto 0;
 		display: block;
 }
-.intro .intro_outer .title.bagle img {
-		position: absolute;
-		width: 94%;
-		left: 0;
+.intro .intro_outer .title.bagle {
+		width: 90%;
+		margin: 2em auto 0em;
 }
 .intro .intro_outer .intro_inner {
 		background-image: url("../img/intro_togubagle_round.png");
@@ -1158,9 +1157,12 @@ section.intro {
 		text-align: center;
 		border: 1px solid #FEFFF8;
 		font-family: "Zen Maru Gothic", sans-serif;
-		font-weight: 700;
 }
 
+.other_services {
+		padding-bottom: 8em;
+		overflow: hidden;
+}
 .other_services .title_box {
 		background-size: auto 137px;
 }
@@ -1171,21 +1173,29 @@ section.intro {
 		font-size: 1.1em;
 }
 .other_services .other_services_inner {
-		display: -ms-grid;
-		display: grid;
-		-ms-grid-columns: 1fr 20px 1fr;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5em;
-		margin-bottom: 2em;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		gap: 1em;
+		margin-bottom: 1em;
+		max-width: 100%;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
 }
 .other_services .other_services_box {
 		position: relative;
+		width: calc(50% - 0.5em);
+		margin-bottom: 3em;
 }
 .other_services .other_services_box .other_services_frame {
 		border-radius: 50%;
 		overflow: hidden;
 		width: 100%;
-		height: 26vh;
 		aspect-ratio: 1;
 }
 .other_services .other_services_box .other_services_frame img {
@@ -1197,15 +1207,20 @@ section.intro {
 }
 .other_services .other_services_box p {
 		position: absolute;
-		bottom: -2em;
+		bottom: -3em;
 		right: 0;
-		background-color: #30ADFF;
-		color: #ffffff;
-		padding: 1em 1.5em;
-		border-radius: 100px;
-		font-size: 0.8em;
+		padding: 0.6em 1em;
 		text-align: center;
-		border: 1px solid #ffffff;
+		white-space: nowrap;
+		max-width: calc(100% - 1em);
+		background-color: rgba(91, 45, 0, 0.5);
+		-webkit-backdrop-filter: blur(3px);
+		backdrop-filter: blur(3px);
+		color: white;
+		padding: 1em 1.5em;
+		border-radius: 10em;
+		font-size: 0.8em;
+		border: 1px solid #FEFFF8;
 		font-family: "Zen Maru Gothic", sans-serif;
 }
 
@@ -1266,6 +1281,10 @@ section.intro {
 		}
 		.intro .intro_outer .intro_inner {
 				padding-top: 44vh;
+		}
+		.cafe_menu .cafe_items {
+				width: 70%;
+				margin: 0 auto;
 		}
 		.cafe_menu .cafe_items .cafe_item .cafe_frame {
 				height: 30vh;
@@ -1402,8 +1421,8 @@ section.intro {
 		.online_shop .shop_items {
 				gap: 4em;
 				margin-bottom: 4em;
-				-ms-grid-columns: 1fr 4em 1fr 4em 1fr;
-				grid-template-columns: repeat(3, 1fr);
+				-ms-grid-columns: 1fr 4em 1fr 4em 1fr 4em 1fr;
+				grid-template-columns: repeat(4, 1fr);
 		}
 		.online_shop .shop_items .item_img_frame {
 				height: 40vh;
@@ -1435,16 +1454,26 @@ section.intro {
 				font-size: 1.4em;
 		}
 		.other_services .other_services_inner {
-				gap: 4em;
-				margin-bottom: 4em;
+				gap: 1.5em;
+				margin-bottom: 5em;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+		}
+		.other_services .other_services_inner .other_services_box {
+				width: calc(25% - 1.125em);
+				margin-bottom: 3em;
 		}
 		.other_services .other_services_inner .other_services_box .other_services_frame {
-				height: 40vh;
 				border-radius: 50%;
 				aspect-ratio: 1;
 		}
 		.other_services .other_services_inner .other_services_box p {
-				font-size: 1.4em;
+				bottom: 0em;
+				right: 0.3em;
+				font-size: 0.9em;
+				padding: 0.8em 1.2em;
+				max-width: calc(100% - 1em);
 		}
 		.footer_inner .logo {
 				width: 20%;
@@ -1473,10 +1502,12 @@ section.intro {
 				grid-template-columns: repeat(4, 1fr);
 		}
 		.intro .intro_outer::before {
-				left: 20em;
+				left: auto;
+				right: 20em;
 		}
 		.intro .intro_outer::after {
-				right: 17vw;
+				right: auto;
+				left: 18em;
 		}
 }
 .loading-screen {

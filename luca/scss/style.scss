@@ -230,10 +230,9 @@ top: -5.3em;
       display: block; // Add this to center the image properly
     }   
 
-    &.bagle img{
-      position: absolute;
-      width: 94%;
-      left: 0;
+    &.bagle{
+ width: 90%;
+    margin: 2em auto 0em;
     }
   }
  
@@ -617,7 +616,6 @@ top: -5.3em;
         text-align: center;
         border: 1px solid $warm-white;
         font-family: $font-zen-maru;
-        font-weight: 700;
       }
     }
   }
@@ -626,6 +624,8 @@ top: -5.3em;
 
 //other_service
 .other_services{
+  padding-bottom: 8em;
+  overflow: hidden;
 
     .title_box{
     background-size: auto 137px;
@@ -638,22 +638,25 @@ top: -5.3em;
   }
 
   .other_services_inner{
-    display: grid;
-    -ms-grid-columns: 1fr 20px 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5em;
-        margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    margin-bottom: 1em;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .other_services_box{
     position: relative;
+    width: calc(50% - 0.5em); // SP版: 2列 (50% - gap/2)
+    margin-bottom: 3em;
 
     .other_services_frame{
-      border-radius: 50%; // 完全な円形
+      border-radius: 50%;
       overflow: hidden;
       width: 100%;
-      height: 26vh;
-      aspect-ratio: 1; // 1:1の比率で正円を保証
+      aspect-ratio: 1;
 
           img {
           width: 100%;
@@ -665,16 +668,21 @@ top: -5.3em;
 
     p{
     position: absolute;
-    bottom: -2em;
+    bottom: -3em;
     right: 0;
-    background-color: $blue;
-    color: $white;
-    padding: 1em 1.5em;
-    border-radius: 100px;
-    font-size: 0.8em;
+    padding: 0.6em 1em;
     text-align: center;
-    border: 1px solid $white;
-    font-family: $font-zen-maru;
+    white-space: nowrap;
+    max-width: calc(100% - 1em);
+        background-color: rgb(91 45 0 / 50%);
+        -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+        color: white;
+        padding: 1em 1.5em;
+        border-radius: 10em;
+        font-size: 0.8em;
+        border: 1px solid $warm-white;
+        font-family: $font-zen-maru;
     }
   }
 }
@@ -731,8 +739,12 @@ p{
   padding-top: 44vh;
 }
 
-.cafe_menu .cafe_items .cafe_item .cafe_frame{
+.cafe_menu .cafe_items {
+      width: 70%;
+    margin: 0 auto;
+    .cafe_item .cafe_frame{
   height: 30vh;
+}
 }
 }
 
@@ -909,7 +921,7 @@ p{
   .shop_items{
   gap: 4em;
   margin-bottom: 4em;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
     .item_img_frame{
     height: 40vh;
@@ -954,16 +966,24 @@ p{
     font-size: 1.4em;
   }
   .other_services_inner{
-    gap: 4em;
-        margin-bottom: 4em;
+    gap: 1.5em;
+    margin-bottom: 5em;
+    justify-content: space-between;
+    
        .other_services_box {
+        width: calc(25% - 1.125em); // PC版: 4列 (25% - gap*3/4)
+        margin-bottom: 3em;
+        
         .other_services_frame{
-         height: 40vh;
-         border-radius: 50%; // PC版でも円形を維持
-         aspect-ratio: 1; // PC版でも正円を保証
+         border-radius: 50%;
+         aspect-ratio: 1;
        }
        p{
-            font-size: 1.4em;
+            bottom: 0em;
+    right: 0.3em;
+            font-size: 0.9em;
+            padding: 0.8em 1.2em;
+            max-width: calc(100% - 1em);
        }
    }
   }
@@ -1001,11 +1021,13 @@ p{
       }
 
       &::before {
-        left: 20em;
+        left: auto;
+        right: 20em;
       }
 
       &::after {
-        right: 17vw;
+        right: auto;
+        left: 18em;
       }
     }
   }
