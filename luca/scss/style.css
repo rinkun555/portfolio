@@ -49,7 +49,6 @@ nav.nav-hidden {
 .nav-menu li {
 		width: 100%;
 		margin: 0;
-		border-bottom: 1px solid rgba(254, 255, 248, 0.6);
 		opacity: 0;
 		-webkit-transform: translateX(30px);
 		        transform: translateX(30px);
@@ -91,7 +90,7 @@ nav.nav-hidden {
 .nav-title-en {
 		display: block;
 		font-family: "Chango", sans-serif;
-		font-size: 1.3em;
+		font-size: 1.2em;
 		line-height: 1.2;
 		margin-bottom: 2px;
 		color: #FEFFF8;
@@ -128,16 +127,19 @@ nav.nav-hidden {
 		        transform: translateY(-100%);
 }
 
-.online-shop-icon {
+.online-shop-icon, .sp-instagram-icon, .hamburger-icon {
+		border-radius: 0 0 50% 50%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		width: 2.5em;
-		height: 2.5em;
+		width: 2em;
+		height: 2em;
+}
+
+.online-shop-icon {
 		cursor: pointer;
 		background-image: url(../img/online-shop_bg.png);
 		background-size: contain;
-		border-radius: 0 0 40% 40%;
 		padding: 1em;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
@@ -163,14 +165,8 @@ nav.nav-hidden {
 }
 
 .sp-instagram-icon {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		width: 2.5em;
-		height: 2.5em;
 		cursor: pointer;
 		background: #A1D9FE;
-		border-radius: 0 0 40% 40%;
 		padding: 1em;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
@@ -198,14 +194,8 @@ nav.nav-hidden {
 }
 
 .hamburger-icon {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		width: 2.5em;
-		height: 2.5em;
 		cursor: pointer;
 		background: #30ADFF;
-		border-radius: 0 0 40% 40%;
 		padding: 1em;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
