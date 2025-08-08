@@ -12,8 +12,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 2000;
-  padding: 20px;
-  transition: transform 0.3s ease-in-out;
+
 
   &.nav-hidden {
     transform: translateY(-100%);
@@ -104,45 +103,82 @@ nav {
   color:$warm-white;
 }
 
-// ハンバーガーアイコン（SP用）
-.hamburger-icon {
-  display: flex;
+// SP用ナビゲーションアイコンコンテナ
+.sp-nav-icons {
   position: fixed;
-  top: 1.5em;
-  right: 1.5em;
+  width: auto;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0;
+  justify-content: flex-end;
+  z-index: 2002;
+}
+
+// オンラインショップアイコン（SP用）
+.online-shop-icon {
+  display: flex;
   width: 3em;
   height: 3em;
   cursor: pointer;
   background: $light-blue;
-  border-radius: 50%;
+border-radius: 0 0 40% 40%;
   padding: 1em;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  z-index: 2002;
+
+  &:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+  }
+}
+
+// ハンバーガーアイコン（SP用）
+.hamburger-icon {
+  display: flex;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  background: $blue;
+  border-radius: 0 0 40% 40%;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
   
   // CSSでクロスアイコンを作成
   &::before,
   &::after {
     content: '';
     position: absolute;
-    width: 30px;
+    width: 18px;
     height: 2px;
-    background: #333;
+    background: $warm-white;
     transition: all 0.3s ease;
     opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
   }
   
   &::before {
-    transform: rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
   
   &::after {
-    transform: rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   &.active {
-    transform: scale(1.1);
     background: $warm-white;
 
     img {
@@ -232,10 +268,11 @@ nav {
 
 // タブレット対応 (769px - 1599px)
 @media (min-width: 760px) and (max-width: 1599px) {
-  .hamburger-icon {
-    display: flex; // タブレットでもハンバーガーメニューを表示
-  width: 4em;
-  height: 4em;
+
+  .hamburger-icon,
+  .online-shop-icon {
+    width: 4em;
+    height: 4em;
   }
 
   .nav-menu {    
@@ -253,7 +290,7 @@ nav {
 
 // PC対応 (1200px以上)
 @media (min-width: 1600px) {
-  .hamburger-icon {
+  .sp-nav-icons {
     display: none !important;
   }
 

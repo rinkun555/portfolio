@@ -4,11 +4,6 @@ nav {
 		left: 0;
 		right: 0;
 		z-index: 2000;
-		padding: 20px;
-		-webkit-transition: -webkit-transform 0.3s ease-in-out;
-		transition: -webkit-transform 0.3s ease-in-out;
-		transition: transform 0.3s ease-in-out;
-		transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 nav.nav-hidden {
 		-webkit-transform: translateY(-100%);
@@ -110,18 +105,30 @@ nav.nav-hidden {
 		color: #FEFFF8;
 }
 
-.hamburger-icon {
+.sp-nav-icons {
+		position: fixed;
+		width: auto;
+		top: 0;
+		right: 0;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		position: fixed;
-		top: 1.5em;
-		right: 1.5em;
+		gap: 0;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		z-index: 2002;
+}
+
+.online-shop-icon {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 		width: 3em;
 		height: 3em;
 		cursor: pointer;
 		background: #A1D9FE;
-		border-radius: 50%;
+		border-radius: 0 0 40% 40%;
 		padding: 1em;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
@@ -131,29 +138,64 @@ nav.nav-hidden {
 		        justify-content: center;
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
-		z-index: 2002;
+}
+.online-shop-icon:hover {
+		-webkit-transform: scale(1.1);
+		        transform: scale(1.1);
+		background: rgb(255, 255, 255);
+}
+.online-shop-icon img {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: contain;
+		   object-fit: contain;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+
+.hamburger-icon {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		width: 3em;
+		height: 3em;
+		cursor: pointer;
+		background: #30ADFF;
+		border-radius: 0 0 40% 40%;
+		padding: 1em;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		position: relative;
 }
 .hamburger-icon::before, .hamburger-icon::after {
 		content: "";
 		position: absolute;
-		width: 30px;
+		width: 18px;
 		height: 2px;
-		background: #333;
+		background: #FEFFF8;
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 		opacity: 0;
+		left: 50%;
+		top: 50%;
+		-webkit-transform-origin: center;
+		        transform-origin: center;
 }
 .hamburger-icon::before {
-		-webkit-transform: rotate(45deg);
-		        transform: rotate(45deg);
+		-webkit-transform: translate(-50%, -50%) rotate(45deg);
+		        transform: translate(-50%, -50%) rotate(45deg);
 }
 .hamburger-icon::after {
-		-webkit-transform: rotate(-45deg);
-		        transform: rotate(-45deg);
+		-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+		        transform: translate(-50%, -50%) rotate(-45deg);
 }
 .hamburger-icon.active {
-		-webkit-transform: scale(1.1);
-		        transform: scale(1.1);
 		background: #FEFFF8;
 }
 .hamburger-icon.active img {
@@ -265,10 +307,8 @@ nav.nav-hidden {
 }
 
 @media (min-width: 760px) and (max-width: 1599px) {
-		.hamburger-icon {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
+		.hamburger-icon,
+		.online-shop-icon {
 				width: 4em;
 				height: 4em;
 		}
@@ -283,7 +323,7 @@ nav.nav-hidden {
 		}
 }
 @media (min-width: 1600px) {
-		.hamburger-icon {
+		.sp-nav-icons {
 				display: none !important;
 		}
 		.mobile-overlay {
