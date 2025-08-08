@@ -121,7 +121,8 @@ nav {
   width: 2.5em;
   height: 2.5em;
   cursor: pointer;
-  background: $light-blue;
+ background-image: url(../img/online-shop_bg.png);
+ background-size: contain;
 border-radius: 0 0 40% 40%;
   padding: 1em;
   align-items: center;

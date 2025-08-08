@@ -127,7 +127,8 @@ nav.nav-hidden {
 		width: 2.5em;
 		height: 2.5em;
 		cursor: pointer;
-		background: #A1D9FE;
+		background-image: url(../img/online-shop_bg.png);
+		background-size: contain;
 		border-radius: 0 0 40% 40%;
 		padding: 1em;
 		-webkit-box-align: center;
@@ -1042,7 +1043,7 @@ section.intro {
 
 .online_shop {
 		background-image: url(../img/online-shop_bg.png);
-		background-size: contain;
+		background-repeat: repeat;
 		font-family: "Zen Maru Gothic", sans-serif;
 }
 .online_shop .title_box {

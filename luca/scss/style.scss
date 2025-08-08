@@ -480,7 +480,7 @@ top: -5.3em;
 //online_shop
 .online_shop{
   background-image: url(../img/online-shop_bg.png);
-  background-size: contain;
+  background-repeat: repeat;
   font-family: $font-zen-maru;
 
   .title_box{
