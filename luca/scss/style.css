@@ -5,6 +5,14 @@ nav {
 		right: 0;
 		z-index: 2000;
 		padding: 20px;
+		-webkit-transition: -webkit-transform 0.3s ease-in-out;
+		transition: -webkit-transform 0.3s ease-in-out;
+		transition: transform 0.3s ease-in-out;
+		transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+nav.nav-hidden {
+		-webkit-transform: translateY(-100%);
+		        transform: translateY(-100%);
 }
 
 .nav-menu {
@@ -59,7 +67,7 @@ nav {
 .nav-menu a {
 		display: block;
 		width: 100%;
-		padding: 2em 0;
+		padding: 1em 0;
 		text-decoration: none;
 		color: #333;
 		font-weight: 500;
@@ -116,14 +124,14 @@ nav {
 		display: -ms-flexbox;
 		display: flex;
 		position: fixed;
-		top: 20px;
-		right: 20px;
-		width: 45px;
-		height: 45px;
+		top: 1.5em;
+		right: 1.5em;
+		width: 3em;
+		height: 3em;
 		cursor: pointer;
 		background: #A1D9FE;
 		border-radius: 50%;
-		padding: 10px;
+		padding: 1em;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
@@ -229,7 +237,66 @@ nav {
 		        transition-delay: 0.6s;
 }
 
-@media (min-width: 769px) {
+.nav-instagram {
+		margin-top: 3em;
+		text-align: center;
+}
+.nav-instagram .follow-text {
+		color: #FEFFF8;
+		font-size: 1.2em;
+		display: block;
+}
+.nav-instagram .follow-text .chango-text {
+		font-family: "Chango", sans-serif;
+}
+.nav-instagram .instagram-icon {
+		width: 4em;
+		height: 4em;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		margin: 0 auto;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		cursor: pointer;
+}
+.nav-instagram .instagram-icon:hover {
+		background: rgba(255, 255, 255, 0.2);
+		-webkit-transform: scale(1.1);
+		        transform: scale(1.1);
+}
+.nav-instagram .instagram-icon svg, .nav-instagram .instagram-icon img {
+		width: 100%;
+		height: 100%;
+		-webkit-filter: brightness(0) invert(1);
+		        filter: brightness(0) invert(1);
+}
+
+@media (min-width: 760px) and (max-width: 1599px) {
+		.hamburger-icon {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				width: 4em;
+				height: 4em;
+		}
+		.nav-menu {
+				width: 50%;
+		}
+		.nav-title-jp {
+				font-size: 0.7em;
+		}
+		.nav-title-en {
+				font-size: 1em;
+		}
+}
+@media (min-width: 1600px) {
 		.hamburger-icon {
 				display: none !important;
 		}
@@ -242,11 +309,19 @@ nav {
 				right: 0;
 				padding: 0;
 				background-color: transparent;
+				-webkit-transition: -webkit-transform 0.3s ease-in-out;
+				transition: -webkit-transform 0.3s ease-in-out;
+				transition: transform 0.3s ease-in-out;
+				transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+		}
+		nav.nav-hidden {
+				-webkit-transform: translateY(-100%);
+				        transform: translateY(-100%);
 		}
 		.nav-menu {
 				position: relative;
 				top: 0;
-				width: 60%;
+				width: 80%;
 				left: 0;
 				height: auto;
 				margin: 0 auto;
@@ -260,8 +335,8 @@ nav {
 				-webkit-box-align: center;
 				    -ms-flex-align: center;
 				        align-items: center;
-				padding: 15px 30px;
-				gap: 30px;
+				padding: 0.5em 1.5em;
+				gap: 0.5em;
 				border-radius: 0 0 80px 80px;
 				z-index: auto;
 		}
@@ -304,6 +379,25 @@ nav {
 		}
 		.nav-menu a::after {
 				display: none;
+		}
+		.nav-menu .nav-instagram {
+				margin-left: 2em;
+				margin-top: 0;
+		}
+		.nav-menu .nav-instagram .follow-text {
+				font-size: 1.2em;
+				margin-bottom: 0;
+		}
+		.nav-menu .nav-instagram .instagram-icon {
+				width: 2em;
+				height: 2em;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+		}
+		.nav-menu .nav-instagram .instagram-icon svg, .nav-menu .nav-instagram .instagram-icon img {
+				width: 2em;
+				height: 2em;
 		}
 		.nav-title-en {
 				font-size: 1.2em;
@@ -1011,7 +1105,18 @@ section.intro {
 		font-size: 0.8em;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 760px) and (max-width: 1199px) {
+		p {
+				font-size: 1.3em;
+		}
+		.intro .intro_outer .intro_inner {
+				padding-top: 44vh;
+		}
+		.cafe_menu .cafe_items .cafe_item .cafe_frame {
+				height: 30vh;
+		}
+}
+@media (min-width: 1200px) {
 		p {
 				font-size: 1.1em;
 		}
@@ -1045,7 +1150,7 @@ section.intro {
 				clip-path: url(#svgPath);
 		}
 		section {
-				padding: 6em 10em;
+				padding: 10em 6em;
 		}
 		#calendar, #store_info {
 				padding: 6em;
@@ -1060,14 +1165,14 @@ section.intro {
 				padding-top: 0;
 		}
 		.intro .intro_outer::before {
-				left: 25em;
+				left: 14em;
 				width: 19vw;
 				height: 22vh;
 				top: 1em;
 		}
 		.intro .intro_outer::after {
 				top: 7em;
-				right: 17vw;
+				right: 14vw;
 				width: 17vw;
 				height: 18vh;
 		}
@@ -1090,13 +1195,13 @@ section.intro {
 				margin: 0 auto;
 				display: -ms-grid;
 				display: grid;
-				-ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
-				grid-template-columns: repeat(4, 1fr);
+				-ms-grid-columns: 1fr 20px 1fr;
+				grid-template-columns: repeat(2, 1fr);
 				gap: 20px;
 				padding-top: 40vh;
 		}
 		.intro .intro_outer .intro_inner p {
-				font-size: 1.5em;
+				font-size: 1.4em;
 		}
 		.intro .intro_outer .bagel_all_outer {
 				height: 40vh;
@@ -1141,7 +1246,7 @@ section.intro {
 		}
 		.online_shop p {
 				text-align: center;
-				font-size: 1.5em;
+				font-size: 1.4em;
 		}
 		.online_shop .shop_items {
 				gap: 4em;
@@ -1159,11 +1264,11 @@ section.intro {
 				padding: 1.5em;
 				width: 30%;
 				margin: 0 auto;
-				font-size: 1.5em;
+				font-size: 1.4em;
 		}
 		.cafe_menu p {
 				text-align: center;
-				font-size: 1.5em;
+				font-size: 1.4em;
 		}
 		.cafe_menu .cafe_items {
 				display: -ms-grid;
@@ -1182,7 +1287,7 @@ section.intro {
 		}
 		.other_services p {
 				text-align: center;
-				font-size: 1.5em;
+				font-size: 1.4em;
 		}
 		.other_services .other_services_inner {
 				gap: 4em;
@@ -1193,6 +1298,14 @@ section.intro {
 		}
 		.other_services .other_services_inner .other_services_box p {
 				font-size: 1.4em;
+		}
+		.footer_inner .logo {
+				width: 20%;
+		}
+}
+@media (min-width: 1600px) {
+		section {
+				padding: 6em 10em;
 		}
 		.container {
 				display: -ms-grid;
@@ -1208,8 +1321,15 @@ section.intro {
 				-ms-grid-column-span: 1;
 				grid-column: span 1;
 		}
-		.footer_inner .logo {
-				width: 20%;
+		.intro .intro_outer .intro_inner {
+				-ms-grid-columns: (1fr)[4];
+				grid-template-columns: repeat(4, 1fr);
+		}
+		.intro .intro_outer::before {
+				left: 20em;
+		}
+		.intro .intro_outer::after {
+				right: 17vw;
 		}
 }
 .loading-screen {

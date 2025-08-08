@@ -681,8 +681,21 @@ top: -5.3em;
   }
 }
 
-//tablet PC
-@media (min-width:767px){
+//tablet 
+@media (min-width: 760px) and (max-width: 1199px) {
+p{
+  font-size: 1.3em;
+}
+.intro .intro_outer .intro_inner{
+  padding-top: 44vh;
+}
+
+.cafe_menu .cafe_items .cafe_item .cafe_frame{
+  height: 30vh;
+}
+}
+
+@media (min-width:1200px){
 
   p{
     font-size: 1.1em;
@@ -723,9 +736,8 @@ top: -5.3em;
     }
   }
   
-
   section{
-    padding: 6em 10em;
+    padding: 10em 6em;
   }
 
   #calendar, #store_info{
@@ -748,17 +760,18 @@ top: -5.3em;
     .intro_outer {
 
     &::before {
-    left: 25em;
+    left: 14em;
     width: 19vw;
     height: 22vh;
     top: 1em;
-      }
-      &::after {
+    }
+
+    &::after {
     top: 7em;
-    right: 17vw;
+    right: 14vw;
     width: 17vw;
     height: 18vh;
-      }
+    }
 
       .box{
         margin: 0;
@@ -783,12 +796,12 @@ top: -5.3em;
         width: 90%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding-top: 40vh;
 
         p{
-          font-size: 1.5em;
+          font-size: 1.4em;
         }
       }
 
@@ -856,7 +869,7 @@ top: -5.3em;
 .online_shop{
   p{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
   .shop_items{
   gap: 4em;
@@ -877,14 +890,14 @@ top: -5.3em;
     padding: 1.5em;
     width: 30%;
     margin: 0 auto;
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 } 
 
 .cafe_menu {
     p{
     text-align: center;
-        font-size: 1.5em;
+        font-size: 1.4em;
   }
   .cafe_items{
    display: grid;
@@ -908,7 +921,7 @@ top: -5.3em;
 .other_services{
       p{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
   .other_services_inner{
     gap: 4em;
@@ -922,28 +935,48 @@ top: -5.3em;
        }
    }
   }
-
-
-
-}
-
-.container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-}
-
-.intro, .online_shop, .cafe_menu, .other_services {
-  grid-column: 1 / -1; // Span both columns (full width)
-}
-
-.calendar, .store_info{
-  grid-column: span 1; // Each takes one column (50% width)
 }
 
 .footer_inner .logo{
   width: 20%;
 }
+}
+
+//
+@media (min-width: 1600px) {
+  section {
+    padding: 6em 10em;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .intro, .online_shop, .cafe_menu, .other_services {
+    grid-column: 1 / -1; // Span both columns (full width)
+  }
+
+  .calendar, .store_info {
+    grid-column: span 1; // Each takes one column (50% width)
+  }
+
+  .intro {
+    .intro_outer {
+      .intro_inner {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      &::before {
+        left: 20em;
+      }
+
+      &::after {
+        right: 17vw;
+      }
+    }
+  }
 }
 
 // Loading Screen

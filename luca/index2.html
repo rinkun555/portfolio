@@ -163,6 +163,35 @@
       });
     });
 
+    // PC用スクロール時ナビゲーション表示/非表示機能
+    let lastScrollTop = 0;
+    let scrollTimeout;
+    
+    window.addEventListener('scroll', function() {
+      // モバイル時は実行しない
+      if (window.innerWidth <= 768) return;
+      
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const nav = document.querySelector('nav');
+      
+      // スクロール方向を判定
+      if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // 下にスクロール - ナビを隠す
+        nav.classList.add('nav-hidden');
+      } else {
+        // 上にスクロール - ナビを表示
+        nav.classList.remove('nav-hidden');
+      }
+      
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+      
+      // スクロール停止時にナビを表示
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        nav.classList.remove('nav-hidden');
+      }, 1000); // 1秒後に表示
+    });
+
     // オーバーレイクリックでメニューを閉じる
     document.addEventListener('click', function(event) {
       const navMenu = document.querySelector('.nav-menu');
@@ -238,6 +267,14 @@
           <span class="nav-title-jp">その他サービス</span>
         </a>
       </li>
+      
+      <!-- Instagram セクション -->
+      <div class="nav-instagram">
+        <span class="follow-text">\ <span class="chango-text">Follow us</span> /</span>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-icon">
+          <img src="img/instagram.svg" alt="Instagram">
+        </a>
+      </div>
     </ul>
 
     <!-- ハンバーガーアイコン（SP用） -->
@@ -643,6 +680,35 @@
           });
         }
       });
+    });
+
+    // PC用スクロール時ナビゲーション表示/非表示機能
+    let lastScrollTop = 0;
+    let scrollTimeout;
+    
+    window.addEventListener('scroll', function() {
+      // モバイル時は実行しない
+      if (window.innerWidth <= 768) return;
+      
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const nav = document.querySelector('nav');
+      
+      // スクロール方向を判定
+      if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // 下にスクロール - ナビを隠す
+        nav.classList.add('nav-hidden');
+      } else {
+        // 上にスクロール - ナビを表示
+        nav.classList.remove('nav-hidden');
+      }
+      
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+      
+      // スクロール停止時にナビを表示
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        nav.classList.remove('nav-hidden');
+      }, 1000); // 1秒後に表示
     });
 
     // オーバーレイクリックでメニューを閉じる

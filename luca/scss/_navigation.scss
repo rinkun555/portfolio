@@ -4,7 +4,8 @@ $light-blue: #A1D9FE;
 $light-blue-2: #E7F4FF;
 $warm-white:#FEFFF8;
 $white:#ffffff;
-// ナビゲーション共通スタイル（スマートフォンファースト）
+
+// ナビゲーション共通スタイル（SP優先 - max-width: 768px）
 nav {
   position: fixed;
   top: 0;
@@ -12,6 +13,11 @@ nav {
   right: 0;
   z-index: 2000;
   padding: 20px;
+  transition: transform 0.3s ease-in-out;
+
+  &.nav-hidden {
+    transform: translateY(-100%);
+  }
 }
 
 // 共通ナビゲーションメニュー（モバイル優先）
@@ -28,11 +34,11 @@ nav {
   list-style: none;
   margin: 0;
   padding: 10em 2em;
-    box-sizing: border-box;
-background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30adff69 30px, #30adff29 31px);
-    background-color: $light-blue;
+  box-sizing: border-box;
+  background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30adff69 30px, #30adff29 31px);
+  background-color: $light-blue;
   -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   gap: 0;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 2001;
@@ -57,7 +63,7 @@ background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30a
   a {
     display: block;
     width: 100%;
-    padding:2em 0;
+    padding:1em 0;
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -112,14 +118,14 @@ background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30a
 .hamburger-icon {
   display: flex;
   position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
+  top: 1.5em;
+  right: 1.5em;
+  width: 3em;
+  height: 3em;
   cursor: pointer;
   background: $light-blue;
   border-radius: 50%;
-  padding: 10px;
+  padding: 1em;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
@@ -201,8 +207,67 @@ background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30a
 .nav-menu.mobile-active li:nth-child(5) { transition-delay: 0.5s; }
 .nav-menu.mobile-active li:nth-child(6) { transition-delay: 0.6s; }
 
-// PC（デスクトップ）対応
-@media (min-width: 769px) {
+// Instagram セクション
+.nav-instagram {
+  margin-top: 3em;
+  text-align: center;
+  
+  .follow-text {
+    color: $warm-white;
+    font-size: 1.2em;
+    display: block;
+    
+    .chango-text {
+      font-family: "Chango", sans-serif;
+    }
+  }
+  
+  .instagram-icon {
+    width: 4em;
+    height: 4em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+    
+    svg, img {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0) invert(1); // 白色にする
+    }
+  }
+}
+
+// タブレット対応 (769px - 1599px)
+@media (min-width: 760px) and (max-width: 1599px) {
+  .hamburger-icon {
+    display: flex; // タブレットでもハンバーガーメニューを表示
+  width: 4em;
+  height: 4em;
+  }
+
+  .nav-menu {    
+    width: 50%; // タブレット用にメニュー幅を調整
+  }
+
+  .nav-title-jp{
+    font-size: 0.7em;
+  }
+
+  .nav-title-en{
+    font-size: 1em;
+  }
+}
+
+// PC対応 (1200px以上)
+@media (min-width: 1600px) {
   .hamburger-icon {
     display: none !important;
   }
@@ -211,28 +276,32 @@ background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30a
     display: none;
   }
 
-  nav{
+  nav {
     top: 0;
     left: 0;
     right: 0;
     padding: 0;
     background-color: transparent;
+    transition: transform 0.3s ease-in-out;
+
+    &.nav-hidden {
+      transform: translateY(-100%);
+    }
   }
 
   .nav-menu {
     position: relative;
     top: 0;
-    width: 60%;
+    width: 80%;
     left: 0;
     height: auto;
     margin: 0 auto;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 15px 30px;
-    gap: 30px;
+    padding: 0.5em 1.5em;
+    gap: 0.5em;
     border-radius: 0 0 80px 80px;
-
     z-index: auto;
 
     &.mobile-active {
@@ -274,6 +343,27 @@ background: repeating-linear-gradient(90deg, transparent, transparent 30px, #30a
 
       &::after {
         display: none;
+      }
+    }
+
+    .nav-instagram {
+      margin-left: 2em;
+      margin-top: 0;
+      
+      .follow-text {
+        font-size: 1.2em;
+        margin-bottom: 0;
+      }
+      
+      .instagram-icon {
+        width: 2em;
+        height: 2em;
+        align-items: center;
+        
+        svg, img {
+    width: 2em;
+    height: 2em;
+        }
       }
     }
   }
