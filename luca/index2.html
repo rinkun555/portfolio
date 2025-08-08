@@ -137,28 +137,36 @@
     };
 
     // ナビゲーションリンククリック時にメニューを閉じる（SP用）
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    document.querySelectorAll('.nav-menu a, .nav-instagram a').forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault(); // デフォルトのリンク動作を防ぐ
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          // モバイル時はメニューを閉じる
+        // Instagramリンクの場合は外部リンクなのでpreventDefaultしない
+        if (!this.classList.contains('instagram-icon')) {
+          e.preventDefault(); // デフォルトのリンク動作を防ぐ
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            // モバイル時はメニューを閉じる
+            if (window.innerWidth <= 768) {
+              closeMenu();
+            }
+            
+            // スクロール位置を調整
+            const headerHeight = window.innerWidth <= 768 ? 80 : 100;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            // スムーズにスクロール
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          // Instagramリンクの場合はモバイル時のみメニューを閉じる
           if (window.innerWidth <= 768) {
             closeMenu();
           }
-          
-          // スクロール位置を調整
-          const headerHeight = window.innerWidth <= 768 ? 80 : 100;
-          const targetPosition = targetElement.offsetTop - headerHeight;
-          
-          // スムーズにスクロール
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
         }
       });
     });
@@ -656,28 +664,36 @@
     };
 
     // ナビゲーションリンククリック時にメニューを閉じる（SP用）
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    document.querySelectorAll('.nav-menu a, .nav-instagram a').forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault(); // デフォルトのリンク動作を防ぐ
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          // モバイル時はメニューを閉じる
+        // Instagramリンクの場合は外部リンクなのでpreventDefaultしない
+        if (!this.classList.contains('instagram-icon')) {
+          e.preventDefault(); // デフォルトのリンク動作を防ぐ
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            // モバイル時はメニューを閉じる
+            if (window.innerWidth <= 768) {
+              closeMenu();
+            }
+            
+            // スクロール位置を調整
+            const headerHeight = window.innerWidth <= 768 ? 80 : 100;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            // スムーズにスクロール
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          // Instagramリンクの場合はモバイル時のみメニューを閉じる
           if (window.innerWidth <= 768) {
             closeMenu();
           }
-          
-          // スクロール位置を調整
-          const headerHeight = window.innerWidth <= 768 ? 80 : 100;
-          const targetPosition = targetElement.offsetTop - headerHeight;
-          
-          // スムーズにスクロール
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
         }
       });
     });
