@@ -467,7 +467,7 @@ nav.nav-hidden {
 				        filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(7471%) hue-rotate(201deg) brightness(97%) contrast(101%);
 		}
 		.nav-menu .nav-instagram .follow-text {
-				font-size: 1.2em;
+				font-size: 1em;
 				margin-bottom: 0;
 				color: #FEFFF8;
 				-webkit-transition: color 0.3s ease;
@@ -496,7 +496,7 @@ nav.nav-hidden {
 				transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 		}
 		.nav-title-en {
-				font-size: 1.2em;
+				font-size: 1em;
 				color: #FEFFF8;
 				-webkit-transition: color 0.3s ease;
 				transition: color 0.3s ease;
@@ -895,7 +895,7 @@ section.intro {
 
 .calendar {
 		background-color: #fff2da;
-		background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(59, 30, 0, 0.2) 40px, rgba(59, 30, 0, 0.2) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(59, 30, 0, 0.2) 40px, rgba(59, 30, 0, 0.2) 41px);
+		background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(145, 110, 74, 0.116) 20px, rgba(145, 110, 74, 0.116) 21px), repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(145, 110, 74, 0.116) 20px, rgba(145, 110, 74, 0.116) 21px);
 }
 .calendar .title_box {
 		background-size: auto 140px;
@@ -1054,9 +1054,7 @@ section.intro {
 }
 
 .online_shop {
-		background-image: url(../img/online-shop_bg.png);
-		background-repeat: repeat;
-		background-size: 200px 200px;
+		background: url(../img/online-shop_bg.png) repeat top left/200px 200px;
 		font-family: "Zen Maru Gothic", sans-serif;
 }
 .online_shop .title_box {

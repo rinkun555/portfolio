@@ -331,8 +331,8 @@ top: -5.3em;
 // calendar
   .calendar {
       background-color: $white-brown;
-      background-image:repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(59, 30, 0, 0.2) 40px, rgba(59, 30, 0, 0.2) 41px),
-              repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(59, 30, 0, 0.2) 40px, rgba(59, 30, 0, 0.2) 41px);
+      background-image:repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(145, 110, 74, 0.116) 20px, rgba(145, 110, 74, 0.116) 21px),
+              repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(145, 110, 74, 0.116) 20px, rgba(145, 110, 74, 0.116) 21px);
 
       .title_box{
         background-size: auto 140px;
@@ -489,9 +489,7 @@ top: -5.3em;
 
 //online_shop
 .online_shop{
-  background-image: url(../img/online-shop_bg.png);
-  background-repeat: repeat;
-  background-size: 200px 200px;
+background: url(../img/online-shop_bg.png) repeat top left / 200px 200px;
   font-family: $font-zen-maru;
 
   .title_box{
