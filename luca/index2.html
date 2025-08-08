@@ -6,6 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Project | Portfolio</title>
 
+    <!-- Schema Tags -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Toful Bagel",
+      "image": "https://tofulbagel.tokyo/img/logo.png",
+      "description": "青梅のお豆腐ベーグル専門・地域密着カフェ｜Toful Bagel cafe（トゥフル）は、お豆腐を練り込んだクセになるふわもち食感と、定番からちょっと珍しい味まで、ボリュームたっぷりのお豆腐ベーグルが人気のお店です。",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Chome-182-1 Katsunuma",
+        "addressLocality": "Ome",
+        "addressRegion": "Tokyo",
+        "postalCode": "198-0041",
+        "addressCountry": "JP"
+      },
+      "url": "https://tofulbagel.tokyo",
+      "telephone": "+81-80-4814-1215",
+      "priceRange": "¥¥",
+      "servesCuisine": ["Bagels", "Cakes", "Coffee"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.79078767000567,
+        "longitude": 139.26845896163317
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "openingHours": [
+        "Mo,Tu,Fr 08:00-17:00",
+        "Sa,Su 09:00-17:00"
+      ],
+      "hasMap": "https://www.google.com/maps/place/35.790690879769194,139.2684536029786"
+    }
+    </script>
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Luca Project showcasing creative work and design solutions">
     <meta name="keywords" content="luca, project, design, portfolio">
@@ -26,9 +73,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chango&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Favicon (optional) -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
+<!-- Standard .ico for legacy support (place in root directory) -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 
+<!-- PNG favicons (place in /img or /icons folder) -->
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+
+<!-- Apple Touch Icon (iPhone/iPad Home Screen) -->
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 
 <script>
   window.onload = function () {
@@ -587,20 +640,32 @@
         </div>
     </footer>
 
-    <!-- Schema.org markup for Google -->
-    <!-- <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Luca Project",
-        "image": "img/first.png",
-        "description": "Luca Project showcasing creative work and design solutions",
-        "author": {
-            "@type": "Person",
-            "name": "Rio Suzuki"
-        }
-    }
-    </script> -->
+
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Toful Bagel",
+  "image": "https://tofulbagel.tokyo/img/logo_full.svg",
+  "description": "Toful Bagel is a cozy local bagel shop in Ome, Tokyo, serving handmade bagels with a Japanese twist.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 Chome-182-1 Katsunuma",
+    "addressLocality": "Ome",
+    "addressRegion": "Tokyo",
+    "postalCode": "198-0041",
+    "addressCountry": "JP"
+  },
+  "url": "https://tofulbagel.tokyo",
+  "telephone": "+8180-4814-1215",
+  "priceRange": "¥¥",
+  "servesCuisine": "Bagels, Cakes, Coffee",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.79078767000567,
+    "longitude": 139.26845896163317
+  }
+}
+</script>
 
     <script>
   window.onload = function () {
