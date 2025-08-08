@@ -136,6 +136,15 @@
       hamburgerIcon.classList.remove('active');
     };
 
+    // ナビゲーションリンククリック時にメニューを閉じる（SP用）
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          closeMenu();
+        }
+      });
+    });
+
     // オーバーレイクリックでメニューを閉じる
     document.addEventListener('click', function(event) {
       const navMenu = document.querySelector('.nav-menu');
@@ -175,12 +184,42 @@
   <nav>
     <!-- 共通ナビゲーション -->
     <ul class="nav-menu">
-      <li><a href="#intro">Toful Bagel</a></li>
-      <li><a href="#calendar">カレンダー</a></li>
-      <li><a href="#store_info">店舗情報</a></li>
-      <li><a href="#online_shop">オンラインショップ</a></li>
-      <li><a href="#cafe_menu">カフェメニュー</a></li>
-      <li><a href="#other_services">その他サービス</a></li>
+      <li>
+        <a href="#intro">
+          <span class="nav-title-en">Tofu Bagel</span>
+          <span class="nav-title-jp">トゥフル(豆腐)ベーグル</span>
+        </a>
+      </li>
+      <li>
+        <a href="#calendar">
+          <span class="nav-title-en">Calendar</span>
+          <span class="nav-title-jp">カレンダー</span>
+        </a>
+      </li>
+      <li>
+        <a href="#store_info">
+          <span class="nav-title-en">Store Info</span>
+          <span class="nav-title-jp">店舗情報</span>
+        </a>
+      </li>
+      <li>
+        <a href="#online_shop">
+          <span class="nav-title-en">Online Shop</span>
+          <span class="nav-title-jp">オンラインショップ</span>
+        </a>
+      </li>
+      <li>
+        <a href="#cafe_menu">
+          <span class="nav-title-en">Cafe Menu</span>
+          <span class="nav-title-jp">カフェメニュー</span>
+        </a>
+      </li>
+      <li>
+        <a href="#other_services">
+          <span class="nav-title-en">Other Service</span>
+          <span class="nav-title-jp">その他サービス</span>
+        </a>
+      </li>
     </ul>
 
     <!-- ハンバーガーアイコン（SP用） -->
@@ -291,7 +330,7 @@
         </section>
 
 
-        <section class="online_shop">
+        <section class="online_shop" id="online_shop">
             <div class="title_box">
                 <h2 class="title">
                     <span class="english">ONLINE SHOP</span>
@@ -344,7 +383,7 @@
             <a class="online_shop_link" href="https://example.com" target="_blank" rel="noopener noreferrer">ベーグル通販サイトへ</a>
         </section>
 
-        <section class="cafe_menu">
+        <section class="cafe_menu" id="cafe_menu">
             <div class="title_box">
                 <h2 class="title">
                     <span class="english">Cafe Menu</span>
@@ -382,7 +421,7 @@
             </div>
         </section>
 
-        <section class="other_services">
+        <section class="other_services" id="other_services">
             <div class="title_box">
                 <h2 class="title">
                     <span class="english">OTHER SERVICE</span>
@@ -560,6 +599,15 @@
       overlay.classList.remove('active');
       hamburgerIcon.classList.remove('active');
     };
+
+    // ナビゲーションリンククリック時にメニューを閉じる（SP用）
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          closeMenu();
+        }
+      });
+    });
 
     // オーバーレイクリックでメニューを閉じる
     document.addEventListener('click', function(event) {
