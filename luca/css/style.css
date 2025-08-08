@@ -650,10 +650,10 @@ section {
 		        align-items: center;
 		gap: 10px;
 		border-radius: 100px;
-		border: 1px solid #000;
-		background: #30ADFF;
-		-webkit-box-shadow: 6px 7px 0px 0px #FFF, 7px 8px 0px 0px #000;
-		        box-shadow: 6px 7px 0px 0px #FFF, 7px 8px 0px 0px #000;
+		border: 1px solid #714B3D;
+		background: #714B3D;
+		-webkit-box-shadow: 6px 7px 0px 0px #FFF, 7px 8px 0px 0px #714B3D;
+		        box-shadow: 6px 7px 0px 0px #FFF, 7px 8px 0px 0px #714B3D;
 		font-family: "Zen Maru Gothic", sans-serif;
 		color: #ffffff;
 }
@@ -667,18 +667,15 @@ section {
 		padding: 3em 0;
 		text-align: center;
 		position: relative;
-		color: white;
+		color: #714B3D;
 		margin-bottom: 2em;
-}
-.title_box.white {
-		background-image: url("../img/title_white.svg");
 }
 .title_box .title {
 		position: relative;
 		z-index: 1;
 		margin: 0;
-		background-color: #30ADFF;
 		padding: 0.5em 0;
+		background-color: #ffffff;
 }
 .title_box .title .english {
 		font-family: "Chango", sans-serif;
@@ -899,23 +896,21 @@ section.intro {
 }
 
 .calendar {
-		background-color: #30ADFF;
-		background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.2) 40px, rgba(255, 255, 255, 0.2) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.2) 40px, rgba(255, 255, 255, 0.2) 41px);
+		background-color: #fff2da;
+		background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(59, 30, 0, 0.2) 40px, rgba(59, 30, 0, 0.2) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(59, 30, 0, 0.2) 40px, rgba(59, 30, 0, 0.2) 41px);
 }
 .calendar .title_box {
 		background-size: auto 140px;
 }
 .calendar .title_box .title {
-		color: #30ADFF;
 		text-align: center;
-		background-color: #ffffff;
 }
 .calendar .calendar_box img {
 		border-radius: 15px;
 }
 
 .store_info {
-		background-color: #A1D9FE;
+		background-color: #E7F4FF;
 		position: relative;
 		overflow: hidden;
 }
@@ -1064,6 +1059,7 @@ section.intro {
 		background-image: url(../img/online-shop_bg.png);
 		background-repeat: repeat;
 		font-family: "Zen Maru Gothic", sans-serif;
+		background-size: 200px;
 }
 .online_shop .title_box {
 		background-size: auto 137px;
@@ -1085,7 +1081,7 @@ section.intro {
 		height: 20vh;
 		overflow: hidden;
 		border-radius: 200px 200px 0 0;
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid #714B3D;
 		margin: 0 auto 0.5em;
 }
 .online_shop .shop_items .item_img_frame img {
@@ -1097,15 +1093,20 @@ section.intro {
 }
 .online_shop .shop_items .item_img_box {
 		border-radius: 200px 200px 30px 30px;
-		border: 1px solid #000;
-		background: #30ADFF;
-		-webkit-box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #000;
-		        box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #000;
+		color: #714B3D;
+		border: 1px solid #714B3D;
+		background: #FEFFF8;
+		-webkit-box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #714B3D;
+		        box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #714B3D;
 }
 .online_shop .shop_items .item_img_box .item_name, .online_shop .shop_items .item_img_box .item_price {
 		margin-bottom: 0;
 		line-height: 1.4;
 		padding: 0 1em 1em;
+		font-family: "Zen Maru Gothic";
+}
+.online_shop .shop_items .item_img_box .item_name {
+		padding-bottom: 0 !important;
 }
 
 .cafe_menu {
@@ -1157,9 +1158,6 @@ section.intro {
 		font-family: "Zen Maru Gothic", sans-serif;
 }
 
-.other_services {
-		background-color: #FEFFF8;
-}
 .other_services .title_box {
 		background-size: auto 137px;
 }
