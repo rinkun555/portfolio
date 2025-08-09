@@ -129,12 +129,10 @@ border-radius: 0 0 50% 50%;
 
 // オンラインショップアイコン（SP用）
 .online-shop-icon {
-
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
   cursor: pointer;
- background-image: url(../img/online-shop_bg.png);
- background-size: contain;
-
-  padding: 1em;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
@@ -145,7 +143,7 @@ border-radius: 0 0 50% 50%;
   }
 
   img {
-    width: 90%;
+    width: 100%;
     height: 100%;
     object-fit: contain;
     transition: all 0.3s ease;
