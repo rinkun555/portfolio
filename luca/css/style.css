@@ -139,8 +139,8 @@ nav.nav-hidden {
 		position: fixed;
 		bottom: 1em;
 		right: 1em;
-		width: 4em;
-		height: 4em;
+		width: 6em;
+		height: 5em;
 		cursor: pointer;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
@@ -756,7 +756,7 @@ section.intro {
 .intro .intro_outer::before {
 		content: "";
 		position: absolute;
-		top: -5.3em;
+		top: -2.3em;
 		right: 0.2em;
 		width: 25vh;
 		height: 16vh;
@@ -767,7 +767,7 @@ section.intro {
 .intro .intro_outer::after {
 		content: "";
 		position: absolute;
-		top: -2.3em;
+		top: -7em;
 		left: 0em;
 		width: 23vh;
 		height: 13vh;
