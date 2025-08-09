@@ -611,15 +611,14 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
         position:absolute;
         bottom: -1.5em;
         right: 0;
-    background-color: rgb(91 45 0 / 50%);
-        -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-        color: white;
-        padding: 1em 1.5em;
-        border-radius: 10em;
-        font-size: 1em;
-        text-align: center;
-        border: 1px solid $warm-white;
+background-color: rgb(255 255 255 / 40%);
+    backdrop-filter: blur(5px);
+    color: $dark-brown;
+    padding: 1em 1.5em;
+    border-radius: 10em;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #fefefe42;
         font-family: $font-zen-maru;
       }
     }
@@ -679,14 +678,14 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
     text-align: center;
     white-space: nowrap;
     max-width: calc(100% - 1em);
-        background-color: rgb(91 45 0 / 50%);
-        -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-        color: white;
-        padding: 1em 1.5em;
-        border-radius: 10em;
-        font-size: 0.8em;
-        border: 1px solid $warm-white;
+background-color: #714b3d1f;
+    backdrop-filter: blur(5px);
+    color: #714b3d;
+    padding: 0.5em 1em;
+    border-radius: 10em;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #714b3d05;
         font-family: $font-zen-maru;
     }
   }
