@@ -36,7 +36,6 @@ nav.nav-hidden {
 		        box-sizing: border-box;
 		background: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(48, 173, 255, 0.4117647059) 30px, rgba(48, 173, 255, 0.1607843137) 31px);
 		background-color: #A1D9FE;
-		-webkit-backdrop-filter: blur(20px);
 		backdrop-filter: blur(20px);
 		gap: 0;
 		-webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -651,7 +650,7 @@ section {
 		gap: 10px;
 		border-radius: 100px;
 		border: 1px solid #714B3D;
-		background: #714B3D;
+		background: url(../img/body_link_bg.jpg) repeat top left/50% 50%;
 		-webkit-box-shadow: 6px 7px 0px 0px #FFF, 7px 8px 0px 0px #714B3D;
 		        box-shadow: 6px 7px 0px 0px #FFF, 7px 8px 0px 0px #714B3D;
 		font-family: "Zen Maru Gothic", sans-serif;
@@ -669,12 +668,14 @@ section {
 		position: relative;
 		color: #714B3D;
 		margin-bottom: 2em;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
 }
 .title_box .title {
 		position: relative;
 		z-index: 1;
 		margin: 0;
-		padding: 0.5em 0;
+		padding: 0.5em 0.5em;
 		background-color: #ffffff;
 }
 .title_box .title .english {
@@ -795,7 +796,7 @@ section.intro {
 		z-index: 1;
 		padding: 2em;
 		border-radius: 50px;
-		margin: 0 2.5em 4.5em;
+		margin: 0 2em 4.5em;
 }
 .intro .intro_outer .box img {
 		margin: 0 auto;
@@ -921,6 +922,9 @@ section.intro {
 }
 .store_info .title_box .title .english {
 		font-size: 1.2em;
+}
+.store_info .closingday {
+		color: rgb(187, 0, 0);
 }
 .store_info .google_map {
 		width: 100%;
@@ -1057,7 +1061,7 @@ section.intro {
 }
 
 .online_shop {
-		background: url(../img/online-shop_bg.png) repeat top left/200px 200px;
+		background: url(../img/online-shop_bg.jpg) repeat top left/50% 50%;
 		font-family: "Zen Maru Gothic", sans-serif;
 }
 .online_shop .title_box {
@@ -1145,10 +1149,9 @@ section.intro {
 }
 .cafe_menu .cafe_items .cafe_item .cafe_label {
 		position: absolute;
-		bottom: -1em;
+		bottom: -1.5em;
 		right: 0;
 		background-color: rgba(91, 45, 0, 0.5);
-		-webkit-backdrop-filter: blur(3px);
 		backdrop-filter: blur(3px);
 		color: white;
 		padding: 1em 1.5em;
@@ -1214,7 +1217,6 @@ section.intro {
 		white-space: nowrap;
 		max-width: calc(100% - 1em);
 		background-color: rgba(91, 45, 0, 0.5);
-		-webkit-backdrop-filter: blur(3px);
 		backdrop-filter: blur(3px);
 		color: white;
 		padding: 1em 1.5em;
