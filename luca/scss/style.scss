@@ -627,7 +627,6 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
         }
       }
     }
-
   }
 
 
@@ -689,9 +688,9 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
         position:absolute;
         bottom: -1.5em;
         right: 0;
-    background-color: rgb(91 45 0 / 50%);
+        background-color: rgb(91 45 0 / 50%);
         -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
         color: white;
         padding: 1em 1.5em;
         border-radius: 10em;
@@ -721,9 +720,8 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
   }
 
   .other_services_inner{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1em;
     margin-bottom: 1em;
     max-width: 100%;
@@ -732,20 +730,22 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
 
   .other_services_box{
     position: relative;
-    width: calc(50% - 0.5em); // SP版: 2列 (50% - gap/2)
     background-color: $dark-brown;
     border-radius: 10px;
 
     &.full{
-      width: 100%;
+      grid-column: 1 / -1; // Spans across all columns
     }
 
     .case_title {
     background-color: $warm-white;
     color: $dark-brown;
-    margin: 1em 0.5em 0 0.5em;
+    margin:1em 1em 0 1em;
     font-size: 0.85em;
-    padding: 0.5em;
+    padding: 0.5em 1em;
+    display: inline-block;
+    border-radius: 10em;
+    font-family: $font-zen-maru;
     }
 
     .other_services_frame{
@@ -760,14 +760,12 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
         }
     }
 
-    p{
+  .text{
     padding: 0.6em 1em;
-    text-align: center;
     max-width: calc(100% - 1em);
         color: $warm-white;
-        padding: 1em 1.5em;
-        border-radius: 10em;
-        font-size: 0.8em;
+        padding: 0.5em 1.5em 0 1.5em;
+            font-size: 0.8em;
         font-family: $font-zen-maru;
     }
   }
@@ -924,7 +922,7 @@ top: 0.7em;
       .intro_inner {
         background-size: 50%;
         width: 90%;
-        margin: 0 auto;
+        margin: 0 auto 10vh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -938,7 +936,10 @@ top: 0.7em;
       .bagel_all_outer{
         img{
         opacity: 0.9;
+        border-radius: 0;
         }
+
+        padding: 0;
       }
     }
   }
@@ -969,7 +970,7 @@ top: 0.7em;
   .store_info {
     p{
       margin-bottom: 0;
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
 
     .title_box {
@@ -990,7 +991,7 @@ top: 0.7em;
 .online_shop{
   p{
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
   .shop_items{
   gap: 4em;
@@ -1013,7 +1014,7 @@ top: 0.7em;
 .cafe_menu {
     p{
     text-align: center;
-        font-size: 1.4em;
+        font-size: 1.3em;
   }
   .cafe_items{
    display: grid;
@@ -1035,26 +1036,42 @@ top: 0.7em;
 }
 
 .other_services{
-      p{
+   p{
+    font-size: 1.3em;
+      }
+   .description{
     text-align: center;
-    font-size: 1.4em;
-  }
+   }
+   .case_title{
+    text-align: center;
+   }
   .other_services_inner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5em;
     margin-bottom: 5em;
-    justify-content: space-between;
     
        .other_services_box {
-        width: calc(25% - 1.125em); // PC版: 4列 (25% - gap*3/4)
         margin-bottom: 3em;
         
+        &.full{
+        grid-column: auto;
+        }
         .other_services_frame{
-         border-radius: 50%;
-         aspect-ratio: 1;
+         height: 24vh;
+
+         img{
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          object-fit: cover;
+          border-radius: 10px;
+         }
        }
+
        p{
             bottom: 0em;
-    right: 0.3em;
+            right: 0.3em;
             font-size: 0.9em;
             padding: 0.8em 1.2em;
             max-width: calc(100% - 1em);
@@ -1069,7 +1086,7 @@ top: 0.7em;
 }
 
 //PC
-@media (min-width: 1600px) {
+@media (min-width: 1200px) {
   section {
     padding: 6em 10em;
   }
@@ -1103,8 +1120,8 @@ top: 0.7em;
       &::after {
         right: auto;
         left: 16em;
-            width: 17vw;
-    height: 16vh;
+        width: 17vw;
+        height: 16vh;
       }
     }
 
@@ -1127,10 +1144,9 @@ top: 0.7em;
       grid-column: 3;
       grid-row: 1;
     }
-
   }
 }
-  }
+}
 }
 
 // Loading Screen

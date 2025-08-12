@@ -1288,14 +1288,10 @@ section.intro {
 		font-size: 1.1em;
 }
 .other_services .other_services_inner {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 1em 1fr;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 1em;
 		margin-bottom: 1em;
 		max-width: 100%;
@@ -1304,19 +1300,21 @@ section.intro {
 }
 .other_services .other_services_box {
 		position: relative;
-		width: calc(50% - 0.5em);
 		background-color: #714B3D;
 		border-radius: 10px;
 }
 .other_services .other_services_box.full {
-		width: 100%;
+		grid-column: 1/-1;
 }
 .other_services .other_services_box .case_title {
 		background-color: #FEFFF8;
 		color: #714B3D;
-		margin: 1em 0.5em 0 0.5em;
+		margin: 1em 1em 0 1em;
 		font-size: 0.85em;
-		padding: 0.5em;
+		padding: 0.5em 1em;
+		display: inline-block;
+		border-radius: 10em;
+		font-family: "Zen Maru Gothic", sans-serif;
 }
 .other_services .other_services_box .other_services_frame {
 		width: 100%;
@@ -1329,13 +1327,11 @@ section.intro {
 		display: block;
 		border-radius: 10px;
 }
-.other_services .other_services_box p {
+.other_services .other_services_box .text {
 		padding: 0.6em 1em;
-		text-align: center;
 		max-width: calc(100% - 1em);
 		color: #FEFFF8;
-		padding: 1em 1.5em;
-		border-radius: 10em;
+		padding: 0.5em 1.5em 0 1.5em;
 		font-size: 0.8em;
 		font-family: "Zen Maru Gothic", sans-serif;
 }
@@ -1474,7 +1470,7 @@ section.intro {
 		.intro .intro_outer .intro_inner {
 				background-size: 50%;
 				width: 90%;
-				margin: 0 auto;
+				margin: 0 auto 10vh;
 				display: -ms-grid;
 				display: grid;
 				-ms-grid-columns: 1fr 20px 1fr;
@@ -1485,8 +1481,12 @@ section.intro {
 		.intro .intro_outer .intro_inner p {
 				font-size: 1.1em;
 		}
+		.intro .intro_outer .bagel_all_outer {
+				padding: 0;
+		}
 		.intro .intro_outer .bagel_all_outer img {
 				opacity: 0.9;
+				border-radius: 0;
 		}
 		.calendar_box {
 				text-align: center;
@@ -1501,7 +1501,7 @@ section.intro {
 		}
 		.store_info p {
 				margin-bottom: 0;
-				font-size: 1.2em;
+				font-size: 1.1em;
 		}
 		.store_info .title_box {
 				background-size: auto 140px !important;
@@ -1514,7 +1514,7 @@ section.intro {
 		}
 		.online_shop p {
 				text-align: center;
-				font-size: 1.4em;
+				font-size: 1.3em;
 		}
 		.online_shop .shop_items {
 				gap: 4em;
@@ -1530,7 +1530,7 @@ section.intro {
 		}
 		.cafe_menu p {
 				text-align: center;
-				font-size: 1.4em;
+				font-size: 1.3em;
 		}
 		.cafe_menu .cafe_items {
 				display: -ms-grid;
@@ -1548,23 +1548,38 @@ section.intro {
 				font-size: 1.4em;
 		}
 		.other_services p {
+				font-size: 1.3em;
+		}
+		.other_services .description {
 				text-align: center;
-				font-size: 1.4em;
+		}
+		.other_services .case_title {
+				text-align: center;
 		}
 		.other_services .other_services_inner {
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-columns: 1fr 1.5em 1fr 1.5em 1fr;
+				grid-template-columns: repeat(3, 1fr);
 				gap: 1.5em;
 				margin-bottom: 5em;
-				-webkit-box-pack: justify;
-				    -ms-flex-pack: justify;
-				        justify-content: space-between;
 		}
 		.other_services .other_services_inner .other_services_box {
-				width: calc(25% - 1.125em);
 				margin-bottom: 3em;
 		}
+		.other_services .other_services_inner .other_services_box.full {
+				grid-column: auto;
+		}
 		.other_services .other_services_inner .other_services_box .other_services_frame {
-				border-radius: 50%;
-				aspect-ratio: 1;
+				height: 24vh;
+		}
+		.other_services .other_services_inner .other_services_box .other_services_frame img {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				-o-object-fit: cover;
+				   object-fit: cover;
+				border-radius: 10px;
 		}
 		.other_services .other_services_inner .other_services_box p {
 				bottom: 0em;
@@ -1577,7 +1592,7 @@ section.intro {
 				width: 20%;
 		}
 }
-@media (min-width: 1600px) {
+@media (min-width: 1200px) {
 		section {
 				padding: 6em 10em;
 		}
