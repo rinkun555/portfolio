@@ -153,11 +153,6 @@ nav.nav-hidden {
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 }
-.online-shop-icon:hover {
-		-webkit-transform: scale(1.1);
-		        transform: scale(1.1);
-		background: rgb(255, 255, 255);
-}
 .online-shop-icon img {
 		width: 100%;
 		height: 100%;
