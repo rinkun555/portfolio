@@ -252,13 +252,28 @@ top: -2.3em;
             padding: 2em;
             border-radius: 50px;
             margin: 0 2em 4.5em;
+                 
+            &:nth-child(1) {
+              background-color: #ffff;
+            }
+        
+            &:nth-child(2) {
+              background-color: #f2faff; 
+            }
+        
+            &:nth-child(3) {
+              background-color: #e4f4ff;
+            }
+  
+            &:nth-child(4) {
+              background-color: #c9e9fe;
+            }
 
             img{
             margin: 0 auto;
             display: flex;
             max-height: 20vh;
             }
-  
 
             .three_bagel {
               display: grid;
@@ -327,7 +342,43 @@ top: -2.3em;
         }
       }
 }
-        
+.bagel_all_outer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5em;
+  box-sizing: border-box;
+  .bagel_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5em;
+
+    .bagel_main,
+    .bagel_sub {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+    }
+    
+    .bagel_main {
+      grid-column: 1 / -1; // spans both columns (full width)
+      grid-row: 1;
+    }
+    
+    .bagel_sub:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    
+    .bagel_sub:nth-child(3) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
+
 // calendar
   .calendar {
       background-color: $white-brown;
@@ -346,7 +397,34 @@ top: -2.3em;
         img{
           border-radius: 15px;
           }
+          margin-bottom: 2em;
         }
+
+.market_info {
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+
+  .market_img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      /* 必要に応じて枠線など追加可 */
+    }
+  }
+
+  p:not(.market_img) {
+    width:55%;
+    margin: 0;
+  }
+}
   }
 
 //store_info
@@ -655,38 +733,41 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
   .other_services_box{
     position: relative;
     width: calc(50% - 0.5em); // SP版: 2列 (50% - gap/2)
-    margin-bottom: 3em;
+    background-color: $dark-brown;
+    border-radius: 10px;
+
+    &.full{
+      width: 100%;
+    }
+
+    .case_title {
+    background-color: $warm-white;
+    color: $dark-brown;
+    margin: 1em 0.5em 0 0.5em;
+    font-size: 0.85em;
+    padding: 0.5em;
+    }
 
     .other_services_frame{
-      border-radius: 50%;
-      overflow: hidden;
       width: 100%;
-      aspect-ratio: 1;
 
           img {
           width: 100%;
-          height: 100%;
+          height: 20vh;
           object-fit: cover;
           display: block;
+          border-radius: 10px;
         }
     }
 
     p{
-    position: absolute;
-    bottom: -3em;
-    right: 0;
     padding: 0.6em 1em;
     text-align: center;
-    white-space: nowrap;
     max-width: calc(100% - 1em);
-        background-color: rgb(91 45 0 / 50%);
-        -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-        color: white;
+        color: $warm-white;
         padding: 1em 1.5em;
         border-radius: 10em;
         font-size: 0.8em;
-        border: 1px solid $warm-white;
         font-family: $font-zen-maru;
     }
   }
@@ -855,14 +936,9 @@ top: 0.7em;
       }
 
       .bagel_all_outer{
-        height: 40vh;
-    overflow: hidden;
-    position: relative;
-    img{
-      position: absolute;
-    top: -25vh;
-    opacity: 0.9;
-    }
+        img{
+        opacity: 0.9;
+        }
       }
     }
   }
@@ -992,7 +1068,7 @@ top: 0.7em;
 }
 }
 
-//
+//PC
 @media (min-width: 1600px) {
   section {
     padding: 6em 10em;
@@ -1031,6 +1107,29 @@ top: 0.7em;
     height: 16vh;
       }
     }
+
+.bagel_all_outer {
+
+  .bagel_grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    // 1枚目・2枚目・3枚目を横並び
+    .bagel_main {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .bagel_sub:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .bagel_sub:nth-child(3) {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+  }
+}
   }
 }
 
@@ -1131,4 +1230,8 @@ top: 0.7em;
     opacity: 0.8;
   }
 }
+
+
+
+
 
