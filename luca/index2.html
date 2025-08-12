@@ -226,7 +226,8 @@
     // PC用スクロール時ナビゲーション表示/非表示機能
     let lastScrollTop = 0;
     let scrollTimeout;
-    
+    const onlineShopIcon = document.querySelector('.online-shop-icon');
+
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const nav = document.querySelector('nav');
@@ -251,17 +252,26 @@
         }
       }
       
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-      
-      // スクロール停止時にナビを表示
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        if (window.innerWidth >= 1600) {
-          nav.classList.remove('nav-hidden');
+      // 下スクロール時に .online-shop-icon を画面下に隠す（SPのみ）
+      if (onlineShopIcon && window.innerWidth <= 768) {
+        if (currentScroll > lastScrollTop && currentScroll > 100) {
+          onlineShopIcon.style.transform = 'translateY(100%)';
+          onlineShopIcon.style.opacity = '0';
+          onlineShopIcon.style.pointerEvents = 'none';
         } else {
-          spNavIcons.classList.remove('nav-hidden');
+          onlineShopIcon.style.transform = 'translateY(0)';
+          onlineShopIcon.style.opacity = '1';
+          onlineShopIcon.style.pointerEvents = 'auto';
         }
-      }, 1000); // 1秒後に表示
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          onlineShopIcon.style.transform = 'translateY(0)';
+          onlineShopIcon.style.opacity = '1';
+          onlineShopIcon.style.pointerEvents = 'auto';
+        }, 1000);
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 
     // オーバーレイクリックでメニューを閉じる
@@ -297,6 +307,13 @@
   <div class="loading-logo">
     <img src="img/logo_full.svg" alt="Toful Bagel logo">
   </div>
+</div>
+
+<!-- オンラインショップアイコン（SP用・画面右下固定） -->
+<div class="online-shop-icon">
+  <a href="#online_shop">
+    <img src="img/button_onlineshop.png" alt="Online Shop">
+  </a>
 </div>
 
 <header>
@@ -359,12 +376,6 @@
         </a>
       </div>
 
-      <!-- オンラインショップアイコン（SP用） -->
-      <div class="online-shop-icon">
-        <a href="#online_shop">
-          <img src="img/button_onlineshop.png" alt="Online Shop">
-        </a>
-      </div>
       <!-- ハンバーガーアイコン（SP用） -->
       <div class="hamburger-icon" onclick="toggleMenu()">
         <img src="img/menu_bar.svg" alt="Menu">
@@ -809,7 +820,8 @@
     // PC用スクロール時ナビゲーション表示/非表示機能
     let lastScrollTop = 0;
     let scrollTimeout;
-    
+    const onlineShopIcon = document.querySelector('.online-shop-icon');
+
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const nav = document.querySelector('nav');
@@ -834,17 +846,26 @@
         }
       }
       
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-      
-      // スクロール停止時にナビを表示
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        if (window.innerWidth >= 1600) {
-          nav.classList.remove('nav-hidden');
+      // 下スクロール時に .online-shop-icon を画面下に隠す（SPのみ）
+      if (onlineShopIcon && window.innerWidth <= 768) {
+        if (currentScroll > lastScrollTop && currentScroll > 100) {
+          onlineShopIcon.style.transform = 'translateY(100%)';
+          onlineShopIcon.style.opacity = '0';
+          onlineShopIcon.style.pointerEvents = 'none';
         } else {
-          spNavIcons.classList.remove('nav-hidden');
+          onlineShopIcon.style.transform = 'translateY(0)';
+          onlineShopIcon.style.opacity = '1';
+          onlineShopIcon.style.pointerEvents = 'auto';
         }
-      }, 1000); // 1秒後に表示
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          onlineShopIcon.style.transform = 'translateY(0)';
+          onlineShopIcon.style.opacity = '1';
+          onlineShopIcon.style.pointerEvents = 'auto';
+        }, 1000);
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 
     // オーバーレイクリックでメニューを閉じる
@@ -868,5 +889,4 @@
 </script>
 </body>
 
-</html>
 </html>
