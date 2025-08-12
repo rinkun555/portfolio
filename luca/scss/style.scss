@@ -10,6 +10,45 @@ $white-brown:#fff2da;
 $dark-brown: #714B3D;
 $pink:#FEBCF9;
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+  
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes floater {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bounceInLoop {
+  0%   { transform: scale(1); opacity: 1; }
+  40%  { transform: scale(0.9); }
+  80%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
 // Font variables
     $font-chango: "Chango", sans-serif;
     $font-zen-maru: "Zen Maru Gothic", sans-serif;
@@ -188,7 +227,7 @@ header{
 
 //introduction
 section.intro{
-  padding:6.5em 0 0;
+  padding:8em 0 0;
 }
 
 .intro{
@@ -199,19 +238,20 @@ section.intro{
   font-family: $font-zen-maru;
 
   
-  &::before {
+  &.bounceIn::before {
     content: "";
     position: absolute;
-top: -2.3em;
+    top: -3.3em;
     right: 0.2em;
     width: 25vh;
     height: 16vh;
     background: url('../img/intro_fuwa2.png') no-repeat center center;
     background-size: contain;
     z-index: 10;
+    animation: bounceInLoop 2s cubic-bezier(.215, .61, .355, 1) infinite;
   }
   
-  &::after {
+  &.floater::after {
     content: "";
     position: absolute;
     top: -7em;
@@ -221,6 +261,7 @@ top: -2.3em;
     background: url('../img/intro_mochi2.png') no-repeat center center;
     background-size: contain;
     z-index: 10;
+     animation: floater 3s ease-in-out infinite;
   }
   
   .title {
@@ -358,7 +399,6 @@ top: -2.3em;
       height: auto;
       object-fit: cover;
       display: block;
-      border-radius: 10px;
     }
     
     .bagel_main {
@@ -1217,32 +1257,6 @@ top: 0.7em;
         animation: none;
       }
     }
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-}
-  
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
   }
 }
 

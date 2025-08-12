@@ -580,6 +580,113 @@ to {
 				opacity: 1;
 		}
 }
+@-webkit-keyframes pulse {
+		0%, 100% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+				opacity: 1;
+		}
+		50% {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+				opacity: 0.8;
+		}
+}
+@keyframes pulse {
+		0%, 100% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+				opacity: 1;
+		}
+		50% {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+				opacity: 0.8;
+		}
+}
+@keyframes pulse {
+		0%, 100% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+				opacity: 1;
+		}
+		50% {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+				opacity: 0.8;
+		}
+		50% {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+				opacity: 0.8;
+		}
+}
+@-webkit-keyframes floater {
+		0% {
+				-webkit-transform: translateY(0);
+				        transform: translateY(0);
+		}
+		50% {
+				-webkit-transform: translateY(-15px);
+				        transform: translateY(-15px);
+		}
+		100% {
+				-webkit-transform: translateY(0);
+				        transform: translateY(0);
+		}
+}
+@keyframes floater {
+		0% {
+				-webkit-transform: translateY(0);
+				        transform: translateY(0);
+		}
+		50% {
+				-webkit-transform: translateY(-15px);
+				        transform: translateY(-15px);
+		}
+		100% {
+				-webkit-transform: translateY(0);
+				        transform: translateY(0);
+		}
+}
+@-webkit-keyframes bounceInLoop {
+		0% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+				opacity: 1;
+		}
+		40% {
+				-webkit-transform: scale(0.9);
+				        transform: scale(0.9);
+		}
+		80% {
+				-webkit-transform: scale(1.02);
+				        transform: scale(1.02);
+		}
+		100% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+		}
+}
+@keyframes bounceInLoop {
+		0% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+				opacity: 1;
+		}
+		40% {
+				-webkit-transform: scale(0.9);
+				        transform: scale(0.9);
+		}
+		80% {
+				-webkit-transform: scale(1.02);
+				        transform: scale(1.02);
+		}
+		100% {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+		}
+}
 html, body, img, h1, h2, h3, h4, p, ul, li, dl, dd, dt, span, a, textarea, input {
 		margin: 0;
 		padding: 0;
@@ -744,7 +851,7 @@ header .cloud-bg .shape_shadow {
 }
 
 section.intro {
-		padding: 6.5em 0 0;
+		padding: 8em 0 0;
 }
 
 .intro {
@@ -755,18 +862,20 @@ section.intro {
 		padding-top: 3em;
 		font-family: "Zen Maru Gothic", sans-serif;
 }
-.intro .intro_outer::before {
+.intro .intro_outer.bounceIn::before {
 		content: "";
 		position: absolute;
-		top: -2.3em;
+		top: -3.3em;
 		right: 0.2em;
 		width: 25vh;
 		height: 16vh;
 		background: url("../img/intro_fuwa2.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
+		-webkit-animation: bounceInLoop 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+		        animation: bounceInLoop 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
-.intro .intro_outer::after {
+.intro .intro_outer.floater::after {
 		content: "";
 		position: absolute;
 		top: -7em;
@@ -776,6 +885,8 @@ section.intro {
 		background: url("../img/intro_mochi2.png") no-repeat center center;
 		background-size: contain;
 		z-index: 10;
+		-webkit-animation: floater 3s ease-in-out infinite;
+		        animation: floater 3s ease-in-out infinite;
 }
 .intro .intro_outer .title.new img {
 		width: 50%;
@@ -949,7 +1060,6 @@ section.intro {
 		-o-object-fit: cover;
 		   object-fit: cover;
 		display: block;
-		border-radius: 10px;
 }
 .bagel_all_outer .bagel_grid .bagel_main {
 		grid-column: 1/-1;
@@ -1729,47 +1839,6 @@ section.intro {
 		.loading-screen .loading-logo.logo-fade img {
 				-webkit-animation: none;
 				        animation: none;
-		}
-		@-webkit-keyframes pulse {
-				0%, 100% {
-						-webkit-transform: scale(1);
-						        transform: scale(1);
-						opacity: 1;
-				}
-				50% {
-						-webkit-transform: scale(1.1);
-						        transform: scale(1.1);
-						opacity: 0.8;
-				}
-		}
-		@keyframes pulse {
-				0%, 100% {
-						-webkit-transform: scale(1);
-						        transform: scale(1);
-						opacity: 1;
-				}
-				50% {
-						-webkit-transform: scale(1.1);
-						        transform: scale(1.1);
-						opacity: 0.8;
-				}
-		}
-		@keyframes pulse {
-				0%, 100% {
-						-webkit-transform: scale(1);
-						        transform: scale(1);
-						opacity: 1;
-				}
-				50% {
-						-webkit-transform: scale(1.1);
-						        transform: scale(1.1);
-						opacity: 0.8;
-				}
-				50% {
-						-webkit-transform: scale(1.1);
-						        transform: scale(1.1);
-						opacity: 0.8;
-				}
 		}
 		.online-shop-icon {
 				display: none;
