@@ -345,13 +345,12 @@ top: -2.3em;
 .bagel_all_outer {
   width: 100%;
   margin: 0 auto;
-  padding: 0.5em;
   box-sizing: border-box;
   .bagel_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 0.5em;
+    gap: 0.3em;
 
     .bagel_main,
     .bagel_sub {
@@ -403,7 +402,7 @@ top: -2.3em;
 .market_info {
   display: flex;
   align-items: center;
-justify-content: space-between;
+column-gap: 0.8em;
 
   .market_img {
     width: 40%;
@@ -423,6 +422,7 @@ justify-content: space-between;
   p:not(.market_img) {
     width:55%;
     margin: 0;
+    font-size: 0.9em;
   }
 }
   }
@@ -723,7 +723,7 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -756,7 +756,7 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
           height: 20vh;
           object-fit: cover;
           display: block;
-          border-radius: 10px;
+          border-radius: 10px 10px 0 0;
         }
     }
 

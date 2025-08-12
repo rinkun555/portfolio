@@ -914,18 +914,17 @@ section.intro {
 .bagel_all_outer {
 		width: 100%;
 		margin: 0 auto;
-		padding: 0.5em;
 		-webkit-box-sizing: border-box;
 		        box-sizing: border-box;
 }
 .bagel_all_outer .bagel_grid {
 		display: -ms-grid;
 		display: grid;
-		-ms-grid-columns: 1fr 0.5em 1fr;
+		-ms-grid-columns: 1fr 0.3em 1fr;
 		grid-template-columns: 1fr 1fr;
-		-ms-grid-rows: auto 0.5em auto;
+		-ms-grid-rows: auto 0.3em auto;
 		grid-template-rows: auto auto;
-		gap: 0.5em;
+		gap: 0.3em;
 }
 .bagel_all_outer .bagel_grid > *:nth-child(1) {
 		-ms-grid-row: 1;
@@ -993,9 +992,9 @@ section.intro {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
+		-webkit-column-gap: 0.8em;
+		   -moz-column-gap: 0.8em;
+		        column-gap: 0.8em;
 }
 .calendar .market_info .market_img {
 		width: 40%;
@@ -1020,6 +1019,7 @@ section.intro {
 .calendar .market_info p:not(.market_img) {
 		width: 55%;
 		margin: 0;
+		font-size: 0.9em;
 }
 
 .store_info {
@@ -1294,7 +1294,7 @@ section.intro {
 		-ms-grid-columns: 1fr 1em 1fr;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1em;
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 		max-width: 100%;
 		-webkit-box-sizing: border-box;
 		        box-sizing: border-box;
@@ -1326,7 +1326,7 @@ section.intro {
 		-o-object-fit: cover;
 		   object-fit: cover;
 		display: block;
-		border-radius: 10px;
+		border-radius: 10px 10px 0 0;
 }
 .other_services .other_services_box .text {
 		padding: 0.6em 1em;
