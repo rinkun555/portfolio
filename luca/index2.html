@@ -76,6 +76,9 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -291,6 +294,57 @@
         closeMenu();
       }
     });
+
+    // Initialize Swiper for SP only
+    if (window.innerWidth <= 768) {
+      const introSwiper = new Swiper('.intro-swiper', {
+        slidesPerView: 2,              // 中央1枚 + 左右0.5ずつ = 2
+        spaceBetween: 16,
+        centeredSlides: true,          // 中央揃え
+        loop: true,                    // 無限ループ
+        loopedSlides: 7,              // 実際のスライド数を指定
+        initialSlide: 0,              // 1番目のスライドを中央に
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          dynamicBullets: false,
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 12,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+        },
+        // エラー対策とセンタリング修正
+        observer: true,
+        observeParents: true,
+        watchSlidesProgress: true,
+        loopFillGroupWithBlank: false,
+        on: {
+          init: function() {
+            console.log('Swiper initialized');
+            // 初期化後に確実に1枚目を中央に配置
+            setTimeout(() => {
+              this.slideToLoop(0, 0); // ループを考慮して1枚目に移動
+            }, 100);
+          },
+          loopFix: function() {
+            console.log('Loop fixed');
+          },
+          error: function(error) {
+            console.log('Swiper error:', error);
+          }
+        }
+      });
+    }
   };
 </script>
 
@@ -415,9 +469,44 @@
                         <p>こだわりは、これでもかとたっぷり詰まった具材たち。どこを食べても後悔させません！</p>
                         <img src="img/intro_gu.png" alt="たっぷり詰まった具材" >
                     </div>
-                    <div class="box">
-                        <p>シンプルからお惣菜系、甘〜いもの、変わり種まで、お子様から、年配の方まで、もぐもぐ美味しく食べられます。</p>
-                  <img src="img/intro_three.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル" >
+                    <div class="box kind">
+                        <p class="explain">シンプルからお惣菜系、甘〜いもの、変わり種まで、お子様から、年配の方まで、もぐもぐ美味しく食べられます。</p>
+                        
+                        <!-- Swiper -->
+                        <div class="swiper intro-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">チーズ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">チーズ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">チーズ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">チーズ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">チーズ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">チーズ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intro_four.png" alt="ワンちゃん用ベーグル">
+                                     <p class="name">ワンちゃん用ベーグル</p>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                     <div class="box">
                         <p>ワンちゃん用ベーグルもご用意しています！（お豆腐、米粉、小麦粉を使用しています。）</p>
@@ -676,217 +765,271 @@
         </div>
     </footer>
 
-    <script>
-  window.onload = function () {
-    // Check if this is the first visit
-    const hasVisited = sessionStorage.getItem('hasVisited');
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    const isMobile = window.innerWidth <= 768;
-    const pcOnly = document.querySelectorAll(".pc-only");
-    const spOnly = document.querySelectorAll(".sp-only");
-
-    if (isMobile) {
-      pcOnly.forEach(el => el.style.display = "none");
-      spOnly.forEach(el => el.style.display = "block");
-    } else {
-      pcOnly.forEach(el => el.style.display = "block");
-      spOnly.forEach(el => el.style.display = "none");
-    }
-
-    // Show loading animation only for first-time visitors
-    if (!hasVisited) {
-      const loader = document.querySelector('.loading-screen');
-      const logoContainer = document.querySelector('.loading-logo');
-      const curtains = document.querySelectorAll('.curtain');
-      
-      // After 2 seconds, fade out logo
-      setTimeout(() => {
-        logoContainer.classList.add('logo-fade');
+    <script>
+      window.onload = function () {
+        // Check if this is the first visit
+        const hasVisited = sessionStorage.getItem('hasVisited');
         
-        // After logo fades, start curtain animation
-        setTimeout(() => {
-          curtains.forEach(curtain => {
-            curtain.classList.add('curtain-open');
-          });
-          sessionStorage.setItem('hasVisited', 'true');
-          
-          // Remove loader completely after animation
-          setTimeout(() => {
-            loader.style.display = 'none';
-          }, 1500);
-        }, 500); // Wait for logo fade
-      }, 2000); // Show logo for 2 seconds
-    } else {
-      // Hide loader immediately for returning visitors
-      const loader = document.querySelector('.loading-screen');
-      loader.style.display = 'none';
-    }
+        const isMobile = window.innerWidth <= 768;
+        const pcOnly = document.querySelectorAll(".pc-only");
+        const spOnly = document.querySelectorAll(".sp-only");
 
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxMap = document.getElementById('lightbox-map');
-    const lightboxClose = document.querySelector('.lightbox-close');
-    const triggers = document.querySelectorAll('.lightbox-trigger');
-
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', function() {
-        const type = this.getAttribute('data-lightbox');
-        lightbox.style.display = 'flex';
-        
-        if (type === 'calendar') {
-          lightboxImage.src = 'img/calendar.jpg';
-          lightboxImage.style.display = 'block';
-          lightboxMap.style.display = 'none';
-        } else if (type === 'map') {
-          const iframe = lightboxMap.querySelector('iframe');
-          iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.86674366108105!2d139.26808914237992!3d35.790599026951654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019252fb524f031%3A0x96a48bd03a281c5!2sToful%20Bagel%20cafe!5e0!3m2!1sen!2sjp!4v1754301077715!5m2!1sen!2sjp';
-          lightboxMap.style.display = 'block';
-          lightboxImage.style.display = 'none';
-        }
-      });
-    });
-
-    lightboxClose.addEventListener('click', function() {
-      lightbox.style.display = 'none';
-      const iframe = lightboxMap.querySelector('iframe');
-      iframe.src = ''; // Stop the map from loading
-    });
-
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-        const iframe = lightboxMap.querySelector('iframe');
-        iframe.src = ''; // Stop the map from loading
-      }
-    });
-
-    // ハンバーガーメニュー機能
-    window.toggleMenu = function() {
-      const navMenu = document.querySelector('.nav-menu');
-      const overlay = document.getElementById('mobileOverlay');
-      const hamburgerIcon = document.querySelector('.hamburger-icon');
-      
-      navMenu.classList.toggle('mobile-active');
-      overlay.classList.toggle('active');
-      hamburgerIcon.classList.toggle('active');
-    };
-
-    window.closeMenu = function() {
-      const navMenu = document.querySelector('.nav-menu');
-      const overlay = document.getElementById('mobileOverlay');
-      const hamburgerIcon = document.querySelector('.hamburger-icon');
-      
-      navMenu.classList.remove('mobile-active');
-      overlay.classList.remove('active');
-      hamburgerIcon.classList.remove('active');
-    };
-
-    // ナビゲーションリンククリック時にメニューを閉じる（SP用）
-    document.querySelectorAll('.nav-menu a, .nav-instagram a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        // Instagramリンクの場合は外部リンクなのでpreventDefaultしない
-        if (!this.classList.contains('instagram-icon')) {
-          e.preventDefault(); // デフォルトのリンク動作を防ぐ
-          
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          
-          if (targetElement) {
-            // モバイル時はメニューを閉じる
-            if (window.innerWidth <= 768) {
-              closeMenu();
-            }
-            
-            // スクロール位置を調整
-            const headerHeight = window.innerWidth <= 768 ? 80 : 100;
-            const targetPosition = targetElement.offsetTop - headerHeight;
-            
-            // スムーズにスクロール
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }
+        if (isMobile) {
+          pcOnly.forEach(el => el.style.display = "none");
+          spOnly.forEach(el => el.style.display = "block");
         } else {
-          // Instagramリンクの場合はモバイル時のみメニューを閉じる
-          if (window.innerWidth <= 768) {
+          pcOnly.forEach(el => el.style.display = "block");
+          spOnly.forEach(el => el.style.display = "none");
+        }
+
+        // Show loading animation only for first-time visitors
+        if (!hasVisited) {
+          const loader = document.querySelector('.loading-screen');
+          const logoContainer = document.querySelector('.loading-logo');
+          const curtains = document.querySelectorAll('.curtain');
+          
+          // After 2 seconds, fade out logo
+          setTimeout(() => {
+            logoContainer.classList.add('logo-fade');
+            
+            // After logo fades, start curtain animation
+            setTimeout(() => {
+              curtains.forEach(curtain => {
+                curtain.classList.add('curtain-open');
+              });
+              sessionStorage.setItem('hasVisited', 'true');
+              
+              // Remove loader completely after animation
+              setTimeout(() => {
+                loader.style.display = 'none';
+              }, 1500);
+            }, 500); // Wait for logo fade
+          }, 2000); // Show logo for 2 seconds
+        } else {
+          // Hide loader immediately for returning visitors
+          const loader = document.querySelector('.loading-screen');
+          loader.style.display = 'none';
+        }
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxMap = document.getElementById('lightbox-map');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', function() {
+            const type = this.getAttribute('data-lightbox');
+            lightbox.style.display = 'flex';
+            
+            if (type === 'calendar') {
+              lightboxImage.src = 'img/calendar.jpg';
+              lightboxImage.style.display = 'block';
+              lightboxMap.style.display = 'none';
+            } else if (type === 'map') {
+              const iframe = lightboxMap.querySelector('iframe');
+              iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.86674366108105!2d139.26808914237992!3d35.790599026951654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019252fb524f031%3A0x96a48bd03a281c5!2sToful%20Bagel%20cafe!5e0!3m2!1sen!2sjp!4v1754301077715!5m2!1sen!2sjp';
+              lightboxMap.style.display = 'block';
+              lightboxImage.style.display = 'none';
+            }
+          });
+        });
+
+        lightboxClose.addEventListener('click', function() {
+          lightbox.style.display = 'none';
+          const iframe = lightboxMap.querySelector('iframe');
+          iframe.src = ''; // Stop the map from loading
+        });
+
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            const iframe = lightboxMap.querySelector('iframe');
+            iframe.src = ''; // Stop the map from loading
+          }
+        });
+
+        // ハンバーガーメニュー機能
+        window.toggleMenu = function() {
+          const navMenu = document.querySelector('.nav-menu');
+          const overlay = document.getElementById('mobileOverlay');
+          const hamburgerIcon = document.querySelector('.hamburger-icon');
+          
+          navMenu.classList.toggle('mobile-active');
+          overlay.classList.toggle('active');
+          hamburgerIcon.classList.toggle('active');
+        };
+
+        window.closeMenu = function() {
+          const navMenu = document.querySelector('.nav-menu');
+          const overlay = document.getElementById('mobileOverlay');
+          const hamburgerIcon = document.querySelector('.hamburger-icon');
+          
+          navMenu.classList.remove('mobile-active');
+          overlay.classList.remove('active');
+          hamburgerIcon.classList.remove('active');
+        };
+
+        // ナビゲーションリンククリック時にメニューを閉じる（SP用）
+        document.querySelectorAll('.nav-menu a, .nav-instagram a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            // Instagramリンクの場合は外部リンクなのでpreventDefaultしない
+            if (!this.classList.contains('instagram-icon')) {
+              e.preventDefault(); // デフォルトのリンク動作を防ぐ
+              
+              const targetId = this.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
+              
+              if (targetElement) {
+                // モバイル時はメニューを閉じる
+                if (window.innerWidth <= 768) {
+                  closeMenu();
+                }
+                
+                // スクロール位置を調整
+                const headerHeight = window.innerWidth <= 768 ? 80 : 100;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                // スムーズにスクロール
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            } else {
+              // Instagramリンクの場合はモバイル時のみメニューを閉じる
+              if (window.innerWidth <= 768) {
+                closeMenu();
+              }
+            }
+          });
+        });
+
+        // PC用スクロール時ナビゲーション表示/非表示機能
+        let lastScrollTop = 0;
+        let scrollTimeout;
+        const onlineShopIcon = document.querySelector('.online-shop-icon');
+
+        window.addEventListener('scroll', function() {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+          const nav = document.querySelector('nav');
+          const spNavIcons = document.querySelector('.sp-nav-icons');
+          
+          // スクロール方向を判定
+          if (currentScroll > lastScrollTop && currentScroll > 100) {
+            // 下にスクロール - ナビを隠す
+            if (window.innerWidth >= 1600) {
+              nav.classList.add('nav-hidden');
+            } else {
+              // SP/タブレット - アイコンを隠す
+              spNavIcons.classList.add('nav-hidden');
+            }
+          } else {
+            // 上にスクロール - ナビを表示
+            if (window.innerWidth >= 1600) {
+              nav.classList.remove('nav-hidden');
+            } else {
+              // SP/タブレット - アイコンを表示
+              spNavIcons.classList.remove('nav-hidden');
+            }
+          }
+          
+          // 下スクロール時に .online-shop-icon を画面下に隠す（SPのみ）
+          if (onlineShopIcon && window.innerWidth <= 768) {
+            if (currentScroll > lastScrollTop && currentScroll > 100) {
+              onlineShopIcon.style.transform = 'translateY(100%)';
+              onlineShopIcon.style.opacity = '0';
+              onlineShopIcon.style.pointerEvents = 'none';
+            } else {
+              onlineShopIcon.style.transform = 'translateY(0)';
+              onlineShopIcon.style.opacity = '1';
+              onlineShopIcon.style.pointerEvents = 'auto';
+            }
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              onlineShopIcon.style.transform = 'translateY(0)';
+              onlineShopIcon.style.opacity = '1';
+              onlineShopIcon.style.pointerEvents = 'auto';
+            }, 1000);
+          }
+
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        // オーバーレイクリックでメニューを閉じる
+        document.addEventListener('click', function(event) {
+          const navMenu = document.querySelector('.nav-menu');
+          const hamburgerIcon = document.querySelector('.hamburger-icon');
+          const overlay = document.getElementById('mobileOverlay');
+          
+          if (event.target === overlay) {
             closeMenu();
           }
-        }
-      });
-    });
+          
+          // ハンバーガーメニュー外クリックで閉じる（モバイル時のみ）
+          if (window.innerWidth <= 768 && 
+              !hamburgerIcon.contains(event.target) && 
+              !navMenu.contains(event.target)) {
+            closeMenu();
+          }
+        });
 
-    // PC用スクロール時ナビゲーション表示/非表示機能
-    let lastScrollTop = 0;
-    let scrollTimeout;
-    const onlineShopIcon = document.querySelector('.online-shop-icon');
-
-    window.addEventListener('scroll', function() {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const nav = document.querySelector('nav');
-      const spNavIcons = document.querySelector('.sp-nav-icons');
-      
-      // スクロール方向を判定
-      if (currentScroll > lastScrollTop && currentScroll > 100) {
-        // 下にスクロール - ナビを隠す
-        if (window.innerWidth >= 1600) {
-          nav.classList.add('nav-hidden');
-        } else {
-          // SP/タブレット - アイコンを隠す
-          spNavIcons.classList.add('nav-hidden');
+        // Initialize Swiper for SP only
+        if (window.innerWidth <= 768) {
+          const introSwiper = new Swiper('.intro-swiper', {
+            slidesPerView: 2,              // 中央1枚 + 左右0.5ずつ = 2
+            spaceBetween: 16,
+            centeredSlides: true,          // 中央揃え
+            loop: true,                    // 無限ループ
+            loopedSlides: 7,              // 実際のスライド数を指定
+            initialSlide: 0,              // 1番目のスライドを中央に
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+              dynamicBullets: false,
+            },
+            breakpoints: {
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+              },
+            },
+            // エラー対策とセンタリング修正
+            observer: true,
+            observeParents: true,
+            watchSlidesProgress: true,
+            loopFillGroupWithBlank: false,
+            on: {
+              init: function() {
+                console.log('Swiper initialized');
+                // 初期化後に確実に1枚目を中央に配置
+                setTimeout(() => {
+                  this.slideToLoop(0, 0); // ループを考慮して1枚目に移動
+                }, 100);
+              },
+              loopFix: function() {
+                console.log('Loop fixed');
+              },
+              error: function(error) {
+                console.log('Swiper error:', error);
+              }
+            }
+          });
         }
-      } else {
-        // 上にスクロール - ナビを表示
-        if (window.innerWidth >= 1600) {
-          nav.classList.remove('nav-hidden');
-        } else {
-          // SP/タブレット - アイコンを表示
-          spNavIcons.classList.remove('nav-hidden');
-        }
-      }
-      
-      // 下スクロール時に .online-shop-icon を画面下に隠す（SPのみ）
-      if (onlineShopIcon && window.innerWidth <= 768) {
-        if (currentScroll > lastScrollTop && currentScroll > 100) {
-          onlineShopIcon.style.transform = 'translateY(100%)';
-          onlineShopIcon.style.opacity = '0';
-          onlineShopIcon.style.pointerEvents = 'none';
-        } else {
-          onlineShopIcon.style.transform = 'translateY(0)';
-          onlineShopIcon.style.opacity = '1';
-          onlineShopIcon.style.pointerEvents = 'auto';
-        }
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          onlineShopIcon.style.transform = 'translateY(0)';
-          onlineShopIcon.style.opacity = '1';
-          onlineShopIcon.style.pointerEvents = 'auto';
-        }, 1000);
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-
-    // オーバーレイクリックでメニューを閉じる
-    document.addEventListener('click', function(event) {
-      const navMenu = document.querySelector('.nav-menu');
-      const hamburgerIcon = document.querySelector('.hamburger-icon');
-      const overlay = document.getElementById('mobileOverlay');
-      
-      if (event.target === overlay) {
-        closeMenu();
-      }
-      
-      // ハンバーガーメニュー外クリックで閉じる（モバイル時のみ）
-      if (window.innerWidth <= 768 && 
-          !hamburgerIcon.contains(event.target) && 
-          !navMenu.contains(event.target)) {
-        closeMenu();
-      }
-    });
-  };
-</script>
+      };
+    </script>
 </body>
 
 </html>
