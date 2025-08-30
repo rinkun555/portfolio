@@ -1009,6 +1009,12 @@ section.intro {
 }
 .intro .intro_outer .box.kind .name {
 		margin-bottom: 0 !important;
+		text-align: center;
+		margin-top: 0.5em;
+		font-size: 0.8em;
+		color: #714B3D;
+		font-family: "Zen Maru Gothic", sans-serif;
+		margin-bottom: 0;
 }
 .intro .intro_outer .box::after {
 		content: "";
@@ -1846,16 +1852,6 @@ section.intro {
 		.intro-swiper .swiper-slide.swiper-slide-active p {
 				opacity: 1;
 		}
-		.intro-swiper .swiper-slide p {
-				text-align: center;
-				margin-top: 0.5em;
-				font-size: 0.8em;
-				color: #714B3D;
-				font-family: "Zen Maru Gothic", sans-serif;
-				-webkit-transition: opacity 0.3s ease;
-				transition: opacity 0.3s ease;
-				margin-bottom: 0;
-		}
 		.intro-swiper .swiper-pagination {
 				position: relative;
 				margin: 1.5em auto 1em;
@@ -1895,5 +1891,8 @@ section.intro {
 				display: -ms-flexbox;
 				display: flex;
 				max-height: 20vh;
+		}
+		.box.kind .name {
+				display: none;
 		}
 }

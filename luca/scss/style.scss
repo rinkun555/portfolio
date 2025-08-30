@@ -399,6 +399,12 @@ section.intro{
              }
              .name{
               margin-bottom: 0!important;
+              text-align: center;
+            margin-top: 0.5em;
+            font-size: 0.8em;
+            color: $dark-brown;
+            font-family: $font-zen-maru;
+            margin-bottom: 0;
              }
             }
 
@@ -1303,16 +1309,6 @@ top: 0.7em;
         }
       }
       
-      // テキストラベルがある場合のスタイル
-      p {
-        text-align: center;
-        margin-top: 0.5em;
-        font-size: 0.8em;
-        color: $dark-brown;
-        font-family: $font-zen-maru;
-        transition: opacity 0.3s ease;
-        margin-bottom: 0;
-      }
     }
     
     .swiper-pagination {
@@ -1355,6 +1351,12 @@ top: 0.7em;
       display: flex;
       max-height: 20vh;
     }
+
+     &.kind {
+        .name{
+        display:none;
+        }
+      }
   }
 }
   
