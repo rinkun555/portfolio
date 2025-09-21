@@ -65,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.toggleMenu = toggleMenuImpl;
   window.closeMenu = closeMenuImpl;
 
+  // HTMLの inline onclick を使わないため、ここでクリックイベントを付与
+  hamburgerIcon?.addEventListener('click', toggleMenuImpl);
+
   // ========= ナビのスムーススクロール & 自動クローズ(SP) =========
   $$(".nav-menu a, .nav-instagram a").forEach(link => {
     link.addEventListener("click", e => {

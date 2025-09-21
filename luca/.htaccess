@@ -1,0 +1,57 @@
+# === Canonical redirect: tofulbagel.moo.jp -> https://tofulbagel.com/ ===
+RewriteEngine On
+
+# Let's Encrypt の検証はリダイレクトしない（必要な場合）
+RewriteCond %{REQUEST_URI} ^/.well-known/acme-challenge/ [NC]
+RewriteRule ^ - [L]
+
+# 新ドメイン以外はすべて https://tofulbagel.com/ へ 301（パス/クエリ維持）
+RewriteCond %{HTTP_HOST} !^tofulbagel\.com$ [NC]
+RewriteRule ^(.*)$ https://tofulbagel.com/$1 [R=301,L]
+
+# 新ドメインで http なら https に 301
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^tofulbagel\.com$ [NC]
+RewriteRule ^(.*)$ https://tofulbagel.com/$1 [R=301,L]
+
+# ===== Safari の画像ゼロバイト対策 =====
+<IfModule mod_deflate.c>
+  # 画像・動画は gzip 圧縮しない
+  SetEnvIfNoCase Request_URI "\.(?:gif|jpeg|jpg|png|webp|ico|bmp|svg|mp4|webm)$" no-gzip dont-vary
+</IfModule>
+
+#対応ブラウザには自動で WebP を返す
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME}\.webp -f
+  RewriteRule (.+)\.(jpe?g|png)$ $1.$2.webp [T=image/webp,E=accept:1]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+# --- セキュリティ強化ヘッダー ---
+<IfModule mod_headers.c>
+  # MIMEタイプスニッフィング対策
+  Header always set X-Content-Type-Options "nosniff"
+
+  # リファラー制御（クロスサイト時はオリジンのみ）
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # ブラウザ機能制御（不要なAPIをブロック）
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # HTTPS強制 & HSTS（1年間 + サブドメイン + preload）
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# --- 不要ファイルへの直接アクセスを防止 ---
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh|bak|sql)$">
+  Require all denied
+</FilesMatch>
+
+# --- エラーページ設定（任意で差し替え可能） ---
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php
