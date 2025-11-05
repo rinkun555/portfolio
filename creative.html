@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Media Grid (PC: 3-up, SP: 2-up, 1:1)</title>
+  <link rel="stylesheet" href="creative.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- Replace items below with your own images/videos. -->
+    <section class="gallery" aria-label="Media gallery">
+
+    <!-- Video (replace src with your file). Poster is optional. -->
+      <figure class="tile">
+        <video autoplay muted loop playsinline preload="metadata"
+          src="creative_media/andresen.mp4"
+          preload="metadata"
+          playsinline
+          controls
+        ></video>
+      </figure>
+
+      <!-- Image -->
+      <figure class="tile">
+        <img src="creative_media/event-10.jpg" alt="Demo image 1" loading="lazy">
+      </figure>
+
+      <!-- Video -->
+      <figure class="tile">
+        <video autoplay muted loop playsinline preload="metadata"
+          src="creative_media/ignite.mp4"
+          preload="metadata"
+          playsinline
+          controls
+        ></video>
+      </figure>
+
+      <!-- Image -->
+      <figure class="tile">
+        <img src="creative_media/event-16.jpg" alt="Demo image 3" loading="lazy">
+      </figure>
+
+      <!-- Video -->
+      <figure class="tile">
+        <video autoplay muted loop playsinline preload="metadata"
+          src="creative_media/ribor_1.mp4"
+
+          preload="metadata"
+          playsinline
+          controls
+        ></video>
+      </figure>
+
+      <!-- Image -->
+      <figure class="tile">
+        <img src="creative_media/workshop6.jpg" alt="Demo image 4" loading="lazy">
+      </figure>
+    </section>
+  </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('video').forEach(v => {
+    v.muted = true;
+    v.autoplay = true;
+    v.loop = true;
+    v.playsInline = true;
+    try { v.play(); } catch(e) {}
+  });
+});
+</script>
+</body>
+</html>
