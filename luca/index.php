@@ -5,11 +5,11 @@ $nonce = base64_encode(random_bytes(16));
 // Build strict CSP using the dynamic nonce
 $csp = "default-src 'self'; "
      . "base-uri 'self'; "
-     . "script-src 'self' 'nonce-{$nonce}' https://cdn.jsdelivr.net https://www.googletagmanager.com; "
+     . "script-src 'self' 'nonce-{$nonce}' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com; "
      . "style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net; "
      . "font-src 'self' data: https://fonts.gstatic.com; "
-     . "img-src 'self' data: https://www.google-analytics.com; "
-     . "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://region2.google-analytics.com; "
+     . "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com https://www.google.dk; "
+     . "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://region1.analytics.google.com; "
      . "media-src 'self'; "
      . "frame-src https://www.google.com https://maps.googleapis.com https://www.googletagmanager.com; "
      . "frame-ancestors 'none'; "
@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toful（トゥフル）Bagel Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さん</title>
+    <title> Toful Bagel (トゥフル ベーグル) Cafe | 青梅のお豆腐ベーグル専門・トゥフル ベーグル</title>
 
     <!-- Schema Tags -->
     <script type="application/ld+json" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "LocalBusiness",
       "name": "Toful Bagel",
       "image": "https://tofulbagel.tokyo/img/logo.png",
-      "description": "Toful（トゥフル）Bagel Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さんは、お豆腐を練り込んだクセになるふわもち食感と、定番からちょっと珍しい味まで、ボリュームたっぷりのお豆腐ベーグルが人気のお店です。",
+      "description": " Toful Bagel (トゥフル ベーグル) Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さんは、お豆腐を練り込んだクセになるふわもち食感と、定番からちょっと珍しい味まで、ボリュームたっぷりのお豆腐ベーグルが人気のお店です。",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "3 Chome-182-1 Katsunuma",
@@ -90,13 +90,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://tofubagelcafe.tokyo/sitemap.xml" />
 
 <!-- SEO Meta Tags -->
-  <meta name="description" content="Toful（トゥフル）Bagel Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さんは、お豆腐を練り込んだクセになるふわっもちっの食感と、定番からちょっと珍しい味まで、ボリュームたっぷりお豆腐ベーグルが人気のお店です。" />
+  <meta name="description" content=" Toful Bagel (トゥフル ベーグル) Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さんは、お豆腐を練り込んだクセになるふわっもちっの食感と、定番からちょっと珍しい味まで、ボリュームたっぷりお豆腐ベーグルが人気のお店です。" />
   <meta name="keywords" content="お豆腐, ベーグル, カフェ,青梅,ランチ,デザート,ケーキ,コーヒー,パン" />
   <meta name="author" content="Toful Bagel" />
 
   <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Toful（トゥフル）Bagel Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さん" />
-  <meta property="og:description" content="Toful（トゥフル）Bagel Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さん　お豆腐を練込み、クセになるふわっもちっの食感と、定番からちょっと珍しい味まで、ボリュームたっぷりお豆腐ベーグル" />
+  <meta property="og:title" content=" Toful Bagel (トゥフル ベーグル) Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さん" />
+  <meta property="og:description" content=" Toful Bagel (トゥフル ベーグル) Cafe | 青梅のお豆腐ベーグル専門・地元カフェ屋さん　お豆腐を練込み、クセになるふわっもちっの食感と、定番からちょっと珍しい味まで、ボリュームたっぷりお豆腐ベーグル" />
   <meta property="og:image" content="img/og.png" />
   <meta property="og:url" content="https://tofulbagel.tokyo" />
   <meta property="og:type" content="website" />
@@ -123,7 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXH6QB7V"
-height="0" width="0"></iframe></noscript>
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- Loading Screen -->
 <div class="loading-screen">
@@ -140,7 +140,8 @@ height="0" width="0"></iframe></noscript>
 <!-- オンラインショップアイコン（SP用・画面右下固定） -->
 <div class="online-shop-icon">
   <a href="#online_shop">
-    <img src="img/button_onlineshop.png" alt="Online Shop">
+    <img class="text" src="img/button_onlineshop_text.svg" alt="Online Shop">
+    <img class="spin" src="img/button_onlineshop.png" alt="Online Shop">
   </a>
 </div>
 
@@ -189,7 +190,7 @@ height="0" width="0"></iframe></noscript>
       <div class="nav-instagram">
         <span class="follow-text">\ <span class="chango-text">Follow us</span> /</span>
         <a href="https://www.instagram.com/toful_bagel_cafe?utm_source=ig_web_button_share_sheet&igsh=OW5heXlkZzZiczVp" target="_blank" rel="noopener noreferrer" class="instagram-icon">
-          <img src="img/instagram.svg" alt="Instagram">
+          <img src="img/instagram.png" alt="Instagram">
         </a>
       </div>
     </ul>
@@ -197,14 +198,18 @@ height="0" width="0"></iframe></noscript>
     <!-- SP用ナビゲーションアイコンコンテナ -->
     <div class="sp-nav-icons">
 
-      <!-- Instagramアイコン（SP用） -->
       <div class="sp-instagram-icon">
         <a href="https://www.instagram.com/toful_bagel_cafe?utm_source=ig_web_button_share_sheet&igsh=OW5heXlkZzZiczVp" target="_blank" rel="noopener noreferrer">
-          <img src="img/instagram.svg" alt="Instagram">
+          <img src="img/instagram.png" alt="Instagram">
         </a>
       </div>
 
-      <!-- ハンバーガーアイコン（SP用） -->
+      <div class="telephone">
+        <a href="tel:080-9948-5079">
+          <img src="img/telephone.svg" alt="電話">
+        </a>
+      </div>
+
       <div class="hamburger-icon">
         <img src="img/menu_bar.svg" alt="Menu">
       </div>
@@ -246,40 +251,52 @@ height="0" width="0"></iframe></noscript>
                     <div class="box kind">
                         <p class="explain">シンプルからお惣菜系、甘〜いもの、変わり種まで、お子様から、年配の方まで、もぐもぐ美味しく食べられちゃう！<br>人気の味を一部紹介（日によって品揃えが変動します）</p>
                         
-                        <!-- Swiper -->
                         <div class="swiper intro-swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
-                                    <p class="name">あんこクリームチーズ</p>
+                                  <div class="swiper-slide">
+                                    <img src="img/intokind_plain.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">プレーン</p>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <img src="img/intokind_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">塩あんバター</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intokind_blueberrycheese.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">ブルーベリー<br>クリームチーズ</p>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="img/intokind_tomatomozzarella.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">ひき肉トマトモッツァレラ</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/intokind_pizza.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
                                     <p class="name">ピザ</p>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
-                                    <p class="name">抹茶</p>
+                                    <img src="img/intokind_carrotlappe.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">キャロットラペ</p>
+                                </div>
+                                 <div class="swiper-slide">
+                                    <img src="img/intokind_mentabutter.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">明太バターモッツァレラ</p>
+                                </div>
+                              　<div class="swiper-slide">
+                                    <img src="img/intokind_matchawhitechoco.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">抹茶ホワイトチョコ</p>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
-                                    <p class="name">揚げベーグル</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
-                                    <p class="name">アールグレイ</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="img/intro_anpan.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
-                                    <p class="name">焼豚(チャーシュー)</p>
+                                    <img src="img/intokind_cornmayo.png" alt="お惣菜系、甘〜いもの、変わり種まで色々なベーグル">
+                                    <p class="name">コーンマヨ</p>
                                 </div>
                             </div>
-                            <!-- Add Pagination -->
+
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
                     <div class="box">
-                        <p>ワンちゃん用ベーグルもご用意しています！（お豆腐、米粉、小麦粉を使用しています。）</p>
+                        <p>ワンちゃん用ベーグルはComing Soonです！</p>
                         <img src="img/intro_four.png" alt="ワンちゃん用ベーグル" >
                     </div>
                 </div>
@@ -323,12 +340,14 @@ height="0" width="0"></iframe></noscript>
                 <div class="store_info_inner">
                 <p><span class="bold">東青梅駅から徒歩6分</span><br><br>
                 <span class="bold">営業時間</span><br>
-                平日：8:00〜17:00<br>
-                土日祝：9:00〜17:00（モーニングセット 9:00〜11:00／土日祝限定）<br>
+                2026年より、店舗営業は週3日に変更になりました。<br>
+                金曜：8:00〜17:00<br>
+                土日・祝日：9:00〜17:00<br>
+                モーニングセット 9:00〜11:00／土日祝限定<br>
                 ランチセット：11:00〜15:00（L.O 14:00）<br>
-                ※なくなり次第、早めに閉店することがあります。<br>
+                ※なくなり次第、早めに閉店する事があります。<br>
 
-                <span class="bold closingday">定休日　水曜日・木曜日</span><br>
+                <span class="bold closingday">定休日　月・火・水・木曜日</span><br>
                 ※振替休日・臨時休業もあるので、カレンダーでご確認ください。
                 <br><br>
 
@@ -360,46 +379,57 @@ height="0" width="0"></iframe></noscript>
             季節限定セットなど、期間限定セットなどもありますので、ぜひチェックお待ちしてます！<br>
             <span class="bold">遠方の方、ちょっとしたギフト</span>にいかがですか？</p>
             <div class="shop_items">
-                <a class="online_shop_item_link" href="https://kimamanicafe.base.shop/" target="_blank" rel="noopener noreferrer">
+                <a id="click_new6_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
                     <div class="item_img_box">
                         <div class="item_img_frame">
-                            <img src="img/online_shop_bagel6.jpg" alt="おまかせ6個セットのイメージ">
+                            <img src="img/online_shop_new_6.jpg" alt="新作6個セットのイメージ">
+                            <!-- 予約販売レイヤーとテキスト -->
+                            <!-- <div class="reserve-layer"></div> -->
+                            <!-- <div class="reserve-text">10月下旬予約販売</div> -->
                         </div>
-                        <p class="item_name">おまかせ6個セット</p>
-                        <p class="item_price">¥2800</p> 
-                    </div>
-                </a>
-                <a class="online_shop_item_link" href="https://kimamanicafe.base.shop/" target="_blank" rel="noopener noreferrer">
-                    <div class="item_img_box">
-                        <div class="item_img_frame">
-                            <img src="img/online_shop_bagel8.jpg" alt="おまかせ8個セットのイメージ">
-                        </div>
-                        <p class="item_name">おまかせ8個セット</p>
-                        <p class="item_price">¥3800</p> 
-                    </div>
-                </a>
-                <a class="online_shop_item_link" href="https://kimamanicafe.base.shop/" target="_blank" rel="noopener noreferrer">
-                    <div class="item_img_box">
-                        <div class="item_img_frame">
-                            <img src="img/online_shop_teacake.jpg" alt="アールグレイバスクチーズケーキ 6号ホールのイメージ">
-                        </div>
-                        <p class="item_name">アールグレイバスクチーズケーキ 6号ホール</p>
-                        <p class="item_price">¥2800</p> 
-                    </div>
-                </a>
-                <a class="online_shop_item_link" href="https://kimamanicafe.base.shop/" target="_blank" rel="noopener noreferrer">
-                    <div class="item_img_box">
-                        <div class="item_img_frame">
-                            <img src="img/online_shop_cheesecake.jpg" alt="バスクチーズケーキ 6号ホールのイメージ">
-                        </div>
-                        <p class="item_name">バスクチーズケーキ 6号ホール</p>
-                        <p class="item_price">¥2800</p> 
-                    </div>
-                </a>
+                          <div class="item_text_frame">
+                          <p class="item_name">新作6個セット</p>
+                          <p class="item_price">¥3,000</p> 
+                          </div>
+                      </div>
+                    </a>
+                    <a id="click_plain8_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
+                      <div class="item_img_box">
+                      <div class="item_img_frame">
+                        <img src="img/online_shop_plain_8.jpg" alt="プレーンベーグル8個セットのイメージ">
+                      </div>
+                      <div class="item_text_frame">
+                        <p class="item_name">プレーンベーグル8個セット</p>
+                        <p class="item_price">¥3,600</p> 
+                      </div>
+                      </div>
+                    </a>
+                    <a id="click_omakase8_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
+                      <div class="item_img_box">
+                      <div class="item_img_frame">
+                        <img src="img/online_shop_omakase_8.jpg" alt="おまかせ8個セット(定番+新作)のイメージ">
+                      </div>
+                      <div class="item_text_frame">
+                        <p class="item_name">おまかせ8個セット(定番+新作)</p>
+                        <p class="item_price">¥3,900</p> 
+                      </div>
+                      </div>
+                    </a>
+                    <a id="click_cheesecake6_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
+                      <div class="item_img_box">
+                      <div class="item_img_frame">
+                        <img src="img/online_shop_cheesecake.jpg" alt="バスクチーズケーキ 6号ホールのイメージ">
+                      </div>
+                      <div class="item_text_frame">
+                        <p class="item_name">ベーグルおまかせ6個+バスクチーズケーキセット</p>
+                        <p class="item_price">¥3,700</p> 
+                      </div>
+                      </div>
+                   </a>
                 
             </div>
             <!-- 新しいりんくになったら要変更 -->
-            <a class="body_link" href="https://kimamanicafe.base.shop/" target="_blank" rel="noopener noreferrer">ベーグル通販サイトへ</a>
+            <a id="click_online_itempage" class="body_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">ベーグル通販サイトへ</a>
         </section>
 
         <section class="cafe_menu" id="cafe_menu">
@@ -416,7 +446,7 @@ height="0" width="0"></iframe></noscript>
                     <div class="cafe_frame">
                         <img src="img/cafe_menu_morning.jpg" alt="モーニングのイメージ">
                     </div>
-                    <div class="cafe_label">モーニング</div>
+                    <div class="cafe_label">(モーニング準備中)</div>
                 </div>
                 <div class="cafe_item">
                     <div class="cafe_frame">
@@ -458,33 +488,33 @@ height="0" width="0"></iframe></noscript>
                 <div class="other_services_frame">
                     <img src="img/retail.jpg" alt="店内貸切ワークショップのイメージ">
                 </div>
-               <p class="case_title">卸売・販売提携</p>
-                <p class="text">冷凍で約XXヶ月間保管可能です。<br>電子レンジで解凍して簡単にふわもちの出来たてベーグルを提供できます！<br>最小ロットはX個、全国に冷凍配達。
+               <p class="case_title">卸売・販売提携（冷凍宅配便）</p>
+                <p class="text">冷凍で約1ヶ月間保管可能です。<br>電子レンジで解凍して簡単にふわもちの出来たてベーグルを提供できます！<br>最小ロットは30個、全国に冷凍配達。
                 </p>
             </div>
             <div class="other_services_box full">
                 <div class="other_services_frame">
-                    <img src="img/other_services_party2.jpg" alt="店内貸切ワークショップのイメージ">
+                    <img src="img/other_services_workshop2.jpg" alt="店内貸切ワークショップのイメージ">
                 </div>
                <p class="case_title">ワークショップ・イベント・コラボ</p>
                 <p class="text">店内のスペースを貸し出しし、ハンドメイドのワークショップや習字の教室、展示会など様々なイベントなどの開催可能です。ドリンクやフードのセットなど大歓迎。是非お気軽にご相談ください。
                 </p>
             </div>
-            <div class="other_services_box">
+            <div class="other_services_box full">
                 <div class="other_services_frame">
                     <img src="img/other_services_party.jpg" alt="オードブルのイメージ">
                 </div>
                 <p class="case_title">オードブル</p>
                 <p class="text">誕生日やお祝いパーティー、イベントに対応したオードブルを作成します。ベーグルでも大人気のオーブンでじっくり焼き上げた、あの焼豚(チャーシュー)を使用したメニューなどもご用意できます。</p>
             </div>
-            <div class="other_services_box">
+            <div class="other_services_box full">
                 <div class="other_services_frame">
                     <img src="img/retail.jpg" alt="ベーグル配達（常温）のイメージ">
                 </div>
-                <p class="case_title">ベーグル配達（常温）</p>
-                <p class="text">X個から、ご要望に応じたベーグル各種をお作りして、直接お届け。</p>
+                <p class="case_title">近郊限定・ベーグル配達（常温）</p>
+                <p class="text">10個から、ご要望に応じたベーグル各種をお作りして、直接お届け。東青梅から車で30分圏内で対応可能です。</p>
             </div>
-            <div class="other_services_box">
+            <div class="other_services_box full">
 
                 <div class="other_services_frame">
                     <img src="img/other_services_cake.jpg" alt="ホールケーキのイメージ">
@@ -495,7 +525,7 @@ height="0" width="0"></iframe></noscript>
           </div>
 
           <!-- 電話番号 -->
-            <a class="body_link" href="tel:080-4814-1215">お問い合わせはこちら</a>
+            <a class="body_link" href="tel:080-9948-5079">お問い合わせはこちら</a>
         </section>
 
     </main>

@@ -5,6 +5,11 @@ $light-blue-2: #E7F4FF;
 $warm-white:#FEFFF8;
 $white:#ffffff;
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 // ナビゲーション共通スタイル（SP優先 - max-width: 768px）
 nav {
   position: fixed;
@@ -130,10 +135,10 @@ border-radius: 0 0 50% 50%;
 // オンラインショップアイコン（SP用）
 .online-shop-icon {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
-    width: 5em;
-    height: 4em;
+bottom: 0.5em;
+    right: 0.2em;
+    width: 6em;
+    height: 5em;
 z-index: 100;
 
   cursor: pointer;
@@ -146,6 +151,19 @@ z-index: 100;
     height: 100%;
     object-fit: contain;
     transition: all 0.3s ease;
+
+    &.spin{
+    animation: spin-slow 20s linear infinite;
+    }
+    &.text{
+    width: 45%;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    z-index: 2;
+    }
   }
 }
 
@@ -156,10 +174,8 @@ z-index: 100;
   padding: 1em;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
 
   &:hover {
-    transform: scale(1.1);
     background: rgba(255, 255, 255, 1);
   }
 
@@ -172,38 +188,76 @@ z-index: 100;
   }
 }
 
+// SP用電話アイコン
+.telephone {
+  cursor: pointer;
+  background: #6bc4ff;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 0 0 50% 50%;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+
+  &:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  img {
+    width: 75%;
+    height: 100%;
+    margin-left: 0.2em;
+    object-fit: contain;
+    display: block;
+    transition: all 0.3s ease;
+    /* ↓↓↓ SVGのviewBoxが正しく設定されていない場合の対策 */
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  /* SVGタグ直埋め対応（imgタグでなくSVGタグの場合） */
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
 // ハンバーガーアイコン（SP用）
 .hamburger-icon {
   cursor: pointer;
   background: $blue;
   padding: 1em;
+  position: relative;
+  display: flex;               // so align-items/justify-content work
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  position: relative;
-  
-  // CSSでクロスアイコンを作成
+
+  // クロスの線を細くする
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
-    width: 18px;
-    height: 2px;
+    width: 1.6em;              // length of each bar
+    height: 2px;               // thickness (the key change)
     background: $warm-white;
-    transition: all 0.3s ease;
     opacity: 0;
     left: 50%;
     top: 50%;
+    transform: translate(-50%, -50%);
     transform-origin: center;
+    border-radius: 2px;        // optional: rounded ends
+    transition: all 0.3s ease;
   }
-  
-  &::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-  
-  &::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
+
+  &::before { transform: translate(-50%, -50%) rotate(45deg); }
+  &::after  { transform: translate(-50%, -50%) rotate(-45deg); }
 
   &.active {
     background: $warm-white;
@@ -212,7 +266,7 @@ z-index: 100;
       opacity: 0;
       transform: scale(0);
     }
-    
+
     &::before,
     &::after {
       opacity: 1;
@@ -277,7 +331,7 @@ z-index: 100;
   
   .instagram-icon {
     width: 3em;
-    height: 3em;
+    // height: 3em;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -288,7 +342,6 @@ z-index: 100;
     svg, img {
       width: 100%;
       height: 100%;
-      filter: brightness(0) invert(1); // 白色にする
     }
   }
 }
@@ -298,7 +351,8 @@ z-index: 100;
 
   .hamburger-icon,
   .online-shop-icon,
-  .sp-instagram-icon {
+  .sp-instagram-icon,
+  .telephone {
     width: 4em;
     height: 4em;
   }
@@ -319,6 +373,10 @@ z-index: 100;
 // PC対応 (1200px以上)
 @media (min-width: 1600px) {
   .sp-nav-icons {
+    display: none !important;
+  }
+
+  .telephone {
     display: none !important;
   }
 
@@ -378,7 +436,6 @@ z-index: 100;
 
       &:hover {
         background: rgba(161, 217, 254, 0.3);
-        transform: translateY(-4px);
 
         .nav-title-en,
         .nav-title-jp {
@@ -406,7 +463,6 @@ z-index: 100;
       
       &:hover {
         background: rgba(161, 217, 254, 0.3);
-        transform: translateY(-4px);
         
         .follow-text {
           color: $blue;

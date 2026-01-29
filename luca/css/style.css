@@ -1,4 +1,24 @@
 @charset "UTF-8";
+@-webkit-keyframes spin-slow {
+		from {
+				-webkit-transform: rotate(0deg);
+				        transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+				        transform: rotate(360deg);
+		}
+}
+@keyframes spin-slow {
+		from {
+				-webkit-transform: rotate(0deg);
+				        transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+				        transform: rotate(360deg);
+		}
+}
 nav {
 		position: fixed;
 		top: 0;
@@ -138,10 +158,10 @@ nav.nav-hidden {
 
 .online-shop-icon {
 		position: fixed;
-		bottom: 1em;
-		right: 1em;
-		width: 5em;
-		height: 4em;
+		bottom: 0.5em;
+		right: 0.2em;
+		width: 6em;
+		height: 5em;
 		z-index: 100;
 		cursor: pointer;
 		-webkit-box-align: center;
@@ -161,6 +181,19 @@ nav.nav-hidden {
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 }
+.online-shop-icon img.spin {
+		-webkit-animation: spin-slow 20s linear infinite;
+		        animation: spin-slow 20s linear infinite;
+}
+.online-shop-icon img.text {
+		width: 45%;
+		position: absolute;
+		top: 53%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		z-index: 2;
+}
 
 .sp-instagram-icon {
 		cursor: pointer;
@@ -172,12 +205,8 @@ nav.nav-hidden {
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
 		        justify-content: center;
-		-webkit-transition: all 0.3s ease;
-		transition: all 0.3s ease;
 }
 .sp-instagram-icon:hover {
-		-webkit-transform: scale(1.1);
-		        transform: scale(1.1);
 		background: rgb(255, 255, 255);
 }
 .sp-instagram-icon img {
@@ -191,10 +220,59 @@ nav.nav-hidden {
 		        filter: brightness(0) invert(1);
 }
 
+.telephone {
+		cursor: pointer;
+		background: #6bc4ff;
+		padding: 1em;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		border-radius: 0 0 50% 50%;
+		width: 2em;
+		height: 2em;
+		overflow: hidden;
+		/* SVGタグ直埋め対応（imgタグでなくSVGタグの場合） */
+}
+.telephone:hover {
+		background: rgb(255, 255, 255);
+}
+.telephone img {
+		width: 75%;
+		height: 100%;
+		margin-left: 0.2em;
+		-o-object-fit: contain;
+		   object-fit: contain;
+		display: block;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		/* ↓↓↓ SVGのviewBoxが正しく設定されていない場合の対策 */
+		max-width: 100%;
+		max-height: 100%;
+}
+.telephone svg {
+		width: 100%;
+		height: 100%;
+		display: block;
+		-o-object-fit: contain;
+		   object-fit: contain;
+		max-width: 100%;
+		max-height: 100%;
+}
+
 .hamburger-icon {
 		cursor: pointer;
 		background: #30ADFF;
 		padding: 1em;
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
@@ -203,21 +281,23 @@ nav.nav-hidden {
 		        justify-content: center;
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
-		position: relative;
 }
 .hamburger-icon::before, .hamburger-icon::after {
 		content: "";
 		position: absolute;
-		width: 18px;
+		width: 1.6em;
 		height: 2px;
 		background: #FEFFF8;
-		-webkit-transition: all 0.3s ease;
-		transition: all 0.3s ease;
 		opacity: 0;
 		left: 50%;
 		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
 		-webkit-transform-origin: center;
 		        transform-origin: center;
+		border-radius: 2px;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
 }
 .hamburger-icon::before {
 		-webkit-transform: translate(-50%, -50%) rotate(45deg);
@@ -316,7 +396,6 @@ nav.nav-hidden {
 }
 .nav-instagram .instagram-icon {
 		width: 3em;
-		height: 3em;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -334,14 +413,13 @@ nav.nav-hidden {
 .nav-instagram .instagram-icon svg, .nav-instagram .instagram-icon img {
 		width: 100%;
 		height: 100%;
-		-webkit-filter: brightness(0) invert(1);
-		        filter: brightness(0) invert(1);
 }
 
 @media (min-width: 760px) and (max-width: 1599px) {
 		.hamburger-icon,
 		.online-shop-icon,
-		.sp-instagram-icon {
+		.sp-instagram-icon,
+		.telephone {
 				width: 4em;
 				height: 4em;
 		}
@@ -357,6 +435,9 @@ nav.nav-hidden {
 }
 @media (min-width: 1600px) {
 		.sp-nav-icons {
+				display: none !important;
+		}
+		.telephone {
 				display: none !important;
 		}
 		.mobile-overlay {
@@ -424,8 +505,6 @@ nav.nav-hidden {
 		}
 		.nav-menu a:hover {
 				background: rgba(161, 217, 254, 0.3);
-				-webkit-transform: translateY(-4px);
-				        transform: translateY(-4px);
 		}
 		.nav-menu a:hover .nav-title-en,
 		.nav-menu a:hover .nav-title-jp {
@@ -450,8 +529,6 @@ nav.nav-hidden {
 		}
 		.nav-menu .nav-instagram:hover {
 				background: rgba(161, 217, 254, 0.3);
-				-webkit-transform: translateY(-4px);
-				        transform: translateY(-4px);
 		}
 		.nav-menu .nav-instagram:hover .follow-text {
 				color: #30ADFF;
@@ -682,10 +759,29 @@ to {
 				        transform: scale(1);
 		}
 }
+@-webkit-keyframes cloudmove {
+		0% {
+				background-position: top 1vh left -20vw, top 25vh left -80vw, top 45vh right 50vw, bottom 45vh left -65vw, bottom 20vh left -80vw, bottom 1vh left -95vw; /* L6: いちばん遅れて登場 */
+		}
+		100% {
+				background-position: top 1vh left 100vw, top 25vh left 105vw, top 45vh left 130vw, bottom 45vh left 120vw, bottom 20vh left 110vw, bottom 1vh left 100vw; /* L6: 距離短い=最遅 */
+		}
+}
+@keyframes cloudmove {
+		0% {
+				background-position: top 1vh left -20vw, top 25vh left -80vw, top 45vh right 50vw, bottom 45vh left -65vw, bottom 20vh left -80vw, bottom 1vh left -95vw; /* L6: いちばん遅れて登場 */
+		}
+		100% {
+				background-position: top 1vh left 100vw, top 25vh left 105vw, top 45vh left 130vw, bottom 45vh left 120vw, bottom 20vh left 110vw, bottom 1vh left 100vw; /* L6: 距離短い=最遅 */
+		}
+}
 html, body, img, h1, h2, h3, h4, p, ul, li, dl, dd, dt, span, a, textarea, input {
 		margin: 0;
 		padding: 0;
 		line-height: 1;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		overflow-x: clip;
 }
 
 img {
@@ -930,7 +1026,7 @@ section.intro {
 		content: "";
 		position: absolute;
 		top: -3.3em;
-		right: 0.2em;
+		right: 0;
 		width: 25vh;
 		height: 16vh;
 		background: url("../img/intro_fuwa2.png") no-repeat center center;
@@ -943,7 +1039,7 @@ section.intro {
 		content: "";
 		position: absolute;
 		top: -7em;
-		left: 0em;
+		left: 1em;
 		width: 23vh;
 		height: 13vh;
 		background: url("../img/intro_mochi2.png") no-repeat center center;
@@ -994,7 +1090,7 @@ section.intro {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		max-height: 20vh;
+		max-height: 27vh;
 }
 .intro .intro_outer .box.kind {
 		padding: 0;
@@ -1170,6 +1266,9 @@ section.intro {
 .store_info .title_box .title .english {
 		font-size: 1.2em;
 }
+.store_info .store_info_inner p {
+		line-height: 1.8;
+}
 .store_info .closingday {
 		color: rgb(187, 0, 0);
 }
@@ -1326,46 +1425,95 @@ section.intro {
 		margin: 2em 0;
 		color: #ffffff;
 }
-.online_shop .shop_items .item_img_frame {
+.online_shop .shop_items .online_shop_item_link {
+		border-radius: 200px 200px 30px 30px;
+		-webkit-box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #714B3D;
+		        box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #714B3D;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-rows: subgrid;
+		grid-template-rows: subgrid;
+		border: 1px solid #714B3D;
+		position: relative;
+}
+.online_shop .shop_items .online_shop_item_link .reserve-layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.35);
+		z-index: 2;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		pointer-events: none;
+		border-radius: inherit;
+}
+.online_shop .shop_items .online_shop_item_link .reserve-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
 		width: 100%;
-		height: 20vh;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+		color: #fff;
+		font-size: 1em;
+		font-weight: bold;
+		border-radius: 2em;
+		z-index: 3;
+		pointer-events: none;
+		letter-spacing: 0.05em;
+		font-family: "Zen Maru Gothic", sans-serif;
+		text-align: center;
+}
+.online_shop .shop_items .online_shop_item_link .item_img_box {
+		border-radius: 200px 200px 30px 30px;
+		color: #714B3D;
+		background: #FEFFF8;
+}
+.online_shop .shop_items .online_shop_item_link .item_img_box .item_img_frame {
+		width: 100%;
+		height: 30vh;
 		overflow: hidden;
 		border-radius: 200px 200px 0 0;
 		border-bottom: 1px solid #714B3D;
-		margin: 0 auto 0.5em;
 }
-.online_shop .shop_items .item_img_frame img {
+.online_shop .shop_items .online_shop_item_link .item_img_box .item_img_frame img {
 		width: 100%;
 		height: 100%;
 		-o-object-fit: cover;
 		   object-fit: cover;
 		display: block;
 }
-.online_shop .shop_items .item_img_box {
-		border-radius: 200px 200px 30px 30px;
-		color: #714B3D;
-		border: 1px solid #714B3D;
-		background: #FEFFF8;
-		-webkit-box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #714B3D;
-		        box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px #714B3D;
-}
-.online_shop .shop_items .item_img_box .item_name, .online_shop .shop_items .item_img_box .item_price {
+.online_shop .shop_items .online_shop_item_link .item_img_box .item_name, .online_shop .shop_items .online_shop_item_link .item_img_box .item_price {
 		margin-bottom: 0;
 		line-height: 1.4;
-		padding: 0 1em 1em;
+		padding: 0.2em 1em 0;
 		font-family: "Zen Maru Gothic";
 }
-.online_shop .shop_items .item_img_box .item_name {
+.online_shop .shop_items .online_shop_item_link .item_img_box .item_name {
 		padding-bottom: 0 !important;
+}
+.online_shop .shop_items .online_shop_item_link .item_img_box .item_price {
+		padding-bottom: 0.2em;
 }
 
 .cafe_menu {
 		background-color: #E7F4FF;
 		position: relative;
-		background-image: url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_two.png"), url("../img/cafe_menu_cloud_three.png"), url("../img/cafe_menu_cloud_two.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_two.png");
+		background-image: url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_one.png"), url("../img/cafe_menu_cloud_one.png");
 		background-repeat: no-repeat;
-		background-position: top 25vh left, top 30vh right, top 45vh left, bottom 25vh right, bottom 10vh left, bottom 1vh right;
 		background-size: auto 80px;
+		animation: cloudmove 20s linear infinite;
+		-webkit-animation: cloudmove 20s linear infinite;
+		-moz-animation: cloudmove 20s linear infinite;
 }
 .cafe_menu .title_box {
 		background-size: auto 137px;
@@ -1473,9 +1621,10 @@ section.intro {
 
 .footer_inner {
 		text-align: center;
+		background-color: #E7F4FF;
 }
 .footer_inner .logo {
-		width: 60%;
+		width: 50%;
 		margin: 3em auto 2em;
 }
 .footer_inner .footer-icons {
@@ -1518,8 +1667,108 @@ section.intro {
 		   object-fit: contain;
 }
 .footer_inner .copyright {
-		font-size: 0.8em;
+		font-size: 0.6em;
+		margin-bottom: 0;
 		color: rgba(69, 56, 46, 0.4901960784);
+}
+
+.intro-swiper {
+		margin: 1em 0;
+		padding: 0 0 2em 0;
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		/* はみ出し抑止（clip対応＋フォールバック） */
+		overflow: hidden;
+}
+@supports (overflow: clip) {
+		.intro-swiper {
+				overflow: clip;
+		}
+}
+.intro-swiper .swiper-wrapper {
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		will-change: transform;
+}
+.intro-swiper .swiper-slide {
+		-webkit-transition: -webkit-transform 0.3s ease;
+		transition: -webkit-transform 0.3s ease;
+		transition: transform 0.3s ease;
+		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		overflow: hidden;
+}
+.intro-swiper .swiper-slide img {
+		display: block;
+		width: 100%;
+		height: 180px;
+		-o-object-fit: contain;
+		   object-fit: contain;
+		border-radius: 10px;
+		-webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+		transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.intro-swiper .swiper-slide:not(.swiper-slide-active) img {
+		opacity: 0.8;
+		-webkit-transform: scale(0.9);
+		        transform: scale(0.9);
+}
+.intro-swiper .swiper-slide:not(.swiper-slide-active) p {
+		opacity: 0;
+}
+.intro-swiper .swiper-slide.swiper-slide-active img {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		        transform: scale(1);
+}
+.intro-swiper .swiper-slide.swiper-slide-active p {
+		opacity: 1;
+}
+.intro-swiper .swiper-slide .name {
+		min-height: 2.8em;
+		display: block;
+		text-align: center;
+		margin-top: 0.5em;
+		font-size: 0.8em;
+		color: #714B3D;
+		font-family: "Zen Maru Gothic", sans-serif;
+		margin-bottom: 0;
+		line-height: 1.4;
+		overflow-wrap: break-word;
+		word-break: break-all;
+}
+.intro-swiper .swiper-pagination {
+		position: relative;
+		bottom: auto;
+		margin: 1.5em auto 1em;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		gap: 0.2em;
+}
+.intro-swiper .swiper-pagination .swiper-pagination-bullet {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: #714B3D;
+		opacity: 0.3;
+		cursor: pointer;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+.intro-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+		opacity: 1;
+		background: #30ADFF;
+		-webkit-transform: scale(1.2);
+		        transform: scale(1.2);
 }
 
 @media (min-width: 760px) and (max-width: 1199px) {
@@ -1745,6 +1994,40 @@ section.intro {
 				-ms-grid-column-span: 1;
 				grid-column: span 1;
 		}
+		.calendar .market_info {
+				-webkit-column-gap: 1.3em;
+				   -moz-column-gap: 1.3em;
+				        column-gap: 1.3em;
+		}
+		.calendar .market_info .market_img {
+				width: 50%;
+		}
+		.calendar .market_info p:not(.market_img) {
+				font-size: 1em;
+				width: auto;
+		}
+		.store_info p {
+				font-size: 1em;
+				line-height: 1.7;
+		}
+		.store_info .google_map_outer {
+				margin-top: 1em;
+		}
+		.store_info .google_map_outer .google_map {
+				height: 50vh;
+		}
+		.intro .intro_outer.floater::after {
+				top: 8em;
+				left: 10em;
+				width: 33vh;
+				height: 21vh;
+		}
+		.intro .intro_outer.bounceIn::before {
+				top: 8em;
+				right: 11.2em;
+				width: 36vh;
+				height: 26vh;
+		}
 		.intro .intro_outer .intro_inner {
 				-ms-grid-columns: (1fr)[4];
 				grid-template-columns: repeat(4, 1fr);
@@ -1796,6 +2079,75 @@ section.intro {
 				-ms-grid-row: 1;
 				grid-row: 1;
 		}
+		.online_shop {
+				/* 4枚横並び（幅に応じて折り返し可） */
+				/* グリッドのセル全体を使う */
+		}
+		.online_shop .shop_items {
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-columns: minmax(0, 1fr) clamp(12px, 1.5vw, 24px) minmax(0, 1fr) clamp(12px, 1.5vw, 24px) minmax(0, 1fr) clamp(12px, 1.5vw, 24px) minmax(0, 1fr);
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				gap: clamp(12px, 1.5vw, 24px);
+				-webkit-box-align: stretch;
+				    -ms-flex-align: stretch;
+				        align-items: stretch; /* 行内で各カードの高さを揃える */
+		}
+		.online_shop .online_shop_item_link {
+				display: block;
+				height: 100%;
+				text-decoration: none;
+				color: inherit;
+				/* ★画像(固定) + テキスト(残り全部) の2行グリッドにする */
+		}
+		.online_shop .online_shop_item_link .item_img_box {
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-rows: auto 1fr;
+				grid-template-rows: auto 1fr; /* 上=画像, 下=テキストが残り高さを取る */
+				height: 100%;
+				width: 100%;
+				/* 画像は比率固定でトリミング */
+				/* テキスト部は各カードで同じ高さになり、上下中央配置 */
+		}
+		.online_shop .online_shop_item_link .item_img_box .item_price {
+				padding: 0;
+		}
+		.online_shop .online_shop_item_link .item_img_box .item_img_frame {
+				aspect-ratio: 4/3; /* 必要なら変更 */
+				overflow: hidden;
+		}
+		.online_shop .online_shop_item_link .item_img_box .item_img_frame img {
+				width: 100%;
+				height: 100%;
+				-o-object-fit: cover;
+				   object-fit: cover;
+				display: block;
+		}
+		.online_shop .online_shop_item_link .item_img_box .item_text_frame {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-wrap: wrap;
+				    flex-wrap: wrap;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center; /* 上下中央 */
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center; /* 左右中央 */
+				padding: 1em 0.5em;
+				text-align: center;
+				min-height: 0;
+				margin-bottom: 0; /* grid内のはみ出し防止 */
+				/* 背景や枠があればここで指定 */
+				/* 余計な上下marginでズレないように */
+		}
+		.online_shop .online_shop_item_link .item_img_box .item_text_frame .item_name {
+				padding: 0;
+				width: 100%;
+				line-height: 1.2;
+		}
 		.online-shop-icon {
 				display: none;
 		}
@@ -1806,79 +2158,15 @@ section.intro {
 				   object-fit: contain;
 				display: block;
 		}
-}
-@media (max-width: 768px) {
-		.intro-swiper {
-				margin: 1em 0;
-				padding: 0 0 2em 0;
-				overflow: visible;
+		.other_services .other_services_inner {
+				margin-bottom: 2em;
 		}
-		.intro-swiper .swiper-wrapper {
-				-webkit-box-align: center;
-				    -ms-flex-align: center;
-				        align-items: center;
+		.footer_inner {
+				padding: 6em 0 1em;
 		}
-		.intro-swiper .swiper-slide {
-				-webkit-transition: -webkit-transform 0.3s ease;
-				transition: -webkit-transform 0.3s ease;
-				transition: transform 0.3s ease;
-				transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-		}
-		.intro-swiper .swiper-slide img {
-				width: 100%;
-				height: auto;
-				-o-object-fit: contain;
-				   object-fit: contain;
-				border-radius: 10px;
-				display: block;
-				-webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-				transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-				transition: opacity 0.3s ease, transform 0.3s ease;
-				transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
-		}
-		.intro-swiper .swiper-slide:not(.swiper-slide-active) img {
-				opacity: 0.8;
-				-webkit-transform: scale(0.9);
-				        transform: scale(0.9);
-		}
-		.intro-swiper .swiper-slide:not(.swiper-slide-active) p {
-				opacity: 0;
-		}
-		.intro-swiper .swiper-slide.swiper-slide-active img {
-				opacity: 1;
-				-webkit-transform: scale(1);
-				        transform: scale(1);
-		}
-		.intro-swiper .swiper-slide.swiper-slide-active p {
-				opacity: 1;
-		}
-		.intro-swiper .swiper-pagination {
-				position: relative;
-				margin: 1.5em auto 1em;
-				bottom: auto;
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-box-pack: center;
-				    -ms-flex-pack: center;
-				        justify-content: center;
-				gap: 0.2em;
-		}
-		.intro-swiper .swiper-pagination .swiper-pagination-bullet {
-				background: #714B3D;
-				opacity: 0.3;
-				width: 6px;
-				height: 6px;
-				border-radius: 50%;
-				cursor: pointer;
-				-webkit-transition: all 0.3s ease;
-				transition: all 0.3s ease;
-		}
-		.intro-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-				opacity: 1;
-				background: #30ADFF;
-				-webkit-transform: scale(1.2);
-				        transform: scale(1.2);
+		.footer_inner .logo {
+				width: 15%;
+				margin: 0 auto 4em;
 		}
 }
 @media (min-width: 769px) {

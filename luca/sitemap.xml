@@ -1,42 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://ranway-dashimaki.com/</loc>
-  <lastmod>2021-03-20T13:19:03+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://ranway-dashimaki.com/index.html</loc>
-  <lastmod>2021-03-20T13:19:03+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ranway-dashimaki.com/sozai/index.html</loc>
-  <lastmod>2021-03-20T13:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ranway-dashimaki.com/intro/index.html</loc>
-  <lastmod>2021-03-20T13:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ranway-dashimaki.com/media/index.html</loc>
-  <lastmod>2021-03-20T13:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ranway-dashimaki.com/img/recruit.pdf</loc>
-  <lastmod>2021-03-20T13:19:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://tofulbagel.com/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/logo_full.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/button_onlineshop_text.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/button_onlineshop.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/instagram.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/telephone.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/menu_bar.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/mv.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_new.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_togubagle.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/tofu.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_gu.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_plain.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_anpan.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_blueberrycheese.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_tomatomozzarella.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_pizza.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_carrotlappe.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_mentabutter.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_matchawhitechoco.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intokind_cornmayo.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_four.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_one.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_atmosphere3.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/intro_atmosphere2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/calendar.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/market.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/online_shop_bagel6.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/online_shop_bagel8.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/online_shop_teacake.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/online_shop_cheesecake.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/cafe_menu_morning.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/cafe_menu_lunch.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/cafe_menu_dessert.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/cafe_menu_drink.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/retail.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/other_services_workshop2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/other_services_party.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/other_services_cake.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/instagram_blue.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tofulbagel.com/img/online_shop_brown.svg</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://tofulbagel.com/img/intro_one.jpeg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://tofulbagel.com/img/intro_one.jpeg.webp</video:thumbnail_loc>
+      <video:title>青梅のお豆腐ベーグル専門・地元カフェ屋さんの紹介ムービー</video:title>
+      <video:description>青梅のお豆腐ベーグル専門・地元カフェ屋さんの紹介ムービー</video:description>
+      <video:content_loc>https://tofulbagel.com/video/mv_video.mp4</video:content_loc>
+    </video:video>
+  </url>
 </urlset>

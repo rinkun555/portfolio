@@ -49,6 +49,28 @@ $pink:#FEBCF9;
   100% { transform: scale(1); }
 }
 
+@keyframes cloudmove {
+  0% {
+    background-position:
+      top 1vh left -20vw,  /* L1: いちばん早く&早めに登場 */
+      top 25vh left -80vw,  /* L2: 少し遅れて登場 */
+      top 45vh right 50vw,  /* L3 */
+      bottom 45vh left -65vw, /* L4 */
+      bottom 20vh left -80vw, /* L5 */
+      bottom 1vh left -95vw;  /* L6: いちばん遅れて登場 */
+  }
+
+  100% {
+    background-position:
+      top 1vh left 100vw,  /* L1: 距離長い=最速 */
+      top 25vh left 105vw,  /* L2 */
+      top 45vh left 130vw,  /* L3 */
+      bottom 45vh left 120vw, /* L4 */
+      bottom 20vh left 110vw, /* L5 */
+      bottom 1vh left 100vw;  /* L6: 距離短い=最遅 */
+  }
+}
+
 // Font variables
     $font-chango: "Chango", sans-serif;
     $font-zen-maru: "Zen Maru Gothic", sans-serif;
@@ -58,6 +80,8 @@ html, body, img, h1, h2, h3, h4, p, ul, li, dl, dd, dt, span, a, textarea, input
   margin: 0;
   padding: 0;
   line-height: 1.0;
+  box-sizing: border-box;
+  overflow-x: clip; 
 }
 
 img {
@@ -221,7 +245,6 @@ section{
   .curtain-5 {
     left: 80vw;
     border-radius: 0 0 15em 15em;
-
   }
   
   .loading-logo {
@@ -309,12 +332,11 @@ section.intro{
   padding-top: 3em;
   font-family: $font-zen-maru;
 
-  
   &.bounceIn::before {
     content: "";
     position: absolute;
     top: -3.3em;
-    right: 0.2em;
+    right: 0;
     width: 25vh;
     height: 16vh;
     background: url('../img/intro_fuwa2.png') no-repeat center center;
@@ -327,7 +349,7 @@ section.intro{
     content: "";
     position: absolute;
     top: -7em;
-    left: 0em;
+    left: 1em;
     width: 23vh;
     height: 13vh;
     background: url('../img/intro_mochi2.png') no-repeat center center;
@@ -344,12 +366,12 @@ section.intro{
     }   
 
     &.bagle{
- width: 90%;
+    width: 90%;
     margin: 2em auto 0em;
     }
-  }
+    }
  
- .intro_inner {
+     .intro_inner {
       background-image: url('../img/intro_togubagle_round.png');
       background-size: 120%;
       background-position: top center;
@@ -385,7 +407,7 @@ section.intro{
             img{
             margin: 0 auto;
             display: flex;
-            max-height: 20vh;
+            max-height: 27vh;
             }
 
             &.kind {
@@ -446,6 +468,7 @@ section.intro{
         }
       }
 }
+
 .bagel_all_outer {
   width: 100%;
   margin: 0 auto;
@@ -547,6 +570,12 @@ column-gap: 0.8em;
       }
     }
   }
+  .store_info_inner{
+    p{
+      line-height: 1.8;
+    }
+  }
+
 
   .closingday{
     color:rgb(187, 0, 0);
@@ -676,33 +705,74 @@ column-gap: 0.8em;
 }
 
 //online_shop
-.online_shop{
-background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
+  .online_shop{
+  background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
   font-family: $font-zen-maru;
 
-  .title_box{
-    background-size: auto 137px;
-    .title{
-
-      .english {
-      font-size: 1.2em;
-    }
-    }
-  }
+      .title_box{
+        background-size: auto 137px;
+        .title{
+          .english {
+          font-size: 1.2em;
+           }
+        }
+      }
       .shop_items {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5em;
-    margin: 2em 0;
+      margin: 2em 0;
       color: $white;
-      
-      .item_img_frame {
-      width: 100%;
-      height: 20vh;
-        overflow: hidden;
-      border-radius: 200px 200px 0 0;
-    border-bottom: 1px solid $dark-brown;
-        margin: 0 auto 0.5em;
+
+      .online_shop_item_link{
+        border-radius: 200px 200px 30px 30px;
+        box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px $dark-brown;
+        display: grid;
+        grid-template-rows: subgrid;
+        border: 1px solid $dark-brown;
+        position: relative; // レイヤー配置のため
+
+        // 予約販売レイヤー
+        .reserve-layer {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0,0,0,0.35); // 半透明ブラック
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: none; // クリックを透過
+          border-radius: inherit;
+        }
+        .reserve-text {
+          position: absolute;
+          top: 50%; left: 50%;
+          width: 100%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          font-size: 1em;
+          font-weight: bold;
+          // background: rgba(30,30,30,0.7);
+          // padding: 0.5em 1.2em;
+          border-radius: 2em;
+          z-index: 3;
+          pointer-events: none;
+          letter-spacing: 0.05em;
+          font-family: "Zen Maru Gothic", sans-serif;
+          text-align: center;
+        }
+        
+      .item_img_box{
+        border-radius: 200px 200px 30px 30px;
+        color: $dark-brown;
+        background: $warm-white;
+
+        .item_img_frame {
+          width: 100%;
+          height: 30vh;
+          overflow: hidden;
+          border-radius: 200px 200px 0 0;
+          border-bottom: 1px solid $dark-brown;
         
         img {
           width: 100%;
@@ -712,50 +782,42 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
         }
       }
 
-      .item_img_box{
-        border-radius: 200px 200px 30px 30px;
-        color: $dark-brown;
-        border: 1px solid $dark-brown;
-        background: $warm-white;
-        box-shadow: 6px 6px 0px 0px #FFF, 7px 7px 0px 0px $dark-brown;
-
         .item_name, .item_price{
           margin-bottom: 0;
           line-height: 1.4;
-          padding:0 1em 1em;
+          padding:0.2em 1em 0;
           font-family: 'Zen Maru Gothic';
-        }
+          }
         .item_name{
           padding-bottom: 0 !important
         }
+        .item_price{
+          padding-bottom:0.2em;
+        }
+      }
       }
     }
   }
 
 
   // cafe_menu
-.cafe_menu {
+  .cafe_menu {
   background-color: $light-blue-2;
   position: relative;
   
   // Add cloud background images
  background-image: 
     url('../img/cafe_menu_cloud_one.png'),
-    url('../img/cafe_menu_cloud_two.png'),
-    url('../img/cafe_menu_cloud_three.png'),
-    url('../img/cafe_menu_cloud_two.png'),
     url('../img/cafe_menu_cloud_one.png'),
-    url('../img/cafe_menu_cloud_two.png');
+    url('../img/cafe_menu_cloud_one.png'),
+    url('../img/cafe_menu_cloud_one.png'),
+    url('../img/cafe_menu_cloud_one.png'),
+    url('../img/cafe_menu_cloud_one.png');
   background-repeat: no-repeat;
-  background-position: 
-    top 25vh left,
-    top 30vh right,
-    top 45vh left,
-    bottom 25vh right,
-   bottom 10vh left,
-    bottom 1vh right;
   background-size: auto 80px; // or adjust to fit your design
-
+	animation: cloudmove 20s linear infinite;
+	-webkit-animation: cloudmove 20s linear infinite;
+	-moz-animation: cloudmove 20s linear infinite;
       .title_box{
     background-size: auto 137px;
     .title{
@@ -877,8 +939,9 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
 
 .footer_inner{
   text-align: center;
+   background-color: $light-blue-2;
   .logo{
-    width: 60%;
+    width: 50%;
     margin: 3em auto 2em;
   }
   
@@ -912,27 +975,109 @@ background: url(../img/online-shop_bg.jpg) repeat top left / 50% 50%;
   }
   
   .copyright{
-    font-size: 0.8em;
+    font-size: 0.6em;
+    margin-bottom: 0;
     color: #45382e7d;
   }
 }
 
+  .intro-swiper {
+    margin: 1em 0;
+    padding: 0 0 2em 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* はみ出し抑止（clip対応＋フォールバック） */
+    overflow: hidden;
+    @supports (overflow: clip) {
+      overflow: clip;
+    }
+
+    .swiper-wrapper {
+      align-items: center;
+      will-change: transform; // スクロール中の微妙なズレ防止
+    }
+
+    .swiper-slide {
+      transition: transform 0.3s ease;
+      box-sizing: border-box;
+      overflow: hidden; // スライド内の微妙なはみ出しも抑止
+      
+      img {
+        display: block;
+        width: 100%;
+        height: 180px; // ★ 画像の高さを固定（2行nameに合わせる）
+        object-fit: contain;
+        border-radius: 10px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      // 中央以外のスライドは少し暗く・小さく
+      &:not(.swiper-slide-active) {
+        img { opacity: 0.8; transform: scale(0.9); }
+        p   { opacity: 0; }
+      }
+
+      // アクティブ（中央）のスライド
+      &.swiper-slide-active {
+        img { opacity: 1; transform: scale(1); }
+        p   { opacity: 1; }
+      }
+
+      .name {
+      min-height: 2.8em; // ★ 2行分の高さを確保（1行でも2行でも揃う）
+      display: block;
+      text-align: center;
+      margin-top: 0.5em;
+      font-size: 0.8em;
+      color: $dark-brown;
+      font-family: $font-zen-maru;
+      margin-bottom: 0;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+      word-break: break-all;
+    }
+    }
+
+    .swiper-pagination {
+      position: relative;
+      bottom: auto;
+      margin: 1.5em auto 1em;
+      display: flex;
+      justify-content: center;
+      gap: 0.2em;
+
+      .swiper-pagination-bullet {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: $dark-brown;
+        opacity: 0.3;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.swiper-pagination-bullet-active {
+          opacity: 1; background: $blue; transform: scale(1.2);
+        }
+      }
+    }
+  }
+
 //tablet 
 @media (min-width: 760px) and (max-width: 1199px) {
-p{
-  font-size: 1.3em;
-}
-.intro .intro_outer .intro_inner{
-  padding-top: 44vh;
-}
+    p{
+      font-size: 1.3em;
+    }
+    .intro .intro_outer .intro_inner{
+      padding-top: 44vh;
+    }
 
-.cafe_menu .cafe_items {
-      width: 70%;
-    margin: 0 auto;
-    .cafe_item .cafe_frame{
-  height: 30vh;
-}
-}
+    .cafe_menu .cafe_items {
+          width: 70%;
+        margin: 0 auto;
+        .cafe_item .cafe_frame{
+      height: 30vh;
+    }
+  }
 }
 
 @media (min-width:1200px){
@@ -948,7 +1093,7 @@ p{
       }
   }
 
-    .body_link{
+   .body_link{
     padding: 1.5em;
     width: 30%;
     margin: 0 auto;
@@ -994,7 +1139,7 @@ p{
     .intro_outer {
 
     &::before {
-top: 0.7em;
+    top: 0.7em;
     right: 5vw;
     width: 28vh;
     height: 18vh;
@@ -1061,14 +1206,12 @@ top: 0.7em;
 .lightbox {
   .lightbox-content {
     
-    img {
-
-      max-width: calc(95vw - 40px); // Account for padding
-      max-height: calc(95vh - 40px); 
+      img {
+        max-width: calc(95vw - 40px); // Account for padding
+        max-height: calc(95vh - 40px); 
+      }
     }
   }
-
-}
 
   .store_info {
     p{
@@ -1088,31 +1231,30 @@ top: 0.7em;
       .google_map{
       height: 40vh;
       }
-  }
-  }
-
-.online_shop{
-  p{
-    text-align: center;
-    font-size: 1.3em;
-  }
-  .shop_items{
-  gap: 4em;
-  margin-bottom: 4em;
-  grid-template-columns: repeat(4, 1fr);
-
-    .item_img_frame{
-    height: 40vh;
     }
+  }
 
-    .item_img_box{
-      .item_name{
-        padding: 0 1em 0.2em;
+  .online_shop{
+    p{
+      text-align: center;
+      font-size: 1.3em;
+    }
+    .shop_items{
+    gap: 4em;
+    margin-bottom: 4em;
+    grid-template-columns: repeat(4, 1fr);
+
+      .item_img_frame{
+      height: 40vh;
       }
-    }
-  } 
 
-} 
+      .item_img_box{
+        .item_name{
+          padding: 0 1em 0.2em;
+        }
+      }
+    } 
+    } 
 
 .cafe_menu {
     p{
@@ -1183,9 +1325,9 @@ top: 0.7em;
   }
 }
 
-.footer_inner .logo{
-  width: 20%;
-}
+  .footer_inner .logo{
+    width: 20%;
+  }
 }
 
 //PC
@@ -1208,8 +1350,50 @@ top: 0.7em;
     grid-column: span 1; // Each takes one column (50% width)
   }
 
+  .calendar{
+      .market_info {
+      column-gap: 1.3em;
+    .market_img {
+      width: 50%;
+    }
+
+    p:not(.market_img) {
+      font-size: 1em;
+      width: auto;
+    }
+    }
+  }
+
+  .store_info{
+    p {
+      font-size: 1em;
+      line-height: 1.7;
+      }
+      .google_map_outer{
+        margin-top: 1em;
+      .google_map{
+      height: 50vh;
+      }
+  }
+  }
+
   .intro {
     .intro_outer {
+        &.floater::after {
+        top: 8em;
+        left: 10em;
+        width: 33vh;
+        height: 21vh;
+      }
+
+      &.bounceIn::before{
+        top: 8em;
+        right: 11.2em;
+        width: 36vh;
+        height: 26vh;
+      }
+
+
       .intro_inner {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -1229,7 +1413,6 @@ top: 0.7em;
     }
 
 .bagel_all_outer {
-
   .bagel_grid {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -1251,6 +1434,67 @@ top: 0.7em;
 }
 }
 
+.online_shop{
+/* 4枚横並び（幅に応じて折り返し可） */
+.shop_items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 24px);
+  align-items: stretch;   /* 行内で各カードの高さを揃える */
+}
+
+/* グリッドのセル全体を使う */
+  .online_shop_item_link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+
+    /* ★画像(固定) + テキスト(残り全部) の2行グリッドにする */
+    .item_img_box {
+      display: grid;
+      grid-template-rows: auto 1fr;  /* 上=画像, 下=テキストが残り高さを取る */
+      height: 100%;
+      width: 100%;
+
+      .item_price{
+        padding: 0;
+      }
+      
+      /* 画像は比率固定でトリミング */
+      .item_img_frame {
+        aspect-ratio: 4 / 3;  /* 必要なら変更 */
+        overflow: hidden;
+          img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+      /* テキスト部は各カードで同じ高さになり、上下中央配置 */
+      .item_text_frame {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;     /* 上下中央 */
+        justify-content: center; /* 左右中央 */
+         padding: 1em 0.5em;
+        text-align: center;
+        min-height: 0; 
+        margin-bottom: 0;          /* grid内のはみ出し防止 */
+        /* 背景や枠があればここで指定 */
+
+        /* 余計な上下marginでズレないように */
+        .item_name { 
+          padding: 0; 
+          width: 100%;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}
+
 .online-shop-icon {
   display: none;
 
@@ -1261,82 +1505,19 @@ top: 0.7em;
     display: block;
   }
 }
-}
-
-// Swiper styles for intro section
-@media (max-width: 768px) {
-  .intro-swiper {
-    margin: 1em 0;
-    padding: 0 0 2em 0;
-    overflow: visible;
-    
-    .swiper-wrapper {
-      align-items: center;
-    }
-    
-    .swiper-slide {
-      transition: transform 0.3s ease;
-      img {
-        width: 100%;
-    height: auto;
-        object-fit: contain; // Changed from contain to cover
-        border-radius: 10px;
-        display: block;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-      
-      // 中央以外のスライドは少し暗く、小さく表示
-      &:not(.swiper-slide-active) {
-        img {
-          opacity: 0.8;
-          transform: scale(0.9);
-        }
-        
-        p {
-          opacity: 0;
-        }
-      }
-      
-      // アクティブ（中央）のスライドは完全に表示
-      &.swiper-slide-active {
-        img {
-          opacity: 1;
-          transform: scale(1);
-        }
-        
-        p {
-          opacity: 1;
-        }
-      }
-      
-    }
-    
-    .swiper-pagination {
-      position: relative;
-      margin: 1.5em auto 1em;
-      bottom: auto;
-      display: flex;
-      justify-content: center;
-      gap: 0.2em;
-      
-      .swiper-pagination-bullet {
-        background: $dark-brown;
-        opacity: 0.3;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        
-        &.swiper-pagination-bullet-active {
-          opacity: 1;
-          background: $blue;
-          transform: scale(1.2);
-        }
-      }
+  .other_services .other_services_inner{
+    margin-bottom: 2em;
+  }
+  .footer_inner{
+    padding: 6em 0 1em;
+    .logo{
+        width: 15%;
+        margin: 0 auto 4em;
     }
   }
 }
+
+
 
 // PC: Hide swiper, show regular images
 @media (min-width: 769px) {
@@ -1359,5 +1540,5 @@ top: 0.7em;
       }
   }
 }
-  
+
 
