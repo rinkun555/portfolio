@@ -1,0 +1,143 @@
+:root {
+  --bg: #f3f0e6;
+  --text: #111;
+  --footer: #232a30;
+  --dot: #d9d400;
+  --dot-border: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 64px; /* space for footer */
+}
+
+.header {
+  position: relative;
+  height: 280px; /* controls how far down the nav sits */
+}
+
+.brand {
+  position: absolute;
+  top: 56px;
+  left: 72px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--dot);
+  border: 2px solid var(--dot-border);
+}
+
+.brand-text {
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  position: absolute;
+  left: 50%;
+  bottom: 42px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 96px;
+  align-items: center;
+  justify-content: center;
+  width: min(920px, 92vw);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px 80px;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: grid;
+  gap: 38px;
+}
+
+.main-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.main-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  background: var(--footer);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-inner {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Simple responsiveness for small screens */
+@media (max-width: 720px) {
+  .brand {
+    left: 20px;
+    top: 24px;
+  }
+
+  .header {
+    height: 240px;
+  }
+
+  .nav {
+    gap: 20px;
+    flex-wrap: wrap;
+    bottom: 22px;
+  }
+}
