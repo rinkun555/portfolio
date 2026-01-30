@@ -1,19 +1,69 @@
 :root {
-  --bg: #f3f0e6;
+  --bg: #efefe1;
   --text: #111;
   --footer: #232a30;
-  --dot: #d9d400;
-  --dot-border: #111;
 }
 
-* {
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+/* 横スクロールは絶対出さない（すでにあるなら重複OK） */
+html, body { overflow-x: hidden; }
+
+/* ナビ全体：画面幅いっぱい、はみ出しは切る */
+.topbar {
+  width: 100%;
+  overflow: hidden;              /* ここで左右の見切れを作る */
+  background: var(--bg);
 }
 
-html,
-body {
-  height: 100%;
+/* 中身：1140px固定、常に中央（画面が狭くても中央基準で見切れる） */
+.topbar-inner {
+  width: 1140px;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);   /* 中心合わせの決め手 */
 }
+
+/* ロゴ */
+.topbar-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+/* 右側メニュー */
+.topbar-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.topbar-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  font-size: 18px;
+}
+
+.topbar-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #dddc00;
+}
+
+/* ナビの下にコンテンツが潜らないように（必要なら） */
+#pages .wrap {
+  padding-top: 20px;
+}
+
 
 body {
   margin: 0;
@@ -27,85 +77,76 @@ body {
   padding-bottom: 64px; /* space for footer */
 }
 
+/* Top-left logo */
 .header {
+  height: 140px;
   position: relative;
-  height: 280px; /* controls how far down the nav sits */
 }
 
 .brand {
   position: absolute;
-  top: 56px;
-  left: 72px;
+  top: 40px;
+  left: 48px;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-}
-
-.brand-dot {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--dot);
-  border: 2px solid var(--dot-border);
-}
-
-.brand-text {
-  font-weight: 800;
-  font-size: 28px;
-  letter-spacing: 0.2px;
-}
-
-.nav {
-  position: absolute;
-  left: 50%;
-  bottom: 42px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 96px;
-  align-items: center;
-  justify-content: center;
-  width: min(920px, 92vw);
-}
-
-.nav-link {
   text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  font-size: 16px;
 }
 
-.nav-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.brand-logo {
+  display: block;
+  height: 46px;          /* tweak as needed */
+  width: auto;
 }
 
+/* Center menu area (nav + lower links) */
 .main {
   display: flex;
   justify-content: center;
-  padding: 40px 16px 80px;
+  padding: 150px 16px 120px; /* pushes nav down like your screenshot */
 }
 
-.link-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+.menu-area {
   display: grid;
-  gap: 38px;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 96px;
+  row-gap: 110px;
+  align-items: start;
 }
 
+/* Let nav children participate in the grid */
+.nav {
+  display: contents;
+}
+
+.nav-link,
 .main-link {
   text-decoration: none;
   color: var(--text);
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
+.nav-link:hover,
 .main-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
+/* Lower list aligned to the left edge of "Timely Insights (TOP)" (2nd nav item) */
+.link-list {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: start;
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  gap: 38px;
+}
+
+/* Footer */
 .footer {
   position: fixed;
   left: 0;
@@ -124,20 +165,75 @@ body {
   opacity: 0.9;
 }
 
-/* Simple responsiveness for small screens */
-@media (max-width: 720px) {
-  .brand {
-    left: 20px;
-    top: 24px;
-  }
+/* Responsive */
+@media (max-width: 900px) {
+  .main { padding-top: 110px; }
 
-  .header {
-    height: 240px;
+  .menu-area {
+    grid-template-columns: 1fr;
+    row-gap: 42px;
+    width: min(520px, 92vw);
   }
 
   .nav {
-    gap: 20px;
-    flex-wrap: wrap;
-    bottom: 22px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
+
+  .link-list {
+    grid-column: 1;
+    text-align: left;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand { left: 20px; top: 22px; }
+  .brand-logo { height: 40px; }
+}
+
+
+
+/* 横スクロールを絶対に出さない */
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* コンテナは画面幅いっぱい。はみ出しは横だけ切る */
+#pages .wrap {
+  width: 100%;
+  overflow-x: hidden;
+  /* 縦はスクロールしたいなら overflow-y は触らない */
+}
+
+/* 画像は 1800px 固定、中心合わせ（←これが左右均等見切れの決め手） */
+#pages .img {
+  width: 1800px;
+  height: auto;
+  max-width: none;       /* 縮小させない */
+  display: block;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+body#timely_top{
+  position: relative;
+}
+
+body#timely_top::before{
+background-image: url(img/circle.png);
+    background-size: contain;
+    width: 700px;
+    height: 500px;
+    z-index: 0;
+    position: absolute;
+    display: inline-block;
+    content: "";
+    top: 0;
+    left: -16px;
 }
