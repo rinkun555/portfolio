@@ -205,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="telephone">
-        <a href="tel:080-9948-5079">
+        <a href="tel:080-9448-5079">
           <img src="img/telephone.svg" alt="電話">
         </a>
       </div>
@@ -377,52 +377,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <p class="description"><span class="bold">冷凍</span>で<span class="bold">全国</span>にお届けできます。<br>
             季節限定セットなど、期間限定セットなどもありますので、ぜひチェックお待ちしてます！<br>
-            <span class="bold">遠方の方、ちょっとしたギフト</span>にいかがですか？</p>
+            <span class="bold">遠方の方、ちょっとしたギフト</span>にいかがですか？<br>商品は都度更新されますので、最新情報は<span class="bold">ベーグル通販サイト</span>でチェックしてください！</p>
             <div class="shop_items">
                 <a id="click_new6_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
                     <div class="item_img_box">
                         <div class="item_img_frame">
-                            <img src="img/online_shop_new_6.jpg" alt="新作6個セットのイメージ">
+                            <img src="img/online_shop_omakase_8.jpg" alt="初めての方におすすめ6個セット">
                             <!-- 予約販売レイヤーとテキスト -->
                             <!-- <div class="reserve-layer"></div> -->
                             <!-- <div class="reserve-text">10月下旬予約販売</div> -->
                         </div>
                           <div class="item_text_frame">
-                          <p class="item_name">新作6個セット</p>
-                          <p class="item_price">¥3,000</p> 
+                          <p class="item_name">初めての方におすすめ<br>6個セット</p>
+                          <p class="item_price">¥3,200</p> 
                           </div>
                       </div>
                     </a>
                     <a id="click_plain8_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
                       <div class="item_img_box">
                       <div class="item_img_frame">
-                        <img src="img/online_shop_plain_8.jpg" alt="プレーンベーグル8個セットのイメージ">
+                        <img src="img/online_shop_new_6.jpg" alt="月替のベーグル 6個セット">
                       </div>
                       <div class="item_text_frame">
-                        <p class="item_name">プレーンベーグル8個セット</p>
-                        <p class="item_price">¥3,600</p> 
+                        <p class="item_name">月替のベーグル<br>6個セット</p>
+                        <p class="item_price">¥3,400</p> 
                       </div>
                       </div>
                     </a>
                     <a id="click_omakase8_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
                       <div class="item_img_box">
                       <div class="item_img_frame">
-                        <img src="img/online_shop_omakase_8.jpg" alt="おまかせ8個セット(定番+新作)のイメージ">
+                        <img src="img/online_shop_cheesecake.jpg" alt="ベーグル5個＋バスクチーズケーキ2種セット">
                       </div>
                       <div class="item_text_frame">
-                        <p class="item_name">おまかせ8個セット(定番+新作)</p>
-                        <p class="item_price">¥3,900</p> 
+                        <p class="item_name">ベーグル5個＋バスクチーズケーキ2種セット</p>
+                        <p class="item_price">¥4,100</p> 
                       </div>
                       </div>
                     </a>
                     <a id="click_cheesecake6_set" class="online_shop_item_link" href="https://tofulbagel.base.shop/items/all" target="_blank" rel="noopener noreferrer">
                       <div class="item_img_box">
                       <div class="item_img_frame">
-                        <img src="img/online_shop_cheesecake.jpg" alt="バスクチーズケーキ 6号ホールのイメージ">
+                        <img src="img/online_shop_osouzai.jpg" alt="お惣菜系ベーグル6個セット">
                       </div>
                       <div class="item_text_frame">
-                        <p class="item_name">ベーグルおまかせ6個+バスクチーズケーキセット</p>
-                        <p class="item_price">¥3,700</p> 
+                        <p class="item_name">お惣菜系ベーグル<br>6個セット</p>
+                        <p class="item_price">¥3,300</p> 
                       </div>
                       </div>
                    </a>
@@ -525,7 +525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <!-- 電話番号 -->
-            <a class="body_link" href="tel:080-9948-5079">お問い合わせはこちら</a>
+            <a class="body_link" href="tel:080-9448-5079">お問い合わせはこちら</a>
         </section>
 
     </main>
