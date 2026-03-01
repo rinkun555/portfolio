@@ -444,12 +444,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="cafe_items">
                 <div class="cafe_item">
                     <div class="cafe_frame">
-                        <img src="img/cafe_menu_morning.jpg" alt="モーニングのイメージ">
-                    </div>
-                    <div class="cafe_label">(モーニング準備中)</div>
-                </div>
-                <div class="cafe_item">
-                    <div class="cafe_frame">
                         <img src="img/cafe_menu_lunch.jpg" alt="ランチのイメージ">
                     </div>
                     <div class="cafe_label">ランチ</div>
